@@ -7,7 +7,8 @@ plugins {
     id "org.springframework.boot" version "2.7.3"
     id "io.spring.dependency-management" version "1.0.13.RELEASE"
     id "io.freefair.lombok" version "6.5.1"
-    id "org.flywaydb.flyway" version "9.2.2"
+    id "org.flywaydb.flyway" version "9.3.0"
+    id 'org.asciidoctor.convert' version '1.5.8'
 }
 
 group = 'com.mrlonis'
@@ -55,6 +56,11 @@ dependencies {
 tasks.named('test') {
     outputs.dir snippetsDir
     useJUnitPlatform()
+}
+
+tasks.named('asciidoctor') {
+    inputs.dir snippetsDir
+    dependsOn test
 }
 
 tasks.withType(JavaCompile) {
