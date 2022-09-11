@@ -1,1 +1,8 @@
-rootProject.name = 'api-mythic-heroes'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "api-mythic-heroes"

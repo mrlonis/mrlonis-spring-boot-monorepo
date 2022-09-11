@@ -1,13 +1,20 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
 plugins {
-    id 'org.springframework.boot' version '2.7.3'
-    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+    id "java"
+    id "idea"
+    id "jacoco"
+    id "org.springframework.boot" version "2.7.3"
+    id "io.spring.dependency-management" version "1.0.13.RELEASE"
+    id "io.freefair.lombok" version "6.5.1"
+    id "org.flywaydb.flyway" version "9.3.0"
     id 'org.asciidoctor.convert' version '1.5.8'
-    id 'java'
 }
 
 group = 'com.mrlonis'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 configurations {
     compileOnly {
@@ -24,16 +31,24 @@ ext {
 }
 
 dependencies {
+    implementation 'com.h2database:h2'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'org.apache.ant:ant:1.10.12'
+    implementation 'org.flywaydb:flyway-core'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.flywaydb:flyway-core'
-    compileOnly 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.h2database:h2'
+
+//    runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
+
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'com.h2database:h2'
+    testImplementation 'org.mockito:mockito-junit-jupiter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
@@ -47,3 +62,117 @@ tasks.named('asciidoctor') {
     inputs.dir snippetsDir
     dependsOn test
 }
+
+tasks.withType(JavaCompile) {
+    options.warnings = true
+    options.deprecation = true
+    options.compilerArgs << "-Xlint:unchecked"
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+}
+
+def filesToExcludeFromCoverage = ["**/com/mrlonis/mythicheroes/config/**", "**/com/mrlonis/mythicheroes/domain/**"]
+
+task restartDocker {
+    doLast {
+        exec {
+            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                workingDir = file('./')
+                commandLine = ['cmd', '/C', 'docker compose up -d']
+            } else {
+                commandLine = ['docker', 'compose', 'up', '-d']
+            }
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+    if (systemProperties.get("spring.profiles.active") == "local") {
+        dependsOn restartDocker
+    }
+//    testLogging {
+//        showStandardStreams = true
+//    }
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: filesToExcludeFromCoverage)
+        })
+    }
+}
+
+jacocoTestCoverageVerification {
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: filesToExcludeFromCoverage)
+        })
+    }
+
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.00
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.00
+            }
+        }
+    }
+
+    mustRunAfter jacocoTestReport
+}
+
+check {
+    dependsOn jacocoTestCoverageVerification
+}
+
+bootRun {
+    if (System.properties.get("spring.profiles.active") == "local") {
+        dependsOn restartDocker
+    }
+}
+
+build {
+    if (System.properties.get("spring.profiles.active") == "local") {
+        dependsOn {
+            jacocoTestReport
+            restartDocker
+        }
+    } else {
+        dependsOn jacocoTestReport
+    }
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5110/'
+    user = 'postgres'
+    password = '123456'
+}
+
+
+

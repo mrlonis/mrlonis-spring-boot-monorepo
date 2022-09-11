@@ -5,14 +5,145 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a2ea5c6-6ac2-4e2d-91cf-43cd72f49d62" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mrlonis-spring-boot-monorepo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/api_mythic_heroes__bootRun_local_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/api_mythic_heroes__bootRun_local_h2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/api_mythic_heroes__build_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/lombok.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/config/SpringDataRestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/config/WebConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/domain/Artifact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/domain/ProjectEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/domain/Rune.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/faction/Faction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/faction/FactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/mythichero/MythicHero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/mythichero/MythicHeroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/mythichero/MythicHeroRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/mythichero/MythicHeroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/rarity/Rarity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/rarity/RarityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/type/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/java/com/mrlonis/mythicheroes/type/TypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/application-local-h2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/application-local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/db/h2-migration/V1__Create_Mythic_Heroes_Tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/db/h2-migration/V2__Create_Mythic_Heroes_Data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/db/migration/V1__Create_Mythic_Heroes_Tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/db/migration/V2__Create_Mythic_Heroes_Data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Guardian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Guardian_Verdian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Luminarch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Luminarch_Guardian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Luminarch_Shadowarch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Luminarch_Verdian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Shadowarch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Shadowarch_Guardian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Shadowarch_Verdian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/factions/Verdian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Amaterasu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Anubis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Archimedes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Artemis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Athena.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Baldur.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Cassandra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Cleopatra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Dionysus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Dracula.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Eos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Faust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Flora.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Freyja.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Gaia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Ganesha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Ganjiang_Moye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Hades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Harpy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Hela.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Hercules.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Hippolyta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Hodur.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Idun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Iset.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Izanami.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Joan_of_Arc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Leonidas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Lilith.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Loki.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Lu_Bu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Lucifer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Medusa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Merlin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Mulan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Muse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Nagakayna.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Nuwa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Oberon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Odin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Persephone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Poseidon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Susanoo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Tamamo_no_Mae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Thanatos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Thor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Typhon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Western_Queen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Yukionna.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/mythicHeroes/Zeus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/rarities/SR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/rarities/SSR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/rarities/UR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/types/Fighter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/types/Mage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/types/Support.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/images/types/Tank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/PaginatedResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/faction/repository/FactionRepositoryH2Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/faction/repository/FactionRepositoryHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/faction/repository/FactionRepositorySmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/faction/repository/FactionRepositoryWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/controller/MythicHeroControllerHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/controller/MythicHeroControllerSmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/controller/MythicHeroControllerWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/controller/MythicHeroControllerWebLayerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/repository/MythicHeroRepositoryH2Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/repository/MythicHeroRepositoryHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/repository/MythicHeroRepositorySmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/repository/MythicHeroRepositoryWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/mythichero/service/MythicHeroServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/rarity/repository/RarityRepositoryH2Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/rarity/repository/RarityRepositoryHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/rarity/repository/RarityRepositorySmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/rarity/repository/RarityRepositoryWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/controller/ControllerHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/controller/ControllerSmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/controller/ControllerWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/controller/ControllerWebLayerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/repsoitory/RepositoryH2Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/repsoitory/RepositoryHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/repsoitory/RepositorySmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/repsoitory/RepositoryWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/templates/service/ServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/type/repository/TypeRepositoryH2Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/type/repository/TypeRepositoryHttpRequestTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/type/repository/TypeRepositorySmokeTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/type/repository/TypeRepositoryWebApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/resources/application-h2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mythic-heroes/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api-mythic-heroes/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mythic-heroes/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-mythic-heroes/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mythic-heroes/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api-mythic-heroes/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-mythic-heroes/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/ApiMythicHeroesApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-mythic-heroes/src/test/java/com/mrlonis/mythicheroes/ApiMythicHeroesApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +158,30 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/api-mythic-heroes">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="api-mythic-heroes" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-mythic-heroes" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-mythic-heroes" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="api-mythic-heroes" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -47,12 +196,16 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -70,6 +223,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -79,23 +233,34 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "spring.configuration.checksum": "4e9d15119517b9598f9742b06eb25b55"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle build" />
+      <command value="gradle bootRun -Dspring.profiles.active=local-h2" />
+      <command value="gradle bootRun -Dspring.profiles.active=locas" />
+    </option>
+  </component>
   <component name="RunManager" selected="Gradle.api-mythic-heroes [build]">
-    <configuration name="api-mythic-heroes [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="api-mythic-heroes [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api-mythic-heroes" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="-Dspring.profiles.active=locas" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="bootRun" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -112,9 +277,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.api-mythic-heroes [build]" />
+      <item itemvalue="Gradle.api-mythic-heroes [bootRun local-h2]" />
+      <item itemvalue="Gradle.api-mythic-heroes [bootRun local]" />
+      <item itemvalue="Gradle.api-mythic-heroes [bootRun]" />
+      <item itemvalue="Spring Boot.ApiMythicHeroesApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.api-mythic-heroes [build]" />
+        <item itemvalue="Gradle.api-mythic-heroes [bootRun]" />
+        <item itemvalue="Gradle.api-mythic-heroes [bootRun local-h2]" />
       </list>
     </recent_temporary>
   </component>
@@ -127,7 +300,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662869877414</updated>
       <workItem from="1662869879169" duration="636000" />
-      <workItem from="1662870530757" duration="86000" />
+      <workItem from="1662870530757" duration="3591000" />
     </task>
     <servers />
   </component>
