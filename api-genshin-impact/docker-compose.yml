@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  postgresql-master:
+    image: "docker.io/bitnami/postgresql:14.1.0"
+    ports:
+      - "5110:5432"
+    volumes:
+      - "postgresql_master_data:/bitnami/postgresql"
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=master
+      - POSTGRESQL_REPLICATION_USER=postgres
+      - POSTGRESQL_REPLICATION_PASSWORD=123456
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=123456
+      - POSTGRESQL_DATABASE=genshinimpact
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  postgresql-slave:
+    image: "docker.io/bitnami/postgresql:14.1.0"
+    ports:
+      - "5111:5432"
+    depends_on:
+      - postgresql-master
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=slave
+      - POSTGRESQL_REPLICATION_USER=postgres
+      - POSTGRESQL_REPLICATION_PASSWORD=123456
+      - POSTGRESQL_MASTER_HOST=postgresql-master
+      - POSTGRESQL_PASSWORD=123456
+      - POSTGRESQL_MASTER_PORT_NUMBER=5432
+      - ALLOW_EMPTY_PASSWORD=yes
+
+volumes:
+  postgresql_master_data:
+    driver: local
