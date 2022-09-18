@@ -1,0 +1,8 @@
+allprojects {
+    group = 'com.mrlonis'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'idea'
+}

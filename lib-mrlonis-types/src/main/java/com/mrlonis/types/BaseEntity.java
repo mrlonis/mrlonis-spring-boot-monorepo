@@ -1,8 +1,8 @@
-package com.mrlonis.mythicheroes.domain;
+package com.mrlonis.types;
 
 import java.util.UUID;
 
-public interface ProjectEntity {
+public interface BaseEntity {
     UUID getId();
 
     String getName();

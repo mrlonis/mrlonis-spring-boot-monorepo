@@ -1,6 +1,6 @@
 package com.mrlonis.mythicheroes.type;
 
-import com.mrlonis.mythicheroes.domain.ProjectEntity;
+import com.mrlonis.types.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Types")
-public class Type implements ProjectEntity, Serializable {
+public class Type implements BaseEntity, Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")

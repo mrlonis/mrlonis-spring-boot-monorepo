@@ -1,6 +1,6 @@
 package com.mrlonis.mythicheroes.mythichero;
 
-import com.mrlonis.mythicheroes.domain.ProjectEntity;
+import com.mrlonis.types.BaseEntity;
 import com.mrlonis.mythicheroes.faction.Faction;
 import com.mrlonis.mythicheroes.rarity.Rarity;
 import com.mrlonis.mythicheroes.type.Type;
@@ -19,7 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Heroes")
-public class MythicHero implements ProjectEntity, Serializable {
+public class MythicHero implements BaseEntity, Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")

@@ -1,6 +1,6 @@
 package com.mrlonis.mythicheroes.rarity;
 
-import com.mrlonis.mythicheroes.domain.ProjectEntity;
+import com.mrlonis.types.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Rarities")
-public class Rarity implements ProjectEntity, Serializable {
+public class Rarity implements BaseEntity, Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")

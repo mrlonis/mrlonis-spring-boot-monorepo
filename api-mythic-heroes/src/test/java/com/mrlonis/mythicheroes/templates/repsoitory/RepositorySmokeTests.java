@@ -1,6 +1,6 @@
 package com.mrlonis.mythicheroes.templates.repsoitory;
 
-import com.mrlonis.mythicheroes.domain.ProjectEntity;
+import com.mrlonis.types.BaseEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 @ActiveProfiles("h2")
 @AutoConfigureTestDatabase
-public abstract class RepositorySmokeTests<E extends ProjectEntity, T extends PagingAndSortingRepository<E, UUID>> {
+public abstract class RepositorySmokeTests<E extends BaseEntity, T extends PagingAndSortingRepository<E, UUID>> {
     @Autowired
     private T repository;
 

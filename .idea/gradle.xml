@@ -12,34 +12,7 @@
             <option value="$PROJECT_DIR$/api-afk-arena" />
             <option value="$PROJECT_DIR$/api-genshin-impact" />
             <option value="$PROJECT_DIR$/api-mythic-heroes" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/api-afk-arena" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/api-afk-arena" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/api-genshin-impact" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/api-genshin-impact" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/api-mythic-heroes" />
-        <option name="gradleJvm" value="17" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/api-mythic-heroes" />
+            <option value="$PROJECT_DIR$/lib-mrlonis-types" />
           </set>
         </option>
       </GradleProjectSettings>
