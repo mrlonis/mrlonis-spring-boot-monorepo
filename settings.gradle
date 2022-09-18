@@ -1,0 +1,4 @@
+rootProject.name = 'mrlonis-spring-boot-monorepo'
+include 'api-afk-arena'
+include 'api-genshin-impact'
+include 'api-mythic-heroes'
