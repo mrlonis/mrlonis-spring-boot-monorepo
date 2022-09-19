@@ -1,7 +1,7 @@
-package com.mrlonis.mythicheroes.templates.repsoitory;
+package com.mrlonis.testing.controller;
 
-import com.mrlonis.mythicheroes.PaginatedResponse;
-import com.mrlonis.mythicheroes.mythichero.MythicHero;
+import com.mrlonis.testing.PaginatedResponse;
+import com.mrlonis.types.BaseEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -13,12 +13,14 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("h2")
 @AutoConfigureTestDatabase
-public abstract class RepositoryHttpRequestTests {
+public class ControllerHttpRequestTests<E extends BaseEntity> {
+
     private final String route;
 
     @LocalServerPort
@@ -27,22 +29,21 @@ public abstract class RepositoryHttpRequestTests {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    protected RepositoryHttpRequestTests(String route) {
+    public ControllerHttpRequestTests(String route) {
         this.route = route;
     }
 
     @Test
     public void charactersShouldReturnAll() {
-        ParameterizedTypeReference<PaginatedResponse<MythicHero>> responseType = new ParameterizedTypeReference<>() {
+        ParameterizedTypeReference<PaginatedResponse<E>> responseType = new ParameterizedTypeReference<>() {
         };
 
-        String url = String.format("http://localhost:%s/api/%s", port, this.route);
-
-        ResponseEntity<String> result = this.restTemplate.exchange(
-                url, HttpMethod.GET, null, String.class);
+        ResponseEntity<PaginatedResponse<E>> result = this.restTemplate.exchange(
+                "http://localhost:" + port + route, HttpMethod.GET, null, responseType);
         System.out.println(result);
-        String body = result.getBody();
+        PaginatedResponse<E> body = result.getBody();
         assertNotNull(body);
-//        assertEquals(0, body.getPageable().getPageNumber());
+        assertEquals(0, body.getPageable().getPageNumber());
     }
+
 }

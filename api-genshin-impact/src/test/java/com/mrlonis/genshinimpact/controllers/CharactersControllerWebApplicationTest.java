@@ -29,7 +29,7 @@ public class CharactersControllerWebApplicationTest {
     @Test
     public void shouldReturnAllCharacters() throws Exception {
         this.mockMvc.perform(get("/characters")).andDo(print()).andExpect(status().isOk())
-                    .andExpect(content().string(containsString("content")));
+                .andExpect(content().string(containsString("content")));
     }
 
     @Test

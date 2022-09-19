@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.templates.repsoitory;
+package com.mrlonis.testing.repsoitory;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,15 +30,15 @@ abstract public class RepositoryWebApplicationTests {
     }
 
     @Test
-    public void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
-        String url = "/api/" + route;
+    public void shouldReturnAllForEntity(@Autowired MockMvc mockMvc) throws Exception {
+        String url = "/" + route;
         mockMvc.perform(get(url)).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("_embedded")));
     }
 
     @Test
-    public void shouldReturnAll_v2(@Autowired MockMvc mockMvc) throws Exception {
-        String url = "/api/" + route;
+    public void shouldReturnAllForEntity_v2(@Autowired MockMvc mockMvc) throws Exception {
+        String url = "/" + route;
         MvcResult result = mockMvc.perform(get(url)).andReturn();
 
         MockHttpServletResponse response = result.getResponse();

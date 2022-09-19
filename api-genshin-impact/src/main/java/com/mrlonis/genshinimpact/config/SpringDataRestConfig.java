@@ -1,8 +1,8 @@
 package com.mrlonis.genshinimpact.config;
 
 import com.mrlonis.genshinimpact.entities.ArtifactSet;
-import com.mrlonis.genshinimpact.entities.Element;
 import com.mrlonis.genshinimpact.entities.Character;
+import com.mrlonis.genshinimpact.entities.Element;
 import com.mrlonis.genshinimpact.entities.Weapon;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;

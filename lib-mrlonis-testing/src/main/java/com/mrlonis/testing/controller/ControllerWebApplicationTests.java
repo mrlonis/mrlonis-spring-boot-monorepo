@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.templates.controller;
+package com.mrlonis.testing.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +21,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @ActiveProfiles("h2")
 public class ControllerWebApplicationTests {
+    private final String route;
+
+    public ControllerWebApplicationTests(String route) {
+        this.route = route;
+    }
+
     @Test
-    public void shouldReturnAllCharacters(@Autowired MockMvc mockMvc) throws Exception {
-        mockMvc.perform(get("/api/v2/mythicHero")).andDo(print()).andExpect(status().isOk())
+    public void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
+        mockMvc.perform(get(route)).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("content")));
     }
 
     @Test
-    public void shouldReturnAllCharacters_v2(@Autowired MockMvc mockMvc) throws Exception {
-        ResultActions result = mockMvc.perform(get("/api/v2/mythicHero"));
+    public void shouldReturnAll_v2(@Autowired MockMvc mockMvc) throws Exception {
+        ResultActions result = mockMvc.perform(get(route));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
         String json = result_v2.getResponse().getContentAsString();

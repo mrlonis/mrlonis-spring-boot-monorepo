@@ -1,9 +1,9 @@
 package com.mrlonis.mythicheroes.mythichero.repository;
 
-import com.mrlonis.mythicheroes.templates.repsoitory.RepositoryWebApplicationTests;
+import com.mrlonis.testing.repsoitory.RepositoryWebApplicationTests;
 
 public class MythicHeroRepositoryWebApplicationTests extends RepositoryWebApplicationTests {
     MythicHeroRepositoryWebApplicationTests() {
-        super("mythicHero");
+        super("api/mythicHero");
     }
 }

@@ -24,6 +24,7 @@ dependencies {
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
+    testImplementation project(":lib-mrlonis-testing")
     testImplementation 'com.h2database:h2'
     testImplementation 'org.mockito:mockito-junit-jupiter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
