@@ -1,36 +1,13 @@
-import org.apache.tools.ant.taskdefs.condition.Os
-
 plugins {
-    id "java"
-    id "idea"
     id "jacoco"
     id "org.springframework.boot" version "2.7.3"
     id "io.spring.dependency-management" version "1.0.13.RELEASE"
     id "io.freefair.lombok" version "6.5.1"
     id "org.flywaydb.flyway" version "9.3.0"
-    id 'org.asciidoctor.convert' version '1.5.8'
-}
-
-group = 'com.mrlonis'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-ext {
-    set('snippetsDir', file("build/generated-snippets"))
 }
 
 dependencies {
+    implementation project(':lib-mrlonis-types')
     implementation 'com.h2database:h2'
     implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
     implementation 'com.zaxxer:HikariCP'
@@ -57,22 +34,6 @@ dependencies {
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
-tasks.named('test') {
-    outputs.dir snippetsDir
-    useJUnitPlatform()
-}
-
-tasks.named('asciidoctor') {
-    inputs.dir snippetsDir
-    dependsOn test
-}
-
-tasks.withType(JavaCompile) {
-    options.warnings = true
-    options.deprecation = true
-    options.compilerArgs << "-Xlint:unchecked"
-}
-
 jacoco {
     toolVersion = "0.8.8"
 }
@@ -93,7 +54,6 @@ task restartDocker {
 }
 
 test {
-    useJUnitPlatform()
     finalizedBy jacocoTestReport
     if (systemProperties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker

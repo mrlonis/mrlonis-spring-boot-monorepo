@@ -4,5 +4,29 @@ allprojects {
 }
 
 subprojects {
+    apply plugin: 'java'
     apply plugin: 'idea'
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+
+    repositories {
+        mavenCentral()
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.warnings = true
+        options.deprecation = true
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
 }
