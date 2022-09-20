@@ -1,5 +1,6 @@
 package com.mrlonis.afkarena.entities;
 
+import com.mrlonis.types.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,25 +9,26 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.UUID;
 
 @Builder
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "AfkArena_Roles")
-public class Role implements ProjectEntity {
+@Table(name = "Afk_Arena_Roles")
+public class Role implements BaseEntity, Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RoleId")
-    private Integer roleId;
+    @GeneratedValue
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "RoleName")
-    private String roleName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "RoleImageUrl")
-    private String roleImageUrl;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 }
