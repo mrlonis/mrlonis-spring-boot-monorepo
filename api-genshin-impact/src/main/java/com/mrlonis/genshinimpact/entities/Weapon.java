@@ -1,5 +1,6 @@
 package com.mrlonis.genshinimpact.entities;
 
+import com.mrlonis.types.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Genshin_Impact_Weapons")
-public class Weapon implements Serializable {
+public class Weapon implements BaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

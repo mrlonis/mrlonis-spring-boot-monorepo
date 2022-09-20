@@ -3,7 +3,7 @@ CREATE TABLE Genshin_Impact_Elements
     id       UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name     varchar(50)  NOT NULL,
     imageUrl varchar(200) NOT NULL,
-    CONSTRAINT MythicHeroes_Factions_Unique UNIQUE (id, name, imageUrl)
+    CONSTRAINT Genshin_Impact_Elements_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Genshin_Impact_Weapons

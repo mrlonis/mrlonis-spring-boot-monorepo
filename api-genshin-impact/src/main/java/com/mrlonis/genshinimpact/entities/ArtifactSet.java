@@ -1,5 +1,6 @@
 package com.mrlonis.genshinimpact.entities;
 
+import com.mrlonis.types.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Genshin_Impact_Artifact_Sets")
-public class ArtifactSet implements ProjectEntity, Serializable {
+public class ArtifactSet implements BaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -27,13 +28,13 @@ public class ArtifactSet implements ProjectEntity, Serializable {
     @Column(name = "imageUrl")
     private String imageUrl;
 
-    @Column(name = "onePiece")
+    @Column(name = "onePiece", length = 500)
     private String onePiece;
 
-    @Column(name = "twoPiece")
+    @Column(name = "twoPiece", length = 500)
     private String twoPiece;
 
-    @Column(name = "fourPiece")
+    @Column(name = "fourPiece", length = 500)
     private String fourPiece;
 
 }

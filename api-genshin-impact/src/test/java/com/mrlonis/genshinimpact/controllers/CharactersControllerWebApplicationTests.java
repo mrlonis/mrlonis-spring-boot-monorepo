@@ -18,23 +18,32 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+//@SpringBootTest
+//@AutoConfigureMockMvc
+//@ActiveProfiles("h2")
+//@AutoConfigureTestDatabase
+//public class CharactersControllerWebApplicationTests extends ControllerWebApplicationTests {
+//    public CharactersControllerWebApplicationTests() {
+//        super("/api/v2/characters");
+//    }
+//}
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("h2")
 @AutoConfigureTestDatabase
-public class CharactersControllerWebApplicationTest {
-    @Autowired
-    private MockMvc mockMvc;
+public class CharactersControllerWebApplicationTests {
+    private final String route = "/api/v2/characters";
 
     @Test
-    public void shouldReturnAllCharacters() throws Exception {
-        this.mockMvc.perform(get("/characters")).andDo(print()).andExpect(status().isOk())
+    public void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
+        mockMvc.perform(get(route)).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("content")));
     }
 
     @Test
-    public void shouldReturnAllCharacters_v2() throws Exception {
-        ResultActions result = this.mockMvc.perform(get("/characters"));
+    public void shouldReturnAll_v2(@Autowired MockMvc mockMvc) throws Exception {
+        ResultActions result = mockMvc.perform(get(route));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
         String json = result_v2.getResponse().getContentAsString();

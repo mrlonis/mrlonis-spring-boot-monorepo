@@ -14,7 +14,6 @@ import java.util.UUID;
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "characters")
 @CrossOrigin(origins = "http://localhost:4200")
 public interface CharactersRepository extends PagingAndSortingRepository<Character, UUID> {
-    Page<Character> findAll(Pageable pageable);
 
     @RestResource(path = "findBy", rel = "findBy")
     Page<Character> findByNameIgnoreCaseContains(@Param("name") String name, Pageable pageable);

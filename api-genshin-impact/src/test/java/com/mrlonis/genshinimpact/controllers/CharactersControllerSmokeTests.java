@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 @ActiveProfiles("h2")
 @AutoConfigureTestDatabase
-public class CharactersControllerSmokeTest {
+public class CharactersControllerSmokeTests {
     @Autowired
     private CharactersController controller;
 
@@ -19,4 +19,5 @@ public class CharactersControllerSmokeTest {
     public void contextLoads() {
         assertNotNull(controller);
     }
+
 }

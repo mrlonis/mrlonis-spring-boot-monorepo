@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @WebMvcTest(CharactersController.class)
-public class CharactersControllerWebLayerTest {
+public class CharactersControllerWebLayerTests {
     @Autowired
     private MockMvc mockMvc;
 
@@ -37,7 +37,7 @@ public class CharactersControllerWebLayerTest {
     public void shouldReturnAllCharacters() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
                 List.of(Character.builder().build())));
-        this.mockMvc.perform(get("/characters")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/api/v2/characters")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("content")));
     }
 
@@ -45,7 +45,7 @@ public class CharactersControllerWebLayerTest {
     public void shouldReturnAllCharacters_v2() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
                 List.of(Character.builder().build())));
-        ResultActions result = this.mockMvc.perform(get("/characters"));
+        ResultActions result = this.mockMvc.perform(get("/api/v2/characters"));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
         String json = result_v2.getResponse().getContentAsString();
