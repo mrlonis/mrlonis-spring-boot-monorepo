@@ -1,9 +1,9 @@
 plugins {
     id "jacoco"
-    id "org.springframework.boot" version "2.7.3"
-    id "io.spring.dependency-management" version "1.0.13.RELEASE"
-    id "io.freefair.lombok" version "6.5.1"
-    id "org.flywaydb.flyway" version "9.3.0"
+    id "org.springframework.boot" version "${springBootVersion}"
+    id "io.spring.dependency-management" version "${sprintDependencyManagementVersion}"
+    id "io.freefair.lombok" version "${lombokPluginVersion}"
+    id "org.flywaydb.flyway" version "${flywayPluginVersion}"
 }
 
 dependencies {

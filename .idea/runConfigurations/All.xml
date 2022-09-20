@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All" type="CompoundRunConfigurationType">
+    <toRun name="api-afk-arena [bootRun: local-h2]" type="GradleRunConfiguration" />
+    <toRun name="api-genshin-impact [bootRun: local-h2]" type="GradleRunConfiguration" />
+    <toRun name="api-mythic-heroes [bootRun: local-h2]" type="GradleRunConfiguration" />
+    <method v="2" />
+  </configuration>
+</component>
