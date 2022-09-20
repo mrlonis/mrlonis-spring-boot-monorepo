@@ -26,7 +26,6 @@ public class RarityRepositoryHttpRequestTests {
     @Autowired
     private TestRestTemplate restTemplate;
 
-
     @Test
     public void shouldReturnAllForEntity() {
         ParameterizedTypeReference<PaginatedResponse<Rarity>> responseType = new ParameterizedTypeReference<>() {

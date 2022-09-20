@@ -14,10 +14,10 @@ build/
 bin/
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+#.idea
+#*.iws
+#*.iml
+#*.ipr
 out/
 
 ### NetBeans ###

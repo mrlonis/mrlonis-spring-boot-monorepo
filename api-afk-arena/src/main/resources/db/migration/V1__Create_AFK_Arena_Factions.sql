@@ -1,12 +1,11 @@
 CREATE TABLE AfkArena_Factions
 (
-    FactionId bigint NOT NULL IDENTITY ( 1,1 ) ,
-    FactionName nvarchar(15) NOT NULL ,
-    FactionImageUrl nvarchar(200) ,
+    FactionId       bigint NOT NULL IDENTITY ( 1,1 ),
+    FactionName     nvarchar(15) NOT NULL,
+    FactionImageUrl nvarchar(200),
     CONSTRAINT AfkArena_Factions_PrimaryKey PRIMARY KEY CLUSTERED (FactionId ASC),
     CONSTRAINT AfkArena_Factions_Unique UNIQUE (FactionId ASC, FactionName ASC, FactionImageUrl ASC)
-)
-GO
+) GO
 
 INSERT INTO AfkArena_Factions
     (FactionName, FactionImageUrl)

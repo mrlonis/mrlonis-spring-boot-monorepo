@@ -1,12 +1,11 @@
 CREATE TABLE AfkArena_Classes
 (
-    ClassId bigint NOT NULL IDENTITY ( 1,1 ) ,
-    ClassName nvarchar(15) NOT NULL ,
-    ClassImageUrl nvarchar(200) ,
+    ClassId       bigint NOT NULL IDENTITY ( 1,1 ),
+    ClassName     nvarchar(15) NOT NULL,
+    ClassImageUrl nvarchar(200),
     CONSTRAINT AfkArena_Classes_PrimaryKey PRIMARY KEY CLUSTERED (ClassId ASC),
     CONSTRAINT AfkArena_Classes_Unique UNIQUE (ClassId ASC, ClassName ASC, ClassImageUrl ASC)
-)
-GO
+) GO
 
 INSERT INTO AfkArena_Classes
     (ClassName, ClassImageUrl)

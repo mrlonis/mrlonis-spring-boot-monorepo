@@ -6,7 +6,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -59,11 +66,13 @@ public class Character implements BaseEntity, Serializable {
     private Weapon weaponTwo;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "artifactSetOneId", referencedColumnName = "id", insertable = false, updatable = false,
+            nullable = false)
     private ArtifactSet artifactSetOne;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetTwoId", referencedColumnName = "id", insertable = false, updatable = false, nullable = true)
+    @JoinColumn(name = "artifactSetTwoId", referencedColumnName = "id", insertable = false, updatable = false,
+            nullable = true)
     private ArtifactSet artifactSetTwo;
 
 }

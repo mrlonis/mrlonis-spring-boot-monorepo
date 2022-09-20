@@ -25,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class TypeRepositoryWebApplicationTests {
     private final String route = "api/type";
 
-
     @Test
     public void shouldReturnAllForEntity(@Autowired MockMvc mockMvc) throws Exception {
         String url = "/" + route;

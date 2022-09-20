@@ -25,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class MythicHeroControllerWebApplicationTests {
     private final String route = "/api/v2/mythicHero";
 
-
     @Test
     public void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
         mockMvc.perform(get(route)).andDo(print()).andExpect(status().isOk())

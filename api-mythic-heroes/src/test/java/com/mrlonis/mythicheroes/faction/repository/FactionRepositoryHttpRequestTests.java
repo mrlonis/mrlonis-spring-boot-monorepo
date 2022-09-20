@@ -26,7 +26,6 @@ public class FactionRepositoryHttpRequestTests {
     @Autowired
     private TestRestTemplate restTemplate;
 
-
     @Test
     public void shouldReturnAllForEntity() {
         ParameterizedTypeReference<PaginatedResponse<Faction>> responseType = new ParameterizedTypeReference<>() {

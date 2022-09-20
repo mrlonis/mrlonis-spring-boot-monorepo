@@ -5,7 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Builder
@@ -42,7 +49,8 @@ public class AfkArenaHeroes implements ProjectEntity, Serializable {
     private Integer roleId;
 
     @ManyToOne
-    @JoinColumn(name = "FactionId", referencedColumnName = "FactionId", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "FactionId", referencedColumnName = "FactionId", insertable = false, updatable = false,
+            nullable = false)
     private Faction heroFaction;
 
     @ManyToOne

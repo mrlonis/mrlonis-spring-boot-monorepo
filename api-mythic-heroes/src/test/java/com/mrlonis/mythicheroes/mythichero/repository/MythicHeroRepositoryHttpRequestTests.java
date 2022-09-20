@@ -27,7 +27,6 @@ public class MythicHeroRepositoryHttpRequestTests {
     @Autowired
     private TestRestTemplate restTemplate;
 
-
     @Test
     public void shouldReturnAllForEntity() {
         ParameterizedTypeReference<PaginatedResponse<MythicHero>> responseType = new ParameterizedTypeReference<>() {

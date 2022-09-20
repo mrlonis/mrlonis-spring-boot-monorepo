@@ -1,21 +1,20 @@
 CREATE TABLE AfkArena_Heroes
 (
-    HeroId bigint NOT NULL IDENTITY ( 1,1 ) ,
-    FactionId bigint NOT NULL ,
-    HeroRarity nvarchar(25) NOT NULL ,
-    HeroImageUrl nvarchar(200) ,
-    HeroName nvarchar(50) NOT NULL ,
-    TypeId bigint NOT NULL ,
-    ClassId bigint NOT NULL ,
-    RoleId bigint NOT NULL ,
-    CONSTRAINT AfkArena_Heroes_PrimaryKey PRIMARY KEY  CLUSTERED (HeroId ASC),
-    CONSTRAINT AfkArena_Heroes_UniqueHeroes UNIQUE (HeroId  ASC, HeroRarity ASC, HeroName ASC),
+    HeroId       bigint NOT NULL IDENTITY ( 1,1 ),
+    FactionId    bigint NOT NULL,
+    HeroRarity   nvarchar(25) NOT NULL,
+    HeroImageUrl nvarchar(200),
+    HeroName     nvarchar(50) NOT NULL,
+    TypeId       bigint NOT NULL,
+    ClassId      bigint NOT NULL,
+    RoleId       bigint NOT NULL,
+    CONSTRAINT AfkArena_Heroes_PrimaryKey PRIMARY KEY CLUSTERED (HeroId ASC),
+    CONSTRAINT AfkArena_Heroes_UniqueHeroes UNIQUE (HeroId ASC, HeroRarity ASC, HeroName ASC),
     CONSTRAINT AfkArena_Heroes_Faction_ForeignKey FOREIGN KEY (FactionId) REFERENCES AfkArena_Factions (FactionId),
     CONSTRAINT AfkArena_Heroes_Type_ForeignKey FOREIGN KEY (TypeId) REFERENCES AfkArena_Types (TypeId),
     CONSTRAINT AfkArena_Heroes_Class_ForeignKey FOREIGN KEY (ClassId) REFERENCES AfkArena_Classes (ClassId),
     CONSTRAINT AfkArena_Heroes_Role_ForeignKey FOREIGN KEY (RoleId) REFERENCES AfkArena_Roles (RoleId)
-)
-GO
+) GO
 -- Factions
 --  - Lightbearers   - 1
 --  - Maulers        - 2

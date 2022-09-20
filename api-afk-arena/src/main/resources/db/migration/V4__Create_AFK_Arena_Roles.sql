@@ -1,12 +1,11 @@
 CREATE TABLE AfkArena_Roles
 (
-    RoleId bigint NOT NULL IDENTITY ( 1,1 ) ,
-    RoleName nvarchar(25) NOT NULL ,
-    RoleImageUrl nvarchar(200) ,
+    RoleId       bigint NOT NULL IDENTITY ( 1,1 ),
+    RoleName     nvarchar(25) NOT NULL,
+    RoleImageUrl nvarchar(200),
     CONSTRAINT AfkArena_Roles_PrimaryKey PRIMARY KEY CLUSTERED (RoleId ASC),
     CONSTRAINT AfkArena_Roles_Unique UNIQUE (RoleId ASC, RoleName ASC, RoleImageUrl ASC)
-)
-GO
+) GO
 
 INSERT INTO AfkArena_Roles
     (RoleName, RoleImageUrl)

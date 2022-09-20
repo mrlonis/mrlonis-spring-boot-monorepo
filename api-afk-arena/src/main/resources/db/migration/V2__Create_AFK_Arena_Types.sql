@@ -1,12 +1,11 @@
 CREATE TABLE AfkArena_Types
 (
-    TypeId bigint NOT NULL IDENTITY ( 1,1 ) ,
-    TypeName nvarchar(15) NOT NULL ,
-    TypeImageUrl nvarchar(200) ,
+    TypeId       bigint NOT NULL IDENTITY ( 1,1 ),
+    TypeName     nvarchar(15) NOT NULL,
+    TypeImageUrl nvarchar(200),
     CONSTRAINT AfkArena_Types_PrimaryKey PRIMARY KEY CLUSTERED (TypeId ASC),
     CONSTRAINT AfkArena_Types_Unique UNIQUE (TypeId ASC, TypeName ASC, TypeImageUrl ASC)
-)
-GO
+) GO
 
 INSERT INTO AfkArena_Types
     (TypeName, TypeImageUrl)
