@@ -9,17 +9,13 @@ plugins {
 dependencies {
     implementation project(':lib-mrlonis-types')
     implementation 'com.h2database:h2'
-    implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
-    implementation 'com.zaxxer:HikariCP'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'org.apache.ant:ant:1.10.12'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-    implementation 'org.springframework.boot:spring-boot-starter-integration'
     implementation "org.springframework.boot:spring-boot-starter-web"
-    implementation 'org.springframework.integration:spring-integration-core'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
@@ -28,6 +24,7 @@ dependencies {
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
+    testImplementation project(':lib-mrlonis-testing')
     testImplementation 'com.h2database:h2'
     testImplementation 'org.mockito:mockito-junit-jupiter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
