@@ -1,5 +1,6 @@
 package com.mrlonis.afkarena.entities;
 
+import com.mrlonis.types.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,60 +9,60 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Builder
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "AfkArena_Heroes")
-public class AfkArenaHeroes implements ProjectEntity, Serializable {
+@Table(name = "Afk_Arena_Heroes")
+public class AfkArenaHeroes implements BaseEntity, Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "HeroId")
-    private Integer heroId;
+    @GeneratedValue
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "FactionId")
-    private Integer factionId;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "HeroRarity")
-    private String heroRarity;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 
-    @Column(name = "HeroImageUrl")
-    private String heroImageUrl;
+    @Column(name = "rarity")
+    private String rarity;
 
-    @Column(name = "HeroName")
-    private String heroName;
+    @Column(name = "factionId")
+    private UUID factionId;
 
-    @Column(name = "TypeId")
-    private Integer typeId;
+    @Column(name = "typeId")
+    private UUID typeId;
 
-    @Column(name = "ClassId")
-    private Integer classId;
+    @Column(name = "classId")
+    private UUID classId;
 
-    @Column(name = "RoleId")
-    private Integer roleId;
+    @Column(name = "roleId")
+    private UUID roleId;
 
     @ManyToOne
-    @JoinColumn(name = "FactionId", referencedColumnName = "FactionId", insertable = false, updatable = false,
+    @JoinColumn(name = "factionId", referencedColumnName = "id", insertable = false, updatable = false,
             nullable = false)
-    private Faction heroFaction;
+    private Faction faction;
 
     @ManyToOne
-    @JoinColumn(name = "TypeId", referencedColumnName = "TypeId", insertable = false, updatable = false, nullable = false)
-    private Type heroType;
+    @JoinColumn(name = "typeId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Type type;
 
     @ManyToOne
-    @JoinColumn(name = "ClassId", referencedColumnName = "ClassId", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "classId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private Class heroClass;
 
     @ManyToOne
-    @JoinColumn(name = "RoleId", referencedColumnName = "RoleId", insertable = false, updatable = false, nullable = false)
-    private Role heroRole;
+    @JoinColumn(name = "roleId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Role role;
 }
