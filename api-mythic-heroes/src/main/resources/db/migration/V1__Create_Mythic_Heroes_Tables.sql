@@ -2,7 +2,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE MythicHeroes_Factions
 (
-    id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id             UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name           varchar(50)  NOT NULL,
     imageUrl       varchar(200) NOT NULL,
     imageSourceUrl varchar(200),
@@ -11,7 +11,7 @@ CREATE TABLE MythicHeroes_Factions
 
 CREATE TABLE MythicHeroes_Rarities
 (
-    id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id             UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name           varchar(3)   NOT NULL,
     imageUrl       varchar(200) NOT NULL,
     imageSourceUrl varchar(200) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE MythicHeroes_Rarities
 
 CREATE TABLE MythicHeroes_Types
 (
-    id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id             UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name           varchar(15)  NOT NULL,
     imageUrl       varchar(200) NOT NULL,
     imageSourceUrl varchar(200) NOT NULL,
@@ -29,21 +29,21 @@ CREATE TABLE MythicHeroes_Types
 
 CREATE TABLE MythicHeroes_Artifacts
 (
-    id   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id   UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name varchar(50) NOT NULL,
     CONSTRAINT MythicHeroes_Artifacts_Unique UNIQUE (id, name)
 );
 
 CREATE TABLE MythicHeroes_Runes
 (
-    id   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id   UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name varchar(15) NOT NULL,
     CONSTRAINT MythicHeroes_Runes_Unique UNIQUE (id, name)
 );
 
 CREATE TABLE MythicHeroes_Heroes
 (
-    id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id             UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name           varchar(50)  NOT NULL,
     imageUrl       varchar(200) NOT NULL,
     imageSourceUrl varchar(200) NOT NULL,
