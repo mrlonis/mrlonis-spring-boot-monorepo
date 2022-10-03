@@ -49,6 +49,9 @@ public class AfkArenaHeroes implements BaseEntity, Serializable {
     @Column(name = "roleId")
     private UUID roleId;
 
+    @Column(name = "role2Id")
+    private UUID role2Id;
+
     @ManyToOne
     @JoinColumn(name = "factionId", referencedColumnName = "id", insertable = false, updatable = false,
             nullable = false)
@@ -59,10 +62,14 @@ public class AfkArenaHeroes implements BaseEntity, Serializable {
     private Type type;
 
     @ManyToOne
-    @JoinColumn(name = "classId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "classId", referencedColumnName = "id", insertable = false, updatable = false, nullable = true)
     private Class heroClass;
 
     @ManyToOne
     @JoinColumn(name = "roleId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "role2Id", referencedColumnName = "id", insertable = false, updatable = false, nullable = true)
+    private Role role2;
 }
