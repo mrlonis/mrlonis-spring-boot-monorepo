@@ -3,40 +3,40 @@ CREATE EXTENSION pgcrypto;
 CREATE TABLE Genshin_Impact_Elements
 (
     id       UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name     varchar(50)  NOT NULL,
-    imageUrl varchar(200) NOT NULL,
+    name     VARCHAR(50)  NOT NULL,
+    imageUrl VARCHAR(200) NOT NULL,
     CONSTRAINT Genshin_Impact_Elements_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Genshin_Impact_Weapons
 (
     id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name           varchar(50)  NOT NULL,
-    imageUrl       varchar(200) NOT NULL,
-    rarity         int          NOT NULL,
-    subStat        varchar(50),
-    specialAbility varchar(750),
-    weaponType     varchar(15)  NOT NULL,
+    name           VARCHAR(50)  NOT NULL,
+    imageUrl       VARCHAR(200) NOT NULL,
+    rarity         INT          NOT NULL,
+    subStat        VARCHAR(50),
+    specialAbility VARCHAR(750),
+    weaponType     VARCHAR(15)  NOT NULL,
     CONSTRAINT Genshin_Impact_Weapons_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Genshin_Impact_Artifact_Sets
 (
     id        UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name      varchar(50)  NOT NULL,
-    imageUrl  varchar(200) NOT NULL,
-    onePiece  varchar(500),
-    twoPiece  varchar(500),
-    fourPiece varchar(500),
+    name      VARCHAR(50)  NOT NULL,
+    imageUrl  VARCHAR(200) NOT NULL,
+    onePiece  VARCHAR(500),
+    twoPiece  VARCHAR(500),
+    fourPiece VARCHAR(500),
     CONSTRAINT Genshin_Impact_Artifact_Sets_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Genshin_Impact_Characters
 (
     id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name             varchar(50) NOT NULL,
-    imageUrl         varchar(200),
-    rarity           int         NOT NULL,
+    name             VARCHAR(50) NOT NULL,
+    imageUrl         VARCHAR(200),
+    rarity           INT         NOT NULL,
     elementId        UUID        NOT NULL,
     weaponOneId      uuid        NOT NULL,
     weaponTwoId      uuid,

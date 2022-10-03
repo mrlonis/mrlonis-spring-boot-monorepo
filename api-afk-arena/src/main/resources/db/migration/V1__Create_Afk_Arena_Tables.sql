@@ -3,40 +3,40 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 CREATE TABLE Afk_Arena_Factions
 (
     id       UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    name     varchar(50)  NOT NULL,
-    imageUrl varchar(200) NOT NULL,
+    name     VARCHAR(50)  NOT NULL,
+    imageUrl VARCHAR(200) NOT NULL,
     CONSTRAINT Afk_Arena_Factions_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Afk_Arena_Types
 (
     id       UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    name     varchar(50)  NOT NULL,
-    imageUrl varchar(200) NOT NULL,
+    name     VARCHAR(50)  NOT NULL,
+    imageUrl VARCHAR(200) NOT NULL,
     CONSTRAINT Afk_Arena_Types_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Afk_Arena_Classes
 (
     id       UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    name     varchar(50)  NOT NULL,
-    imageUrl varchar(200) NOT NULL,
+    name     VARCHAR(50)  NOT NULL,
+    imageUrl VARCHAR(200) NOT NULL,
     CONSTRAINT Afk_Arena_Classes_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Afk_Arena_Roles
 (
     id       UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    name     varchar(50)  NOT NULL,
-    imageUrl varchar(200) NOT NULL,
+    name     VARCHAR(50)  NOT NULL,
+    imageUrl VARCHAR(200) NOT NULL,
     CONSTRAINT Afk_Arena_Roles_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE Afk_Arena_Heroes
 (
     id        UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    name      varchar(50)  NOT NULL,
-    imageUrl  varchar(200),
+    name      VARCHAR(50)  NOT NULL,
+    imageUrl  VARCHAR(200),
     rarity    nvarchar(25) NOT NULL,
     factionId UUID         NOT NULL,
     typeId    UUID         NOT NULL,
