@@ -13,6 +13,21 @@
       <option name="KEYWORD_CASE" value="2" />
       <option name="TYPE_CASE" value="2" />
       <option name="BUILT_IN_CASE" value="2" />
+      <option name="QUERY_SECTION_1ST_WORD_ALIGN" value="2" />
+      <option name="INSERT_CONTENT" value="3" />
+      <option name="INSERT_CLOSING" value="4" />
+      <option name="INSERT_EL_WRAP" value="1" />
+      <option name="INSERT_SPACE_WITHIN_PARENTHESES" value="true" />
+      <option name="INSERT_COLLAPSE_MULTI_ROW_VALUES" value="true" />
+      <option name="ROUTINE_ARG_SPACE_WITHIN_PARENTHESES" value="true" />
+      <option name="ROUTINE_ARG_ALIGN_TYPES" value="true" />
+      <option name="IMP_COMMON_KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <option name="IMP_DECLARE_ALIGN_DEFAULT" value="true" />
+      <option name="CORTEGE_SPACE_WITHIN_PARENTHESES" value="true" />
+      <option name="EXPR_SPACE_WITHIN_PARENTHESES" value="true" />
+      <option name="EXPR_CALL_SPACE_INSIDE_PARENTHESES" value="true" />
+      <option name="EXPR_CASE_THEN_ALIGN" value="true" />
+      <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
     </SqlCodeStyleSettings>
     <codeStyleSettings language="JAVA">
       <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
