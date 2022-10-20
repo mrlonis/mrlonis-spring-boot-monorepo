@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "faction", exported = false)
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4202"})
 public interface FactionRepository extends PagingAndSortingRepository<Faction, UUID> {
     @RestResource(path = "findBy", rel = "findBy")
     List<Faction> findByNameIgnoreCaseContains(@Param("name") String name);
