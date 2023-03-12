@@ -7,17 +7,23 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="mrlonis-spring-boot-monorepo.api-afk-arena.test" />
-        <module name="mrlonis-spring-boot-monorepo.lib-mrlonis-types.main" />
-        <module name="mrlonis-spring-boot-monorepo.api-genshin-impact.test" />
-        <module name="mrlonis-spring-boot-monorepo.api-mythic-heroes.test" />
         <module name="mrlonis-spring-boot-monorepo.lib-mrlonis-types.test" />
+        <module name="mrlonis-spring-boot-monorepo.lib-mrlonis-types.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.7.3/51a5ea1af70ef8065cec9f1a216009ad116a7b0f/spring-boot-configuration-processor-2.7.3.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
+        </processorPath>
+        <module name="mrlonis-spring-boot-monorepo.api-genshin-impact.test" />
+        <module name="mrlonis-spring-boot-monorepo.api-afk-arena.test" />
+        <module name="mrlonis-spring-boot-monorepo.api-mythic-heroes.test" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.4/120cb2d8ed8f5f006bcc97813a920f25bd1a76da/spring-boot-configuration-processor-3.0.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
         </processorPath>
         <module name="mrlonis-spring-boot-monorepo.api-mythic-heroes.main" />
         <module name="mrlonis-spring-boot-monorepo.api-afk-arena.main" />

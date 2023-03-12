@@ -34,10 +34,9 @@ public class MythicHeroRepositoryHttpRequestTests {
 
         String url = String.format("http://localhost:%s/%s", port, this.route);
 
-        ResponseEntity<String> result = this.restTemplate.exchange(
-                url, HttpMethod.GET, null, String.class);
+        ResponseEntity<String> result = this.restTemplate.exchange(url, HttpMethod.GET, null, String.class);
         String body = result.getBody();
         assertNotNull(body);
-//        assertEquals(0, body.getPageable().getPageNumber());
+        //        assertEquals(0, body.getPageable().getPageNumber());
     }
 }

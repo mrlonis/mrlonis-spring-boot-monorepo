@@ -28,7 +28,9 @@ public class MythicHeroRepositoryWebApplicationTests {
     @Test
     public void shouldReturnAllForEntity(@Autowired MockMvc mockMvc) throws Exception {
         String url = "/" + route;
-        mockMvc.perform(get(url)).andDo(print()).andExpect(status().isOk())
+        mockMvc.perform(get(url))
+                .andDo(print())
+                .andExpect(status().isOk())
                 .andExpect(content().string(containsString("_embedded")));
     }
 

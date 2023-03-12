@@ -33,8 +33,8 @@ public class MythicHeroControllerHttpRequestTests {
         };
 
         String route = "/api/v2/mythicHero";
-        ResponseEntity<PaginatedResponse<MythicHero>> result = this.restTemplate.exchange(
-                "http://localhost:" + port + route, HttpMethod.GET, null, responseType);
+        ResponseEntity<PaginatedResponse<MythicHero>> result =
+                this.restTemplate.exchange("http://localhost:" + port + route, HttpMethod.GET, null, responseType);
         PaginatedResponse<MythicHero> body = result.getBody();
         assertNotNull(body);
         assertEquals(0, body.getPageable().getPageNumber());

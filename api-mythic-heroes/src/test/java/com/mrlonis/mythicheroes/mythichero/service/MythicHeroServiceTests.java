@@ -29,8 +29,7 @@ public class MythicHeroServiceTests {
 
     @Test
     public void shouldGetAll_whenThereAreNoRequestParams() {
-        PageImpl<MythicHero> expectedResult = new PageImpl<>(
-                List.of(MythicHero.builder().build()));
+        PageImpl<MythicHero> expectedResult = new PageImpl<>(List.of(MythicHero.builder().build()));
 
         when(mythicHeroRepository.findAll(Mockito.any(Pageable.class))).thenReturn(expectedResult);
 

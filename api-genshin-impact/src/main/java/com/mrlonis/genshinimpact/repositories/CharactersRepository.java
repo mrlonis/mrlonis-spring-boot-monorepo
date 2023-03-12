@@ -18,11 +18,11 @@ public interface CharactersRepository extends PagingAndSortingRepository<Charact
     @RestResource(path = "findBy", rel = "findBy")
     Page<Character> findByNameIgnoreCaseContains(@Param("name") String name, Pageable pageable);
 
-//    @RestResource(path = "findBy", rel = "findBy")
-//    Page<Character> findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
-//            @Param("name") String name,
-//            @Param("factionName") String factionName,
-//            @Param("rarityName") String rarityName,
-//            @Param("typeName") String typeName,
-//            Pageable pageable);
+    //    @RestResource(path = "findBy", rel = "findBy")
+    //    Page<Character> findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
+    //            @Param("name") String name,
+    //            @Param("factionName") String factionName,
+    //            @Param("rarityName") String rarityName,
+    //            @Param("typeName") String typeName,
+    //            Pageable pageable);
 }

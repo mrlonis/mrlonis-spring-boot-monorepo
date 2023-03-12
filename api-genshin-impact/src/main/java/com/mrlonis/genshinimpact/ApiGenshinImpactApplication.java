@@ -18,7 +18,8 @@ public class ApiGenshinImpactApplication implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
-        registry.addResourceHandler("/api/images/**").addResourceLocations("classpath:/images/")
+        registry.addResourceHandler("/api/images/**")
+                .addResourceLocations("classpath:/images/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }
 

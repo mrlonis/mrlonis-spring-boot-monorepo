@@ -33,8 +33,8 @@ public class CharactersControllerHttpRequestTests {
         };
 
         String route = "/api/v2/characters";
-        ResponseEntity<PaginatedResponse<Character>> result = this.restTemplate.exchange(
-                "http://localhost:" + port + route, HttpMethod.GET, null, responseType);
+        ResponseEntity<PaginatedResponse<Character>> result =
+                this.restTemplate.exchange("http://localhost:" + port + route, HttpMethod.GET, null, responseType);
         PaginatedResponse<Character> body = result.getBody();
         assertNotNull(body);
         assertEquals(0, body.getPageable().getPageNumber());

@@ -1,18 +1,18 @@
 package com.mrlonis.afkarena.entities;
 
 import com.mrlonis.types.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -53,8 +53,7 @@ public class AfkArenaHeroes implements BaseEntity, Serializable {
     private UUID role2Id;
 
     @ManyToOne
-    @JoinColumn(name = "factionId", referencedColumnName = "id", insertable = false, updatable = false,
-            nullable = false)
+    @JoinColumn(name = "factionId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private Faction faction;
 
     @ManyToOne

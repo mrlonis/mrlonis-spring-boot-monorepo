@@ -34,16 +34,18 @@ public class CharactersControllerWebLayerTests {
 
     @Test
     public void shouldReturnAllCharacters() throws Exception {
-        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
-                List.of(Character.builder().build())));
-        this.mockMvc.perform(get("/api/v2/characters")).andDo(print()).andExpect(status().isOk())
+        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(
+                new PageImpl<>(List.of(Character.builder().build())));
+        this.mockMvc.perform(get("/api/v2/characters"))
+                .andDo(print())
+                .andExpect(status().isOk())
                 .andExpect(content().string(containsString("content")));
     }
 
     @Test
     public void shouldReturnAllCharacters_v2() throws Exception {
-        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
-                List.of(Character.builder().build())));
+        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(
+                new PageImpl<>(List.of(Character.builder().build())));
         ResultActions result = this.mockMvc.perform(get("/api/v2/characters"));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
