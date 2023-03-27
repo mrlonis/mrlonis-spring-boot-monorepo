@@ -32,7 +32,7 @@ dependencies {
 }
 
 jacoco {
-    toolVersion = "0.8.8"
+    toolVersion = "${jacocoVersion}"
 }
 
 def filesToExcludeFromCoverage = ["**/com/mrlonis/afkarena/config/**", "**/com/mrlonis/afkarena/domain/**"]
