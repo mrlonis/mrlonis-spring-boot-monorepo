@@ -9,8 +9,8 @@ plugins {
 dependencies {
     implementation project(':lib-mrlonis-types')
     implementation 'com.h2database:h2'
-    implementation 'commons-io:commons-io:2.11.0'
-    implementation 'org.apache.ant:ant:1.10.12'
+    implementation "commons-io:commons-io:${commonsIoVersion}"
+    implementation "org.apache.ant:ant:${antVersion}"
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
