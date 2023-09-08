@@ -12,11 +12,6 @@ import org.springframework.stereotype.Component;
 public class ProjectRepository {
     private static final Logger LOG = LoggerFactory.getLogger(ProjectRepository.class);
 
-    @Autowired
-    public ProjectRepository() {
-
-    }
-
     public <ID, R extends JpaRepository<T, ID>, T extends BaseEntity> T save(R repository, T entity) {
         try {
             return repository.save(entity);

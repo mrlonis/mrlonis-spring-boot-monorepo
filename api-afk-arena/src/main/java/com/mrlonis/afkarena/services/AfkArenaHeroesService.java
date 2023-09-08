@@ -3,7 +3,6 @@ package com.mrlonis.afkarena.services;
 import com.mrlonis.afkarena.entities.AfkArenaHeroes;
 import com.mrlonis.afkarena.repositories.AfkArenaHeroesRepository;
 import com.mrlonis.afkarena.repositories.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +12,6 @@ public class AfkArenaHeroesService {
     private final ProjectRepository projectRepository;
     private final AfkArenaHeroesRepository afkArenaHeroesRepository;
 
-    @Autowired
     public AfkArenaHeroesService(AfkArenaHeroesRepository afkArenaHeroesRepository,
                                  ProjectRepository projectRepository) {
         this.afkArenaHeroesRepository = afkArenaHeroesRepository;

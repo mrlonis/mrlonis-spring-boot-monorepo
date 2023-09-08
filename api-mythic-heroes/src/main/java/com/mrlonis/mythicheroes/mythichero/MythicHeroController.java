@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MythicHeroController {
     private final MythicHeroService mythicHeroService;
 
-    @Autowired
     MythicHeroController(MythicHeroService mythicHeroService) {
         this.mythicHeroService = mythicHeroService;
     }

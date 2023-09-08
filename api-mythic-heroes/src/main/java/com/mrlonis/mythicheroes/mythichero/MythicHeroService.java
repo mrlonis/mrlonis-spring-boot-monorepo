@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 public class MythicHeroService {
     private final MythicHeroRepository mythicHeroRepository;
 
-    @Autowired
     MythicHeroService(MythicHeroRepository mythicHeroRepository) {
         this.mythicHeroRepository = mythicHeroRepository;
     }

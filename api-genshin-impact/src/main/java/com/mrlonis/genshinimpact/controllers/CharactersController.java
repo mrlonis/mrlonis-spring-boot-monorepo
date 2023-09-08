@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class CharactersController {
     private final CharactersRepository charactersRepository;
 
-    @Autowired
     CharactersController(CharactersRepository charactersRepository) {
         this.charactersRepository = charactersRepository;
     }
