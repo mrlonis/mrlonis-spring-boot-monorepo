@@ -1,4 +1,6 @@
 plugins {
+    id "java"
+    id "idea"
     id "jacoco"
     id "org.springframework.boot" version "${springBootVersion}"
     id "io.spring.dependency-management" version "${sprintDependencyManagementVersion}"
@@ -6,29 +8,50 @@ plugins {
     id "org.flywaydb.flyway" version "${flywayPluginVersion}"
 }
 
+group = "com.mrlonis"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    implementation project(':lib-mrlonis-types')
-    implementation 'com.h2database:h2'
+    implementation project(":lib-mrlonis-types")
+    implementation "com.h2database:h2"
     implementation "commons-io:commons-io:${commonsIoVersion}"
     implementation "org.apache.ant:ant:${antVersion}"
-    implementation 'org.flywaydb:flyway-core'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation "org.flywaydb:flyway-core"
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-data-rest"
     implementation "org.springframework.boot:spring-boot-starter-web"
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    developmentOnly "org.springframework.boot:spring-boot-devtools"
 
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'org.postgresql:postgresql'
+    runtimeOnly "com.h2database:h2"
+    runtimeOnly "org.postgresql:postgresql"
 
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
     testImplementation project(":lib-mrlonis-testing")
-    testImplementation 'com.h2database:h2'
-    testImplementation 'org.mockito:mockito-junit-jupiter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation "com.h2database:h2"
+    testImplementation "org.mockito:mockito-junit-jupiter"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc"
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -43,10 +66,10 @@ task restartDocker {
     doLast {
         exec {
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                workingDir = file('./')
-                commandLine = ['cmd', '/C', 'docker compose up -d']
+                workingDir = file("./")
+                commandLine = ["cmd", "/C", "docker compose up -d"]
             } else {
-                commandLine = ['docker', 'compose', 'up', '-d']
+                commandLine = ["docker", "compose", "up", "-d"]
             }
         }
     }
@@ -68,7 +91,7 @@ jacocoTestReport {
     reports {
         xml.required = false
         csv.required = false
-        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
     }
 
     afterEvaluate {
@@ -96,12 +119,12 @@ jacocoTestCoverageVerification {
 
         rule {
             enabled = true
-            element = 'CLASS'
-            includes = ['org.gradle.*']
+            element = "CLASS"
+            includes = ["org.gradle.*"]
 
             limit {
-                counter = 'LINE'
-                value = 'TOTALCOUNT'
+                counter = "LINE"
+                value = "TOTALCOUNT"
                 maximum = 0.00
             }
         }
@@ -112,6 +135,16 @@ jacocoTestCoverageVerification {
 
 check {
     dependsOn jacocoTestCoverageVerification
+}
+
+tasks.withType(JavaCompile) {
+    options.warnings = true
+    options.deprecation = true
+    options.compilerArgs << "-Xlint:unchecked"
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
 }
 
 bootRun {
@@ -132,7 +165,7 @@ build {
 }
 
 flyway {
-    url = 'jdbc:postgresql://localhost:5110/'
-    user = 'postgres'
-    password = '123456'
+    url = "jdbc:postgresql://localhost:5110/"
+    user = "postgres"
+    password = "123456"
 }
