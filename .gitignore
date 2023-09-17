@@ -14,10 +14,17 @@ build/
 bin/
 
 ### IntelliJ IDEA ###
-#.idea
-#*.iws
-#*.iml
-#*.ipr
+.idea/**
+!.idea/codeStyles
+!.idea/codeStyles/**
+!.idea/dictionaries
+!.idea/dictionaries/**
+!.idea/runConfigurations
+!.idea/runConfigurations/**
+!.idea/sqldialects.xml
+*.iws
+*.iml
+*.ipr
 out/
 
 ### NetBeans ###

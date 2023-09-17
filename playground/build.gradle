@@ -1,3 +1,5 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
 plugins {
     id "java"
     id "idea"
@@ -64,7 +66,7 @@ def filesToExcludeFromCoverage = ["**/com/mrlonis/afkarena/config/**", "**/com/m
 tasks.register('restartDocker') {
     doLast {
         exec {
-            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+            if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
                 workingDir = file("./")
                 commandLine = ["cmd", "/C", "docker compose up -d"]
             } else {

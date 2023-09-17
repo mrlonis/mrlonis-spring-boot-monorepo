@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="lib-mrlonis-types [build]" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="lib-mrlonis-testing [build]" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/lib-mrlonis-types" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/lib-mrlonis-testing" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="" />
       <option name="taskDescriptions">

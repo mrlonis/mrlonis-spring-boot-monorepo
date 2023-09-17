@@ -1,17 +1,16 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="lib-mrlonis-types [build]" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="playground [bootRun: local]" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/lib-mrlonis-types" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/playground" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="" />
+      <option name="scriptParameters" value="-Dspring.profiles.active=local" />
       <option name="taskDescriptions">
         <list />
       </option>
       <option name="taskNames">
         <list>
-          <option value="clean" />
-          <option value="build" />
+          <option value="bootRun" />
         </list>
       </option>
       <option name="vmOptions" />

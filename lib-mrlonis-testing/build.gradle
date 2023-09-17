@@ -28,13 +28,12 @@ repositories {
 
 dependencies {
     api project(":lib-mrlonis-types")
-    api "org.junit.jupiter:junit-jupiter-api"
+    api "org.junit.jupiter:junit-jupiter"
     api "org.springframework.boot:spring-boot-starter-data-jpa"
     api "org.springframework.boot:spring-boot-starter-test"
     api "org.springframework.boot:spring-boot-starter-web"
 
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation "org.junit.jupiter:junit-jupiter"
 }
 
 tasks.withType(JavaCompile) {

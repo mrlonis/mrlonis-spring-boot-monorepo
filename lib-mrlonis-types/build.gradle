@@ -28,12 +28,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation "org.junit.jupiter:junit-jupiter-api"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation "org.junit.jupiter:junit-jupiter"
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.warnings = true
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"

@@ -48,12 +48,11 @@ dependencies {
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
     testImplementation project(":lib-mrlonis-testing")
+    testImplementation "org.junit.jupiter:junit-jupiter"
     testImplementation "com.h2database:h2"
     testImplementation "org.mockito:mockito-junit-jupiter"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc"
-
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 jacoco {
@@ -62,7 +61,7 @@ jacoco {
 
 def filesToExcludeFromCoverage = [""]
 
-task restartDocker {
+tasks.register('restartDocker') {
     doLast {
         exec {
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
@@ -137,7 +136,7 @@ check {
     dependsOn jacocoTestCoverageVerification
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.warnings = true
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"
