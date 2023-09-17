@@ -1,3 +1,5 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
 plugins {
     id "java"
     id "idea"
@@ -64,11 +66,11 @@ def filesToExcludeFromCoverage = ["**/com/mrlonis/mythicheroes/config/**", "**/c
 tasks.register('restartDocker') {
     doLast {
         exec {
-            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+            if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
                 workingDir = file("./")
-                commandLine = ["cmd", "/C", "docker compose up -d"]
+                commandLine = ["cmd", "/C", "docker compose up -d", "--wait"]
             } else {
-                commandLine = ["docker", "compose", "up", "-d"]
+                commandLine = ["docker", "compose", "up", "-d", "--wait"]
             }
         }
     }
@@ -164,7 +166,7 @@ build {
 }
 
 flyway {
-    url = "jdbc:postgresql://localhost:5110/"
+    url = "jdbc:postgresql://localhost:5110/mythicheroes"
     user = "postgres"
     password = "123456"
 }

@@ -34,12 +34,9 @@ repositories {
 dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
-    implementation "commons-io:commons-io:${commonsIoVersion}"
-    implementation "org.apache.ant:ant:${antVersion}"
     implementation "org.flywaydb:flyway-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
-    implementation "org.springframework.boot:spring-boot-starter-data-rest"
     implementation "org.springframework.boot:spring-boot-starter-web"
 
     developmentOnly "org.springframework.boot:spring-boot-devtools"
@@ -68,9 +65,9 @@ tasks.register('restartDocker') {
         exec {
             if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
                 workingDir = file("./")
-                commandLine = ["cmd", "/C", "docker compose up -d"]
+                commandLine = ["cmd", "/C", "docker compose up -d", "--wait"]
             } else {
-                commandLine = ["docker", "compose", "up", "-d"]
+                commandLine = ["docker", "compose", "up", "-d", "--wait"]
             }
         }
     }
@@ -166,7 +163,7 @@ build {
 }
 
 flyway {
-    url = "jdbc:postgresql://localhost:5110/"
+    url = "jdbc:postgresql://localhost:5434/playground"
     user = "postgres"
     password = "123456"
 }

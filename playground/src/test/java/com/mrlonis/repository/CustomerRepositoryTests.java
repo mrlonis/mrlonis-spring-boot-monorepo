@@ -20,7 +20,7 @@ class CustomerRepositoryTests {
 
     @Test
     void testFindAll() {
-        List<Customer > customers = customerRepository.findAll();
+        List<Customer> customers = customerRepository.findAll();
         assertEquals(2, customers.size());
     }
 

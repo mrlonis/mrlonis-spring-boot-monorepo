@@ -1,6 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="playground [bootRun: local]" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="spring_profiles_active" value="local" />
+        </map>
+      </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/playground" />
       <option name="externalSystemIdString" value="GRADLE" />
@@ -10,6 +15,7 @@
       </option>
       <option name="taskNames">
         <list>
+          <option value="clean" />
           <option value="bootRun" />
         </list>
       </option>

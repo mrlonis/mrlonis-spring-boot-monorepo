@@ -1,4 +1,4 @@
-version: "2"
+version: "3.8"
 
 services:
   postgres:
@@ -9,9 +9,14 @@ services:
       - POSTGRES_PASSWORD=123456
       - POSTGRES_DB=mythicheroes
     ports:
-      - '5432:5432'
+      - '5433:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "mythicheroes", "-U", "postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 volumes:
   postgres_data:
     driver: local
