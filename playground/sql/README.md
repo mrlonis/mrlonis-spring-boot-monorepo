@@ -11,6 +11,8 @@
       - [Concurrency Solution 1](#concurrency-solution-1)
       - [Concurrency Solution 2](#concurrency-solution-2)
       - [Concurrency Solution 3](#concurrency-solution-3)
+  - [APIs](#apis)
+    - [APIs Solutions](#apis-solutions)
 
 ## Database Queries
 
@@ -134,3 +136,101 @@ Thread-Safe Queues: Classes like BlockingQueue and its implementations (e.g., Li
 Futures and Promises: The Future interface and related classes (e.g., CompletableFuture) enable asynchronous programming and handling of results from asynchronous tasks.
 
 By using classes and utilities from the java.util.concurrent package, developers can design concurrent applications that are both thread-safe and efficient, reducing the risk of data corruption and synchronization issues commonly associated with multithreading.
+
+## APIs
+
+How could the following API endpoint be improved?
+
+```java
+@GET
+@Path("report")
+public Response searchItems(@QueryParam("search") String search,
+                            @QueryParam("customerId") Integer customerId,
+                            @QueryParam("brandFilters") String brandFilters,
+                            @QueryParam("categoryFilters") String categoryFilters,
+                            @QueryParam("orderGuide") Integer orderGuideId,
+                            @QueryParam("orderGuideOnly") String orderGuideOnly,
+                            @QueryParam("page") Integer page,
+                            @QueryParam("rows") Integer pageSize,
+                            @QueryParam("sort") String sortValue) {
+
+   List selectedBrands = Arrays.asList(brandFilters.split(","));
+   List selectedCategories = Arrays.asList(categoryFilters.split(","));
+   boolean isOrderGuideItemsOnly = Boolean.parse(orderGuideOnly);
+
+   Customer customer = customerDao.findById(customerId);
+   List itemList = itemDao.searchItems(search, customerId, isOrderGuideItemsOnly, orderGuideId, page, pageSize, selectedBrands, selectedCategories);
+
+   JsonArrayBuilder builder = Json.createArrayBuilder();
+
+   for (Item item : itemList) {
+      if (customer.canViewInactiveItems() || item.isActive()) {
+         builder.add(Json.createObjectBuilder()
+                .add("id", item.getId())
+                .add("name", item.getName())
+                .add("stockQty", item.getStockQuantity())
+                .add("price", item.getPrice()));
+      }
+   }
+
+   return Response.ok(builder.build()).build();
+}
+```
+
+### APIs Solutions
+
+The provided API endpoint could be improved in several ways to enhance its readability, maintainability, and performance. Here are some suggestions:
+
+1. Use DTOs (Data Transfer Objects): Instead of directly using the Item entity, create a separate DTO class that represents the data to be returned in the response. This can help decouple the API from the internal data structure and make it easier to manage changes.
+2. Validation: Add input validation to ensure that required parameters like search, customerId, and orderGuideOnly are present and have valid values. This will help prevent unexpected errors.
+3. Pagination: Consider returning pagination metadata along with the list of items (e.g., total count, next/previous page links) to make it easier for clients to navigate through the results.
+4. Error Handling: Implement proper error handling and return meaningful error responses when necessary, with appropriate HTTP status codes and error messages.
+5. Logging: Add logging statements to capture important information or errors for debugging and monitoring purposes.
+6. Query Parameters: Reduce the number of query parameters if possible. Having too many query parameters can make the API less user-friendly. Consider grouping related parameters into objects or using path parameters when appropriate.
+7. Dependency Injection: Instead of directly creating instances of customerDao and itemDao within the method, use dependency injection to inject these dependencies. This promotes better testability and flexibility.
+8. Use Enums for Boolean Query Parameters: Instead of parsing the orderGuideOnly query parameter manually, consider using an enumeration for boolean values. This can improve code readability and reduce potential errors.
+
+Here's a refactored version of the endpoint with some of these improvements:
+
+```java
+@GET
+@Path("report")
+public Response searchItems(@QueryParam("search") String search,
+                            @QueryParam("customerId") Integer customerId,
+                            @QueryParam("brandFilters") String brandFilters,
+                            @QueryParam("categoryFilters") String categoryFilters,
+                            @QueryParam("orderGuide") Integer orderGuideId,
+                            @QueryParam("orderGuideOnly") Boolean orderGuideOnly,
+                            @QueryParam("page") Integer page,
+                            @QueryParam("pageSize") Integer pageSize,
+                            @QueryParam("sort") String sortValue) {
+    // Input validation
+    if (search == null || customerId == null || orderGuideOnly == null) {
+        return Response.status(Response.Status.BAD_REQUEST)
+                .entity("search, customerId, and orderGuideOnly are required query parameters.")
+                .build();
+    }
+
+    // Retrieve customer
+    Customer customer = customerDao.findById(customerId);
+
+    // Search for items
+    List<ItemDto> itemDtos = itemService.searchItems(search, customerId, orderGuideOnly, orderGuideId, page, pageSize, brandFilters, categoryFilters);
+
+    // Convert to JSON
+    JsonArrayBuilder builder = Json.createArrayBuilder();
+    for (ItemDto itemDto : itemDtos) {
+        if (customer.canViewInactiveItems() || itemDto.isActive()) {
+            builder.add(Json.createObjectBuilder()
+                    .add("id", itemDto.getId())
+                    .add("name", itemDto.getName())
+                    .add("stockQty", itemDto.getStockQuantity())
+                    .add("price", itemDto.getPrice()));
+        }
+    }
+
+    return Response.ok(builder.build()).build();
+}
+```
+
+In this refactored code, I've assumed the existence of a separate ItemDto class for representing item data, as well as an ItemService for searching items. This promotes better separation of concerns and improves maintainability. Additionally, input validation and error handling have been added for robustness.
