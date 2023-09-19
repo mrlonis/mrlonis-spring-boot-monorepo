@@ -1,4 +1,18 @@
-# Database Queries
+# Interview Questions
+
+## Table of Contents
+
+- [Interview Questions](#interview-questions)
+  - [Table of Contents](#table-of-contents)
+  - [Database Queries](#database-queries)
+    - [Database Queries - Solutions](#database-queries---solutions)
+  - [Concurrency](#concurrency)
+    - [Concurrency Solutions](#concurrency-solutions)
+      - [Concurrency Solution 1](#concurrency-solution-1)
+      - [Concurrency Solution 2](#concurrency-solution-2)
+      - [Concurrency Solution 3](#concurrency-solution-3)
+
+## Database Queries
 
 Customer
 
@@ -28,7 +42,7 @@ The tables above could have hundreds of thousands of rows. You have been tasked 
    - Item : 23
 4. An error occurred mistakenly adding the item with id 2 to Sales Orders for the Martin Bros customer account. The mistake only occurred on Sales Orders with a prefix of 'M'. Create a query to delete instances of this item from Sales_Orders for the Martin Bros customer account.
 
-## Solutions
+### Database Queries - Solutions
 
 [1.1](./Customers_With_No_Sales_Orders_Left_Join.sql)
 
@@ -36,6 +50,87 @@ The tables above could have hundreds of thousands of rows. You have been tasked 
 
 [2](./Average_Price_Each_Customer_Pays_For_Each_Item_Ordered_No_Join.sql)
 
-[3](./Add_Sales_Order.sql)
+[3](./Add_New_Sales_Order.sql)
 
 [4](./Delete_M_Order_Numbers_For_Martin_Bros_Customers.sql)
+
+## Concurrency
+
+Reflecting on the previous question, the Sales_Order table had a field order_number. As an alpha-numeric field, we are unable to leverage sequencing within the database. This sales order number must be a unique value. As such a race condition is possible when users submit an order at the same time. Please answer the following questions pertaining to how Race Conditions can be managed so Dead Lock does not occur.
+
+1. What Java keyword can be used to ensure only one thread can execute a block of code at a time?
+2. What Java modifier can be used to ensure reading a variable's value is always the latest value?
+3. What Java package can be leveraged for ensuring thread safety for objects and variables?
+
+### Concurrency Solutions
+
+#### Concurrency Solution 1
+
+In Java, you can use the synchronized keyword to ensure that only one thread can execute a block of code at a time. When a method or a block of code is marked as synchronized, it becomes a synchronized block, and Java provides built-in mechanisms to ensure that only one thread can enter and execute that block at any given time.
+
+For example, you can use the synchronized keyword to synchronize a method like this:
+
+```java
+public synchronized void mySynchronizedMethod() {
+// This block of code is synchronized, and only one thread can execute it at a time.
+// ...
+}
+```
+
+You can also create synchronized blocks within your code to synchronize on a specific object or monitor, like this:
+
+```java
+Object myLock = new Object();
+
+synchronized (myLock) {
+// This block of code is synchronized on the "myLock" object, and only one thread can execute it at a time.
+// ...
+}
+```
+
+By using synchronized, you can prevent concurrent access to shared resources or critical sections of your code, ensuring that thread safety is maintained.
+
+#### Concurrency Solution 2
+
+In Java, you can use the volatile modifier to ensure that reading a variable's value always retrieves the latest value from main memory. When a variable is declared as volatile, it guarantees that any read operation on that variable will return the most up-to-date value, and any write operation on that variable will be immediately visible to all threads.
+
+Here's an example of how to use the volatile modifier:
+
+```java
+public class MyThreadSafeClass {
+private volatile int sharedValue = 0;
+
+    public void incrementValue() {
+        sharedValue++;
+    }
+
+    public int getSharedValue() {
+        return sharedValue;
+    }
+
+}
+```
+
+In this example, the sharedValue variable is declared as volatile, which ensures that when multiple threads access the getSharedValue method, they always see the most recent value of sharedValue. Without the volatile modifier, there might be situations where a thread caches the value and doesn't see updates made by other threads.
+
+Keep in mind that while volatile is useful for ensuring visibility of changes between threads, it doesn't provide atomicity for compound operations (e.g., incrementing a variable) by itself. For compound operations, you may need to use additional synchronization mechanisms like synchronized blocks or use atomic classes from the java.util.concurrent.atomic package.
+
+#### Concurrency Solution 3
+
+In Java, the java.util.concurrent package provides a range of classes and interfaces that can be leveraged to ensure thread safety for objects and variables. This package offers various concurrency utilities and tools to help developers write multithreaded programs that are safe and efficient. Some of the key classes and interfaces in this package include:
+
+Concurrent Collections: Classes like ConcurrentHashMap, ConcurrentLinkedQueue, and CopyOnWriteArrayList provide thread-safe alternatives to standard Java collections, ensuring safe concurrent access to data.
+
+Executors and Thread Pools: The Executor framework and classes like ThreadPoolExecutor and ScheduledExecutorService help manage and control the execution of tasks across multiple threads.
+
+Synchronization Utilities: Classes like Semaphore, CountDownLatch, and CyclicBarrier enable coordination and synchronization between threads.
+
+Atomic Variables: The java.util.concurrent.atomic package provides atomic classes like AtomicInteger, AtomicLong, and AtomicReference, which offer atomic operations for variables without the need for explicit synchronization.
+
+Locks: The package includes more flexible locking mechanisms, such as ReentrantLock, which can be used for fine-grained control over synchronization.
+
+Thread-Safe Queues: Classes like BlockingQueue and its implementations (e.g., LinkedBlockingQueue, ArrayBlockingQueue) facilitate thread-safe producer-consumer scenarios.
+
+Futures and Promises: The Future interface and related classes (e.g., CompletableFuture) enable asynchronous programming and handling of results from asynchronous tasks.
+
+By using classes and utilities from the java.util.concurrent package, developers can design concurrent applications that are both thread-safe and efficient, reducing the risk of data corruption and synchronization issues commonly associated with multithreading.
