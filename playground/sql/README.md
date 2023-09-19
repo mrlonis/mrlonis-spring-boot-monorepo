@@ -9,10 +9,14 @@
   - [Concurrency](#concurrency)
     - [Concurrency Solutions](#concurrency-solutions)
       - [Concurrency Solution 1](#concurrency-solution-1)
+      - [Concurrency Solution 1 Used](#concurrency-solution-1-used)
       - [Concurrency Solution 2](#concurrency-solution-2)
+      - [Concurrency Solution 2 Used](#concurrency-solution-2-used)
       - [Concurrency Solution 3](#concurrency-solution-3)
+      - [Concurrency Solution 3 Used](#concurrency-solution-3-used)
   - [APIs](#apis)
     - [APIs Solutions](#apis-solutions)
+    - [APIs Solutions Used](#apis-solutions-used)
 
 ## Database Queries
 
@@ -92,6 +96,10 @@ synchronized (myLock) {
 
 By using synchronized, you can prevent concurrent access to shared resources or critical sections of your code, ensuring that thread safety is maintained.
 
+#### Concurrency Solution 1 Used
+
+The synchronized keyword ensures that only one thread can execute a block of code at a time. You can make synchronized methods or synchronized blocks of code.
+
 #### Concurrency Solution 2
 
 In Java, you can use the volatile modifier to ensure that reading a variable's value always retrieves the latest value from main memory. When a variable is declared as volatile, it guarantees that any read operation on that variable will return the most up-to-date value, and any write operation on that variable will be immediately visible to all threads.
@@ -117,6 +125,10 @@ In this example, the sharedValue variable is declared as volatile, which ensures
 
 Keep in mind that while volatile is useful for ensuring visibility of changes between threads, it doesn't provide atomicity for compound operations (e.g., incrementing a variable) by itself. For compound operations, you may need to use additional synchronization mechanisms like synchronized blocks or use atomic classes from the java.util.concurrent.atomic package.
 
+#### Concurrency Solution 2 Used
+
+The volatile keyword can be used to ensure reading a variable's value is always the latest value. Additionally, the volatile keyword ensures any write operation on that variable will be immediately visible to all threads.
+
 #### Concurrency Solution 3
 
 In Java, the java.util.concurrent package provides a range of classes and interfaces that can be leveraged to ensure thread safety for objects and variables. This package offers various concurrency utilities and tools to help developers write multithreaded programs that are safe and efficient. Some of the key classes and interfaces in this package include:
@@ -136,6 +148,10 @@ Thread-Safe Queues: Classes like BlockingQueue and its implementations (e.g., Li
 Futures and Promises: The Future interface and related classes (e.g., CompletableFuture) enable asynchronous programming and handling of results from asynchronous tasks.
 
 By using classes and utilities from the java.util.concurrent package, developers can design concurrent applications that are both thread-safe and efficient, reducing the risk of data corruption and synchronization issues commonly associated with multithreading.
+
+#### Concurrency Solution 3 Used
+
+The java.util.concurrent package can be leveraged to ensure thread safety for objects and variables.
 
 ## APIs
 
@@ -234,3 +250,14 @@ public Response searchItems(@QueryParam("search") String search,
 ```
 
 In this refactored code, I've assumed the existence of a separate ItemDto class for representing item data, as well as an ItemService for searching items. This promotes better separation of concerns and improves maintainability. Additionally, input validation and error handling have been added for robustness.
+
+### APIs Solutions Used
+
+Without any additional context, some broad improvements that I would suggest are as follows:
+
+- Add input validation to ensure that any parameters that are required are present to prevent unnecessary work and to prevent other errors downstream. This is hard to do without further context of how the Dao objects work and the underlying database schema.
+- Implement pagination. We already have the pagination query parameters here, we just need to properly use them. We are reducing the size retrieved from the database, but we could enhance the response entity to include useful links to grab the next page like with Spring Data Repository pagination.
+- Implement error handling and return useful error messages along with appropriate HTTP status codes.
+- Add logging around points of failure to make potential debugging easier in the future.
+- Reduce the number of query parameters. To do this we could implement path parameters to reduce the number of query parameters. For example, customer ID would make a great candidate for a path parameter. The new path could be "report/{customerId}".
+- Where possible, use the correct type for the query parameters instead of parsing them. For example, orderGuideOnly should be a boolean type instead of a string type.
