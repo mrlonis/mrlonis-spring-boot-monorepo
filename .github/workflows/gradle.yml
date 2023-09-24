@@ -1,6 +1,6 @@
 name: Build Gradle project
 
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 jobs:
   build-gradle-project:
@@ -14,7 +14,7 @@ jobs:
           java-version: 17
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v2.8.0
 
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
