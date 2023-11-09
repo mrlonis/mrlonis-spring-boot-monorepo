@@ -5,4 +5,5 @@ include "api-mythic-heroes"
 include "lib-mrlonis-types"
 include "lib-mrlonis-testing"
 include 'playground'
+include 'api-honkai-star-rail'
 
