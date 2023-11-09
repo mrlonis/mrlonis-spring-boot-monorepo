@@ -1,6 +1,6 @@
 package com.mrlonis.mythicheroes.rarity;
 
-import com.mrlonis.types.BaseEntity;
+import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Rarities")
-public class Rarity implements BaseEntity, Serializable {
+public class Rarity implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")

@@ -1,6 +1,6 @@
 package com.mrlonis.genshinimpact.entities;
 
-import com.mrlonis.types.BaseEntity;
+import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +21,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Genshin_Impact_Elements")
-public class Element implements BaseEntity, Serializable {
+public class Element implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

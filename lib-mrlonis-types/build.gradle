@@ -28,6 +28,7 @@ repositories {
 }
 
 dependencies {
+    implementation "jakarta.persistence:jakarta.persistence-api"
     testImplementation "org.junit.jupiter:junit-jupiter"
 }
 

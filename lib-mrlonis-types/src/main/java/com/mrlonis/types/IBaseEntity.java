@@ -2,7 +2,7 @@ package com.mrlonis.types;
 
 import java.util.UUID;
 
-public interface BaseEntity {
+public interface IBaseEntity {
     UUID getId();
 
     String getName();

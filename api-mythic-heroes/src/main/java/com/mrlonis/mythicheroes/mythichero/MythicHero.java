@@ -3,7 +3,7 @@ package com.mrlonis.mythicheroes.mythichero;
 import com.mrlonis.mythicheroes.faction.Faction;
 import com.mrlonis.mythicheroes.rarity.Rarity;
 import com.mrlonis.mythicheroes.type.Type;
-import com.mrlonis.types.BaseEntity;
+import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +25,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Heroes")
-public class MythicHero implements BaseEntity, Serializable {
+public class MythicHero implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")

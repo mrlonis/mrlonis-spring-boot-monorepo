@@ -1,6 +1,6 @@
 package com.mrlonis.afkarena.entities;
 
-import com.mrlonis.types.BaseEntity;
+import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Afk_Arena_Factions")
-public class Faction implements BaseEntity {
+public class Faction implements IBaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "id")
