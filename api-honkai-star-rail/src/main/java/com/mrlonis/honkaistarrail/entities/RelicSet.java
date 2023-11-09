@@ -29,33 +29,25 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Light_Cones")
-public class LightCone implements IBaseEntity, Serializable {
+@Table(name = "Relic_Sets")
+public class RelicSet implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "name")
+    @Column(name = "relicOneId")
     @NonNull
-    private String name;
+    private UUID relicOneId;
 
-    @Column(name = "imageUrl")
-    @NonNull
-    private String imageUrl;
-
-    @Column(name = "rarity")
-    private int rarity;
-
-    @Column(name = "combatPathId")
-    @NonNull
-    private UUID combatPathId;
-
-    @Column(name = "skill")
-    @NonNull
-    private String skill;
+    @Column(name = "relicTwoId")
+    private UUID relicTwoId;
 
     @ManyToOne
-    @JoinColumn(name = "combatPathId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
-    private CombatPath combatPath;
+    @JoinColumn(name = "relicOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicOne;
+
+    @ManyToOne
+    @JoinColumn(name = "relicTwoId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Relic relicTwo;
 }

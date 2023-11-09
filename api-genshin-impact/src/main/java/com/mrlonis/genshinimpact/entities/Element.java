@@ -10,13 +10,21 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,9 +36,11 @@ public class Element implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
+    @NonNull
     private String name;
 
     @Column(name = "imageUrl")
+    @NonNull
     private String imageUrl;
 
 }
