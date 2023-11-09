@@ -1,17 +1,19 @@
 CREATE TABLE Combat_Types
 (
-    id       UUID DEFAULT RANDOM_UUID( ) PRIMARY KEY,
-    name     VARCHAR(50)  NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
-    CONSTRAINT Combat_Types_Unique UNIQUE ( name, imageUrl )
+    id          UUID DEFAULT RANDOM_UUID( ) PRIMARY KEY,
+    name        VARCHAR(50)  NOT NULL,
+    imageUrl    VARCHAR(200) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    CONSTRAINT Combat_Types_Unique UNIQUE ( name, imageUrl, description )
 );
 
 CREATE TABLE Combat_Paths
 (
-    id       UUID DEFAULT RANDOM_UUID( ) PRIMARY KEY,
-    name     VARCHAR(50)  NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
-    CONSTRAINT Combat_Paths_Unique UNIQUE ( name, imageUrl )
+    id          UUID DEFAULT RANDOM_UUID( ) PRIMARY KEY,
+    name        VARCHAR(50)  NOT NULL,
+    imageUrl    VARCHAR(200) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    CONSTRAINT Combat_Paths_Unique UNIQUE ( name, imageUrl, description )
 );
 
 CREATE TABLE Light_Cones

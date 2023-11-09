@@ -41,4 +41,8 @@ public class CombatType implements IBaseEntity, Serializable {
     @Column(name = "imageUrl")
     @NonNull
     private String imageUrl;
+
+    @Column(name = "description")
+    @NonNull
+    private String description;
 }
