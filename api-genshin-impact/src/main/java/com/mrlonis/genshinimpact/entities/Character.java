@@ -58,12 +58,30 @@ public class Character implements IBaseEntity, Serializable {
     @Column(name = "weaponTwoId")
     private UUID weaponTwoId;
 
+    @Column(name = "weaponThreeId")
+    private UUID weaponThreeId;
+
+    @Column(name = "weaponFourId")
+    private UUID weaponFourId;
+
+    @Column(name = "weaponFiveId")
+    private UUID weaponFiveId;
+
     @Column(name = "artifactSetOneId")
     @NonNull
     private UUID artifactSetOneId;
 
     @Column(name = "artifactSetTwoId")
     private UUID artifactSetTwoId;
+
+    @Column(name = "artifactSetThreeId")
+    private UUID artifactSetThreeId;
+
+    @Column(name = "artifactSetFourId")
+    private UUID artifactSetFourId;
+
+    @Column(name = "artifactSetFiveId")
+    private UUID artifactSetFiveId;
 
     @ManyToOne
     @JoinColumn(name = "elementId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
@@ -78,6 +96,18 @@ public class Character implements IBaseEntity, Serializable {
     private Weapon weaponTwo;
 
     @ManyToOne
+    @JoinColumn(name = "weaponThreeId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Weapon weaponThree;
+
+    @ManyToOne
+    @JoinColumn(name = "weaponFourId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Weapon weaponFour;
+
+    @ManyToOne
+    @JoinColumn(name = "weaponFiveId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Weapon weaponFive;
+
+    @ManyToOne
     @JoinColumn(name = "artifactSetOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private ArtifactSet artifactSetOne;
 
@@ -85,4 +115,15 @@ public class Character implements IBaseEntity, Serializable {
     @JoinColumn(name = "artifactSetTwoId", referencedColumnName = "id", insertable = false, updatable = false)
     private ArtifactSet artifactSetTwo;
 
+    @ManyToOne
+    @JoinColumn(name = "artifactSetThreeId", referencedColumnName = "id", insertable = false, updatable = false)
+    private ArtifactSet artifactSetThree;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetFourId", referencedColumnName = "id", insertable = false, updatable = false)
+    private ArtifactSet artifactSetFour;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetFiveId", referencedColumnName = "id", insertable = false, updatable = false)
+    private ArtifactSet artifactSetFive;
 }
