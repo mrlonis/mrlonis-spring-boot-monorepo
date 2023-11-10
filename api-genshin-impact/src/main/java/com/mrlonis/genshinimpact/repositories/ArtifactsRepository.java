@@ -1,7 +1,6 @@
 package com.mrlonis.genshinimpact.repositories;
 
 import com.mrlonis.genshinimpact.entities.Artifact;
-import com.mrlonis.genshinimpact.entities.ArtifactSet;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

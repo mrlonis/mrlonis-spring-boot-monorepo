@@ -1,7 +1,6 @@
 package com.mrlonis.genshinimpact.config;
 
 import com.mrlonis.genshinimpact.entities.Artifact;
-import com.mrlonis.genshinimpact.entities.ArtifactSet;
 import com.mrlonis.genshinimpact.entities.Character;
 import com.mrlonis.genshinimpact.entities.Element;
 import com.mrlonis.genshinimpact.entities.Weapon;

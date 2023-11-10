@@ -1,6 +1,5 @@
 package com.mrlonis.honkaistarrail.entities;
 
-import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -9,9 +9,9 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 public class SpringDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-//        config.exposeIdsFor(Character.class);
-//        config.exposeIdsFor(Element.class);
-//        config.exposeIdsFor(Weapon.class);
-//        config.exposeIdsFor(ArtifactSet.class);
+        //        config.exposeIdsFor(Character.class);
+        //        config.exposeIdsFor(Element.class);
+        //        config.exposeIdsFor(Weapon.class);
+        //        config.exposeIdsFor(ArtifactSet.class);
     }
 }
