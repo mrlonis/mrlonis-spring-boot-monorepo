@@ -11,5 +11,9 @@
   "spring-boot.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
   "java.compile.nullAnalysis.mode": "automatic",
   "java.configuration.updateBuildConfiguration": "automatic",
-  "cSpell.words": ["afkarena", "mythichero", "mythicheroes"]
+  "cSpell.words": [
+    "afkarena",
+    "mythichero",
+    "mythicheroes"
+  ]
 }
