@@ -33,11 +33,12 @@ public class MythicHeroControllerWebLayerTests {
     @Test
     public void shouldReturnAllCharacters(@Autowired MockMvc mockMvc) throws Exception {
         when(mythicHeroService.get(Mockito.eq(null), Mockito.eq(null), Mockito.eq(null), Mockito.eq(null),
-                Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(List.of(MythicHero.builder().build())));
+                                   Mockito.any(Pageable.class))).thenReturn(
+                new PageImpl<>(List.of(MythicHero.builder().build())));
         mockMvc.perform(get("/api/v2//mythicHero"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("content")));
+               .andDo(print())
+               .andExpect(status().isOk())
+               .andExpect(content().string(containsString("content")));
     }
 
     @Test
@@ -45,7 +46,7 @@ public class MythicHeroControllerWebLayerTests {
         PageImpl<MythicHero> expectedResult = new PageImpl<>(List.of(MythicHero.builder().build()));
 
         when(mythicHeroService.get(Mockito.eq(null), Mockito.eq(null), Mockito.eq(null), Mockito.eq(null),
-                Mockito.any(Pageable.class))).thenReturn(expectedResult);
+                                   Mockito.any(Pageable.class))).thenReturn(expectedResult);
 
         MvcResult result = mockMvc.perform(get("/api/v2/mythicHero")).andReturn();
         assertEquals(200, result.getResponse().getStatus());

@@ -38,9 +38,9 @@ public class CharactersControllerWebApplicationTests {
     @Test
     public void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
         mockMvc.perform(get(route))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("content")));
+               .andDo(print())
+               .andExpect(status().isOk())
+               .andExpect(content().string(containsString("content")));
     }
 
     @Test

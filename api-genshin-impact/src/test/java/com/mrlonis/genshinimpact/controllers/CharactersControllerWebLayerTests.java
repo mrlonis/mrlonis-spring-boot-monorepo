@@ -37,28 +37,28 @@ public class CharactersControllerWebLayerTests {
     public void shouldReturnAllCharacters() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
                 List.of(Character.builder()
-                        .name("Test")
-                        .imageUrl("Test")
-                        .elementId(UUID.randomUUID())
-                        .weaponOneId(UUID.randomUUID())
-                        .artifactSetOneId(UUID.randomUUID())
-                        .build())));
+                                 .name("Test")
+                                 .imageUrl("Test")
+                                 .elementId(UUID.randomUUID())
+                                 .weaponOneId(UUID.randomUUID())
+                                 .artifactSetOneId(UUID.randomUUID())
+                                 .build())));
         this.mockMvc.perform(get("/api/v2/characters"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("content")));
+                    .andDo(print())
+                    .andExpect(status().isOk())
+                    .andExpect(content().string(containsString("content")));
     }
 
     @Test
     public void shouldReturnAllCharacters_v2() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
                 List.of(Character.builder()
-                        .name("Test")
-                        .imageUrl("Test")
-                        .elementId(UUID.randomUUID())
-                        .weaponOneId(UUID.randomUUID())
-                        .artifactSetOneId(UUID.randomUUID())
-                        .build())));
+                                 .name("Test")
+                                 .imageUrl("Test")
+                                 .elementId(UUID.randomUUID())
+                                 .weaponOneId(UUID.randomUUID())
+                                 .artifactSetOneId(UUID.randomUUID())
+                                 .build())));
         ResultActions result = this.mockMvc.perform(get("/api/v2/characters"));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
