@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ApiGenshinImpactApplication.class)
-@ActiveProfiles("h2")
+@ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
 class ApiGenshinImpactApplicationTests {
 

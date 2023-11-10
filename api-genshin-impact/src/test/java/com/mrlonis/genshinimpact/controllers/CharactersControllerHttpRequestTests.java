@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("h2")
+@ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
 public class CharactersControllerHttpRequestTests {
 

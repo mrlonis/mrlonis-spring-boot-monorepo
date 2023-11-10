@@ -12,17 +12,25 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Genshin_Impact_Characters")
+@Table(name = "Characters")
 public class Character implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,24 +38,29 @@ public class Character implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
+    @NonNull
     private String name;
 
     @Column(name = "imageUrl")
+    @NonNull
     private String imageUrl;
 
     @Column(name = "rarity")
     private int rarity;
 
     @Column(name = "elementId")
+    @NonNull
     private UUID elementId;
 
     @Column(name = "weaponOneId")
+    @NonNull
     private UUID weaponOneId;
 
     @Column(name = "weaponTwoId")
     private UUID weaponTwoId;
 
     @Column(name = "artifactSetOneId")
+    @NonNull
     private UUID artifactSetOneId;
 
     @Column(name = "artifactSetTwoId")
@@ -62,7 +75,7 @@ public class Character implements IBaseEntity, Serializable {
     private Weapon weaponOne;
 
     @ManyToOne
-    @JoinColumn(name = "weaponTwoId", referencedColumnName = "id", insertable = false, updatable = false, nullable = true)
+    @JoinColumn(name = "weaponTwoId", referencedColumnName = "id", insertable = false, updatable = false)
     private Weapon weaponTwo;
 
     @ManyToOne
@@ -70,7 +83,7 @@ public class Character implements IBaseEntity, Serializable {
     private ArtifactSet artifactSetOne;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetTwoId", referencedColumnName = "id", insertable = false, updatable = false, nullable = true)
+    @JoinColumn(name = "artifactSetTwoId", referencedColumnName = "id", insertable = false, updatable = false)
     private ArtifactSet artifactSetTwo;
 
 }

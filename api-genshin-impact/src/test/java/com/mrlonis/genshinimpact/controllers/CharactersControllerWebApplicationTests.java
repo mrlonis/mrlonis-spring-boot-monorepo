@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("h2")
+@ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
 public class CharactersControllerWebApplicationTests {
     private final String route = "/api/v2/characters";

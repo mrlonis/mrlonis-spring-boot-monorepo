@@ -9,7 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-@ActiveProfiles("h2")
+@ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
 public class CharactersControllerSmokeTests {
     @Autowired

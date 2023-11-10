@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 
 import java.util.List;
+import java.util.UUID;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -35,7 +36,7 @@ public class CharactersControllerWebLayerTests {
     @Test
     public void shouldReturnAllCharacters() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(
-                new PageImpl<>(List.of(Character.builder().build())));
+                new PageImpl<>(List.of(Character.builder().name("Test").imageUrl("Test").elementId(UUID.randomUUID()).weaponOneId(UUID.randomUUID()).artifactSetOneId(UUID.randomUUID()).build())));
         this.mockMvc.perform(get("/api/v2/characters"))
                 .andDo(print())
                 .andExpect(status().isOk())

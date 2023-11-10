@@ -28,7 +28,7 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Genshin_Impact_Elements")
+@Table(name = "Elements")
 public class Element implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

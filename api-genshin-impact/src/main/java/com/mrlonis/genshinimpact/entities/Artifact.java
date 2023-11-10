@@ -6,12 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -30,26 +27,27 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Artifact_Sets")
-public class ArtifactSet implements Serializable {
+@Table(name = "Artifacts")
+public class Artifact implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "artifactOneId")
+    @Column(name = "name")
     @NonNull
-    private UUID artifactOneId;
+    private String name;
 
-    @Column(name = "artifactTwoId")
-    private UUID artifactTwoId;
+    @Column(name = "imageUrl")
+    @NonNull
+    private String imageUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "artifactOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
-    private Artifact artifactOne;
+    @Column(name = "onePieceSetEffect")
+    private String onePieceSetEffect;
 
-    @ManyToOne
-    @JoinColumn(name = "artifactTwoId", referencedColumnName = "id", insertable = false, updatable = false)
-    private Artifact artifactTwo;
+    @Column(name = "twoPieceSetEffect")
+    private String twoPieceSetEffect;
 
+    @Column(name = "fourPieceSetEffect")
+    private String fourPieceSetEffect;
 }

@@ -28,7 +28,7 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Genshin_Impact_Weapons")
+@Table(name = "Weapons")
 public class Weapon implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,16 +46,21 @@ public class Weapon implements IBaseEntity, Serializable {
     @Column(name = "rarity")
     private int rarity;
 
-    @Column(name = "subStat")
-    @NonNull
-    private String subStat;
-
-    @Column(name = "specialAbility")
-    @NonNull
-    private String specialAbility;
-
     @Column(name = "weaponType")
     @NonNull
     private String weaponType;
 
+    @Column(name = "substatType")
+    @NonNull
+    private String substatType;
+
+    @Column(name = "weaponAffix")
+    private String weaponAffix;
+
+    @Column(name = "affixDescription")
+    private String affixDescription;
+
+    @Column(name = "description")
+    @NonNull
+    private String description;
 }

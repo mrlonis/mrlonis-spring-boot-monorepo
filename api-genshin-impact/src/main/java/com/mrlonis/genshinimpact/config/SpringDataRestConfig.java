@@ -1,5 +1,6 @@
 package com.mrlonis.genshinimpact.config;
 
+import com.mrlonis.genshinimpact.entities.Artifact;
 import com.mrlonis.genshinimpact.entities.ArtifactSet;
 import com.mrlonis.genshinimpact.entities.Character;
 import com.mrlonis.genshinimpact.entities.Element;
@@ -16,7 +17,6 @@ public class SpringDataRestConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(Character.class);
         config.exposeIdsFor(Element.class);
         config.exposeIdsFor(Weapon.class);
-        config.exposeIdsFor(ArtifactSet.class);
-
+        config.exposeIdsFor(Artifact.class);
     }
 }
