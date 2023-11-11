@@ -4,15 +4,20 @@ import com.mrlonis.genshinimpact.dto.ArtifactBreakdown;
 import com.mrlonis.genshinimpact.entities.Artifact;
 import com.mrlonis.genshinimpact.entities.ArtifactSet;
 import com.mrlonis.genshinimpact.entities.Character;
+import com.mrlonis.genshinimpact.enums.CircletMainStats;
+import com.mrlonis.genshinimpact.enums.GobletMainStats;
+import com.mrlonis.genshinimpact.enums.SandsMainStats;
+import com.mrlonis.genshinimpact.enums.Substats;
 import com.mrlonis.genshinimpact.repositories.ArtifactSetsRepository;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import com.mrlonis.genshinimpact.repositories.CharactersRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -23,13 +28,15 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v2")
 @AllArgsConstructor
+@Slf4j
 public class ArtifactBreakdownController {
     private CharactersRepository charactersRepository;
     private ArtifactsRepository artifactsRepository;
     private ArtifactSetsRepository artifactSetsRepository;
 
     @GetMapping("/artifactBreakdown")
-    ArtifactBreakdown getArtifactBreakdownForArtifact(@Param("artifactId") UUID artifactId) {
+    ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId) {
+        log.info("Getting artifact breakdown for artifact: {}", artifactId);
         Artifact artifact = artifactsRepository.findById(artifactId);
         if (artifact == null) {
             throw new RuntimeException("Artifact not found");
@@ -46,7 +53,9 @@ public class ArtifactBreakdownController {
                                                                .twoPieceSetEffect(artifact.getTwoPieceSetEffect())
                                                                .fourPieceSetEffect(artifact.getFourPieceSetEffect())
                                                                .build();
+
         if (artifactSets == null || artifactSets.isEmpty()) {
+            log.info("No artifact sets found for artifact: {}", artifact.getName());
             return artifactBreakdown;
         }
 
@@ -64,22 +73,34 @@ public class ArtifactBreakdownController {
             characters.addAll(newCharacters.stream().toList());
         }
 
-        List<String> sandsStats = new ArrayList<>();
-        List<String> gobletStats = new ArrayList<>();
-        List<String> circletStats = new ArrayList<>();
-        List<String> substats = new ArrayList<>();
+        List<SandsMainStats> sandsStats = new ArrayList<>();
+        List<GobletMainStats> gobletStats = new ArrayList<>();
+        List<CircletMainStats> circletStats = new ArrayList<>();
+        List<Substats> substats = new ArrayList<>();
 
         for (Character character : characters) {
-            if (!sandsStats.contains(character.getSandsStat())) {
-                sandsStats.add(character.getSandsStat());
+            if (!sandsStats.contains(character.getSandsStatOne())) {
+                sandsStats.add(character.getSandsStatOne());
             }
 
-            if (!gobletStats.contains(character.getGobletStat())) {
-                gobletStats.add(character.getGobletStat());
+            if (character.getSandsStatTwo() != null && !sandsStats.contains(character.getSandsStatTwo())) {
+                sandsStats.add(character.getSandsStatTwo());
             }
 
-            if (!circletStats.contains(character.getCircletStat())) {
-                circletStats.add(character.getCircletStat());
+            if (!gobletStats.contains(character.getGobletStatOne())) {
+                gobletStats.add(character.getGobletStatOne());
+            }
+
+            if (character.getGobletStatTwo() != null && !gobletStats.contains(character.getGobletStatTwo())) {
+                gobletStats.add(character.getGobletStatTwo());
+            }
+
+            if (!circletStats.contains(character.getCircletStatOne())) {
+                circletStats.add(character.getCircletStatOne());
+            }
+
+            if (character.getCircletStatTwo() != null && !circletStats.contains(character.getCircletStatTwo())) {
+                circletStats.add(character.getCircletStatTwo());
             }
 
             if (!substats.contains(character.getSubstatOne())) {

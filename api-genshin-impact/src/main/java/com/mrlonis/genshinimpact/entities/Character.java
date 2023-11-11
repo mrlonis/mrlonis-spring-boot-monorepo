@@ -1,5 +1,9 @@
 package com.mrlonis.genshinimpact.entities;
 
+import com.mrlonis.genshinimpact.enums.CircletMainStats;
+import com.mrlonis.genshinimpact.enums.GobletMainStats;
+import com.mrlonis.genshinimpact.enums.SandsMainStats;
+import com.mrlonis.genshinimpact.enums.Substats;
 import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -51,29 +55,38 @@ public class Character implements IBaseEntity, Serializable {
     @NonNull
     private UUID elementId;
 
-    @Column(name = "sandsStat")
+    @Column(name = "sandsStatOne")
     @NonNull
-    private String sandsStat;
+    private SandsMainStats sandsStatOne;
 
-    @Column(name = "gobletStat")
-    @NonNull
-    private String gobletStat;
+    @Column(name = "sandsStatTwo")
+    private SandsMainStats sandsStatTwo;
 
-    @Column(name = "circletStat")
+    @Column(name = "gobletStatOne")
     @NonNull
-    private String circletStat;
+    private GobletMainStats gobletStatOne;
+
+    @Column(name = "gobletStatTwo")
+    private GobletMainStats gobletStatTwo;
+
+    @Column(name = "circletStatOne")
+    @NonNull
+    private CircletMainStats circletStatOne;
+
+    @Column(name = "circletStatTwo")
+    private CircletMainStats circletStatTwo;
 
     @Column(name = "substatOne")
     @NonNull
-    private String substatOne;
+    private Substats substatOne;
 
     @Column(name = "substatTwo")
     @NonNull
-    private String substatTwo;
+    private Substats substatTwo;
 
     @Column(name = "substatThree")
     @NonNull
-    private String substatThree;
+    private Substats substatThree;
 
     @Column(name = "weaponOneId")
     @NonNull
