@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(CharactersController.class)
-public class CharactersControllerWebLayerTests {
+class CharactersControllerWebLayerTests {
     @Autowired
     private MockMvc mockMvc;
 
@@ -34,7 +34,7 @@ public class CharactersControllerWebLayerTests {
     private CharactersRepository charactersRepository;
 
     @Test
-    public void shouldReturnAllCharacters() throws Exception {
+    void shouldReturnAllCharacters() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
                 List.of(Character.builder()
                                  .name("Test")
@@ -56,7 +56,7 @@ public class CharactersControllerWebLayerTests {
     }
 
     @Test
-    public void shouldReturnAllCharacters_v2() throws Exception {
+    void shouldReturnAllCharacters_v2() throws Exception {
         when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
                 List.of(Character.builder()
                                  .name("Test")
