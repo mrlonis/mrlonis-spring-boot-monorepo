@@ -18,25 +18,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-//@SpringBootTest
-//@AutoConfigureMockMvc
-//@ActiveProfiles("h2")
-//@AutoConfigureTestDatabase
-//public class CharactersControllerWebApplicationTests extends ControllerWebApplicationTests {
-//    public CharactersControllerWebApplicationTests() {
-//        super("/api/v2/characters");
-//    }
-//}
-
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
-public class CharactersControllerWebApplicationTests {
+class CharactersControllerWebApplicationTests {
     private final String route = "/api/v2/characters";
 
     @Test
-    public void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
+    void shouldReturnAll(@Autowired MockMvc mockMvc) throws Exception {
         mockMvc.perform(get(route))
                .andDo(print())
                .andExpect(status().isOk())
@@ -44,7 +34,7 @@ public class CharactersControllerWebApplicationTests {
     }
 
     @Test
-    public void shouldReturnAll_v2(@Autowired MockMvc mockMvc) throws Exception {
+    void shouldReturnAll_v2(@Autowired MockMvc mockMvc) throws Exception {
         ResultActions result = mockMvc.perform(get(route));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());

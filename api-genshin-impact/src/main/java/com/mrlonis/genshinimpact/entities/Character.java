@@ -51,6 +51,30 @@ public class Character implements IBaseEntity, Serializable {
     @NonNull
     private UUID elementId;
 
+    @Column(name = "sandsStat")
+    @NonNull
+    private String sandsStat;
+
+    @Column(name = "gobletStat")
+    @NonNull
+    private String gobletStat;
+
+    @Column(name = "circletStat")
+    @NonNull
+    private String circletStat;
+
+    @Column(name = "substatOne")
+    @NonNull
+    private String substatOne;
+
+    @Column(name = "substatTwo")
+    @NonNull
+    private String substatTwo;
+
+    @Column(name = "substatThree")
+    @NonNull
+    private String substatThree;
+
     @Column(name = "weaponOneId")
     @NonNull
     private UUID weaponOneId;

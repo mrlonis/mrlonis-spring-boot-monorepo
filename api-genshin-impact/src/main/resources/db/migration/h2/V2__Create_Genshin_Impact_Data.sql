@@ -22,12 +22,18 @@ VALUES ( ( SELECT id FROM Artifacts WHERE name = 'Blizzard Strayer' ), NULL ),
        ( ( SELECT id FROM Artifacts WHERE name = 'Emblem of Severed Fate' ), NULL );
 
 INSERT INTO Characters
-    (name, imageUrl, rarity, elementId, weaponOneId, weaponTwoId, weaponThreeId, weaponFourId, weaponFiveId, artifactSetOneId, artifactSetTwoId, artifactSetThreeId, artifactSetFourId, artifactSetFiveId)
+    (name, imageUrl, rarity, elementId, sandsStat, gobletStat, circletStat, substatOne, substatTwo, substatThree, weaponOneId, weaponTwoId, weaponThreeId, weaponFourId, weaponFiveId, artifactSetOneId, artifactSetTwoId, artifactSetThreeId, artifactSetFourId, artifactSetFiveId)
 VALUES (
        'Kamisato Ayaka',
        'characters/Ayaka.png',
        5,
        ( SELECT id FROM Elements WHERE name = 'Cryo' ),
+       'ATK%',
+       'Cryo DMG',
+       'CRIT DMG / ATK%',
+       'CRIT DMG',
+       'ATK%',
+       'Energy Recharge',
        ( SELECT id FROM Weapons WHERE name = 'Mistsplitter Reforged' ),
        ( SELECT id FROM Weapons WHERE name = 'Amenoma Kageuchi' ),
        NULL,

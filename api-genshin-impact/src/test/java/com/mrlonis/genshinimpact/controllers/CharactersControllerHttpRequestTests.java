@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
-public class CharactersControllerHttpRequestTests {
+class CharactersControllerHttpRequestTests {
 
     @LocalServerPort
     private int port;
@@ -28,7 +28,7 @@ public class CharactersControllerHttpRequestTests {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void shouldReturnAllForEntity() {
+    void shouldReturnAllForEntity() {
         ParameterizedTypeReference<PaginatedResponse<Character>> responseType = new ParameterizedTypeReference<>() {
         };
 
