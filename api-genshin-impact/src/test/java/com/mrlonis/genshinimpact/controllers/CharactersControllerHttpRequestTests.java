@@ -28,7 +28,7 @@ class CharactersControllerHttpRequestTests {
     private TestRestTemplate restTemplate;
 
     @Test
-    void shouldReturnAllForEntity() {
+    void testShouldReturnAllForEntity() {
         ParameterizedTypeReference<PaginatedResponse<Character>> responseType = new ParameterizedTypeReference<>() {
         };
 
