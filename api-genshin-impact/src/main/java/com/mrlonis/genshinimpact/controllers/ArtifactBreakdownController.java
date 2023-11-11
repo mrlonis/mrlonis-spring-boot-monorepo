@@ -116,6 +116,30 @@ public class ArtifactBreakdownController {
             }
         }
 
+        if (circletStats.contains(CircletMainStats.CRITICAL_RATE_CRITICAL_DAMAGE)) {
+            circletStats.remove(CircletMainStats.CRITICAL_RATE_CRITICAL_DAMAGE);
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_RATE)) {
+                circletStats.add(CircletMainStats.CRITICAL_RATE);
+            }
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_DAMAGE)) {
+                circletStats.add(CircletMainStats.CRITICAL_DAMAGE);
+            }
+        }
+
+        if (substats.contains(Substats.CRITICAL_RATE_CRITICAL_DAMAGE)) {
+            substats.remove(Substats.CRITICAL_RATE_CRITICAL_DAMAGE);
+
+            if (!substats.contains(Substats.CRITICAL_RATE)) {
+                substats.add(Substats.CRITICAL_RATE);
+            }
+
+            if (!substats.contains(Substats.CRITICAL_DAMAGE)) {
+                substats.add(Substats.CRITICAL_DAMAGE);
+            }
+        }
+
         artifactBreakdown.setSandsStats(sandsStats);
         artifactBreakdown.setGobletStats(gobletStats);
         artifactBreakdown.setCircletStats(circletStats);
