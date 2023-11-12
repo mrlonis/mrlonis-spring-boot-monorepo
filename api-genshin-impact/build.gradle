@@ -33,6 +33,7 @@ dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
     implementation "commons-io:commons-io:${commonsIoVersion}"
+    implementation "com.opencsv:opencsv:5.8"
     implementation "org.apache.ant:ant:${antVersion}"
     implementation "org.flywaydb:flyway-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
