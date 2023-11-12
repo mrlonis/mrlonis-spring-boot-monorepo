@@ -61,6 +61,6 @@ public class Weapon implements IBaseEntity, Serializable {
     private String affixDescription;
 
     @Column(name = "description")
-    @NonNull
+    // TODO - @NonNull
     private String description;
 }
