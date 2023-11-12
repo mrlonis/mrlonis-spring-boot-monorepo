@@ -26,10 +26,10 @@ public class ApiGenshinImpactApplication implements WebMvcConfigurer {
     }
 
     public static void flywayMigrationCreation() {
-        log.info("ApiGenshinImpactApplication: flywayMigrationCreation(): Starting...");
+        log.info("flywayMigrationCreation(): Starting...");
 
         WeaponsFlywayMigrationCreation.createWeaponsFlywayMigration();
 
-        log.info("ApiGenshinImpactApplication: flywayMigrationCreation(): Finished!");
+        log.info("flywayMigrationCreation(): Finished!");
     }
 }
