@@ -21,7 +21,7 @@ public class SubstatsConverter implements AttributeConverter<Substats, String> {
 
     @Override
     public Substats convertToEntityAttribute(String value) {
-        log.info("SubstatsConverter: convertToEntityAttribute: {}", value);
+        log.info("convertToEntityAttribute: {}", value);
         if (value == null) {
             return null;
         }
