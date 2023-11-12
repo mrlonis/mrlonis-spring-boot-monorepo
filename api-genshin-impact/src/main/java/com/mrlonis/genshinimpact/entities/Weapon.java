@@ -1,5 +1,6 @@
 package com.mrlonis.genshinimpact.entities;
 
+import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,7 +40,7 @@ public class Weapon implements IBaseEntity, Serializable {
     private String name;
 
     @Column(name = "imageUrl")
-    @NonNull
+    // TODO - @NonNull
     private String imageUrl;
 
     @Column(name = "rarity")
@@ -49,9 +50,9 @@ public class Weapon implements IBaseEntity, Serializable {
     @NonNull
     private String weaponType;
 
-    @Column(name = "substatType")
+    @Column(name = "secondaryStat")
     @NonNull
-    private String substatType;
+    private WeaponSecondaryStats secondaryStat;
 
     @Column(name = "weaponAffix")
     private String weaponAffix;
