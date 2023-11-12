@@ -2,26 +2,21 @@ package com.mrlonis.genshinimpact.controllers;
 
 import com.mrlonis.genshinimpact.dto.ArtifactBreakdown;
 import com.mrlonis.genshinimpact.entities.Artifact;
-import com.mrlonis.genshinimpact.entities.ArtifactSet;
 import com.mrlonis.genshinimpact.entities.Character;
 import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
-import com.mrlonis.genshinimpact.repositories.ArtifactSetsRepository;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import com.mrlonis.genshinimpact.repositories.CharactersRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,7 +27,6 @@ import java.util.UUID;
 public class ArtifactBreakdownController {
     private CharactersRepository charactersRepository;
     private ArtifactsRepository artifactsRepository;
-    private ArtifactSetsRepository artifactSetsRepository;
 
     @GetMapping("/artifactBreakdown")
     ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId) {
@@ -41,9 +35,6 @@ public class ArtifactBreakdownController {
         if (artifact == null) {
             throw new RuntimeException("Artifact not found");
         }
-
-        List<ArtifactSet> artifactSets =
-                artifactSetsRepository.findByArtifactOneIdIsOrArtifactTwoIdIs(artifact.getId(), artifact.getId());
 
         ArtifactBreakdown artifactBreakdown = ArtifactBreakdown.builder()
                                                                .id(artifact.getId())
@@ -54,23 +45,14 @@ public class ArtifactBreakdownController {
                                                                .fourPieceSetEffect(artifact.getFourPieceSetEffect())
                                                                .build();
 
-        if (artifactSets == null || artifactSets.isEmpty()) {
-            log.info("No artifact sets found for artifact: {}", artifact.getName());
+        List<Character> characters =
+                charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
+                        artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(),
+                        artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId());
+
+        if (characters == null || characters.isEmpty()) {
+            log.info("No Characters use artifact: {}", artifact.getName());
             return artifactBreakdown;
-        }
-
-        List<Character> characters = new LinkedList<>();
-        for (ArtifactSet artifactSet : artifactSets) {
-            Page<Character> newCharacters =
-                    charactersRepository.findByArtifactSetOneIdIsOrArtifactSetTwoIdIsOrArtifactSetThreeIdIsOrArtifactSetFourIdIsOrArtifactSetFiveIdIs(
-                            artifactSet.getId(), artifactSet.getId(), artifactSet.getId(), artifactSet.getId(),
-                            artifactSet.getId(), Pageable.ofSize(100));
-
-            if (newCharacters == null || newCharacters.isEmpty()) {
-                continue;
-            }
-
-            characters.addAll(newCharacters.stream().toList());
         }
 
         List<SandsMainStats> sandsStats = new ArrayList<>();

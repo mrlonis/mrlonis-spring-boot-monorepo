@@ -128,39 +128,74 @@ public class Character implements IBaseEntity, Serializable {
     @JoinColumn(name = "weaponFiveId", referencedColumnName = "id", insertable = false, updatable = false)
     private Weapon weaponFive;
 
-    @Column(name = "artifactSetOneId")
+    @Column(name = "artifactSetOneIdFirst")
     @NonNull
-    private UUID artifactSetOneId;
+    private UUID artifactSetOneIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
-    private ArtifactSet artifactSetOne;
+    @JoinColumn(name = "artifactSetOneIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Artifact artifactSetOneFirst;
 
-    @Column(name = "artifactSetTwoId")
-    private UUID artifactSetTwoId;
-
-    @ManyToOne
-    @JoinColumn(name = "artifactSetTwoId", referencedColumnName = "id", insertable = false, updatable = false)
-    private ArtifactSet artifactSetTwo;
-
-    @Column(name = "artifactSetThreeId")
-    private UUID artifactSetThreeId;
+    @Column(name = "artifactSetOneIdSecond")
+    private UUID artifactSetOneIdSecond;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetThreeId", referencedColumnName = "id", insertable = false, updatable = false)
-    private ArtifactSet artifactSetThree;
+    @JoinColumn(name = "artifactSetOneIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetOneSecond;
 
-    @Column(name = "artifactSetFourId")
-    private UUID artifactSetFourId;
-
-    @ManyToOne
-    @JoinColumn(name = "artifactSetFourId", referencedColumnName = "id", insertable = false, updatable = false)
-    private ArtifactSet artifactSetFour;
-
-    @Column(name = "artifactSetFiveId")
-    private UUID artifactSetFiveId;
+    @Column(name = "artifactSetTwoIdFirst")
+    private UUID artifactSetTwoIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetFiveId", referencedColumnName = "id", insertable = false, updatable = false)
-    private ArtifactSet artifactSetFive;
+    @JoinColumn(name = "artifactSetTwoIdFirst", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetTwoFirst;
+
+    @Column(name = "artifactSetTwoIdSecond")
+    private UUID artifactSetTwoIdSecond;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetTwoIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetTwoSecond;
+
+    @Column(name = "artifactSetThreeIdFirst")
+    private UUID artifactSetThreeIdFirst;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetThreeIdFirst", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetThreeFirst;
+
+    @Column(name = "artifactSetThreeIdSecond")
+    private UUID artifactSetThreeIdSecond;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetThreeIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetThreeSecond;
+
+    @Column(name = "artifactSetFourIdFirst")
+    private UUID artifactSetFourIdFirst;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetFourIdFirst", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetFourFirst;
+
+    @Column(name = "artifactSetFourIdSecond")
+    private UUID artifactSetFourIdSecond;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetFourIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetFourSecond;
+
+    @Column(name = "artifactSetFiveIdFirst")
+    private UUID artifactSetFiveIdFirst;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetFiveIdFirst", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetFiveFirst;
+
+    @Column(name = "artifactSetFiveIdSecond")
+    private UUID artifactSetFiveIdSecond;
+
+    @ManyToOne
+    @JoinColumn(name = "artifactSetFiveIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artifact artifactSetFiveSecond;
 }

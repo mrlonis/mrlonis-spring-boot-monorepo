@@ -51,7 +51,7 @@ class CharactersControllerWebLayerTests {
                                  .substatTwo(Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
                                  .substatThree(Substats.HEALTH_PERCENT)
                                  .weaponOneId(UUID.randomUUID())
-                                 .artifactSetOneId(UUID.randomUUID())
+                                 .artifactSetOneIdFirst(UUID.randomUUID())
                                  .build())));
         this.mockMvc.perform(get("/api/v2/characters"))
                     .andDo(print())
@@ -73,7 +73,7 @@ class CharactersControllerWebLayerTests {
                                  .substatTwo(Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
                                  .substatThree(Substats.HEALTH_PERCENT)
                                  .weaponOneId(UUID.randomUUID())
-                                 .artifactSetOneId(UUID.randomUUID())
+                                 .artifactSetOneIdFirst(UUID.randomUUID())
                                  .build())));
         ResultActions result = this.mockMvc.perform(get("/api/v2/characters"));
         MvcResult result_v2 = result.andReturn();

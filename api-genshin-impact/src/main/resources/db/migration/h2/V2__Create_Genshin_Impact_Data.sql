@@ -77,24 +77,6 @@ VALUES (
         'Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way'
     );
 
-INSERT INTO Artifact_Sets (artifactOneId, artifactTwoId)
-VALUES (
-        (
-            SELECT id
-            FROM Artifacts
-            WHERE name = 'Blizzard Strayer'
-        ),
-        NULL
-    ),
-    (
-        (
-            SELECT id
-            FROM Artifacts
-            WHERE name = 'Emblem of Severed Fate'
-        ),
-        NULL
-    );
-
 INSERT INTO Characters (
         name,
         imageUrl,
@@ -114,11 +96,16 @@ INSERT INTO Characters (
         weaponThreeId,
         weaponFourId,
         weaponFiveId,
-        artifactSetOneId,
-        artifactSetTwoId,
-        artifactSetThreeId,
-        artifactSetFourId,
-        artifactSetFiveId
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
     )
 VALUES (
         'Kamisato Ayaka',
@@ -153,24 +140,19 @@ VALUES (
         NULL,
         (
             SELECT id
-            FROM Artifact_Sets
-            WHERE artifactOneId = (
-                    SELECT id
-                    FROM Artifacts
-                    WHERE name = 'Blizzard Strayer'
-                )
-                AND artifactTwoId IS NULL
+            FROM Artifacts
+            WHERE name = 'Blizzard Strayer'
         ),
+        NULL,
         (
             SELECT id
-            FROM Artifact_Sets
-            WHERE artifactOneId = (
-                    SELECT id
-                    FROM Artifacts
-                    WHERE name = 'Emblem of Severed Fate'
-                )
-                AND artifactTwoId IS NULL
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
         ),
+        NULL,
+        NULL,
+        NULL,
+        NULL,
         NULL,
         NULL,
         NULL

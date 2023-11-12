@@ -10,6 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.util.List;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "characters")
@@ -21,8 +22,15 @@ public interface CharactersRepository extends PagingAndSortingRepository<Charact
     Page<Character> findByNameIgnoreCaseContains(@Param("name") String name, Pageable pageable);
 
     @RestResource(path = "findByArtifactSet", rel = "findByArtifactSet")
-    Page<Character> findByArtifactSetOneIdIsOrArtifactSetTwoIdIsOrArtifactSetThreeIdIsOrArtifactSetFourIdIsOrArtifactSetFiveIdIs(
-            @Param("artifactSetOneId") UUID artifactSetOneId, @Param("artifactSetTwoId") UUID artifactSetTwoId,
-            @Param("artifactSetThreeId") UUID artifactSetThreeId, @Param("artifactSetFourId") UUID artifactSetFourId,
-            @Param("artifactSetFiveId") UUID artifactSetFiveId, Pageable pageable);
+    List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
+            @Param("artifactSetOneIdFirst") UUID artifactSetOneIdFirst,
+            @Param("artifactSetOneIdSecond") UUID artifactSetOneIdSecond,
+            @Param("artifactSetTwoIdFirst") UUID artifactSetTwoIdFirst,
+            @Param("artifactSetTwoIdSecond") UUID artifactSetTwoIdSecond,
+            @Param("artifactSetThreeIdFirst") UUID artifactSetThreeIdFirst,
+            @Param("artifactSetThreeIdSecond") UUID artifactSetThreeIdSecond,
+            @Param("artifactSetFourIdFirst") UUID artifactSetFourIdFirst,
+            @Param("artifactSetFourIdSecond") UUID artifactSetFourIdSecond,
+            @Param("artifactSetFiveIdFirst") UUID artifactSetFiveIdFirst,
+            @Param("artifactSetFiveIdSecond") UUID artifactSetFiveIdSecond);
 }

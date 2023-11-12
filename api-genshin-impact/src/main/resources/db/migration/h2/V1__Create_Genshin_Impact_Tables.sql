@@ -28,15 +28,6 @@ CREATE TABLE Artifacts (
     CONSTRAINT Artifacts_Unique UNIQUE (name)
 );
 
-CREATE TABLE Artifact_Sets (
-    id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
-    artifactOneId UUID NOT NULL,
-    artifactTwoId UUID,
-    CONSTRAINT Artifact_Sets_Unique UNIQUE (artifactOneId, artifactTwoId),
-    CONSTRAINT Artifact_One_Foreign_Key FOREIGN KEY (artifactOneId) REFERENCES Artifacts (id),
-    CONSTRAINT Artifact_Two_Foreign_Key FOREIGN KEY (artifactTwoId) REFERENCES Artifacts (id)
-);
-
 CREATE TABLE Characters (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -57,11 +48,16 @@ CREATE TABLE Characters (
     weaponThreeId UUID,
     weaponFourId UUID,
     weaponFiveId UUID,
-    artifactSetOneId UUID NOT NULL,
-    artifactSetTwoId UUID,
-    artifactSetThreeId UUID,
-    artifactSetFourId UUID,
-    artifactSetFiveId UUID,
+    artifactSetOneIdFirst UUID NOT NULL,
+    artifactSetOneIdSecond UUID,
+    artifactSetTwoIdFirst UUID,
+    artifactSetTwoIdSecond UUID,
+    artifactSetThreeIdFirst UUID,
+    artifactSetThreeIdSecond UUID,
+    artifactSetFourIdFirst UUID,
+    artifactSetFourIdSecond UUID,
+    artifactSetFiveIdFirst UUID,
+    artifactSetFiveIdSecond UUID,
     CONSTRAINT Characters_Unique UNIQUE (id, name, imageUrl),
     CONSTRAINT Elements_Foreign_Key FOREIGN KEY (elementId) REFERENCES Elements (id),
     CONSTRAINT Weapon_One_Foreign_Key FOREIGN KEY (weaponOneId) REFERENCES Weapons (id),
@@ -69,9 +65,14 @@ CREATE TABLE Characters (
     CONSTRAINT Weapon_Three_Foreign_Key FOREIGN KEY (weaponThreeId) REFERENCES Weapons (id),
     CONSTRAINT Weapon_Four_Foreign_Key FOREIGN KEY (weaponFourId) REFERENCES Weapons (id),
     CONSTRAINT Weapon_Five_Foreign_Key FOREIGN KEY (weaponFiveId) REFERENCES Weapons (id),
-    CONSTRAINT Artifact_Set_One_Foreign_Key FOREIGN KEY (artifactSetOneId) REFERENCES Artifact_Sets (id),
-    CONSTRAINT Artifact_Set_Two_Foreign_Key FOREIGN KEY (artifactSetTwoId) REFERENCES Artifact_Sets (id),
-    CONSTRAINT Artifact_Set_Three_Foreign_Key FOREIGN KEY (artifactSetThreeId) REFERENCES Artifact_Sets (id),
-    CONSTRAINT Artifact_Set_Four_Foreign_Key FOREIGN KEY (artifactSetFourId) REFERENCES Artifact_Sets (id),
-    CONSTRAINT Artifact_Set_Five_Foreign_Key FOREIGN KEY (artifactSetFiveId) REFERENCES Artifact_Sets (id)
+    CONSTRAINT Artifact_Set_One_First_Foreign_Key FOREIGN KEY (artifactSetOneIdFirst) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_One_Second_Foreign_Key FOREIGN KEY (artifactSetOneIdSecond) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Two_First_Foreign_Key FOREIGN KEY (artifactSetTwoIdFirst) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Two_Second_Foreign_Key FOREIGN KEY (artifactSetTwoIdSecond) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Three_First_Foreign_Key FOREIGN KEY (artifactSetThreeIdFirst) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Three_Second_Foreign_Key FOREIGN KEY (artifactSetThreeIdSecond) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Four_First_Foreign_Key FOREIGN KEY (artifactSetFourIdFirst) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Four_Second_Foreign_Key FOREIGN KEY (artifactSetFourIdSecond) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Five_First_Foreign_Key FOREIGN KEY (artifactSetFiveIdFirst) REFERENCES Artifacts (id),
+    CONSTRAINT Artifact_Set_Five_Second_Foreign_Key FOREIGN KEY (artifactSetFiveIdSecond) REFERENCES Artifacts (id)
 );
