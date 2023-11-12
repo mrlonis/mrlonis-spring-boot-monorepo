@@ -8,12 +8,12 @@ CREATE TABLE Elements (
 CREATE TABLE Weapons (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
+    imageUrl VARCHAR(200), -- TODO: NOT NULL,
     rarity INT NOT NULL,
     weaponType VARCHAR(15) NOT NULL,
-    substatType VARCHAR(50) NOT NULL,
+    secondaryStat VARCHAR(50),
     weaponAffix VARCHAR(750),
-    affixDescription VARCHAR(750),
+    affixDescription VARCHAR(1500),
     description VARCHAR(750),
     CONSTRAINT Weapons_Unique UNIQUE (name)
 );
