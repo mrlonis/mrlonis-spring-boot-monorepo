@@ -21,7 +21,7 @@ public class SandsMainStatsConverter implements AttributeConverter<SandsMainStat
 
     @Override
     public SandsMainStats convertToEntityAttribute(String value) {
-        log.info("SandsMainStatsConverter: convertToEntityAttribute: {}", value);
+        log.info("convertToEntityAttribute: {}", value);
         if (value == null) {
             return null;
         }
