@@ -8,7 +8,8 @@ CREATE TABLE Elements (
 CREATE TABLE Weapons (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200), -- TODO: NOT NULL,
+    -- TODO: NOT NULL
+    imageUrl VARCHAR(200),
     rarity INT NOT NULL,
     weaponType VARCHAR(15) NOT NULL,
     secondaryStat VARCHAR(50),
@@ -21,7 +22,8 @@ CREATE TABLE Weapons (
 CREATE TABLE Artifacts (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200), -- TODO: NOT NULL,
+    -- TODO: NOT NULL
+    imageUrl VARCHAR(200),
     onePieceSetEffect VARCHAR(500),
     twoPieceSetEffect VARCHAR(500),
     fourPieceSetEffect VARCHAR(1500),
