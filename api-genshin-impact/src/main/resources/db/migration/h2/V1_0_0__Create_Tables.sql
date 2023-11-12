@@ -21,10 +21,10 @@ CREATE TABLE Weapons (
 CREATE TABLE Artifacts (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
+    imageUrl VARCHAR(200), -- TODO: NOT NULL,
     onePieceSetEffect VARCHAR(500),
     twoPieceSetEffect VARCHAR(500),
-    fourPieceSetEffect VARCHAR(500),
+    fourPieceSetEffect VARCHAR(1500),
     CONSTRAINT Artifacts_Unique UNIQUE (name)
 );
 

@@ -1,5 +1,6 @@
 package com.mrlonis.genshinimpact;
 
+import com.mrlonis.genshinimpact.utils.ArtifactsFlywayMigrationCreation;
 import com.mrlonis.genshinimpact.utils.WeaponsFlywayMigrationCreation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +29,8 @@ public class ApiGenshinImpactApplication implements WebMvcConfigurer {
     public static void flywayMigrationCreation() {
         log.info("flywayMigrationCreation(): Starting...");
 
-        WeaponsFlywayMigrationCreation.createWeaponsFlywayMigration();
+        WeaponsFlywayMigrationCreation.createFlywayMigration();
+        ArtifactsFlywayMigrationCreation.createFlywayMigration();
 
         log.info("flywayMigrationCreation(): Finished!");
     }

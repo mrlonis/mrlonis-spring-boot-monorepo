@@ -39,7 +39,7 @@ public class Artifact implements IBaseEntity, Serializable {
     private String name;
 
     @Column(name = "imageUrl")
-    @NonNull
+    // TODO - @NonNull
     private String imageUrl;
 
     @Column(name = "onePieceSetEffect")
