@@ -1,0 +1,8 @@
+INSERT INTO Elements (name, imageUrl)
+VALUES ('Pyro', 'elements/Pyro.svg'),
+    ('Hydro', 'elements/Hydro.svg'),
+    ('Anemo', 'elements/Anemo.svg'),
+    ('Electro', 'elements/Electro.svg'),
+    ('Dendro', 'elements/Dendro.svg'),
+    ('Cryo', 'elements/Cryo.svg'),
+    ('Geo', 'elements/Geo.svg');
