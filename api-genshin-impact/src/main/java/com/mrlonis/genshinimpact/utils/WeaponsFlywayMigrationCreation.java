@@ -22,14 +22,14 @@ public class WeaponsFlywayMigrationCreation {
     private WeaponsFlywayMigrationCreation() {
     }
 
-    public static void createWeaponsFlywayMigration() {
-        log.info("createWeaponsFlywayMigration(): Starting...");
+    public static void createFlywayMigration() {
+        log.info("createFlywayMigration(): Starting...");
 
         List<String[]> csvFile = parseCsvFile();
         String fileContents = createFileContents(csvFile);
         writeMigrationFile(fileContents);
 
-        log.info("createWeaponsFlywayMigration(): Finished!");
+        log.info("createFlywayMigration(): Finished!");
     }
 
     private static List<String[]> parseCsvFile() {
