@@ -21,7 +21,7 @@ public class GobletMainStatsConverter implements AttributeConverter<GobletMainSt
 
     @Override
     public GobletMainStats convertToEntityAttribute(String value) {
-        log.info("GobletMainStatsConverter: convertToEntityAttribute: {}", value);
+        log.info("convertToEntityAttribute: {}", value);
         if (value == null) {
             return null;
         }
