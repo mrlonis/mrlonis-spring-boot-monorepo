@@ -21,7 +21,7 @@ public class CircletMainStatsConverter implements AttributeConverter<CircletMain
 
     @Override
     public CircletMainStats convertToEntityAttribute(String value) {
-        log.info("CircletMainStatsConverter: convertToEntityAttribute: {}", value);
+        log.info("convertToEntityAttribute: {}", value);
         if (value == null) {
             return null;
         }
