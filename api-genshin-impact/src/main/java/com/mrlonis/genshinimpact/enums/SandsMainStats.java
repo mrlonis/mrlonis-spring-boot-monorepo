@@ -12,4 +12,9 @@ public enum SandsMainStats {
     private SandsMainStats(String label) {
         this.value = label;
     }
+
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
 }

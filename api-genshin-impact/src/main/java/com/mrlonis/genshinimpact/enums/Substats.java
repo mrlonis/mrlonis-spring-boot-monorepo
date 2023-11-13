@@ -13,4 +13,9 @@ public enum Substats {
     private Substats(String label) {
         this.value = label;
     }
+
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
 }

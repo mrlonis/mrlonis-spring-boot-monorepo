@@ -20,4 +20,9 @@ public enum WeaponSecondaryStats {
         this.value = label;
         this.csvValue = csvValue;
     }
+
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
 }

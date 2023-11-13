@@ -13,4 +13,9 @@ public enum CircletMainStats {
     private CircletMainStats(String label) {
         this.value = label;
     }
+
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
 }

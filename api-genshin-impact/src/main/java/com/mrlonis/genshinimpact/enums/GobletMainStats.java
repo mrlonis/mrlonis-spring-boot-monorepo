@@ -14,4 +14,9 @@ public enum GobletMainStats {
     private GobletMainStats(String label) {
         this.value = label;
     }
+
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
 }
