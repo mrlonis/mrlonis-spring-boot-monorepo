@@ -33,25 +33,34 @@ CREATE TABLE Artifacts (
 CREATE TABLE Characters (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
+    -- TODO: NOT NULL
     imageUrl VARCHAR(200),
     rarity INT NOT NULL,
-    weaponType VARCHAR(15) NOT NULL,
     elementId UUID NOT NULL,
-    sandsStatOne VARCHAR(50) NOT NULL,
+    weaponType VARCHAR(15) NOT NULL,
+    -- TODO: NOT NULL
+    sandsStatOne VARCHAR(50),
     sandsStatTwo VARCHAR(50),
-    gobletStatOne VARCHAR(50) NOT NULL,
+    -- TODO: NOT NULL
+    gobletStatOne VARCHAR(50),
     gobletStatTwo VARCHAR(50),
-    circletStatOne VARCHAR(50) NOT NULL,
+    -- TODO: NOT NULL
+    circletStatOne VARCHAR(50),
     circletStatTwo VARCHAR(50),
-    substatOne VARCHAR(50) NOT NULL,
-    substatTwo VARCHAR(50) NOT NULL,
-    substatThree VARCHAR(50) NOT NULL,
-    weaponOneId UUID NOT NULL,
+    -- TODO: NOT NULL
+    substatOne VARCHAR(50),
+    -- TODO: NOT NULL
+    substatTwo VARCHAR(50),
+    -- TODO: NOT NULL
+    substatThree VARCHAR(50),
+    -- TODO: NOT NULL
+    weaponOneId UUID,
     weaponTwoId UUID,
     weaponThreeId UUID,
     weaponFourId UUID,
     weaponFiveId UUID,
-    artifactSetOneIdFirst UUID NOT NULL,
+    -- TODO: NOT NULL
+    artifactSetOneIdFirst UUID,
     artifactSetOneIdSecond UUID,
     artifactSetTwoIdFirst UUID,
     artifactSetTwoIdSecond UUID,
