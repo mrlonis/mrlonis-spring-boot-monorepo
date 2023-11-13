@@ -3,12 +3,10 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-@Slf4j
 public class CircletMainStatsConverter implements AttributeConverter<CircletMainStats, String> {
 
     @Override
@@ -21,7 +19,6 @@ public class CircletMainStatsConverter implements AttributeConverter<CircletMain
 
     @Override
     public CircletMainStats convertToEntityAttribute(String value) {
-        log.info("convertToEntityAttribute: {}", value);
         if (value == null) {
             return null;
         }
