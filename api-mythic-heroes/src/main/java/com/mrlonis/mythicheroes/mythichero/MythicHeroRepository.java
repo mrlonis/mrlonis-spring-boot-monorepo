@@ -15,7 +15,10 @@ import java.util.UUID;
 public interface MythicHeroRepository extends PagingAndSortingRepository<MythicHero, UUID> {
     @RestResource(path = "findBy", rel = "findBy")
     Page<MythicHero> findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
-            @Param("name") String name, @Param("factionName") String factionName,
-            @Param("rarityName") String rarityName, @Param("typeName") String typeName, Pageable pageable);
+            @Param("name") String name,
+            @Param("factionName") String factionName,
+            @Param("rarityName") String rarityName,
+            @Param("typeName") String typeName,
+            Pageable pageable);
 
 }
