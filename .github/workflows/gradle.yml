@@ -10,8 +10,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: 'npm'
+          node-version: 18
 
       - name: Install newman
         run: npm install -g newman
