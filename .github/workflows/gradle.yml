@@ -29,5 +29,9 @@ jobs:
       - name: Run bootRun in the background
         run: ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &
 
+      - name: Wait for bootRun to start
+        run: sleep 10
+        shell: bash
+
       - name: Run newman
         run: newman run ./api-genshin-impact/newman/demo-genshin-impact-spring-boot.postman_collection.json -e ./api-genshin-impact/newman/demo-genshin-impact-spring-boot-local.postman_environment.json
