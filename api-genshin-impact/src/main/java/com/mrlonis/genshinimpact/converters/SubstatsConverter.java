@@ -3,12 +3,10 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.Substats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-@Slf4j
 public class SubstatsConverter implements AttributeConverter<Substats, String> {
 
     @Override
@@ -21,7 +19,6 @@ public class SubstatsConverter implements AttributeConverter<Substats, String> {
 
     @Override
     public Substats convertToEntityAttribute(String value) {
-        log.info("convertToEntityAttribute: {}", value);
         if (value == null) {
             return null;
         }
