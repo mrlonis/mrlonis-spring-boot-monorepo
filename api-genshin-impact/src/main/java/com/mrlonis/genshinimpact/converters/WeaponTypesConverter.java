@@ -3,12 +3,10 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.WeaponTypes;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-@Slf4j
 public class WeaponTypesConverter implements AttributeConverter<WeaponTypes, String> {
 
     @Override
