@@ -6,7 +6,15 @@ jobs:
   build-gradle-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install newman
+        run: npm install -g newman
 
       - uses: actions/setup-java@v3
         with:
@@ -18,3 +26,9 @@ jobs:
 
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
+
+      - name: Run bootRun in the background
+        run: ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &
+
+      - name: Run newman
+        run: newman run ./api-genshin-impact/newman/demo-genshin-impact-spring-boot.postman_collection.json -e ./api-genshin-impact/newman/demo-genshin-impact-spring-boot.postman_environment.json
