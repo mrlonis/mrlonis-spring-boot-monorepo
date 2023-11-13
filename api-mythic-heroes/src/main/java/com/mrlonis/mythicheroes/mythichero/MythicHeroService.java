@@ -18,7 +18,10 @@ public class MythicHeroService {
         }
 
         return this.mythicHeroRepository.findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
-                name != null ? name : "", factionName != null ? factionName : "", rarityName != null ? rarityName : "",
-                typeName != null ? typeName : "", page);
+                name != null ? name : "",
+                factionName != null ? factionName : "",
+                rarityName != null ? rarityName : "",
+                typeName != null ? typeName : "",
+                page);
     }
 }
