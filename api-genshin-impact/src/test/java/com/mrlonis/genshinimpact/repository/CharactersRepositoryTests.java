@@ -44,8 +44,16 @@ class CharactersRepositoryTests {
 
         List<Character> characters =
                 charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
-                        artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(),
-                        artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId());
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId());
         assertNotNull(characters);
         assertFalse(characters.isEmpty());
     }
