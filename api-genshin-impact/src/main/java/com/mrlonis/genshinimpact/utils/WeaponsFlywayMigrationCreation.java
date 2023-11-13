@@ -63,7 +63,7 @@ public class WeaponsFlywayMigrationCreation {
     }
 
     private static String createFileContents(List<String[]> csvFile) {
-        StringBuffer fileContents = new StringBuffer();
+        StringBuilder fileContents = new StringBuilder();
         fileContents.append("""
                             INSERT INTO Weapons (
                                     name,
