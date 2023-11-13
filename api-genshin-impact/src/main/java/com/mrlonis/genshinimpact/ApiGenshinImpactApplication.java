@@ -20,13 +20,6 @@ public class ApiGenshinImpactApplication implements WebMvcConfigurer {
         SpringApplication.run(ApiGenshinImpactApplication.class, args);
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/api/images/**")
-                .addResourceLocations("classpath:/images/")
-                .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
-    }
-
     public static void flywayMigrationCreation() {
         log.info("flywayMigrationCreation(): Starting...");
 
@@ -35,5 +28,12 @@ public class ApiGenshinImpactApplication implements WebMvcConfigurer {
         CharactersFlywayMigrationCreation.createFlywayMigration();
 
         log.info("flywayMigrationCreation(): Finished!");
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/api/images/**")
+                .addResourceLocations("classpath:/images/")
+                .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }
 }
