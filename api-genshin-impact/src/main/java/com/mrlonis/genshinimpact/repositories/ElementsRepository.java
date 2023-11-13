@@ -1,5 +1,6 @@
 package com.mrlonis.genshinimpact.repositories;
 
+import com.mrlonis.genshinimpact.entities.Artifact;
 import com.mrlonis.genshinimpact.entities.Element;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -15,7 +16,8 @@ import java.util.UUID;
 public interface ElementsRepository extends PagingAndSortingRepository<Element, UUID> {
     List<Element> findAll();
 
-    @RestResource(path = "findBy", rel = "findBy")
-    List<Element> findByNameIgnoreCaseContains(@Param("name") String name);
-}
+    Element findById(UUID id);
 
+    @RestResource(path = "findByName", rel = "findByName")
+    Element findByNameIgnoreCaseContains(@Param("name") String name);
+}

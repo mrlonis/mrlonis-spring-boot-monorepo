@@ -16,10 +16,12 @@ import java.util.UUID;
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "characters")
 @CrossOrigin(origins = "http://localhost:4200")
 public interface CharactersRepository extends PagingAndSortingRepository<Character, UUID> {
-    @NonNull Page<Character> findAll(@NonNull Pageable pageable);
+    List<Character> findAll();
 
-    @RestResource(path = "findBy", rel = "findBy")
-    Page<Character> findByNameIgnoreCaseContains(@Param("name") String name, Pageable pageable);
+    Character findById(UUID id);
+
+    @RestResource(path = "findByName", rel = "findByName")
+    Character findByNameIgnoreCaseContains(@Param("name") String name);
 
     @RestResource(path = "findByArtifactSet", rel = "findByArtifactSet")
     List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(

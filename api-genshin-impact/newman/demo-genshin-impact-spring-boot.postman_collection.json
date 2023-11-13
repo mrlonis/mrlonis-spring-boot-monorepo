@@ -1,341 +1,947 @@
 {
-  "info": {
-    "_postman_id": "39680cb9-8524-4656-a5db-59de2257cd82",
-    "name": "demo-genshin-impact-spring-boot",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Spring Data Rest",
-      "item": [
-        {
-          "name": "characters",
-          "item": [
-            {
-              "name": "findAll",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "exec": [
-                      "pm.test(\"Response Status Code is 200\", function(){\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Content-Type is application/pdf\", function () {\r",
-                      "    pm.response.to.have.header(\"Content-Type\");\r",
-                      "    \r",
-                      "    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
-                      "    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response Body have default page size number of heroes\", function () {\r",
-                      "    const responseJson = pm.response.json();\r",
-                      "    pm.expect(responseJson._embedded.data.length).to.eql(20);\r",
-                      "});"
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/characters?page=0&size=0",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "characters"
-                  ],
-                  "query": [
-                    {
-                      "key": "page",
-                      "value": "0"
-                    },
-                    {
-                      "key": "size",
-                      "value": "0"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "findBy",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/characters/search/findBy?name=Kamisato Ayaka&page=0&size=100&sort=name,asc",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "characters",
-                    "search",
-                    "findBy"
-                  ],
-                  "query": [
-                    {
-                      "key": "name",
-                      "value": "Kamisato Ayaka"
-                    },
-                    {
-                      "key": "page",
-                      "value": "0"
-                    },
-                    {
-                      "key": "size",
-                      "value": "100"
-                    },
-                    {
-                      "key": "sort",
-                      "value": "name,asc"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
-          "name": "element",
-          "item": [
-            {
-              "name": "findAll",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/elements?page=0&size=50&sort=name",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "elements"
-                  ],
-                  "query": [
-                    {
-                      "key": "page",
-                      "value": "0"
-                    },
-                    {
-                      "key": "size",
-                      "value": "50"
-                    },
-                    {
-                      "key": "sort",
-                      "value": "name"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "findByName",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/elements/search/findBy?name=Anemo",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "elements",
-                    "search",
-                    "findBy"
-                  ],
-                  "query": [
-                    {
-                      "key": "name",
-                      "value": "Anemo"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
-          "name": "weapon",
-          "item": [
-            {
-              "name": "findAll",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/weapons?page=0&size=50&sort=name",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "weapons"
-                  ],
-                  "query": [
-                    {
-                      "key": "page",
-                      "value": "0"
-                    },
-                    {
-                      "key": "size",
-                      "value": "50"
-                    },
-                    {
-                      "key": "sort",
-                      "value": "name"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "findByName",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/weapons/search/findBy?name=Amenoma Kageuchi",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "weapons",
-                    "search",
-                    "findBy"
-                  ],
-                  "query": [
-                    {
-                      "key": "name",
-                      "value": "Amenoma Kageuchi"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
-          "name": "artifact set",
-          "item": [
-            {
-              "name": "findAll",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/artifact-sets?page=0&size=50&sort=name",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "artifact-sets"
-                  ],
-                  "query": [
-                    {
-                      "key": "page",
-                      "value": "0"
-                    },
-                    {
-                      "key": "size",
-                      "value": "50"
-                    },
-                    {
-                      "key": "sort",
-                      "value": "name"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "findByName",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/artifact-sets/search/findBy?name=Adventurer",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "artifact-sets",
-                    "search",
-                    "findBy"
-                  ],
-                  "query": [
-                    {
-                      "key": "name",
-                      "value": "Adventurer"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
-          "name": "images",
-          "item": [
-            {
-              "name": "Get Image",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "{{hostname}}/api/images/characters/Ayaka.png",
-                  "host": [
-                    "{{hostname}}"
-                  ],
-                  "path": [
-                    "api",
-                    "images",
-                    "characters",
-                    "Ayaka.png"
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "List API Details",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{hostname}}/api",
-          "host": [
-            "{{hostname}}"
-          ],
-          "path": [
-            "api"
-          ]
-        }
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "39680cb9-8524-4656-a5db-59de2257cd82",
+		"name": "demo-genshin-impact-spring-boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10017040"
+	},
+	"item": [
+		{
+			"name": "Spring Data Rest",
+			"item": [
+				{
+					"name": "artifacts",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/artifacts?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"artifacts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Artifact ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testArtifactId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/artifacts/search/findByName?name=Blizzard Strayer",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"artifacts",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Blizzard Strayer"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Artifact ID Is Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/artifacts/{{testArtifactId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"artifacts",
+										"{{testArtifactId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "characters",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testCharacterId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/search/findByName?name=Kamisato Ayaka",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Kamisato Ayaka"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/{{testCharacterId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"{{testCharacterId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "element",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/elements?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"elements"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Element ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testElementId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/elements/search/findByName?name=Anemo",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"elements",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Anemo"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Element ID Is Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/elements/{{testElementId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"elements",
+										"{{testElementId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "weapon",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons?page=0&size=0&sort=name",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Weapon ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testWeaponId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons/search/findByName?name=Amenoma Kageuchi",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Amenoma Kageuchi"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Weapon ID Is Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons/{{testWeaponId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons",
+										"{{testWeaponId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByWeaponType",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons/search/findByWeaponType?weaponType=Sword",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons",
+										"search",
+										"findByWeaponType"
+									],
+									"query": [
+										{
+											"key": "weaponType",
+											"value": "Sword"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "images",
+					"item": [
+						{
+							"name": "Get Character Image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/images/:type/:fimename",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"images",
+										":type",
+										":fimename"
+									],
+									"variable": [
+										{
+											"key": "type",
+											"value": "characters"
+										},
+										{
+											"key": "fimename",
+											"value": "Ayaka.png"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Element Image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/images/:type/:fimename",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"images",
+										":type",
+										":fimename"
+									],
+									"variable": [
+										{
+											"key": "type",
+											"value": "elements"
+										},
+										{
+											"key": "fimename",
+											"value": "Pyro.svg"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Api",
+			"item": [
+				{
+					"name": "artifacts",
+					"item": [
+						{
+							"name": "Get All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifacts",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifact?id={{testArtifactId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifact"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{testArtifactId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Characters",
+					"item": [
+						{
+							"name": "Get All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/characters",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"characters"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Artifact Breakdown",
+					"item": [
+						{
+							"name": "Get Artifact Breakdown",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifactBreakdown?artifactId={{testArtifactId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifactBreakdown"
+									],
+									"query": [
+										{
+											"key": "artifactId",
+											"value": "{{testArtifactId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Actuator",
+			"item": [
+				{
+					"name": "Actuator Mappings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Status Code is 200\", function(){",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/actuator/mappings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"actuator",
+								"mappings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List API Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response Status Code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }

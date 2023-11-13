@@ -1,15 +1,17 @@
 package com.mrlonis.genshinimpact.enums;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
-@Getter
 public enum WeaponSecondaryStats {
     HEALTH_PERCENT("HP%", "HP%"), ATTACK_PERCENT("ATK%", "Atk%"), DEFENSE_PERCENT("DEF%", "Def%"),
     ENERGY_RECHARGE("Energy Recharge", "ER%"), ELEMENTAL_MASTERY("Elemental Mastery", "EM"),
     CRITICAL_RATE("CRIT Rate", "CrR%"), CRITICAL_DAMAGE("CRIT DMG", "CrD%"),
     PHYSICAL_DAMAGE_BONUS("Physical DMG Bonus", "Phys%");
 
+    @Getter(onMethod_ = @JsonValue)
     private final String value;
+    @Getter
     private final String csvValue;
 
     private WeaponSecondaryStats(String label, String csvValue) {

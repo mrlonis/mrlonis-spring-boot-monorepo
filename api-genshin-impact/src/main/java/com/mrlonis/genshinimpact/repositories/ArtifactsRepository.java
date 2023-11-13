@@ -15,10 +15,8 @@ import java.util.UUID;
 public interface ArtifactsRepository extends PagingAndSortingRepository<Artifact, UUID> {
     List<Artifact> findAll();
 
-    @RestResource(path = "findById", rel = "findById")
-    Artifact findById(@Param("id") UUID id);
+    Artifact findById(UUID id);
 
-    @RestResource(path = "findBy", rel = "findBy")
+    @RestResource(path = "findByName", rel = "findByName")
     Artifact findByNameIgnoreCaseContains(@Param("name") String name);
 }
-

@@ -1,5 +1,7 @@
 package com.mrlonis.genshinimpact.utils;
 
+import com.mrlonis.genshinimpact.converters.GobletMainStatsConverter;
+import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.enums.CSVReaderNullFieldIndicator;
@@ -146,16 +148,18 @@ public class CharactersFlywayMigrationCreation {
                                               whitespace,
                                               row[6] != null ? String.format("'%s'", row[6].replace("'", "''")) :
                                               "NULL"));
+            GobletMainStats gobletMainStatOne = GobletMainStatsConverter.convertToEntityAttributeFromCsvValue(row[7]);
             fileContents.append(String.format("%s-- gobletStatOne%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[7] != null ? String.format("'%s'", row[7].replace("'", "''")) :
-                                              "NULL"));
+                                              gobletMainStatOne != null ?
+                                              String.format("'%s'",gobletMainStatOne.getValue()) : "NULL"));
+            GobletMainStats gobletMainStatTwo = GobletMainStatsConverter.convertToEntityAttributeFromCsvValue(row[8]);
             fileContents.append(String.format("%s-- gobletStatTwo%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[8] != null ? String.format("'%s'", row[8].replace("'", "''")) :
-                                              "NULL"));
+                                              gobletMainStatTwo != null ?
+                                              String.format("'%s'",gobletMainStatTwo.getValue()) : "NULL"));
             fileContents.append(String.format("%s-- circletStatOne%n%s%s,%n",
                                               whitespace,
                                               whitespace,

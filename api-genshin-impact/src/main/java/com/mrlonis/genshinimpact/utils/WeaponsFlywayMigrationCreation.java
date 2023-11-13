@@ -1,6 +1,7 @@
 package com.mrlonis.genshinimpact.utils;
 
 import com.mrlonis.genshinimpact.converters.WeaponSecondaryStatsConverter;
+import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.enums.CSVReaderNullFieldIndicator;
@@ -109,13 +110,12 @@ public class WeaponsFlywayMigrationCreation {
                                               whitespace,
                                               row[3] != null ? String.format("'%s'", row[3].replace("'", "''")) :
                                               "NULL"));
+            WeaponSecondaryStats weaponSecondaryStat = WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(row[4]);
             fileContents.append(String.format("%s-- secondaryStat%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[4] != null ? String.format("'%s'",
-                                                                             WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(
-                                                                                                                  row[4].replace("'", "''"))
-                                                                                                          .getValue()) :
+                                              weaponSecondaryStat != null ? String.format("'%s'",
+                                                                                          weaponSecondaryStat.getValue()) :
                                               "NULL"));
             fileContents.append(String.format("%s-- weaponAffix%n%s%s,%n",
                                               whitespace,

@@ -15,7 +15,11 @@ import java.util.UUID;
 public interface WeaponsRepository extends PagingAndSortingRepository<Weapon, UUID> {
     List<Weapon> findAll();
 
-    @RestResource(path = "findBy", rel = "findBy")
-    List<Weapon> findByNameIgnoreCaseContains(@Param("name") String name);
-}
+    Weapon findById(UUID id);
 
+    @RestResource(path = "findByName", rel = "findByName")
+    Weapon findByNameIgnoreCaseContains(@Param("name") String name);
+
+    @RestResource(path = "findByWeaponType", rel = "findByWeaponType")
+    List<Weapon> findByWeaponTypeIgnoreCaseContains(@Param("weaponType") String weaponType);
+}
