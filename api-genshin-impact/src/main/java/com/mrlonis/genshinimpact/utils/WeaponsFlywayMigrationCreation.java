@@ -49,8 +49,7 @@ public class WeaponsFlywayMigrationCreation {
 
     private static List<String[]> readCsvFile(BufferedReader bufferedReader) {
         try (CSVReader csvReader = new CSVReaderBuilder(bufferedReader).withSkipLines(1)
-                                                                       .withFieldAsNull(
-                                                                               CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
+                                                                       .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
                                                                        .build()) {
             return csvReader.readAll();
         } catch (CsvException e) {
@@ -80,42 +79,57 @@ public class WeaponsFlywayMigrationCreation {
         for (int i = 0; i < csvFile.size(); i++) {
             String[] row = csvFile.get(i);
             if (row.length != 8) {
-                String errorMessage =
-                        String.format("createFileContents(): Row %s size is not 8 and was instead %s! row: %s", i,
-                                      row.length, Arrays.toString(row));
+                String errorMessage = String.format(
+                        "createFileContents(): Row %s size is not 8 and was instead %s! row: %s",
+                        i,
+                        row.length,
+                        Arrays.toString(row));
                 log.error(errorMessage);
                 throw new RuntimeException(errorMessage);
             }
 
             String whitespace = " ".repeat(8);
             String parenthesisWhitespace = " ".repeat(4);
-            fileContents.append(String.format("%s-- name%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- name%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[0] != null ? String.format("'%s'", row[0].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- imageUrl%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- imageUrl%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[1] != null ? String.format("'%s'", row[1].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- rarity%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- rarity%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[2] != null ? row[2].replace("'", "''") : "NULL"));
-            fileContents.append(String.format("%s-- weaponType%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- weaponType%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[3] != null ? String.format("'%s'", row[3].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- secondaryStat%n%s%s,%n", whitespace, whitespace, row[4] != null ?
-                                                                                                     String.format(
-                                                                                                             "'%s'",
-                                                                                                             WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(
-                                                                                                                                                  row[4].replace(
-                                                                                                                                                          "'",
-                                                                                                                                                          "''"))
-                                                                                                                                          .getValue()) :
-                                                                                                     "NULL"));
-            fileContents.append(String.format("%s-- weaponAffix%n%s%s,%n", whitespace, whitespace,
-                                                row[5] != null ? String.format("'%s'", row[5].replace("'", "''")) :
-                                                "NULL"));
-            fileContents.append(String.format("%s-- affixDescription%n%s%s,%n", whitespace, whitespace,
-                                                row[6] != null ? String.format("'%s'", row[6].replace("'", "''")) :
-                                                "NULL"));
-            fileContents.append(String.format("%s-- description%n%s%s%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- secondaryStat%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
+                                              row[4] != null ? String.format("'%s'",
+                                                                             WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(
+                                                                                                                  row[4].replace("'", "''"))
+                                                                                                          .getValue()) :
+                                              "NULL"));
+            fileContents.append(String.format("%s-- weaponAffix%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
+                                              row[5] != null ? String.format("'%s'", row[5].replace("'", "''")) :
+                                              "NULL"));
+            fileContents.append(String.format("%s-- affixDescription%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
+                                              row[6] != null ? String.format("'%s'", row[6].replace("'", "''")) :
+                                              "NULL"));
+            fileContents.append(String.format("%s-- description%n%s%s%n",
+                                              whitespace,
+                                              whitespace,
                                               row[7] != null ? String.format("'%s'", row[7].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));
@@ -130,8 +144,8 @@ public class WeaponsFlywayMigrationCreation {
 
     private static void writeMigrationFile(String fileContents) {
         try {
-            BufferedWriter writer = new BufferedWriter(
-                    new FileWriter("src/main/resources/db/migration/h2/V1_1_1__Create_Weapons_Data.sql"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(
+                    "src/main/resources/db/migration/h2/V1_1_1__Create_Weapons_Data.sql"));
             writer.write(fileContents);
 
             writer.close();
