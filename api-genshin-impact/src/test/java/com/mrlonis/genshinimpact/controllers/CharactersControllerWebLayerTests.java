@@ -40,21 +40,31 @@ class CharactersControllerWebLayerTests {
 
     @Test
     void shouldReturnAllCharacters() throws Exception {
-        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
-                List.of(Character.builder()
-                                 .name("Test")
-                                 .imageUrl("Test")
-                                 .weaponType(WeaponTypes.BOW)
-                                 .elementId(UUID.randomUUID())
-                                 .sandsStatOne(SandsMainStats.ENERGY_RECHARGE)
-                                 .gobletStatOne(GobletMainStats.ANEMO_DAMAGE_BONUS)
-                                 .circletStatOne(CircletMainStats.ATTACK_PERCENT)
-                                 .substatOne(Substats.ATTACK_FLAT)
-                                 .substatTwo(Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
-                                 .substatThree(Substats.HEALTH_PERCENT)
-                                 .weaponOneId(UUID.randomUUID())
-                                 .artifactSetOneIdFirst(UUID.randomUUID())
-                                 .build())));
+        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(List.of(Character.builder()
+                                                                                                                   .name("Test")
+                                                                                                                   .imageUrl(
+                                                                                                                           "Test")
+                                                                                                                   .weaponType(
+                                                                                                                           WeaponTypes.BOW)
+                                                                                                                   .elementId(
+                                                                                                                           UUID.randomUUID())
+                                                                                                                   .sandsStatOne(
+                                                                                                                           SandsMainStats.ENERGY_RECHARGE)
+                                                                                                                   .gobletStatOne(
+                                                                                                                           GobletMainStats.ANEMO_DAMAGE_BONUS)
+                                                                                                                   .circletStatOne(
+                                                                                                                           CircletMainStats.ATTACK_PERCENT)
+                                                                                                                   .substatOne(
+                                                                                                                           Substats.ATTACK_FLAT)
+                                                                                                                   .substatTwo(
+                                                                                                                           Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
+                                                                                                                   .substatThree(
+                                                                                                                           Substats.HEALTH_PERCENT)
+                                                                                                                   .weaponOneId(
+                                                                                                                           UUID.randomUUID())
+                                                                                                                   .artifactSetOneIdFirst(
+                                                                                                                           UUID.randomUUID())
+                                                                                                                   .build())));
         this.mockMvc.perform(get("/api/v2/characters"))
                     .andDo(print())
                     .andExpect(status().isOk())
@@ -63,21 +73,31 @@ class CharactersControllerWebLayerTests {
 
     @Test
     void shouldReturnAllCharacters_v2() throws Exception {
-        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(
-                List.of(Character.builder()
-                                 .name("Test")
-                                 .imageUrl("Test")
-                                 .weaponType(WeaponTypes.BOW)
-                                 .elementId(UUID.randomUUID())
-                                 .sandsStatOne(SandsMainStats.ENERGY_RECHARGE)
-                                 .gobletStatOne(GobletMainStats.ANEMO_DAMAGE_BONUS)
-                                 .circletStatOne(CircletMainStats.ATTACK_PERCENT)
-                                 .substatOne(Substats.ATTACK_FLAT)
-                                 .substatTwo(Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
-                                 .substatThree(Substats.HEALTH_PERCENT)
-                                 .weaponOneId(UUID.randomUUID())
-                                 .artifactSetOneIdFirst(UUID.randomUUID())
-                                 .build())));
+        when(charactersRepository.findAll(Mockito.any(Pageable.class))).thenReturn(new PageImpl<>(List.of(Character.builder()
+                                                                                                                   .name("Test")
+                                                                                                                   .imageUrl(
+                                                                                                                           "Test")
+                                                                                                                   .weaponType(
+                                                                                                                           WeaponTypes.BOW)
+                                                                                                                   .elementId(
+                                                                                                                           UUID.randomUUID())
+                                                                                                                   .sandsStatOne(
+                                                                                                                           SandsMainStats.ENERGY_RECHARGE)
+                                                                                                                   .gobletStatOne(
+                                                                                                                           GobletMainStats.ANEMO_DAMAGE_BONUS)
+                                                                                                                   .circletStatOne(
+                                                                                                                           CircletMainStats.ATTACK_PERCENT)
+                                                                                                                   .substatOne(
+                                                                                                                           Substats.ATTACK_FLAT)
+                                                                                                                   .substatTwo(
+                                                                                                                           Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
+                                                                                                                   .substatThree(
+                                                                                                                           Substats.HEALTH_PERCENT)
+                                                                                                                   .weaponOneId(
+                                                                                                                           UUID.randomUUID())
+                                                                                                                   .artifactSetOneIdFirst(
+                                                                                                                           UUID.randomUUID())
+                                                                                                                   .build())));
         ResultActions result = this.mockMvc.perform(get("/api/v2/characters"));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
