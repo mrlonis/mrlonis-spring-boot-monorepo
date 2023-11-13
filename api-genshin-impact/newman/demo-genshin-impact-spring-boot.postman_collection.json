@@ -283,6 +283,68 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "findByArtifactSet",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/search/findByArtifactSet?artifactSetOneIdFirst={{testArtifactId}}&artifactSetOneIdSecond={{testArtifactId}}&artifactSetTwoIdFirst={{testArtifactId}}&artifactSetTwoIdSecond={{testArtifactId}}&artifactSetThreeIdFirst={{testArtifactId}}&artifactSetThreeIdSecond={{testArtifactId}}&artifactSetFourIdFirst={{testArtifactId}}&artifactSetFourIdSecond={{testArtifactId}}&artifactSetFiveIdFirst={{testArtifactId}}&artifactSetFiveIdSecond={{testArtifactId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"search",
+										"findByArtifactSet"
+									],
+									"query": [
+										{
+											"key": "artifactSetOneIdFirst",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetOneIdSecond",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetTwoIdFirst",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetTwoIdSecond",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetThreeIdFirst",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetThreeIdSecond",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetFourIdFirst",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetFourIdSecond",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetFiveIdFirst",
+											"value": "{{testArtifactId}}"
+										},
+										{
+											"key": "artifactSetFiveIdSecond",
+											"value": "{{testArtifactId}}"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
