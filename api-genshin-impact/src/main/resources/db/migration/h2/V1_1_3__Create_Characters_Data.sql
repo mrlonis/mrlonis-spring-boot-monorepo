@@ -188,35 +188,83 @@ VALUES (
         -- substatFour
         'Energy Recharge',
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Primordial Jade Cutter'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Freedom-Sworn'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Mistsplitter Reforged'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Haran Geppaku Futsu'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Amenoma Kageuchi'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Ocean-Hued Clam'
+        ),
         -- artifactSetThreeIdSecond
         NULL,
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        )
     ),
     (
         -- name
