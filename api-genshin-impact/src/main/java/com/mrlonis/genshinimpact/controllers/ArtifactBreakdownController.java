@@ -47,8 +47,16 @@ public class ArtifactBreakdownController {
 
         List<Character> characters =
                 charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
-                        artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(),
-                        artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId());
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId(),
+                        artifact.getId());
 
         if (characters == null || characters.isEmpty()) {
             log.info("No Characters use artifact: {}", artifact.getName());
