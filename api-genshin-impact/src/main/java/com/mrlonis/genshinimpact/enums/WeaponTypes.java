@@ -4,11 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum WeaponTypes {
-    SWORD("Sword"),
-    CLAYMORE("Claymore"),
-    POLEARM("Polearm"),
-    BOW("Bow"),
-    CATALYST("Catalyst");
+    SWORD("Sword"), CLAYMORE("Claymore"), POLEARM("Polearm"), BOW("Bow"), CATALYST("Catalyst");
 
     private final String value;
 
