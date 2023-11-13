@@ -46,59 +46,59 @@ public class Character implements IBaseEntity, Serializable {
     private String name;
 
     @Column(name = "imageUrl")
-    @NonNull
+    // TODO - @NonNull
     private String imageUrl;
 
     @Column(name = "rarity")
     private int rarity;
 
-    @Column(name = "weaponType")
-    @NonNull
-    private WeaponTypes weaponType;
-
     @Column(name = "elementId")
     @NonNull
     private UUID elementId;
+
+    @Column(name = "weaponType")
+    @NonNull
+    private WeaponTypes weaponType;
 
     @ManyToOne
     @JoinColumn(name = "elementId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private Element element;
 
     @Column(name = "sandsStatOne")
-    @NonNull
+    // TODO - @NonNull
     private SandsMainStats sandsStatOne;
 
     @Column(name = "sandsStatTwo")
     private SandsMainStats sandsStatTwo;
 
     @Column(name = "gobletStatOne")
-    @NonNull
+    // TODO - @NonNull
     private GobletMainStats gobletStatOne;
 
     @Column(name = "gobletStatTwo")
     private GobletMainStats gobletStatTwo;
 
     @Column(name = "circletStatOne")
-    @NonNull
+    // TODO - @NonNull
     private CircletMainStats circletStatOne;
 
     @Column(name = "circletStatTwo")
     private CircletMainStats circletStatTwo;
 
     @Column(name = "substatOne")
-    @NonNull
+    // TODO - @NonNull
     private Substats substatOne;
 
     @Column(name = "substatTwo")
-    @NonNull
+    // TODO - @NonNull
     private Substats substatTwo;
 
     @Column(name = "substatThree")
-    @NonNull
+    // TODO - @NonNull
     private Substats substatThree;
 
     @Column(name = "weaponOneId")
-    @NonNull
+    // TODO - @NonNull
     private UUID weaponOneId;
 
     @ManyToOne
@@ -134,7 +134,7 @@ public class Character implements IBaseEntity, Serializable {
     private Weapon weaponFive;
 
     @Column(name = "artifactSetOneIdFirst")
-    @NonNull
+    // TODO - @NonNull
     private UUID artifactSetOneIdFirst;
 
     @ManyToOne
