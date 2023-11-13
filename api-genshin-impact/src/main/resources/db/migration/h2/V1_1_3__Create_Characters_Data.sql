@@ -2,6 +2,7 @@ INSERT INTO Characters (
         name,
         imageUrl,
         rarity,
+        weaponType,
         elementId,
         sandsStatOne,
         sandsStatTwo,
@@ -32,6 +33,7 @@ VALUES (
         'Kamisato Ayaka',
         'characters/Ayaka.png',
         5,
+        'Sword',
         (
             SELECT id
             FROM Elements

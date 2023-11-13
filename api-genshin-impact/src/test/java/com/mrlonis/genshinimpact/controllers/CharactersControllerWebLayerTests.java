@@ -5,6 +5,7 @@ import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
+import com.mrlonis.genshinimpact.enums.WeaponTypes;
 import com.mrlonis.genshinimpact.repositories.CharactersRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -43,6 +44,7 @@ class CharactersControllerWebLayerTests {
                 List.of(Character.builder()
                                  .name("Test")
                                  .imageUrl("Test")
+                                 .weaponType(WeaponTypes.BOW)
                                  .elementId(UUID.randomUUID())
                                  .sandsStatOne(SandsMainStats.ENERGY_RECHARGE)
                                  .gobletStatOne(GobletMainStats.ANEMO_DAMAGE_BONUS)
@@ -65,6 +67,7 @@ class CharactersControllerWebLayerTests {
                 List.of(Character.builder()
                                  .name("Test")
                                  .imageUrl("Test")
+                                 .weaponType(WeaponTypes.BOW)
                                  .elementId(UUID.randomUUID())
                                  .sandsStatOne(SandsMainStats.ENERGY_RECHARGE)
                                  .gobletStatOne(GobletMainStats.ANEMO_DAMAGE_BONUS)

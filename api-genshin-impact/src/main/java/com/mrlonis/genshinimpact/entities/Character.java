@@ -4,6 +4,7 @@ import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
+import com.mrlonis.genshinimpact.enums.WeaponTypes;
 import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -50,6 +51,10 @@ public class Character implements IBaseEntity, Serializable {
 
     @Column(name = "rarity")
     private int rarity;
+
+    @Column(name = "weaponType")
+    @NonNull
+    private WeaponTypes weaponType;
 
     @Column(name = "elementId")
     @NonNull

@@ -35,6 +35,7 @@ CREATE TABLE Characters (
     name VARCHAR(50) NOT NULL,
     imageUrl VARCHAR(200),
     rarity INT NOT NULL,
+    weaponType VARCHAR(15) NOT NULL,
     elementId UUID NOT NULL,
     sandsStatOne VARCHAR(50) NOT NULL,
     sandsStatTwo VARCHAR(50),
