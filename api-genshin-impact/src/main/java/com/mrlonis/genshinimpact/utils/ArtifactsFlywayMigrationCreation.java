@@ -62,7 +62,7 @@ public class ArtifactsFlywayMigrationCreation {
     }
 
     private static String createFileContents(List<String[]> csvFile) {
-        StringBuffer fileContents = new StringBuffer();
+        StringBuilder fileContents = new StringBuilder();
         fileContents.append("""
                             INSERT INTO Artifacts (
                                     name,
