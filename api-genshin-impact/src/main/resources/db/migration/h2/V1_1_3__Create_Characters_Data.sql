@@ -13,6 +13,7 @@ INSERT INTO Characters (
         substatOne,
         substatTwo,
         substatThree,
+        substatFour,
         weaponOneId,
         weaponTwoId,
         weaponThreeId,
@@ -62,6 +63,8 @@ VALUES (
         'ATK%',
         -- substatThree
         'Energy Recharge',
+        -- substatFour
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -165,23 +168,25 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        NULL,
+        'ATK%',
         -- sandsStatTwo
-        NULL,
+        'Energy Recharge',
         -- gobletStatOne
-        NULL,
+        'Anemo DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate',
         -- circletStatTwo
-        NULL,
+        'CRIT DMG',
         -- substatOne
-        NULL,
+        'CRIT Rate',
         -- substatTwo
-        NULL,
+        'CRIT DMG',
         -- substatThree
-        NULL,
+        'ATK%',
+        -- substatFour
+        'Energy Recharge',
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -245,6 +250,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -310,6 +317,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -373,6 +382,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -438,6 +449,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -501,6 +514,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -566,6 +581,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -629,6 +646,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -694,6 +713,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -757,6 +778,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -822,6 +845,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -885,6 +910,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -950,6 +977,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1013,6 +1042,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1078,6 +1109,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1141,6 +1174,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1206,6 +1241,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1269,6 +1306,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1334,6 +1373,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1397,6 +1438,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1462,6 +1505,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1525,6 +1570,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1590,6 +1637,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1653,6 +1702,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1718,6 +1769,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1781,6 +1834,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1846,6 +1901,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -1909,6 +1966,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -1974,6 +2033,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2037,6 +2098,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2102,6 +2165,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2165,6 +2230,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2230,6 +2297,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2293,6 +2362,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2358,6 +2429,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2421,6 +2494,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2486,6 +2561,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2549,6 +2626,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2614,6 +2693,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2677,6 +2758,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2742,6 +2825,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2805,6 +2890,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2870,6 +2957,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -2933,6 +3022,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -2998,6 +3089,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3061,6 +3154,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3126,6 +3221,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3189,6 +3286,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3254,6 +3353,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3317,6 +3418,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3382,6 +3485,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3445,6 +3550,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3510,6 +3617,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3573,6 +3682,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3638,6 +3749,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3701,6 +3814,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3766,6 +3881,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3829,6 +3946,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -3894,6 +4013,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -3957,6 +4078,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4022,6 +4145,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4085,6 +4210,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4150,6 +4277,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4213,6 +4342,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4278,6 +4409,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4341,6 +4474,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4406,6 +4541,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4469,6 +4606,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4534,6 +4673,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4597,6 +4738,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4662,6 +4805,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4725,6 +4870,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4790,6 +4937,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4853,6 +5002,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -4918,6 +5069,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -4981,6 +5134,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -5046,6 +5201,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -5109,6 +5266,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,
@@ -5174,6 +5333,8 @@ VALUES (
         NULL,
         -- substatThree
         NULL,
+        -- substatFour
+        NULL,
         -- weaponOneId
         NULL,
         -- weaponTwoId
@@ -5237,6 +5398,8 @@ VALUES (
         -- substatTwo
         NULL,
         -- substatThree
+        NULL,
+        -- substatFour
         NULL,
         -- weaponOneId
         NULL,

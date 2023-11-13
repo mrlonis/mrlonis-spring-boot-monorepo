@@ -53,6 +53,7 @@ CREATE TABLE Characters (
     substatTwo VARCHAR(50),
     -- TODO: NOT NULL
     substatThree VARCHAR(50),
+    substatFour VARCHAR(50),
     -- TODO: NOT NULL
     weaponOneId UUID,
     weaponTwoId UUID,

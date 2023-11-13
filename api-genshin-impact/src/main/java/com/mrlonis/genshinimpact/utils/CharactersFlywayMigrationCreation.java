@@ -80,6 +80,7 @@ public class CharactersFlywayMigrationCreation {
                                     substatOne,
                                     substatTwo,
                                     substatThree,
+                                    substatFour,
                                     weaponOneId,
                                     weaponTwoId,
                                     weaponThreeId,
@@ -100,9 +101,9 @@ public class CharactersFlywayMigrationCreation {
                             """);
         for (int i = 0; i < csvFile.size(); i++) {
             String[] row = csvFile.get(i);
-            if (row.length != 29) {
+            if (row.length != 30) {
                 String errorMessage = String.format(
-                        "createFileContents(): Row %s size is not 29 and was instead %s! row: %s",
+                        "createFileContents(): Row %s size is not 30 and was instead %s! row: %s",
                         i,
                         row.length,
                         Arrays.toString(row));
@@ -185,15 +186,12 @@ public class CharactersFlywayMigrationCreation {
                                               whitespace,
                                               row[13] != null ? String.format("'%s'", row[13].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- weaponOneId%n%s%s,%n",
+            fileContents.append(String.format("%s-- substatFour%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[14] != null ? buildSubQuery("Weapons",
-                                                                              String.format("'%s'",
-                                                                                            row[14].replace("'",
-                                                                                                            "''"))) :
+                                              row[14] != null ? String.format("'%s'", row[14].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- weaponTwoId%n%s%s,%n",
+            fileContents.append(String.format("%s-- weaponOneId%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[15] != null ? buildSubQuery("Weapons",
@@ -201,7 +199,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[15].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- weaponThreeId%n%s%s,%n",
+            fileContents.append(String.format("%s-- weaponTwoId%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[16] != null ? buildSubQuery("Weapons",
@@ -209,7 +207,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[16].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- weaponFourId%n%s%s,%n",
+            fileContents.append(String.format("%s-- weaponThreeId%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[17] != null ? buildSubQuery("Weapons",
@@ -217,7 +215,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[17].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- weaponFiveId%n%s%s,%n",
+            fileContents.append(String.format("%s-- weaponFourId%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[18] != null ? buildSubQuery("Weapons",
@@ -225,15 +223,15 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[18].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetOneIdFirst%n%s%s,%n",
+            fileContents.append(String.format("%s-- weaponFiveId%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[19] != null ? buildSubQuery("Artifacts",
+                                              row[19] != null ? buildSubQuery("Weapons",
                                                                               String.format("'%s'",
                                                                                             row[19].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetOneIdSecond%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetOneIdFirst%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[20] != null ? buildSubQuery("Artifacts",
@@ -241,7 +239,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[20].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetTwoIdFirst%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetOneIdSecond%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[21] != null ? buildSubQuery("Artifacts",
@@ -249,7 +247,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[21].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetTwoIdSecond%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetTwoIdFirst%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[22] != null ? buildSubQuery("Artifacts",
@@ -257,7 +255,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[22].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetThreeIdFirst%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetTwoIdSecond%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[23] != null ? buildSubQuery("Artifacts",
@@ -265,7 +263,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[23].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetThreeIdSecond%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetThreeIdFirst%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[24] != null ? buildSubQuery("Artifacts",
@@ -273,7 +271,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[24].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetFourIdFirst%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetThreeIdSecond%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[25] != null ? buildSubQuery("Artifacts",
@@ -281,7 +279,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[25].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetFourIdSecond%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetFourIdFirst%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[26] != null ? buildSubQuery("Artifacts",
@@ -289,7 +287,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[26].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetFiveIdFirst%n%s%s,%n",
+            fileContents.append(String.format("%s-- artifactSetFourIdSecond%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[27] != null ? buildSubQuery("Artifacts",
@@ -297,12 +295,20 @@ public class CharactersFlywayMigrationCreation {
                                                                                             row[27].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- artifactSetFiveIdSecond%n%s%s%n",
+            fileContents.append(String.format("%s-- artifactSetFiveIdFirst%n%s%s,%n",
                                               whitespace,
                                               whitespace,
                                               row[28] != null ? buildSubQuery("Artifacts",
                                                                               String.format("'%s'",
                                                                                             row[28].replace("'",
+                                                                                                            "''"))) :
+                                              "NULL"));
+            fileContents.append(String.format("%s-- artifactSetFiveIdSecond%n%s%s%n",
+                                              whitespace,
+                                              whitespace,
+                                              row[29] != null ? buildSubQuery("Artifacts",
+                                                                              String.format("'%s'",
+                                                                                            row[29].replace("'",
                                                                                                             "''"))) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));

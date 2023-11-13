@@ -97,6 +97,9 @@ public class Character implements IBaseEntity, Serializable {
     // TODO - @NonNull
     private Substats substatThree;
 
+    @Column(name = "substatFour")
+    private Substats substatFour;
+
     @Column(name = "weaponOneId")
     // TODO - @NonNull
     private UUID weaponOneId;
