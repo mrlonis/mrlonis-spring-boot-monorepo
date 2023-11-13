@@ -48,8 +48,7 @@ public class ArtifactsFlywayMigrationCreation {
 
     private static List<String[]> readCsvFile(BufferedReader bufferedReader) {
         try (CSVReader csvReader = new CSVReaderBuilder(bufferedReader).withSkipLines(1)
-                                                                       .withFieldAsNull(
-                                                                               CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
+                                                                       .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
                                                                        .build()) {
             return csvReader.readAll();
         } catch (CsvException e) {
@@ -76,28 +75,40 @@ public class ArtifactsFlywayMigrationCreation {
         for (int i = 0; i < csvFile.size(); i++) {
             String[] row = csvFile.get(i);
             if (row.length != 5) {
-                String errorMessage =
-                        String.format("createFileContents(): Row %s size is not 5 and was instead %s! row: %s", i,
-                                      row.length, Arrays.toString(row));
+                String errorMessage = String.format(
+                        "createFileContents(): Row %s size is not 5 and was instead %s! row: %s",
+                        i,
+                        row.length,
+                        Arrays.toString(row));
                 log.error(errorMessage);
                 throw new RuntimeException(errorMessage);
             }
 
             String whitespace = " ".repeat(8);
             String parenthesisWhitespace = " ".repeat(4);
-            fileContents.append(String.format("%s-- name%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- name%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[0] != null ? String.format("'%s'", row[0].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- imageUrl%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- imageUrl%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[1] != null ? String.format("'%s'", row[1].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- onePieceSetEffect%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- onePieceSetEffect%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[2] != null ? String.format("'%s'", row[2].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- twoPieceSetEffect%n%s%s,%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- twoPieceSetEffect%n%s%s,%n",
+                                              whitespace,
+                                              whitespace,
                                               row[3] != null ? String.format("'%s'", row[3].replace("'", "''")) :
                                               "NULL"));
-            fileContents.append(String.format("%s-- fourPieceSetEffect%n%s%s%n", whitespace, whitespace,
+            fileContents.append(String.format("%s-- fourPieceSetEffect%n%s%s%n",
+                                              whitespace,
+                                              whitespace,
                                               row[4] != null ? String.format("'%s'", row[4].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));
@@ -112,8 +123,8 @@ public class ArtifactsFlywayMigrationCreation {
 
     private static void writeMigrationFile(String fileContents) {
         try {
-            BufferedWriter writer = new BufferedWriter(
-                    new FileWriter("src/main/resources/db/migration/h2/V1_1_2__Create_Artifacts_Data.sql"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(
+                    "src/main/resources/db/migration/h2/V1_1_2__Create_Artifacts_Data.sql"));
             writer.write(fileContents);
 
             writer.close();
