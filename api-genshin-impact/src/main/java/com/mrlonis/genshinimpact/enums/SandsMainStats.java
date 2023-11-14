@@ -10,7 +10,8 @@ public enum SandsMainStats {
     ENERGY_RECHARGE("Energy Recharge"),
     ELEMENTAL_MASTERY("Elemental Mastery"),
     ATTACK_PERCENT_ENERGY_RECHARGE("ATK% / Energy Recharge"),
-    ELEMENTAL_MASTERY_ATTACK_PERCENT_ENERGY_RECHARGE("Elemental Mastery / ATK% / Energy Recharge");
+    ELEMENTAL_MASTERY_ATTACK_PERCENT_ENERGY_RECHARGE("Elemental Mastery / ATK% / Energy Recharge"),
+    ENERGY_RECHARGE_ATTACK_PERCENT("Energy Recharge / ATK%");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;

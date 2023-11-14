@@ -167,6 +167,18 @@ public class ArtifactBreakdownController {
                 sandsStats.add(SandsMainStats.ENERGY_RECHARGE);
             }
         }
+
+        if (sandsStats.contains(SandsMainStats.ENERGY_RECHARGE_ATTACK_PERCENT)) {
+            sandsStats.remove(SandsMainStats.ENERGY_RECHARGE_ATTACK_PERCENT);
+
+            if (!sandsStats.contains(SandsMainStats.ENERGY_RECHARGE)) {
+                sandsStats.add(SandsMainStats.ENERGY_RECHARGE);
+            }
+
+            if (!sandsStats.contains(SandsMainStats.ATTACK_PERCENT)) {
+                sandsStats.add(SandsMainStats.ATTACK_PERCENT);
+            }
+        }
     }
 
     private void processGobletStats(List<GobletMainStats> gobletStats) {
