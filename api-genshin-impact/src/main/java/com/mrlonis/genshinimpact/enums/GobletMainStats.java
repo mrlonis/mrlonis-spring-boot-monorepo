@@ -15,8 +15,7 @@ public enum GobletMainStats {
     ANEMO_DAMAGE_BONUS("Anemo DMG Bonus", "Anemo DMG"),
     GEO_DAMAGE_BONUS("Geo DMG Bonus", "Geo DMG"),
     DENDRO_DAMAGE_BONUS("Dendro DMG Bonus", "Dendro DMG"),
-    PHYSICAL_DAMAGE_BONUS("Physical DMG Bonus", "Physical DMG"),
-    ELEMENTAL_MASTERY_ANEMO_DAMAGE_BONUS("Elemental Mastery / Anemo DMG Bonus", "Elemental Mastery / Anemo DMG");
+    PHYSICAL_DAMAGE_BONUS("Physical DMG Bonus", "Physical DMG");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
