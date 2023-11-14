@@ -2689,61 +2689,113 @@ VALUES (
         -- weaponType
         'Polearm',
         -- sandsStatOne
-        NULL,
+        'ATK%',
         -- sandsStatTwo
         NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Anemo DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        NULL,
+        'ATK%',
         -- substatThree
-        NULL,
+        'Energy Recharge',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Primordial Jade Winged-Spear'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Staff of Homa'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Vortex Vanquisher'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Calamity Queller'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Deathmatch'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Vermillion Hereafter'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Desert Pavilion Chronicle'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Desert Pavilion Chronicle'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Vermillion Hereafter'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Vermillion Hereafter'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Desert Pavilion Chronicle'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        )
     );
 
 INSERT INTO Characters (
