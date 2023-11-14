@@ -6,10 +6,13 @@ INSERT INTO Characters (
         weaponType,
         sandsStatOne,
         sandsStatTwo,
+        sansStatThree
         gobletStatOne,
         gobletStatTwo,
+        gobletStatThree,
         circletStatOne,
         circletStatTwo,
+        circletStatThree,
         substatOne,
         substatTwo,
         substatThree,
@@ -49,14 +52,20 @@ VALUES (
         'ATK%',
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         'Cryo DMG Bonus',
         -- gobletStatTwo
+        NULL,
+        -- gobletStatThree
         NULL,
         -- circletStatOne
         'CRIT DMG',
         -- circletStatTwo
         'ATK%',
+        -- circletStatThree
+        NULL,
         -- substatOne
         'CRIT DMG',
         -- substatTwo
@@ -171,14 +180,20 @@ VALUES (
         'ATK%',
         -- sandsStatTwo
         'Energy Recharge',
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         'Anemo DMG Bonus',
         -- gobletStatTwo
+        NULL,
+        -- gobletStatThree
         NULL,
         -- circletStatOne
         'CRIT Rate',
         -- circletStatTwo
         'CRIT DMG',
+        -- circletStatThree
+        NULL,
         -- substatOne
         'CRIT Rate',
         -- substatTwo
@@ -285,13 +300,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -351,13 +372,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -417,13 +444,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -483,13 +516,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -549,13 +588,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -615,13 +660,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -681,13 +732,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -747,13 +804,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -813,13 +876,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -879,13 +948,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -945,13 +1020,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1011,13 +1092,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1077,13 +1164,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1143,13 +1236,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1209,13 +1308,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1275,13 +1380,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1341,13 +1452,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1407,13 +1524,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1473,13 +1596,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1539,13 +1668,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1605,13 +1740,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1671,13 +1812,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1737,13 +1884,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1803,13 +1956,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1869,13 +2028,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -1935,13 +2100,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2001,13 +2172,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2067,13 +2244,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2133,13 +2316,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2199,13 +2388,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2265,13 +2460,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2331,13 +2532,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2397,13 +2604,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2463,13 +2676,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2529,13 +2748,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2595,13 +2820,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2661,13 +2892,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2727,13 +2964,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2793,13 +3036,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2859,13 +3108,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2925,13 +3180,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -2991,13 +3252,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3057,13 +3324,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3123,13 +3396,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3189,13 +3468,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3255,13 +3540,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3321,13 +3612,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3387,13 +3684,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3453,13 +3756,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3519,13 +3828,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3585,13 +3900,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3651,13 +3972,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3717,13 +4044,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3783,13 +4116,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3849,13 +4188,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3915,13 +4260,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -3981,13 +4332,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4047,13 +4404,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4113,13 +4476,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4179,13 +4548,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4245,13 +4620,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4311,13 +4692,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4377,13 +4764,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4443,13 +4836,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4509,13 +4908,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4575,13 +4980,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4641,13 +5052,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4707,13 +5124,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4773,13 +5196,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4839,13 +5268,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4905,13 +5340,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -4971,13 +5412,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5037,13 +5484,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5103,13 +5556,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5169,13 +5628,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5235,13 +5700,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5301,13 +5772,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5367,13 +5844,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,
@@ -5433,13 +5916,19 @@ VALUES (
         NULL,
         -- sandsStatTwo
         NULL,
+        -- sandsStatThree
+        NULL,
         -- gobletStatOne
         NULL,
         -- gobletStatTwo
         NULL,
+        -- gobletStatThree
+        NULL,
         -- circletStatOne
         NULL,
         -- circletStatTwo
+        NULL,
+        -- circletStatThree
         NULL,
         -- substatOne
         NULL,

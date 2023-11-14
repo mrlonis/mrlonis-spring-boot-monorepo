@@ -71,6 +71,9 @@ public class Character implements IBaseEntity, Serializable {
     @Column(name = "sandsStatTwo")
     private SandsMainStats sandsStatTwo;
 
+    @Column(name = "sandsStatThree")
+    private SandsMainStats sandsStatThree;
+
     @Column(name = "gobletStatOne")
     // TODO - @NonNull
     private GobletMainStats gobletStatOne;
@@ -78,12 +81,18 @@ public class Character implements IBaseEntity, Serializable {
     @Column(name = "gobletStatTwo")
     private GobletMainStats gobletStatTwo;
 
+    @Column(name = "gobletStatThree")
+    private GobletMainStats gobletStatThree;
+
     @Column(name = "circletStatOne")
     // TODO - @NonNull
     private CircletMainStats circletStatOne;
 
     @Column(name = "circletStatTwo")
     private CircletMainStats circletStatTwo;
+
+    @Column(name = "circletStatThree")
+    private CircletMainStats circletStatThree;
 
     @Column(name = "substatOne")
     // TODO - @NonNull

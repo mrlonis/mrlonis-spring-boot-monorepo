@@ -41,12 +41,15 @@ CREATE TABLE Characters (
     -- TODO: NOT NULL
     sandsStatOne VARCHAR(50),
     sandsStatTwo VARCHAR(50),
+    sandsStatThree VARCHAR(50),
     -- TODO: NOT NULL
     gobletStatOne VARCHAR(50),
     gobletStatTwo VARCHAR(50),
+    gobletStatThree VARCHAR(50),
     -- TODO: NOT NULL
     circletStatOne VARCHAR(50),
     circletStatTwo VARCHAR(50),
+    circletStatThree VARCHAR(50),
     -- TODO: NOT NULL
     substatOne VARCHAR(50),
     -- TODO: NOT NULL

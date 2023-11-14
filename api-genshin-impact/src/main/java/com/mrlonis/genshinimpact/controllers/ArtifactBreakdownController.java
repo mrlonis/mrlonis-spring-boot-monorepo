@@ -69,7 +69,7 @@ public class ArtifactBreakdownController {
         List<Substats> substats = new ArrayList<>();
 
         for (Character character : characters) {
-            if (!sandsStats.contains(character.getSandsStatOne())) {
+            if (character.getSandsStatOne() != null && !sandsStats.contains(character.getSandsStatOne())) {
                 sandsStats.add(character.getSandsStatOne());
             }
 
@@ -77,7 +77,11 @@ public class ArtifactBreakdownController {
                 sandsStats.add(character.getSandsStatTwo());
             }
 
-            if (!gobletStats.contains(character.getGobletStatOne())) {
+            if (character.getSandsStatThree() != null && !sandsStats.contains(character.getSandsStatThree())) {
+                sandsStats.add(character.getSandsStatThree());
+            }
+
+            if (character.getGobletStatOne() != null && !gobletStats.contains(character.getGobletStatOne())) {
                 gobletStats.add(character.getGobletStatOne());
             }
 
@@ -85,7 +89,11 @@ public class ArtifactBreakdownController {
                 gobletStats.add(character.getGobletStatTwo());
             }
 
-            if (!circletStats.contains(character.getCircletStatOne())) {
+            if (character.getGobletStatThree() != null && !gobletStats.contains(character.getGobletStatThree())) {
+                gobletStats.add(character.getGobletStatThree());
+            }
+
+            if (character.getCircletStatOne() != null && !circletStats.contains(character.getCircletStatOne())) {
                 circletStats.add(character.getCircletStatOne());
             }
 
@@ -93,15 +101,19 @@ public class ArtifactBreakdownController {
                 circletStats.add(character.getCircletStatTwo());
             }
 
-            if (!substats.contains(character.getSubstatOne())) {
+            if (character.getCircletStatThree() != null && !circletStats.contains(character.getCircletStatThree())) {
+                circletStats.add(character.getCircletStatThree());
+            }
+
+            if (character.getSubstatOne() != null && !substats.contains(character.getSubstatOne())) {
                 substats.add(character.getSubstatOne());
             }
 
-            if (!substats.contains(character.getSubstatTwo())) {
+            if (character.getSubstatTwo() != null && !substats.contains(character.getSubstatTwo())) {
                 substats.add(character.getSubstatTwo());
             }
 
-            if (!substats.contains(character.getSubstatThree())) {
+            if (character.getSubstatThree() != null && !substats.contains(character.getSubstatThree())) {
                 substats.add(character.getSubstatThree());
             }
         }
