@@ -10,10 +10,7 @@ public enum CircletMainStats {
     ELEMENTAL_MASTERY("Elemental Mastery"),
     CRITICAL_RATE("CRIT Rate"),
     CRITICAL_DAMAGE("CRIT DMG"),
-    CRITICAL_RATE_CRITICAL_DAMAGE("CRIT Rate / CRIT DMG"),
-    HEALING_BONUS("Healing Bonus"),
-    CRITICAL_DAMAGE_ATTACK_PERCENT("CRIT DMG / ATK%"),
-    ELEMENTAL_MASTERY_CRITICAL_RATE_CRITICAL_DAMAGE("Elemental Mastery / CRIT Rate / CRIT DMG");
+    HEALING_BONUS("Healing Bonus");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
