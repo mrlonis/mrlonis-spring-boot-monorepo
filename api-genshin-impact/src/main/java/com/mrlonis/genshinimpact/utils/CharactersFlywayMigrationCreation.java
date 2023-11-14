@@ -64,45 +64,46 @@ public class CharactersFlywayMigrationCreation {
 
     private static String createFileContents(List<String[]> csvFile) {
         StringBuilder fileContents = new StringBuilder();
-        fileContents.append("""
-                            INSERT INTO Characters (
-                                    name,
-                                    imageUrl,
-                                    rarity,
-                                    elementId,
-                                    weaponType,
-                                    sandsStatOne,
-                                    sandsStatTwo,
-                                    sandsStatThree,
-                                    gobletStatOne,
-                                    gobletStatTwo,
-                                    gobletStatThree,
-                                    circletStatOne,
-                                    circletStatTwo,
-                                    circletStatThree,
-                                    substatOne,
-                                    substatTwo,
-                                    substatThree,
-                                    substatFour,
-                                    weaponOneId,
-                                    weaponTwoId,
-                                    weaponThreeId,
-                                    weaponFourId,
-                                    weaponFiveId,
-                                    artifactSetOneIdFirst,
-                                    artifactSetOneIdSecond,
-                                    artifactSetTwoIdFirst,
-                                    artifactSetTwoIdSecond,
-                                    artifactSetThreeIdFirst,
-                                    artifactSetThreeIdSecond,
-                                    artifactSetFourIdFirst,
-                                    artifactSetFourIdSecond,
-                                    artifactSetFiveIdFirst,
-                                    artifactSetFiveIdSecond
-                                )
-                            VALUES (
-                            """);
         for (int i = 0; i < csvFile.size(); i++) {
+            fileContents.append("""
+                                INSERT INTO Characters (
+                                        name,
+                                        imageUrl,
+                                        rarity,
+                                        elementId,
+                                        weaponType,
+                                        sandsStatOne,
+                                        sandsStatTwo,
+                                        sandsStatThree,
+                                        gobletStatOne,
+                                        gobletStatTwo,
+                                        gobletStatThree,
+                                        circletStatOne,
+                                        circletStatTwo,
+                                        circletStatThree,
+                                        substatOne,
+                                        substatTwo,
+                                        substatThree,
+                                        substatFour,
+                                        weaponOneId,
+                                        weaponTwoId,
+                                        weaponThreeId,
+                                        weaponFourId,
+                                        weaponFiveId,
+                                        artifactSetOneIdFirst,
+                                        artifactSetOneIdSecond,
+                                        artifactSetTwoIdFirst,
+                                        artifactSetTwoIdSecond,
+                                        artifactSetThreeIdFirst,
+                                        artifactSetThreeIdSecond,
+                                        artifactSetFourIdFirst,
+                                        artifactSetFourIdSecond,
+                                        artifactSetFiveIdFirst,
+                                        artifactSetFiveIdSecond
+                                    )
+                                VALUES (
+                                """);
+
             String[] row = csvFile.get(i);
             if (row.length != 33) {
                 String errorMessage = String.format(
@@ -332,11 +333,7 @@ public class CharactersFlywayMigrationCreation {
                                                                                                             "''"))) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));
-            if (i != csvFile.size() - 1) {
-                fileContents.append(String.format(",%n%s%s%n", parenthesisWhitespace, "("));
-            } else {
-                fileContents.append(";\n");
-            }
+            fileContents.append(String.format(";%n%n"));
         }
         return fileContents.toString();
     }

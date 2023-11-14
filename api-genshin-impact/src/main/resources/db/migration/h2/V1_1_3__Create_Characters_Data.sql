@@ -160,8 +160,44 @@ VALUES (
             FROM Artifacts
             WHERE name = 'Noblesse Oblige'
         )
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Jean',
         -- imageUrl
@@ -280,8 +316,44 @@ VALUES (
             FROM Artifacts
             WHERE name = 'Shimenawa''s Reminiscence'
         )
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Traveler (Anemo)',
         -- imageUrl
@@ -352,8 +424,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Traveler (Geo)',
         -- imageUrl
@@ -424,8 +532,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Traveler (Electro)',
         -- imageUrl
@@ -496,8 +640,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Traveler (Dendro)',
         -- imageUrl
@@ -568,8 +748,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Traveler (Hydro)',
         -- imageUrl
@@ -640,8 +856,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Lisa',
         -- imageUrl
@@ -712,8 +964,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Barbara',
         -- imageUrl
@@ -784,8 +1072,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kaeya',
         -- imageUrl
@@ -856,8 +1180,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Diluc',
         -- imageUrl
@@ -928,8 +1288,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Razor',
         -- imageUrl
@@ -1000,8 +1396,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Amber',
         -- imageUrl
@@ -1072,8 +1504,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Venti',
         -- imageUrl
@@ -1144,8 +1612,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Xiangling',
         -- imageUrl
@@ -1216,8 +1720,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Beidou',
         -- imageUrl
@@ -1288,8 +1828,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Xingqiu',
         -- imageUrl
@@ -1360,8 +1936,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Xiao',
         -- imageUrl
@@ -1432,8 +2044,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Ningguang',
         -- imageUrl
@@ -1504,8 +2152,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Klee',
         -- imageUrl
@@ -1576,8 +2260,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Zhongli',
         -- imageUrl
@@ -1648,8 +2368,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Fischl',
         -- imageUrl
@@ -1720,8 +2476,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Bennett',
         -- imageUrl
@@ -1792,8 +2584,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Tartaglia',
         -- imageUrl
@@ -1864,8 +2692,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Noelle',
         -- imageUrl
@@ -1936,8 +2800,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Qiqi',
         -- imageUrl
@@ -2008,8 +2908,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Chongyun',
         -- imageUrl
@@ -2080,8 +3016,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Ganyu',
         -- imageUrl
@@ -2152,8 +3124,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Albedo',
         -- imageUrl
@@ -2224,8 +3232,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Diona',
         -- imageUrl
@@ -2296,8 +3340,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Mona',
         -- imageUrl
@@ -2368,8 +3448,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Keqing',
         -- imageUrl
@@ -2440,8 +3556,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Sucrose',
         -- imageUrl
@@ -2512,8 +3664,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Xinyan',
         -- imageUrl
@@ -2584,8 +3772,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Rosaria',
         -- imageUrl
@@ -2656,8 +3880,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Hu Tao',
         -- imageUrl
@@ -2728,8 +3988,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kaedehara Kazuha',
         -- imageUrl
@@ -2800,8 +4096,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Yanfei',
         -- imageUrl
@@ -2872,8 +4204,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Yoimiya',
         -- imageUrl
@@ -2944,8 +4312,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Thoma',
         -- imageUrl
@@ -3016,8 +4420,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Eula',
         -- imageUrl
@@ -3088,8 +4528,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Raiden Shogun',
         -- imageUrl
@@ -3160,8 +4636,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Sayu',
         -- imageUrl
@@ -3232,8 +4744,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Sangonomiya Kokomi',
         -- imageUrl
@@ -3304,8 +4852,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Gorou',
         -- imageUrl
@@ -3376,8 +4960,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kujou Sara',
         -- imageUrl
@@ -3448,8 +5068,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Arataki Itto',
         -- imageUrl
@@ -3520,8 +5176,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Yae Miko',
         -- imageUrl
@@ -3592,8 +5284,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Shikanoin Heizou',
         -- imageUrl
@@ -3664,8 +5392,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Yelan',
         -- imageUrl
@@ -3736,8 +5500,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kirara',
         -- imageUrl
@@ -3808,8 +5608,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Aloy',
         -- imageUrl
@@ -3880,8 +5716,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Shenhe',
         -- imageUrl
@@ -3952,8 +5824,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Yun Jin',
         -- imageUrl
@@ -4024,8 +5932,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kuki Shinobu',
         -- imageUrl
@@ -4096,8 +6040,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kamisato Ayato',
         -- imageUrl
@@ -4168,8 +6148,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Collei',
         -- imageUrl
@@ -4240,8 +6256,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Dori',
         -- imageUrl
@@ -4312,8 +6364,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Tighnari',
         -- imageUrl
@@ -4384,8 +6472,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Nilou',
         -- imageUrl
@@ -4456,8 +6580,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Cyno',
         -- imageUrl
@@ -4528,8 +6688,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Candace',
         -- imageUrl
@@ -4600,8 +6796,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Nahida',
         -- imageUrl
@@ -4672,8 +6904,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Layla',
         -- imageUrl
@@ -4744,8 +7012,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Wanderer',
         -- imageUrl
@@ -4816,8 +7120,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Faruzan',
         -- imageUrl
@@ -4888,8 +7228,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Yaoyao',
         -- imageUrl
@@ -4960,8 +7336,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Alhaitham',
         -- imageUrl
@@ -5032,8 +7444,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Dehya',
         -- imageUrl
@@ -5104,8 +7552,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Mika',
         -- imageUrl
@@ -5176,8 +7660,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Kaveh',
         -- imageUrl
@@ -5248,8 +7768,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Baizhu',
         -- imageUrl
@@ -5320,8 +7876,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Lynette',
         -- imageUrl
@@ -5392,8 +7984,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Lyney',
         -- imageUrl
@@ -5464,8 +8092,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Freminet',
         -- imageUrl
@@ -5536,8 +8200,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Wriothesley',
         -- imageUrl
@@ -5608,8 +8308,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Neuvillette',
         -- imageUrl
@@ -5680,8 +8416,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Charlotte',
         -- imageUrl
@@ -5752,8 +8524,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Furina',
         -- imageUrl
@@ -5824,8 +8632,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Chevreuse',
         -- imageUrl
@@ -5896,8 +8740,44 @@ VALUES (
         NULL,
         -- artifactSetFiveIdSecond
         NULL
-    ),
-    (
+    );
+
+INSERT INTO Characters (
+        name,
+        imageUrl,
+        rarity,
+        elementId,
+        weaponType,
+        sandsStatOne,
+        sandsStatTwo,
+        sandsStatThree,
+        gobletStatOne,
+        gobletStatTwo,
+        gobletStatThree,
+        circletStatOne,
+        circletStatTwo,
+        circletStatThree,
+        substatOne,
+        substatTwo,
+        substatThree,
+        substatFour,
+        weaponOneId,
+        weaponTwoId,
+        weaponThreeId,
+        weaponFourId,
+        weaponFiveId,
+        artifactSetOneIdFirst,
+        artifactSetOneIdSecond,
+        artifactSetTwoIdFirst,
+        artifactSetTwoIdSecond,
+        artifactSetThreeIdFirst,
+        artifactSetThreeIdSecond,
+        artifactSetFourIdFirst,
+        artifactSetFourIdSecond,
+        artifactSetFiveIdFirst,
+        artifactSetFiveIdSecond
+    )
+VALUES (
         -- name
         'Navia',
         -- imageUrl
