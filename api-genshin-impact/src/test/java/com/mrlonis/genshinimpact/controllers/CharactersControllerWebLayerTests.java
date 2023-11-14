@@ -57,7 +57,7 @@ class CharactersControllerWebLayerTests {
                                                                                                                    .substatOne(
                                                                                                                            Substats.ATTACK_FLAT)
                                                                                                                    .substatTwo(
-                                                                                                                           Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
+                                                                                                                           Substats.CRITICAL_RATE)
                                                                                                                    .substatThree(
                                                                                                                            Substats.HEALTH_PERCENT)
                                                                                                                    .weaponOneId(
@@ -90,7 +90,7 @@ class CharactersControllerWebLayerTests {
                                                                                                                    .substatOne(
                                                                                                                            Substats.ATTACK_FLAT)
                                                                                                                    .substatTwo(
-                                                                                                                           Substats.CRITICAL_RATE_CRITICAL_DAMAGE)
+                                                                                                                           Substats.CRITICAL_DAMAGE)
                                                                                                                    .substatThree(
                                                                                                                            Substats.HEALTH_PERCENT)
                                                                                                                    .weaponOneId(
