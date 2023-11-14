@@ -6,7 +6,7 @@ INSERT INTO Characters (
         weaponType,
         sandsStatOne,
         sandsStatTwo,
-        sansStatThree
+        sandsStatThree,
         gobletStatOne,
         gobletStatTwo,
         gobletStatThree,
@@ -297,23 +297,23 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        NULL,
+        'Elemental Mastery',
         -- sandsStatTwo
-        NULL,
+        'ATK%',
         -- sandsStatThree
-        NULL,
+        'Energy Recharge',
         -- gobletStatOne
-        NULL,
+        'Elemental Mastery',
         -- gobletStatTwo
-        NULL,
+        'Anemo DMG Bonus',
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'Elemental Mastery',
         -- circletStatTwo
-        NULL,
+        'CRIT Rate',
         -- circletStatThree
-        NULL,
+        'CRIT DMG',
         -- substatOne
         NULL,
         -- substatTwo
