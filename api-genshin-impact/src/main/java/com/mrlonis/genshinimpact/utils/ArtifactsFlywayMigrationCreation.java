@@ -89,27 +89,32 @@ public class ArtifactsFlywayMigrationCreation {
             fileContents.append(String.format("%s-- name%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[0] != null ? String.format("'%s'", row[0].replace("'", "''")) :
+                                              row[0] != null ?
+                                              String.format("'%s'", row[0].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- imageUrl%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[1] != null ? String.format("'%s'", row[1].replace("'", "''")) :
+                                              row[1] != null ?
+                                              String.format("'%s'", row[1].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- onePieceSetEffect%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[2] != null ? String.format("'%s'", row[2].replace("'", "''")) :
+                                              row[2] != null ?
+                                              String.format("'%s'", row[2].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- twoPieceSetEffect%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[3] != null ? String.format("'%s'", row[3].replace("'", "''")) :
+                                              row[3] != null ?
+                                              String.format("'%s'", row[3].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- fourPieceSetEffect%n%s%s%n",
                                               whitespace,
                                               whitespace,
-                                              row[4] != null ? String.format("'%s'", row[4].replace("'", "''")) :
+                                              row[4] != null ?
+                                              String.format("'%s'", row[4].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));
             if (i != csvFile.size() - 1) {
