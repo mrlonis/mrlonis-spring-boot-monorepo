@@ -73,7 +73,7 @@ public class CharactersFlywayMigrationCreation {
                                     weaponType,
                                     sandsStatOne,
                                     sandsStatTwo,
-                                    sansStatThree
+                                    sandsStatThree,
                                     gobletStatOne,
                                     gobletStatTwo,
                                     gobletStatThree,
