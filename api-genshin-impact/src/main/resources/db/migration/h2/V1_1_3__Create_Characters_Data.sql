@@ -387,43 +387,99 @@ VALUES (
         -- circletStatThree
         'CRIT DMG',
         -- substatOne
-        NULL,
+        'Elemental Mastery',
         -- substatTwo
-        NULL,
+        'Energy Recharge',
         -- substatThree
-        NULL,
+        'ATK%',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Freedom-Sworn'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Primordial Jade Cutter'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Mistsplitter Reforged'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Sacrificial Sword'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Iron Sting'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetTwoIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        ),
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Viridescent Venerer'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        )
     );
 
 INSERT INTO Characters (
@@ -477,61 +533,117 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        NULL,
+        'ATK%',
         -- sandsStatTwo
         NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Geo DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate',
         -- circletStatTwo
-        NULL,
+        'CRIT DMG',
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'CRIT Rate',
         -- substatTwo
-        NULL,
+        'CRIT DMG',
         -- substatThree
-        NULL,
+        'ATK%',
         -- substatFour
-        NULL,
+        'Energy Recharge',
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Primordial Jade Cutter'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Mistsplitter Reforged'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Haran Geppaku Futsu'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Summit Shaper'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'The Black Sword'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Archaic Petra'
+        ),
         -- artifactSetOneIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Archaic Petra'
+        ),
         -- artifactSetTwoIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
+        ),
         -- artifactSetThreeIdSecond
         NULL,
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gladiator''s Finale'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        )
     );
 
 INSERT INTO Characters (
