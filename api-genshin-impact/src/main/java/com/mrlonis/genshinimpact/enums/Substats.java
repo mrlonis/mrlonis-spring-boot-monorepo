@@ -13,7 +13,8 @@ public enum Substats {
     ENERGY_RECHARGE("Energy Recharge"),
     ELEMENTAL_MASTERY("Elemental Mastery"),
     CRITICAL_RATE("CRIT Rate"),
-    CRITICAL_DAMAGE("CRIT DMG");
+    CRITICAL_DAMAGE("CRIT DMG"),
+    CRITICAL_RATE_AND_DAMAGE("CRIT Rate / CRIT DMG");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;

@@ -225,19 +225,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT DMG',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        'CRIT DMG',
-        -- substatThree
         'ATK%',
-        -- substatFour
+        -- substatThree
         'Energy Recharge',
+        -- substatFour
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -383,9 +383,9 @@ VALUES (
         -- circletStatOne
         'Elemental Mastery',
         -- circletStatTwo
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatThree
-        'CRIT DMG',
+        NULL,
         -- substatOne
         'Elemental Mastery',
         -- substatTwo
@@ -545,19 +545,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT DMG',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        'CRIT DMG',
-        -- substatThree
         'ATK%',
-        -- substatFour
+        -- substatThree
         'Energy Recharge',
+        -- substatFour
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -709,9 +709,9 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT DMG',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
@@ -719,9 +719,9 @@ VALUES (
         -- substatTwo
         'ATK%',
         -- substatThree
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- substatFour
-        'CRIT DMG',
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -861,19 +861,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT DMG',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
         'Energy Recharge',
         -- substatTwo
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- substatThree
-        'CRIT DMG',
-        -- substatFour
         'ATK%',
+        -- substatFour
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -1105,61 +1105,109 @@ VALUES (
         -- weaponType
         'Catalyst',
         -- sandsStatOne
-        NULL,
+        'Elemental Mastery',
         -- sandsStatTwo
-        NULL,
+        'ATK%',
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Electro DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        NULL,
+        'Elemental Mastery',
         -- substatThree
-        NULL,
+        'ATK%',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Kagura''s Verity'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Lost Prayer to the Sacred Winds'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Skyward Atlas'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'A Thousand Floating Dreams'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'The Widsith'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Thundering Fury'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Thundersoother'
+        ),
         -- artifactSetThreeIdSecond
         NULL,
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Thundering Fury'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Thundering Fury'
+        )
     );
 
 INSERT INTO Characters (
@@ -1213,59 +1261,111 @@ VALUES (
         -- weaponType
         'Catalyst',
         -- sandsStatOne
-        NULL,
+        'HP%',
         -- sandsStatTwo
         NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'HP%',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'Healing Bonus',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'HP%',
         -- substatTwo
-        NULL,
+        'HP',
         -- substatThree
-        NULL,
+        'Energy Recharge',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Thrilling Tales of Dragon Slayers'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Everlasting Moonglow'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Prototype Amber'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Favonius Codex'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Wine and Song'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Maiden Beloved'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Maiden Beloved'
+        ),
         -- artifactSetTwoIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Tenacity of the Millelith'
+        ),
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Maiden Beloved'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Ocean-Hued Clam'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Ocean-Hued Clam'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Tenacity of the Millelith'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Instructor'
+        ),
         -- artifactSetFiveIdSecond
         NULL
     );
@@ -1321,59 +1421,107 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        NULL,
+        'Energy Recharge',
         -- sandsStatTwo
-        NULL,
+        'ATK%',
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Cryo DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'Energy Recharge',
         -- substatTwo
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatThree
-        NULL,
+        'ATK%',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Primordial Jade Cutter'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Mistsplitter Reforged'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Light of Foliar Incision'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Freedom-Sworn'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Lion''s Roar'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Blizzard Strayer'
+        ),
         -- artifactSetTwoIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetFourIdSecond
         NULL,
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Instructor'
+        ),
         -- artifactSetFiveIdSecond
         NULL
     );
@@ -1429,61 +1577,113 @@ VALUES (
         -- weaponType
         'Claymore',
         -- sandsStatOne
-        NULL,
+        'ATK%',
         -- sandsStatTwo
-        NULL,
+        'Elemental Mastery',
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Pyro DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        NULL,
+        'ATK%',
         -- substatThree
-        NULL,
+        'Elemental Mastery',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Redhorn Stonethresher'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Beacon of the Reed Sea'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Serpent Spine'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Wolf''s Gravestone'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'The Unforged'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Crimson Witch of Flames'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Crimson Witch of Flames'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Crimson Witch of Flames'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gilded Dreams'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        )
     );
 
 INSERT INTO Characters (
@@ -1537,61 +1737,113 @@ VALUES (
         -- weaponType
         'Claymore',
         -- sandsStatOne
-        NULL,
+        'ATK%',
         -- sandsStatTwo
         NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Physical DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        NULL,
+        'ATK%',
         -- substatThree
-        NULL,
+        'Energy Recharge',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Wolf''s Gravestone'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Beacon of the Reed Sea'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Song of Broken Pines'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Redhorn Stonethresher'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Serpent Spine'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Pale Flame'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gladiator''s Finale'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Bloodstained Chivalry'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Pale Flame'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gladiator''s Finale'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Pale Flame'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Gladiator''s Finale'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        )
     );
 
 INSERT INTO Characters (

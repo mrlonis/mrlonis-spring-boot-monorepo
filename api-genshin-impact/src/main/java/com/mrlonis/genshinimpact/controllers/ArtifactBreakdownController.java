@@ -69,6 +69,8 @@ public class ArtifactBreakdownController {
         List<Substats> substats = new ArrayList<>();
 
         processCharacters(characters, sandsStats, gobletStats, circletStats, substats);
+        processCircletStats(circletStats);
+        processSubstats(substats);
 
         artifactBreakdown.setSandsStats(sandsStats);
         artifactBreakdown.setGobletStats(gobletStats);
@@ -130,6 +132,34 @@ public class ArtifactBreakdownController {
 
             if (character.getSubstatThree() != null && !substats.contains(character.getSubstatThree())) {
                 substats.add(character.getSubstatThree());
+            }
+        }
+    }
+
+    private void processCircletStats(List<CircletMainStats> circletStats) {
+        if (circletStats.contains(CircletMainStats.CRITICAL_RATE_AND_DAMAGE)) {
+            circletStats.remove(CircletMainStats.CRITICAL_RATE_AND_DAMAGE);
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_RATE)) {
+                circletStats.add(CircletMainStats.CRITICAL_RATE);
+            }
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_DAMAGE)) {
+                circletStats.add(CircletMainStats.CRITICAL_DAMAGE);
+            }
+        }
+    }
+
+    private void processSubstats(List<Substats> substats) {
+        if (substats.contains(Substats.CRITICAL_RATE_AND_DAMAGE)) {
+            substats.remove(Substats.CRITICAL_RATE_AND_DAMAGE);
+
+            if (!substats.contains(Substats.CRITICAL_RATE)) {
+                substats.add(Substats.CRITICAL_RATE);
+            }
+
+            if (!substats.contains(Substats.CRITICAL_DAMAGE)) {
+                substats.add(Substats.CRITICAL_DAMAGE);
             }
         }
     }
