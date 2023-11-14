@@ -61,9 +61,9 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT DMG / ATK%',
+        'CRIT DMG',
         -- circletStatTwo
-        NULL,
+        'ATK%',
         -- circletStatThree
         NULL,
         -- substatOne
@@ -213,9 +213,9 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        'ATK% / Energy Recharge',
+        'ATK%',
         -- sandsStatTwo
-        NULL,
+        'Energy Recharge',
         -- sandsStatThree
         NULL,
         -- gobletStatOne
@@ -225,19 +225,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- circletStatTwo
-        NULL,
+        'CRIT DMG',
         -- circletStatThree
         NULL,
         -- substatOne
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- substatTwo
-        'ATK%',
+        'CRIT DMG',
         -- substatThree
-        'Energy Recharge',
+        'ATK%',
         -- substatFour
-        NULL,
+        'Energy Recharge',
         -- weaponOneId
         (
             SELECT id
@@ -369,23 +369,23 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        'Elemental Mastery / ATK% / Energy Recharge',
+        'Elemental Mastery',
         -- sandsStatTwo
-        NULL,
+        'ATK%',
         -- sandsStatThree
-        NULL,
+        'Energy Recharge',
         -- gobletStatOne
-        'Elemental Mastery / Anemo DMG Bonus',
+        'Elemental Mastery',
         -- gobletStatTwo
-        NULL,
+        'Anemo DMG Bonus',
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'Elemental Mastery / CRIT Rate / CRIT DMG',
+        'Elemental Mastery',
         -- circletStatTwo
-        NULL,
+        'CRIT Rate',
         -- circletStatThree
-        NULL,
+        'CRIT DMG',
         -- substatOne
         'Elemental Mastery',
         -- substatTwo
@@ -545,19 +545,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- circletStatTwo
-        NULL,
+        'CRIT DMG',
         -- circletStatThree
         NULL,
         -- substatOne
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- substatTwo
-        'ATK%',
+        'CRIT DMG',
         -- substatThree
-        'Energy Recharge',
+        'ATK%',
         -- substatFour
-        NULL,
+        'Energy Recharge',
         -- weaponOneId
         (
             SELECT id
@@ -709,9 +709,9 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- circletStatTwo
-        NULL,
+        'CRIT DMG',
         -- circletStatThree
         NULL,
         -- substatOne
@@ -719,9 +719,9 @@ VALUES (
         -- substatTwo
         'ATK%',
         -- substatThree
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- substatFour
-        NULL,
+        'CRIT DMG',
         -- weaponOneId
         (
             SELECT id
@@ -849,9 +849,9 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        'Energy Recharge / ATK%',
+        'Energy Recharge',
         -- sandsStatTwo
-        NULL,
+        'ATK%',
         -- sandsStatThree
         NULL,
         -- gobletStatOne
@@ -861,19 +861,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- circletStatTwo
-        NULL,
+        'CRIT DMG',
         -- circletStatThree
         NULL,
         -- substatOne
         'Energy Recharge',
         -- substatTwo
-        'CRIT Rate / CRIT DMG',
+        'CRIT Rate',
         -- substatThree
-        'ATK%',
+        'CRIT DMG',
         -- substatFour
-        NULL,
+        'ATK%',
         -- weaponOneId
         (
             SELECT id
