@@ -1,6 +1,5 @@
 package com.mrlonis.genshinimpact.repositories;
 
-import com.mrlonis.genshinimpact.entities.Artifact;
 import com.mrlonis.genshinimpact.entities.Element;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;

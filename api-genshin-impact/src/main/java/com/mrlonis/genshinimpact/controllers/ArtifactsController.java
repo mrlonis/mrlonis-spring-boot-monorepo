@@ -3,7 +3,6 @@ package com.mrlonis.genshinimpact.controllers;
 import com.mrlonis.genshinimpact.entities.Artifact;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

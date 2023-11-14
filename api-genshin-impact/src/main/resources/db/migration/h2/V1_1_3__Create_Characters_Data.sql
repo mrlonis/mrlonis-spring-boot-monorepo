@@ -61,9 +61,9 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT DMG',
+        'CRIT DMG / ATK%',
         -- circletStatTwo
-        'ATK%',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
@@ -213,9 +213,9 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        'ATK%',
+        'ATK% / Energy Recharge',
         -- sandsStatTwo
-        'Energy Recharge',
+        NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
@@ -225,19 +225,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT DMG',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        'CRIT DMG',
-        -- substatThree
         'ATK%',
-        -- substatFour
+        -- substatThree
         'Energy Recharge',
+        -- substatFour
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -369,23 +369,23 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        'Elemental Mastery',
+        'Elemental Mastery / ATK% / Energy Recharge',
         -- sandsStatTwo
-        'ATK%',
+        NULL,
         -- sandsStatThree
-        'Energy Recharge',
+        NULL,
         -- gobletStatOne
-        'Elemental Mastery',
+        'Elemental Mastery / Anemo DMG Bonus',
         -- gobletStatTwo
-        'Anemo DMG Bonus',
+        NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'Elemental Mastery',
+        'Elemental Mastery / CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT Rate',
+        NULL,
         -- circletStatThree
-        'CRIT DMG',
+        NULL,
         -- substatOne
         'Elemental Mastery',
         -- substatTwo
@@ -545,19 +545,19 @@ VALUES (
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
-        'CRIT DMG',
+        NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        'CRIT Rate',
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        'CRIT DMG',
-        -- substatThree
         'ATK%',
-        -- substatFour
+        -- substatThree
         'Energy Recharge',
+        -- substatFour
+        NULL,
         -- weaponOneId
         (
             SELECT id
@@ -697,59 +697,103 @@ VALUES (
         -- weaponType
         'Sword',
         -- sandsStatOne
-        NULL,
+        'Energy Recharge',
         -- sandsStatTwo
         NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Electro DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'Energy Recharge',
         -- substatTwo
-        NULL,
+        'ATK%',
         -- substatThree
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Favonius Sword'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Freedom-Sworn'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Sacrificial Sword'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Skyward Blade'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Festering Desire'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Noblesse Oblige'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Instructor'
+        ),
         -- artifactSetThreeIdSecond
         NULL,
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Emblem of Severed Fate'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'The Exile'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'The Exile'
+        ),
         -- artifactSetFiveIdSecond
         NULL
     );

@@ -110,13 +110,13 @@ public class WeaponsFlywayMigrationCreation {
                                               whitespace,
                                               row[3] != null ? String.format("'%s'", row[3].replace("'", "''")) :
                                               "NULL"));
-            WeaponSecondaryStats weaponSecondaryStat = WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(row[4]);
+            WeaponSecondaryStats weaponSecondaryStat =
+                    WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(row[4]);
             fileContents.append(String.format("%s-- secondaryStat%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              weaponSecondaryStat != null ? String.format("'%s'",
-                                                                                          weaponSecondaryStat.getValue()) :
-                                              "NULL"));
+                                              weaponSecondaryStat != null ?
+                                              String.format("'%s'", weaponSecondaryStat.getValue()) : "NULL"));
             fileContents.append(String.format("%s-- weaponAffix%n%s%s,%n",
                                               whitespace,
                                               whitespace,

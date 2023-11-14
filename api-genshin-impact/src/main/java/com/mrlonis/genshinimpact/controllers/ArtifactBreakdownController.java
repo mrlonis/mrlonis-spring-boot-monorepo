@@ -68,6 +68,26 @@ public class ArtifactBreakdownController {
         List<CircletMainStats> circletStats = new ArrayList<>();
         List<Substats> substats = new ArrayList<>();
 
+        processCharacters(characters, sandsStats, gobletStats, circletStats, substats);
+
+        processSandsStats(sandsStats);
+        processGobletStats(gobletStats);
+        processCircletStats(circletStats);
+        processSubstatStats(substats);
+
+        artifactBreakdown.setSandsStats(sandsStats);
+        artifactBreakdown.setGobletStats(gobletStats);
+        artifactBreakdown.setCircletStats(circletStats);
+        artifactBreakdown.setSubstats(substats);
+
+        return artifactBreakdown;
+    }
+
+    private void processCharacters(List<Character> characters,
+                                   List<SandsMainStats> sandsStats,
+                                   List<GobletMainStats> gobletStats,
+                                   List<CircletMainStats> circletStats,
+                                   List<Substats> substats) {
         for (Character character : characters) {
             if (character.getSandsStatOne() != null && !sandsStats.contains(character.getSandsStatOne())) {
                 sandsStats.add(character.getSandsStatOne());
@@ -117,7 +137,53 @@ public class ArtifactBreakdownController {
                 substats.add(character.getSubstatThree());
             }
         }
+    }
 
+    private void processSandsStats(List<SandsMainStats> sandsStats) {
+        if (sandsStats.contains(SandsMainStats.ATTACK_PERCENT_ENERGY_RECHARGE)) {
+            sandsStats.remove(SandsMainStats.ATTACK_PERCENT_ENERGY_RECHARGE);
+
+            if (!sandsStats.contains(SandsMainStats.ATTACK_PERCENT)) {
+                sandsStats.add(SandsMainStats.ATTACK_PERCENT);
+            }
+
+            if (!sandsStats.contains(SandsMainStats.ENERGY_RECHARGE)) {
+                sandsStats.add(SandsMainStats.ENERGY_RECHARGE);
+            }
+        }
+
+        if (sandsStats.contains(SandsMainStats.ELEMENTAL_MASTERY_ATTACK_PERCENT_ENERGY_RECHARGE)) {
+            sandsStats.remove(SandsMainStats.ELEMENTAL_MASTERY_ATTACK_PERCENT_ENERGY_RECHARGE);
+
+            if (!sandsStats.contains(SandsMainStats.ELEMENTAL_MASTERY)) {
+                sandsStats.add(SandsMainStats.ELEMENTAL_MASTERY);
+            }
+
+            if (!sandsStats.contains(SandsMainStats.ATTACK_PERCENT)) {
+                sandsStats.add(SandsMainStats.ATTACK_PERCENT);
+            }
+
+            if (!sandsStats.contains(SandsMainStats.ENERGY_RECHARGE)) {
+                sandsStats.add(SandsMainStats.ENERGY_RECHARGE);
+            }
+        }
+    }
+
+    private void processGobletStats(List<GobletMainStats> gobletStats) {
+        if (gobletStats.contains(GobletMainStats.ELEMENTAL_MASTERY_ANEMO_DAMAGE_BONUS)) {
+            gobletStats.remove(GobletMainStats.ELEMENTAL_MASTERY_ANEMO_DAMAGE_BONUS);
+
+            if (!gobletStats.contains(GobletMainStats.ELEMENTAL_MASTERY)) {
+                gobletStats.add(GobletMainStats.ELEMENTAL_MASTERY);
+            }
+
+            if (!gobletStats.contains(GobletMainStats.ANEMO_DAMAGE_BONUS)) {
+                gobletStats.add(GobletMainStats.ANEMO_DAMAGE_BONUS);
+            }
+        }
+    }
+
+    private void processCircletStats(List<CircletMainStats> circletStats) {
         if (circletStats.contains(CircletMainStats.CRITICAL_RATE_CRITICAL_DAMAGE)) {
             circletStats.remove(CircletMainStats.CRITICAL_RATE_CRITICAL_DAMAGE);
 
@@ -130,6 +196,36 @@ public class ArtifactBreakdownController {
             }
         }
 
+        if (circletStats.contains(CircletMainStats.CRITICAL_DAMAGE_ATTACK_PERCENT)) {
+            circletStats.remove(CircletMainStats.CRITICAL_DAMAGE_ATTACK_PERCENT);
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_DAMAGE)) {
+                circletStats.add(CircletMainStats.CRITICAL_DAMAGE);
+            }
+
+            if (!circletStats.contains(CircletMainStats.ATTACK_PERCENT)) {
+                circletStats.add(CircletMainStats.ATTACK_PERCENT);
+            }
+        }
+
+        if (circletStats.contains(CircletMainStats.ELEMENTAL_MASTERY_CRITICAL_RATE_CRITICAL_DAMAGE)) {
+            circletStats.remove(CircletMainStats.ELEMENTAL_MASTERY_CRITICAL_RATE_CRITICAL_DAMAGE);
+
+            if (!circletStats.contains(CircletMainStats.ELEMENTAL_MASTERY)) {
+                circletStats.add(CircletMainStats.ELEMENTAL_MASTERY);
+            }
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_RATE)) {
+                circletStats.add(CircletMainStats.CRITICAL_RATE);
+            }
+
+            if (!circletStats.contains(CircletMainStats.CRITICAL_DAMAGE)) {
+                circletStats.add(CircletMainStats.CRITICAL_DAMAGE);
+            }
+        }
+    }
+
+    private void processSubstatStats(List<Substats> substats) {
         if (substats.contains(Substats.CRITICAL_RATE_CRITICAL_DAMAGE)) {
             substats.remove(Substats.CRITICAL_RATE_CRITICAL_DAMAGE);
 
@@ -141,12 +237,5 @@ public class ArtifactBreakdownController {
                 substats.add(Substats.CRITICAL_DAMAGE);
             }
         }
-
-        artifactBreakdown.setSandsStats(sandsStats);
-        artifactBreakdown.setGobletStats(gobletStats);
-        artifactBreakdown.setCircletStats(circletStats);
-        artifactBreakdown.setSubstats(substats);
-
-        return artifactBreakdown;
     }
 }

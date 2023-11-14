@@ -4,8 +4,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 public enum SandsMainStats {
-    HEALTH_PERCENT("HP%"), ATTACK_PERCENT("ATK%"), DEFENSE_PERCENT("DEF%"), ENERGY_RECHARGE("Energy Recharge"),
-    ELEMENTAL_MASTERY("Elemental Mastery");
+    HEALTH_PERCENT("HP%"),
+    ATTACK_PERCENT("ATK%"),
+    DEFENSE_PERCENT("DEF%"),
+    ENERGY_RECHARGE("Energy Recharge"),
+    ELEMENTAL_MASTERY("Elemental Mastery"),
+    ATTACK_PERCENT_ENERGY_RECHARGE("ATK% / Energy Recharge"),
+    ELEMENTAL_MASTERY_ATTACK_PERCENT_ENERGY_RECHARGE("Elemental Mastery / ATK% / Energy Recharge");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;

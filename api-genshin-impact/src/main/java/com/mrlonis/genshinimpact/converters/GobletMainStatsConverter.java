@@ -1,7 +1,6 @@
 package com.mrlonis.genshinimpact.converters;
 
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
-import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
