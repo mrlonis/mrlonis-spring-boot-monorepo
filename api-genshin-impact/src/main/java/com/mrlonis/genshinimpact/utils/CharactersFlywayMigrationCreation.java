@@ -333,7 +333,10 @@ public class CharactersFlywayMigrationCreation {
                                                                                                             "''"))) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));
-            fileContents.append(String.format(";%n%n"));
+            fileContents.append(String.format(";%n"));
+            if (i != csvFile.size() - 1) {
+                fileContents.append(String.format("%n"));
+            }
         }
         return fileContents.toString();
     }
