@@ -11,8 +11,8 @@ Barbara,,4,Hydro,Catalyst,HP%,,,HP%,,,Healing Bonus,,,HP%,HP,Energy Recharge,,Th
 Kaeya,,4,Cryo,Sword,Energy Recharge,ATK%,,Cryo DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Primordial Jade Cutter,Mistsplitter Reforged,Light of Foliar Incision,Freedom-Sworn,Lion's Roar,Emblem of Severed Fate,,Blizzard Strayer,Noblesse Oblige,Emblem of Severed Fate,Noblesse Oblige,Noblesse Oblige,,Instructor,
 Diluc,,5,Pyro,Claymore,ATK%,Elemental Mastery,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Redhorn Stonethresher,Beacon of the Reed Sea,Serpent Spine,Wolf's Gravestone,The Unforged,Crimson Witch of Flames,,Gilded Dreams,,Crimson Witch of Flames,Gilded Dreams,Crimson Witch of Flames,Shimenawa's Reminiscence,Gilded Dreams,Shimenawa's Reminiscence
 Razor,,4,Electro,Claymore,ATK%,,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Wolf's Gravestone,Beacon of the Reed Sea,Song of Broken Pines,Redhorn Stonethresher,Serpent Spine,Pale Flame,,Gladiator's Finale,,Bloodstained Chivalry,Pale Flame,Gladiator's Finale,Pale Flame,Gladiator's Finale,Shimenawa's Reminiscence
-Amber,,4,Pyro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Venti,,5,Anemo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Amber,,4,Pyro,Bow,Energy Recharge,,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Elegy for the End,Favonius Warbow,Sacrificial Bow,The Viridescent Hunt,End of the Line,Noblesse Oblige,,Instructor,,Emblem of Severed Fate,The Exile,Emblem of Severed Fate,,Emblem of Severed Fate,Noblesse Oblige
+Venti,,5,Anemo,Bow,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,,Elegy for the End,The Stringless,Windblume Ode,Alley Hunter,Favonius Warbow,Viridescent Venerer,,Noblesse Oblige,,Gilded Dreams,Wanderer's Troupe,Emblem of Severed Fate,Gilded Dreams,Gilded Dreams,
 Xiangling,,4,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Beidou,,4,Electro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Xingqiu,,4,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
