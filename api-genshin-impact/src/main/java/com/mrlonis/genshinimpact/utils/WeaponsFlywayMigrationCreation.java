@@ -94,12 +94,14 @@ public class WeaponsFlywayMigrationCreation {
             fileContents.append(String.format("%s-- name%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[0] != null ? String.format("'%s'", row[0].replace("'", "''")) :
+                                              row[0] != null ?
+                                              String.format("'%s'", row[0].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- imageUrl%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[1] != null ? String.format("'%s'", row[1].replace("'", "''")) :
+                                              row[1] != null ?
+                                              String.format("'%s'", row[1].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- rarity%n%s%s,%n",
                                               whitespace,
@@ -108,7 +110,8 @@ public class WeaponsFlywayMigrationCreation {
             fileContents.append(String.format("%s-- weaponType%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[3] != null ? String.format("'%s'", row[3].replace("'", "''")) :
+                                              row[3] != null ?
+                                              String.format("'%s'", row[3].replace("'", "''")) :
                                               "NULL"));
             WeaponSecondaryStats weaponSecondaryStat =
                     WeaponSecondaryStatsConverter.convertToEntityAttributeFromCsvValue(row[4]);
@@ -116,21 +119,25 @@ public class WeaponsFlywayMigrationCreation {
                                               whitespace,
                                               whitespace,
                                               weaponSecondaryStat != null ?
-                                              String.format("'%s'", weaponSecondaryStat.getValue()) : "NULL"));
+                                              String.format("'%s'", weaponSecondaryStat.getValue()) :
+                                              "NULL"));
             fileContents.append(String.format("%s-- weaponAffix%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[5] != null ? String.format("'%s'", row[5].replace("'", "''")) :
+                                              row[5] != null ?
+                                              String.format("'%s'", row[5].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- affixDescription%n%s%s,%n",
                                               whitespace,
                                               whitespace,
-                                              row[6] != null ? String.format("'%s'", row[6].replace("'", "''")) :
+                                              row[6] != null ?
+                                              String.format("'%s'", row[6].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s-- description%n%s%s%n",
                                               whitespace,
                                               whitespace,
-                                              row[7] != null ? String.format("'%s'", row[7].replace("'", "''")) :
+                                              row[7] != null ?
+                                              String.format("'%s'", row[7].replace("'", "''")) :
                                               "NULL"));
             fileContents.append(String.format("%s%s", parenthesisWhitespace, ")"));
             if (i != csvFile.size() - 1) {
