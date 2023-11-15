@@ -40,7 +40,8 @@ out/
 # VS Code
 .vscode/*
 !.vscode/extensions.json
-!.vscode/settings.sample.json
+!.vscode/settings.mac.sample.json
+!.vscode/settings.wsl.sample.json
 
 ### H2 ###
 *.db
