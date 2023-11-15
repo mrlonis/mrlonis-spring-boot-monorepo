@@ -1,0 +1,29 @@
+{
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools",
+    "editor.formatOnSave": true
+  },
+  "cSpell.words": [
+    "afkarena",
+    "mythichero",
+    "mythicheroes"
+  ],
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.runtimes": [
+    {
+      "default": true,
+      "name": "JavaSE-17",
+      "path": "/usr/lib/jvm/java-17-openjdk-amd64"
+    }
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+  "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+  "spring-boot.ls.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+  "sqltools.format": {
+    "keywordCase": "upper",
+    "language": "sql",
+    "linesBetweenQueries": 2,
+    "uppercaseKeywords": true
+  }
+}
