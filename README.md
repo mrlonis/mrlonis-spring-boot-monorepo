@@ -15,6 +15,7 @@ This repo is meant to house all of my personal Spring Boot projects
       - [WSL - Ubuntu](#wsl---ubuntu)
   - [Running the Project](#running-the-project)
   - [Ports](#ports)
+  - [Sorting JSON Files](#sorting-json-files)
 
 ## Prerequisites
 
@@ -67,3 +68,11 @@ gradlew.bat build
 - 9001: api-mythic-heroes
 - 9002: api-genshin-impact
 - 9003: api-afk-arena
+
+## Sorting JSON Files
+
+```bash
+sort-json --indent 2 --depth 4 .vscode/settings.json && prettier --config .prettierrc --write .vscode/settings.json
+sort-json --indent 2 --depth 4 .vscode/settings.mac.sample.json && prettier --config .prettierrc --write .vscode/settings.mac.sample.json
+sort-json --indent 2 --depth 4 .vscode/settings.wsl.sample.json && prettier --config .prettierrc --write .vscode/settings.wsl.sample.json
+```
