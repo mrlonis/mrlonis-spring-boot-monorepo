@@ -3,11 +3,7 @@
     "editor.defaultFormatter": "mtxr.sqltools",
     "editor.formatOnSave": true
   },
-  "cSpell.words": [
-    "afkarena",
-    "mythichero",
-    "mythicheroes"
-  ],
+  "cSpell.words": ["afkarena", "mythichero", "mythicheroes"],
   "java.compile.nullAnalysis.mode": "automatic",
   "java.configuration.runtimes": [
     {
@@ -19,6 +15,7 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.import.gradle.java.home": "/usr/local/opt/openjdk@17",
   "java.jdt.ls.java.home": "/usr/local/opt/openjdk@17",
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable",
   "spring-boot.ls.java.home": "/usr/local/opt/openjdk@17",
   "sqltools.format": {
     "keywordCase": "upper",
