@@ -4257,61 +4257,113 @@ VALUES (
         -- weaponType
         'Bow',
         -- sandsStatOne
-        NULL,
+        'ATK%',
         -- sandsStatTwo
         NULL,
         -- sandsStatThree
         NULL,
         -- gobletStatOne
-        NULL,
+        'Cryo DMG Bonus',
         -- gobletStatTwo
         NULL,
         -- gobletStatThree
         NULL,
         -- circletStatOne
-        NULL,
+        'CRIT DMG',
         -- circletStatTwo
         NULL,
         -- circletStatThree
         NULL,
         -- substatOne
-        NULL,
+        'CRIT Rate / CRIT DMG',
         -- substatTwo
-        NULL,
+        'Elemental Mastery',
         -- substatThree
-        NULL,
+        'ATK%',
         -- substatFour
         NULL,
         -- weaponOneId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Hunter''s Path'
+        ),
         -- weaponTwoId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Amos'' Bow'
+        ),
         -- weaponThreeId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Aqua Simulacra'
+        ),
         -- weaponFourId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Polar Star'
+        ),
         -- weaponFiveId
-        NULL,
+        (
+            SELECT id
+            FROM Weapons
+            WHERE name = 'Prototype Crescent'
+        ),
         -- artifactSetOneIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetOneIdSecond
         NULL,
         -- artifactSetTwoIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Wanderer''s Troupe'
+        ),
         -- artifactSetTwoIdSecond
         NULL,
         -- artifactSetThreeIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetThreeIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Wanderer''s Troupe'
+        ),
         -- artifactSetFourIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Blizzard Strayer'
+        ),
         -- artifactSetFourIdSecond
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Shimenawa''s Reminiscence'
+        ),
         -- artifactSetFiveIdFirst
-        NULL,
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Blizzard Strayer'
+        ),
         -- artifactSetFiveIdSecond
-        NULL
+        (
+            SELECT id
+            FROM Artifacts
+            WHERE name = 'Wanderer''s Troupe'
+        )
     );
 
 INSERT INTO Characters (
