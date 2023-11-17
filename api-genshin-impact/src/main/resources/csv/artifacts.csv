@@ -1,5 +1,5 @@
 name,imageUrl,onePieceSetEffect,twoPieceSetEffect,fourPieceSetEffect
-Resolution of Sojourner,,,2-Piece: ATK +18%.,4-Piece: Increases Charged Attack CRIT Rate by 30%.
+Resolution of Sojourner,images/artifacts/Resolution of Sojourner.webp,,2-Piece: ATK +18%.,4-Piece: Increases Charged Attack CRIT Rate by 30%.
 Brave Heart,,,2-Piece: ATK +18%.,4-Piece: Increases DMG by 30% against opponents with more than 50% HP.
 Defender's Will,,,2-Piece: DEF +30%,"4-Piece: For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%."
 Tiny Miracle,,,2-Piece: All Elemental RES increased by 20%.,4-Piece: Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s.

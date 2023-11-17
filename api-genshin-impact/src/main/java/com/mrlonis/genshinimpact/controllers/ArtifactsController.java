@@ -23,7 +23,14 @@ public class ArtifactsController {
     }
 
     @GetMapping("/artifact")
-    public Artifact getArtifact(@RequestParam("id") UUID id) {
+    public Artifact getArtifact(@RequestParam(value = "id", required = false) UUID id,
+                                @RequestParam(value = "name", required = false) String name) {
+        if (id == null && name == null) {
+            throw new RuntimeException("Must provide either an id or a name");
+        }
+        if (id == null) {
+            return artifactsRepository.findByNameIgnoreCaseContains(name);
+        }
         return artifactsRepository.findById(id);
     }
 }

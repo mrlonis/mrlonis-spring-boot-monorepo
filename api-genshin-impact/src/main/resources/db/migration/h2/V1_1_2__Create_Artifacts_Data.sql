@@ -9,7 +9,7 @@ VALUES (
         -- name
         'Resolution of Sojourner',
         -- imageUrl
-        NULL,
+        'images/artifacts/Resolution of Sojourner.webp',
         -- onePieceSetEffect
         NULL,
         -- twoPieceSetEffect
