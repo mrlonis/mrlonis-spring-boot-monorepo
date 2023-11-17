@@ -73,6 +73,7 @@
 											"  const responseJson = pm.response.json();",
 											"  pm.expect(responseJson.id).to.not.be.null;",
 											"  pm.environment.set(\"testArtifactId\", responseJson.id);",
+											"  pm.environment.set(\"testArtifactName\", responseJson.name);",
 											"});",
 											""
 										],
@@ -657,99 +658,6 @@
 							"response": []
 						}
 					]
-				},
-				{
-					"name": "images",
-					"item": [
-						{
-							"name": "Get Character Image",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", () => {",
-											"  pm.response.to.have.status(200);",
-											"});",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{hostname}}/api/images/:type/:fimename",
-									"host": [
-										"{{hostname}}"
-									],
-									"path": [
-										"api",
-										"images",
-										":type",
-										":fimename"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "characters"
-										},
-										{
-											"key": "fimename",
-											"value": "Ayaka.png"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Element Image",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", () => {",
-											"  pm.response.to.have.status(200);",
-											"});",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{hostname}}/api/images/:type/:fimename",
-									"host": [
-										"{{hostname}}"
-									],
-									"path": [
-										"api",
-										"images",
-										":type",
-										":fimename"
-									],
-									"variable": [
-										{
-											"key": "type",
-											"value": "elements"
-										},
-										{
-											"key": "fimename",
-											"value": "Pyro.svg"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
 				}
 			]
 		},
@@ -825,6 +733,45 @@
 										{
 											"key": "id",
 											"value": "{{testArtifactId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifact?name={{testArtifactName}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifact"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "{{testArtifactName}}"
 										}
 									]
 								}
@@ -914,6 +861,119 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Get Character Image",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/images/:type/:fimename",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"images",
+								":type",
+								":fimename"
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "characters"
+								},
+								{
+									"key": "fimename",
+									"value": "Ayaka.png"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Element Image",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/images/:type/:fimename",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"images",
+								":type",
+								":fimename"
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "elements"
+								},
+								{
+									"key": "fimename",
+									"value": "Pyro.svg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artifact Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/images/artifacts/Resolution Of Sojourner.webp",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"images",
+								"artifacts",
+								"Resolution Of Sojourner.webp"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
