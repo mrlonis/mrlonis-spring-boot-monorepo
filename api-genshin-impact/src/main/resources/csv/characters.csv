@@ -32,7 +32,7 @@ Diona,,4,Cryo,Bow,Energy Recharge,HP%,,HP%,,,HP%,Healing Bonus,,HP%,Energy Recha
 Mona,,5,Hydro,Catalyst,Energy Recharge,ATK%,,Hydro DMG,ATK%,,CRIT Rate,,,Energy Recharge,CRIT Rate,ATK%,,Thrilling Tales of Dragon Slayers,Favonius Codex,Prototype Amber,Wine and Song,The Widsith,Noblesse Oblige,,Tenacity of the Millelith,,Emblem of Severed Fate,Scholar,Emblem of Severed Fate,,Scholar,
 Keqing,,5,Electro,Sword,ATK%,,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Mistsplitter Reforged,Primordial Jade Cutter,Haran Geppaku Futsu,Freedom-Sworn,Harbinger of Dawn,Thundering Fury,,Thundersoother,,Gilded Dreams,,Gilded Dreams,Thundering Fury,Shimenawa's Reminiscence,Thundering Fury
 Sucrose,,4,Anemo,Catalyst,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,,A Thousand Floating Dreams,Sacrificial Fragments,Thrilling Tales of Dragon Slayers,Hakushin Ring,Magic Guide,Viridescent Venerer,,Instructor,,Gilded Dreams,Wanderer's Troupe,Gilded Dreams,,Gilded Dreams,Viridescent Venerer
-Xinyan,,4,Geo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Xinyan,,4,Geo,Claymore,ATK%,Energy Recharge,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Redhorn Stonethresher,Skyward Pride,Serpent Spine,The Unforged,Song of Broken Pines,Bloodstained Chivalry,Pale Flame,Pale Flame,,Emblem of Severed Fate,Pale Flame,Pale Flame,Shimenawa's Reminiscence,Noblesse Oblige,Pale Flame
 Rosaria,,4,Cryo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Hu Tao,,5,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kaedehara Kazuha,,5,Anemo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
