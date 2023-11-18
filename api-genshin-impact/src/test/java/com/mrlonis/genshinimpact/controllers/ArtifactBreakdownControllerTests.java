@@ -17,8 +17,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test-h2")
@@ -35,7 +38,10 @@ class ArtifactBreakdownControllerTests {
 
     @Test
     void testShouldReturnAllForEntity() {
-        Artifact artifact = artifactsRepository.findByNameIgnoreCaseContains("Blizzard Strayer");
+        Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseContains("Blizzard Strayer");
+        assertTrue(repositoryArtifact.isPresent());
+
+        Artifact artifact = repositoryArtifact.get();
         assertNotNull(artifact);
         assertNotNull(artifact.getId());
 
