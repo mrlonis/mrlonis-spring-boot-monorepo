@@ -38,7 +38,7 @@ class CharactersRepositoryTests {
 
     @Test
     void testFindByArtifactSet() {
-        Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseContains("Blizzard Strayer");
+        Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseIs("Blizzard Strayer");
         assertTrue(repositoryArtifact.isPresent());
 
         Artifact artifact = repositoryArtifact.get();

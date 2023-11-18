@@ -30,7 +30,7 @@ public class ArtifactsController {
             throw new RuntimeException("Must provide either an id or a name");
         }
         if (id == null) {
-            Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseContains(name);
+            Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseIs(name);
             if (repositoryArtifact.isEmpty()) {
                 throw new RuntimeException("Artifact not found");
             }

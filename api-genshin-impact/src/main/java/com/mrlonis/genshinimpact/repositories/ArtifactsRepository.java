@@ -15,5 +15,5 @@ import java.util.UUID;
 @CrossOrigin(origins = "http://localhost:4200")
 public interface ArtifactsRepository extends JpaRepository<Artifact, UUID>, PagingAndSortingRepository<Artifact, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
-    Optional<Artifact> findByNameIgnoreCaseContains(@Param("name") String name);
+    Optional<Artifact> findByNameIgnoreCaseIs(@Param("name") String name);
 }

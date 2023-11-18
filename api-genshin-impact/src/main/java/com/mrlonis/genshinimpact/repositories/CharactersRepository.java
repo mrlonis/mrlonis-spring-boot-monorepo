@@ -16,7 +16,7 @@ import java.util.UUID;
 public interface CharactersRepository
         extends JpaRepository<Character, UUID>, PagingAndSortingRepository<Character, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
-    Character findByNameIgnoreCaseContains(@Param("name") String name);
+    Character findByNameIgnoreCaseIs(@Param("name") String name);
 
     @RestResource(path = "findByArtifactSet", rel = "findByArtifactSet")
     List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(

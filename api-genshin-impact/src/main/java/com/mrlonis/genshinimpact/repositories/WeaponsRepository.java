@@ -17,7 +17,7 @@ import java.util.UUID;
 @CrossOrigin(origins = "http://localhost:4200")
 public interface WeaponsRepository extends JpaRepository<Weapon, UUID>, PagingAndSortingRepository<Weapon, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
-    Optional<Weapon> findByNameIgnoreCaseContains(@Param("name") String name);
+    Optional<Weapon> findByNameIgnoreCaseIs(@Param("name") String name);
 
     @RestResource(path = "findByWeaponType", rel = "findByWeaponType")
     List<Weapon> findByWeaponType(@Param("weaponType") WeaponTypes weaponType);

@@ -99,7 +99,7 @@ public class EntityCreation {
             String name = row[0];
             String imageUrl = row[1];
 
-            Optional<Element> existingElement = elementsRepository.findByNameIgnoreCaseContains(name);
+            Optional<Element> existingElement = elementsRepository.findByNameIgnoreCaseIs(name);
             if (existingElement.isPresent()) {
                 Element element = existingElement.get();
                 log.info("createEntities(): Element already exists: " + element);
@@ -144,7 +144,8 @@ public class EntityCreation {
             String affixDescription = row[6];
             String description = row[7];
 
-            Optional<Weapon> existingWeapon = weaponsRepository.findByNameIgnoreCaseContains(name);
+            log.info("createEntities(): Creating weapon: " + name);
+            Optional<Weapon> existingWeapon = weaponsRepository.findByNameIgnoreCaseIs(name);
             if (existingWeapon.isPresent()) {
                 Weapon weapon = existingWeapon.get();
                 log.info("createEntities(): Weapon already exists: " + weapon);
@@ -199,7 +200,7 @@ public class EntityCreation {
             String twoPieceSetEffect = row[3];
             String fourPieceSetEffect = row[4];
 
-            Optional<Artifact> existingArtifact = artifactsRepository.findByNameIgnoreCaseContains(name);
+            Optional<Artifact> existingArtifact = artifactsRepository.findByNameIgnoreCaseIs(name);
             if (existingArtifact.isPresent()) {
                 Artifact artifact = existingArtifact.get();
                 log.info("createEntities(): Artifact already exists: " + artifact);
@@ -276,14 +277,15 @@ public class EntityCreation {
             String artifactSetFiveNameFirst = row[31];
             String artifactSetFiveNameSecond = row[32];
 
-            Character existingCharacter = charactersRepository.findByNameIgnoreCaseContains(name);
+            log.info("createEntities(): Creating character: " + name);
+            Character existingCharacter = charactersRepository.findByNameIgnoreCaseIs(name);
             if (existingCharacter != null) {
                 log.info("createEntities(): Character already exists: " + existingCharacter);
                 log.info("createEntities(): Updating character: " + existingCharacter);
 
                 existingCharacter.setImageUrl(imageUrl);
                 existingCharacter.setRarity(rarity);
-                Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseContains(elementName);
+                Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseIs(elementName);
                 if (repositoryElement.isEmpty()) {
                     log.error("createEntities(): Element does not exist: " + elementName);
                     throw new RuntimeException("Element does not exist: " + elementName);
@@ -305,7 +307,7 @@ public class EntityCreation {
                 existingCharacter.setSubstatTwo(substatTwo);
                 existingCharacter.setSubstatThree(substatThree);
                 existingCharacter.setSubstatFour(substatFour);
-                Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseContains(weaponOneName);
+                Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseIs(weaponOneName);
                 if (repositoryWeaponOne.isEmpty()) {
                     existingCharacter.setWeaponOneId(null);
                     existingCharacter.setWeaponOne(null);
@@ -314,7 +316,7 @@ public class EntityCreation {
                     existingCharacter.setWeaponOneId(weaponOne.getId());
                     existingCharacter.setWeaponOne(weaponOne);
                 }
-                Optional<Weapon> repositoryWeaponTwo = weaponsRepository.findByNameIgnoreCaseContains(weaponTwoName);
+                Optional<Weapon> repositoryWeaponTwo = weaponsRepository.findByNameIgnoreCaseIs(weaponTwoName);
                 if (repositoryWeaponTwo.isEmpty()) {
                     existingCharacter.setWeaponTwoId(null);
                     existingCharacter.setWeaponTwo(null);
@@ -324,7 +326,7 @@ public class EntityCreation {
                     existingCharacter.setWeaponTwo(weaponTwo);
                 }
                 Optional<Weapon> repositoryWeaponThree =
-                        weaponsRepository.findByNameIgnoreCaseContains(weaponThreeName);
+                        weaponsRepository.findByNameIgnoreCaseIs(weaponThreeName);
                 if (repositoryWeaponThree.isEmpty()) {
                     existingCharacter.setWeaponThreeId(null);
                     existingCharacter.setWeaponThree(null);
@@ -333,7 +335,7 @@ public class EntityCreation {
                     existingCharacter.setWeaponThreeId(weaponThree.getId());
                     existingCharacter.setWeaponThree(weaponThree);
                 }
-                Optional<Weapon> repositoryWeaponFour = weaponsRepository.findByNameIgnoreCaseContains(weaponFourName);
+                Optional<Weapon> repositoryWeaponFour = weaponsRepository.findByNameIgnoreCaseIs(weaponFourName);
                 if (repositoryWeaponFour.isEmpty()) {
                     existingCharacter.setWeaponFourId(null);
                     existingCharacter.setWeaponFour(null);
@@ -342,7 +344,7 @@ public class EntityCreation {
                     existingCharacter.setWeaponFourId(weaponFour.getId());
                     existingCharacter.setWeaponFour(weaponFour);
                 }
-                Optional<Weapon> repositoryWeaponFive = weaponsRepository.findByNameIgnoreCaseContains(weaponFiveName);
+                Optional<Weapon> repositoryWeaponFive = weaponsRepository.findByNameIgnoreCaseIs(weaponFiveName);
                 if (repositoryWeaponFive.isEmpty()) {
                     existingCharacter.setWeaponFiveId(null);
                     existingCharacter.setWeaponFive(null);
@@ -352,7 +354,7 @@ public class EntityCreation {
                     existingCharacter.setWeaponFive(weaponFive);
                 }
                 Optional<Artifact> repositoryArtifactSetOneFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetOneNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameFirst);
                 if (repositoryArtifactSetOneFirst.isEmpty()) {
                     existingCharacter.setArtifactSetOneIdFirst(null);
                     existingCharacter.setArtifactSetOneFirst(null);
@@ -362,7 +364,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetOneFirst(artifactSetOneFirst);
                 }
                 Optional<Artifact> repositoryArtifactSetOneSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetOneNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameSecond);
                 if (repositoryArtifactSetOneSecond.isEmpty()) {
                     existingCharacter.setArtifactSetOneIdSecond(null);
                     existingCharacter.setArtifactSetOneSecond(null);
@@ -372,7 +374,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetOneSecond(artifactSetOneSecond);
                 }
                 Optional<Artifact> repositoryArtifactSetTwoFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetTwoNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameFirst);
                 if (repositoryArtifactSetTwoFirst.isEmpty()) {
                     existingCharacter.setArtifactSetTwoIdFirst(null);
                     existingCharacter.setArtifactSetTwoFirst(null);
@@ -382,7 +384,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetTwoFirst(artifactSetTwoFirst);
                 }
                 Optional<Artifact> repositoryArtifactSetTwoSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetTwoNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameSecond);
                 if (repositoryArtifactSetTwoSecond.isEmpty()) {
                     existingCharacter.setArtifactSetTwoIdSecond(null);
                     existingCharacter.setArtifactSetTwoSecond(null);
@@ -392,7 +394,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetTwoSecond(artifactSetTwoSecond);
                 }
                 Optional<Artifact> repositoryArtifactSetThreeFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetThreeNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameFirst);
                 if (repositoryArtifactSetThreeFirst.isEmpty()) {
                     existingCharacter.setArtifactSetThreeIdFirst(null);
                     existingCharacter.setArtifactSetThreeFirst(null);
@@ -402,7 +404,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetThreeFirst(artifactSetThreeFirst);
                 }
                 Optional<Artifact> repositoryArtifactSetThreeSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetThreeNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameSecond);
                 if (repositoryArtifactSetThreeSecond.isEmpty()) {
                     existingCharacter.setArtifactSetThreeIdSecond(null);
                     existingCharacter.setArtifactSetThreeSecond(null);
@@ -412,7 +414,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetThreeSecond(artifactSetThreeSecond);
                 }
                 Optional<Artifact> repositoryArtifactSetFourFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFourNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameFirst);
                 if (repositoryArtifactSetFourFirst.isEmpty()) {
                     existingCharacter.setArtifactSetFourIdFirst(null);
                     existingCharacter.setArtifactSetFourFirst(null);
@@ -422,7 +424,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFourFirst(artifactSetFourFirst);
                 }
                 Optional<Artifact> repositoryArtifactSetFourSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFourNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameSecond);
                 if (repositoryArtifactSetFourSecond.isEmpty()) {
                     existingCharacter.setArtifactSetFourIdSecond(null);
                     existingCharacter.setArtifactSetFourSecond(null);
@@ -432,7 +434,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFourSecond(artifactSetFourSecond);
                 }
                 Optional<Artifact> repositoryArtifactSetFiveFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFiveNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameFirst);
                 if (repositoryArtifactSetFiveFirst.isEmpty()) {
                     existingCharacter.setArtifactSetFiveIdFirst(null);
                     existingCharacter.setArtifactSetFiveFirst(null);
@@ -442,7 +444,7 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFiveFirst(artifactSetFiveFirst);
                 }
                 Optional<Artifact> repositoryArtifactSetFiveSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFiveNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameSecond);
                 if (repositoryArtifactSetFiveSecond.isEmpty()) {
                     existingCharacter.setArtifactSetFiveIdSecond(null);
                     existingCharacter.setArtifactSetFiveSecond(null);
@@ -454,38 +456,38 @@ public class EntityCreation {
                 characters.add(existingCharacter);
             } else {
                 log.info("createEntities(): Character does not exist: " + name);
-                Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseContains(elementName);
+                Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseIs(elementName);
                 if (repositoryElement.isEmpty()) {
                     log.error("createEntities(): Element does not exist: " + elementName);
                     throw new RuntimeException("Element does not exist: " + elementName);
                 }
                 Element element = repositoryElement.get();
-                Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseContains(weaponOneName);
-                Optional<Weapon> repositoryWeaponTwo = weaponsRepository.findByNameIgnoreCaseContains(weaponTwoName);
+                Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseIs(weaponOneName);
+                Optional<Weapon> repositoryWeaponTwo = weaponsRepository.findByNameIgnoreCaseIs(weaponTwoName);
                 Optional<Weapon> repositoryWeaponThree =
-                        weaponsRepository.findByNameIgnoreCaseContains(weaponThreeName);
-                Optional<Weapon> repositoryWeaponFour = weaponsRepository.findByNameIgnoreCaseContains(weaponFourName);
-                Optional<Weapon> repositoryWeaponFive = weaponsRepository.findByNameIgnoreCaseContains(weaponFiveName);
+                        weaponsRepository.findByNameIgnoreCaseIs(weaponThreeName);
+                Optional<Weapon> repositoryWeaponFour = weaponsRepository.findByNameIgnoreCaseIs(weaponFourName);
+                Optional<Weapon> repositoryWeaponFive = weaponsRepository.findByNameIgnoreCaseIs(weaponFiveName);
                 Optional<Artifact> repositoryArtifactSetOneFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetOneNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameFirst);
                 Optional<Artifact> repositoryArtifactSetOneSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetOneNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameSecond);
                 Optional<Artifact> repositoryArtifactSetTwoFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetTwoNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameFirst);
                 Optional<Artifact> repositoryArtifactSetTwoSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetTwoNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameSecond);
                 Optional<Artifact> repositoryArtifactSetThreeFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetThreeNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameFirst);
                 Optional<Artifact> repositoryArtifactSetThreeSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetThreeNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameSecond);
                 Optional<Artifact> repositoryArtifactSetFourFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFourNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameFirst);
                 Optional<Artifact> repositoryArtifactSetFourSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFourNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameSecond);
                 Optional<Artifact> repositoryArtifactSetFiveFirst =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFiveNameFirst);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameFirst);
                 Optional<Artifact> repositoryArtifactSetFiveSecond =
-                        artifactsRepository.findByNameIgnoreCaseContains(artifactSetFiveNameSecond);
+                        artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameSecond);
                 Character character = Character.builder()
                                                .name(name)
                                                .imageUrl(imageUrl)
