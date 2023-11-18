@@ -46,6 +46,7 @@ public class EntityCreation {
     @EventListener(ContextRefreshedEvent.class)
     public void contextRefreshedEvent() {
         log.info("WeaponsCreation.contextRefreshedEvent(): Starting...");
+        createElementEntities(parseCsvFile("csv/elements.csv"));
         createWeaponEntities(parseCsvFile("csv/weapons.csv"));
         createArtifactEntities(parseCsvFile("csv/artifacts.csv"));
         createCharacterEntities(parseCsvFile("csv/characters.csv"));
@@ -79,6 +80,45 @@ public class EntityCreation {
             log.error("readCsvFile(): IOException: " + e.getMessage());
             throw new RuntimeException(e);
         }
+    }
+
+    private void createElementEntities(List<String[]> csvFile) {
+        List<Element> elements = new LinkedList<>();
+
+        for (int i = 0; i < csvFile.size(); i++) {
+            String[] row = csvFile.get(i);
+            if (row.length != 2) {
+                String errorMessage = String.format(
+                        "createWeaponEntities(): Row %s size is not 2 and was instead %s! row: %s",
+                        i,
+                        row.length,
+                        Arrays.toString(row));
+                log.error(errorMessage);
+                throw new RuntimeException(errorMessage);
+            }
+            String name = row[0];
+            String imageUrl = row[1];
+
+            Optional<Element> existingElement = elementsRepository.findByNameIgnoreCaseContains(name);
+            if (existingElement.isPresent()) {
+                Element element = existingElement.get();
+                log.info("createEntities(): Element already exists: " + element);
+                log.info("createEntities(): Updating element: " + element);
+
+                element.setImageUrl(imageUrl);
+
+                elements.add(element);
+            } else {
+                log.info("createEntities(): Element does not exist: " + name);
+                Element element = Element.builder()
+                                         .name(name)
+                                         .imageUrl(imageUrl)
+                                         .build();
+                elements.add(element);
+            }
+        }
+
+        elementsRepository.saveAllAndFlush(elements);
     }
 
     private void createWeaponEntities(List<String[]> csvFile) {
