@@ -1,6 +1,8 @@
 package com.mrlonis.genshinimpact.controllers;
 
 import com.mrlonis.genshinimpact.entities.Artifact;
+import com.mrlonis.genshinimpact.exceptions.BadRequestException;
+import com.mrlonis.genshinimpact.exceptions.NotFoundException;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,21 +27,22 @@ public class ArtifactsController {
 
     @GetMapping("/artifact")
     public Artifact getArtifact(@RequestParam(value = "id", required = false) UUID id,
-                                @RequestParam(value = "name", required = false) String name) {
+                                @RequestParam(value = "name", required = false) String name)
+            throws NotFoundException, BadRequestException {
         if (id == null && name == null) {
-            throw new RuntimeException("Must provide either an id or a name");
+            throw new BadRequestException("Must provide either an id or a name");
         }
         if (id == null) {
             Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseIs(name);
             if (repositoryArtifact.isEmpty()) {
-                throw new RuntimeException("Artifact not found");
+                throw new NotFoundException("Artifact not found");
             }
             return repositoryArtifact.get();
         }
 
         Optional<Artifact> artifact = artifactsRepository.findById(id);
         if (artifact.isEmpty()) {
-            throw new RuntimeException("Artifact not found");
+            throw new NotFoundException("Artifact not found");
         }
 
         return artifact.get();

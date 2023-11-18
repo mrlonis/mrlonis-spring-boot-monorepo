@@ -1268,8 +1268,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Response Status Code is 500\", function(){",
-											"    pm.response.to.have.status(500);",
+											"pm.test(\"Response Status Code is 400\", function(){",
+											"    pm.response.to.have.status(400);",
 											"});",
 											""
 										],
@@ -1340,8 +1340,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Response Status Code is 500\", function(){",
-											"    pm.response.to.have.status(500);",
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
 											"});",
 											""
 										],
@@ -1418,8 +1418,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Response Status Code is 500\", function(){",
-											"    pm.response.to.have.status(500);",
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
 											"});",
 											""
 										],
@@ -1539,8 +1539,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Response Status Code is 500\", function(){",
-											"    pm.response.to.have.status(500);",
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
 											"});",
 											""
 										],

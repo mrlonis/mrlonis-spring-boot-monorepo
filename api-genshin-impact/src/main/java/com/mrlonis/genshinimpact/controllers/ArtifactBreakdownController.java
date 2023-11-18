@@ -7,6 +7,7 @@ import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
+import com.mrlonis.genshinimpact.exceptions.NotFoundException;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import com.mrlonis.genshinimpact.repositories.CharactersRepository;
 import lombok.AllArgsConstructor;
@@ -30,11 +31,11 @@ public class ArtifactBreakdownController {
     private ArtifactsRepository artifactsRepository;
 
     @GetMapping("/artifactBreakdown")
-    ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId) {
+    ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId) throws NotFoundException {
         log.info("Getting artifact breakdown for artifact: {}", artifactId);
         Optional<Artifact> repositoryArtifact = artifactsRepository.findById(artifactId);
         if (repositoryArtifact.isEmpty()) {
-            throw new RuntimeException("Artifact not found");
+            throw new NotFoundException("Artifact not found");
         }
 
         Artifact artifact = repositoryArtifact.get();

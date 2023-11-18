@@ -33,8 +33,8 @@ Mona,,5,Hydro,Catalyst,Energy Recharge,ATK%,,Hydro DMG,ATK%,,CRIT Rate,,,Energy 
 Keqing,,5,Electro,Sword,ATK%,,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Mistsplitter Reforged,Primordial Jade Cutter,Haran Geppaku Futsu,Freedom-Sworn,Harbinger of Dawn,Thundering Fury,,Thundersoother,,Gilded Dreams,,Gilded Dreams,Thundering Fury,Shimenawa's Reminiscence,Thundering Fury
 Sucrose,,4,Anemo,Catalyst,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,,A Thousand Floating Dreams,Sacrificial Fragments,Thrilling Tales of Dragon Slayers,Hakushin Ring,Magic Guide,Viridescent Venerer,,Instructor,,Gilded Dreams,Wanderer's Troupe,Gilded Dreams,,Gilded Dreams,Viridescent Venerer
 Xinyan,,4,Geo,Claymore,ATK%,Energy Recharge,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Redhorn Stonethresher,Skyward Pride,Serpent Spine,The Unforged,Song of Broken Pines,Bloodstained Chivalry,Pale Flame,Pale Flame,,Emblem of Severed Fate,Pale Flame,Pale Flame,Shimenawa's Reminiscence,Noblesse Oblige,Pale Flame
-Rosaria,,4,Cryo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Hu Tao,,5,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rosaria,,4,Cryo,Polearm,ATK%,,,Cryo DMG,,,CRIT DMG,,,CRIT DMG,ATK%,Energy Recharge,,Staff of Homa,Wavebreaker's Fin,Vortex Vanquisher,Primordial Jade Winged-Spear,Blackcliff Pole,Blizzard Strayer,,Noblesse Oblige,,Blizzard Strayer,Noblesse Oblige,Blizzard Strayer,Shimenawa's Reminiscence,Noblesse Oblige,Shimenawa's Reminiscence
+Hu Tao,,5,Pyro,Polearm,HP%,Elemental Mastery,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,HP%,,Staff of Homa,Staff of the Scarlet Sands,Dragon's Bane,Deathmatch,Primordial Jade Winged-Spear,Crimson Witch of Flames,,Shimenawa's Reminiscence,,Gilded Dreams,,Crimson Witch of Flames,Gilded Dreams,Crimson Witch of Flames,Tenacity of the Millelith
 Kaedehara Kazuha,,5,Anemo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Yanfei,,4,Pyro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Yoimiya,,5,Pyro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
