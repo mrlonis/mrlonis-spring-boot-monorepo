@@ -12,7 +12,7 @@ CREATE TABLE Sales_Order (
     item_id INT NOT NULL,
     order_number varchar(255) NOT NULL,
     quantity INT NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
+    amount NUMERIC(10,2) NOT NULL,
     CONSTRAINT Sales_Order_Customer_Foreign_Key FOREIGN KEY (customer_id) REFERENCES Customer(id)
 );
 

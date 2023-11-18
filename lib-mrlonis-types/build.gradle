@@ -37,7 +37,3 @@ tasks.withType(JavaCompile).configureEach {
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"
 }
-
-tasks.named("test") {
-    useJUnitPlatform()
-}

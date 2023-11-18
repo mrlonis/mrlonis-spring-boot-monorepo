@@ -14,6 +14,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Builder
 @Getter
 @Setter
@@ -40,7 +42,7 @@ public class SalesOrder {
     private int quantity;
 
     @Column(name = "amount", columnDefinition = "NUMERIC(10,2)")
-    private float amount;
+    private BigDecimal amount;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id", insertable = false, updatable = false)

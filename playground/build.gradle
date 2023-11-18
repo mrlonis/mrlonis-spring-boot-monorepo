@@ -52,6 +52,8 @@ dependencies {
     testImplementation "org.mockito:mockito-junit-jupiter"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc"
+
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
 }
 
 jacoco {
@@ -74,6 +76,7 @@ tasks.register('restartDocker') {
 }
 
 test {
+    useJUnitPlatform()
     finalizedBy jacocoTestReport
     if (systemProperties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker
@@ -87,9 +90,9 @@ jacocoTestReport {
     dependsOn test
 
     reports {
-        xml.required = false
-        csv.required = false
-        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
+        xml.required.set(false)
+        csv.required.set(false)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
     }
 
     afterEvaluate {
@@ -139,10 +142,6 @@ tasks.withType(JavaCompile).configureEach {
     options.warnings = true
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"
-}
-
-tasks.named("test") {
-    useJUnitPlatform()
 }
 
 bootRun {

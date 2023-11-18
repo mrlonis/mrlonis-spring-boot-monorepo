@@ -1,3 +1,5 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
 plugins {
     id "java"
     id "idea"
@@ -33,7 +35,9 @@ dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
     implementation "commons-io:commons-io:${commonsIoVersion}"
-    implementation "com.opencsv:opencsv:5.8"
+    implementation("com.opencsv:opencsv:5.8") {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
     implementation "org.apache.ant:ant:${antVersion}"
     implementation "org.flywaydb:flyway-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
@@ -54,6 +58,8 @@ dependencies {
     testImplementation "org.mockito:mockito-junit-jupiter"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc"
+
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
 }
 
 jacoco {
@@ -65,17 +71,18 @@ def filesToExcludeFromCoverage = [""]
 tasks.register('restartDocker') {
     doLast {
         exec {
-            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+            if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
                 workingDir = file("./")
-                commandLine = ["cmd", "/C", "docker compose up -d"]
+                commandLine = ["cmd", "/C", "docker compose up -d", "--wait"]
             } else {
-                commandLine = ["docker", "compose", "up", "-d"]
+                commandLine = ["docker", "compose", "up", "-d", "--wait"]
             }
         }
     }
 }
 
 test {
+    useJUnitPlatform()
     finalizedBy jacocoTestReport
     if (systemProperties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker
@@ -89,9 +96,9 @@ jacocoTestReport {
     dependsOn test
 
     reports {
-        xml.required = false
-        csv.required = false
-        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
+        xml.required.set(false)
+        csv.required.set(false)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
     }
 
     afterEvaluate {
@@ -141,10 +148,6 @@ tasks.withType(JavaCompile).configureEach {
     options.warnings = true
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"
-}
-
-tasks.named("test") {
-    useJUnitPlatform()
 }
 
 bootRun {

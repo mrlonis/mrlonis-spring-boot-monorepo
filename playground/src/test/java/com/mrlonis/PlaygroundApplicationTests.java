@@ -9,10 +9,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = PlaygroundApplicationTests.class)
+@SpringBootTest
 @ActiveProfiles("test")
-@AutoConfigureTestDatabase
 class PlaygroundApplicationTests {
 
     @Test

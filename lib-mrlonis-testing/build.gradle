@@ -36,12 +36,8 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter"
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.warnings = true
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"
-}
-
-tasks.named("test") {
-    useJUnitPlatform()
 }
