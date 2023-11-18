@@ -1,8 +1,5 @@
 package com.mrlonis.genshinimpact;
 
-import com.mrlonis.genshinimpact.utils.ArtifactsFlywayMigrationCreation;
-import com.mrlonis.genshinimpact.utils.CharactersFlywayMigrationCreation;
-import com.mrlonis.genshinimpact.utils.WeaponsFlywayMigrationCreation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,18 +13,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class ApiGenshinImpactApplication implements WebMvcConfigurer {
     public static void main(String[] args) {
-        flywayMigrationCreation();
         SpringApplication.run(ApiGenshinImpactApplication.class, args);
-    }
-
-    public static void flywayMigrationCreation() {
-        log.info("flywayMigrationCreation(): Starting...");
-
-        WeaponsFlywayMigrationCreation.createFlywayMigration();
-        ArtifactsFlywayMigrationCreation.createFlywayMigration();
-        CharactersFlywayMigrationCreation.createFlywayMigration();
-
-        log.info("flywayMigrationCreation(): Finished!");
     }
 
     @Override

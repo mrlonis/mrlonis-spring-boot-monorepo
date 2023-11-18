@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -29,8 +30,18 @@ public class ArtifactsController {
             throw new RuntimeException("Must provide either an id or a name");
         }
         if (id == null) {
-            return artifactsRepository.findByNameIgnoreCaseContains(name);
+            Optional<Artifact> repositoryArtifact = artifactsRepository.findByNameIgnoreCaseContains(name);
+            if (repositoryArtifact.isEmpty()) {
+                throw new RuntimeException("Artifact not found");
+            }
+            return repositoryArtifact.get();
         }
-        return artifactsRepository.findById(id);
+
+        Optional<Artifact> artifact = artifactsRepository.findById(id);
+        if (artifact.isEmpty()) {
+            throw new RuntimeException("Artifact not found");
+        }
+
+        return artifact.get();
     }
 }

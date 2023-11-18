@@ -3,6 +3,8 @@ package com.mrlonis.genshinimpact.enums;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
+import java.util.stream.Stream;
+
 public enum WeaponSecondaryStats {
     HEALTH_PERCENT("HP%", "HP%"),
     ATTACK_PERCENT("ATK%", "Atk%"),
@@ -21,6 +23,17 @@ public enum WeaponSecondaryStats {
     private WeaponSecondaryStats(String label, String csvValue) {
         this.value = label;
         this.csvValue = csvValue;
+    }
+
+    public static WeaponSecondaryStats convertToEnumFromCsvValue(String csvValue) {
+        if (csvValue == null) {
+            return null;
+        }
+
+        return Stream.of(WeaponSecondaryStats.values())
+                     .filter(c -> c.getCsvValue().equals(csvValue))
+                     .findFirst()
+                     .orElse(null);
     }
 
     @Override

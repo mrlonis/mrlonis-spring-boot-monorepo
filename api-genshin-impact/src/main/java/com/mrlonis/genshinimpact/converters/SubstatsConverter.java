@@ -3,11 +3,17 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.Substats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class SubstatsConverter implements AttributeConverter<Substats, String> {
+public class SubstatsConverter implements AttributeConverter<Substats, String>,
+        org.springframework.core.convert.converter.Converter<String, Substats> {
+    @Override
+    public Substats convert(@NonNull String from) {
+        return Substats.convertToEnumFromCsvValue(from);
+    }
 
     @Override
     public String convertToDatabaseColumn(Substats substats) {

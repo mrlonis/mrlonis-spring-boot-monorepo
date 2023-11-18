@@ -3,11 +3,20 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.WeaponTypes;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class WeaponTypesConverter implements AttributeConverter<WeaponTypes, String> {
+@Slf4j
+public class WeaponTypesConverter implements AttributeConverter<WeaponTypes, String>,
+        org.springframework.core.convert.converter.Converter<String, WeaponTypes> {
+    @Override
+    public WeaponTypes convert(@NonNull String from) {
+        log.info("WeaponTypesConverter.convert");
+        return WeaponTypes.convertToEnumFromCsvValue(from);
+    }
 
     @Override
     public String convertToDatabaseColumn(WeaponTypes enumValue) {

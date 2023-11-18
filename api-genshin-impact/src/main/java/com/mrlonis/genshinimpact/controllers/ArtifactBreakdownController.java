@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -31,11 +32,12 @@ public class ArtifactBreakdownController {
     @GetMapping("/artifactBreakdown")
     ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId) {
         log.info("Getting artifact breakdown for artifact: {}", artifactId);
-        Artifact artifact = artifactsRepository.findById(artifactId);
-        if (artifact == null) {
+        Optional<Artifact> repositoryArtifact = artifactsRepository.findById(artifactId);
+        if (repositoryArtifact.isEmpty()) {
             throw new RuntimeException("Artifact not found");
         }
 
+        Artifact artifact = repositoryArtifact.get();
         ArtifactBreakdown artifactBreakdown = ArtifactBreakdown.builder()
                                                                .id(artifact.getId())
                                                                .name(artifact.getName())

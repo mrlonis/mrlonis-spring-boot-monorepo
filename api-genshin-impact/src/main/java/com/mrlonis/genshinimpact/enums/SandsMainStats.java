@@ -3,6 +3,8 @@ package com.mrlonis.genshinimpact.enums;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
+import java.util.stream.Stream;
+
 public enum SandsMainStats {
     HEALTH_PERCENT("HP%"),
     ATTACK_PERCENT("ATK%"),
@@ -15,6 +17,14 @@ public enum SandsMainStats {
 
     private SandsMainStats(String label) {
         this.value = label;
+    }
+
+    public static SandsMainStats convertToEnumFromCsvValue(String csvValue) {
+        if (csvValue == null) {
+            return null;
+        }
+
+        return Stream.of(SandsMainStats.values()).filter(c -> c.getValue().equals(csvValue)).findFirst().orElse(null);
     }
 
     @Override

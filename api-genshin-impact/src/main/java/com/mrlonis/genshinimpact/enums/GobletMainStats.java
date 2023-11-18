@@ -3,6 +3,8 @@ package com.mrlonis.genshinimpact.enums;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
+import java.util.stream.Stream;
+
 public enum GobletMainStats {
     HEALTH_PERCENT("HP%", "HP%"),
     ATTACK_PERCENT("ATK%", "ATK%"),
@@ -25,6 +27,17 @@ public enum GobletMainStats {
     private GobletMainStats(String label, String csvValue) {
         this.value = label;
         this.csvValue = csvValue;
+    }
+
+    public static GobletMainStats convertToEnumFromCsvValue(String csvValue) {
+        if (csvValue == null) {
+            return null;
+        }
+
+        return Stream.of(GobletMainStats.values())
+                     .filter(c -> c.getCsvValue().equals(csvValue))
+                     .findFirst()
+                     .orElse(null);
     }
 
     @Override

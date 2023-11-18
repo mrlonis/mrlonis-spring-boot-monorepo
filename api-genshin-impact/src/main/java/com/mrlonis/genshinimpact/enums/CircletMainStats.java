@@ -3,6 +3,8 @@ package com.mrlonis.genshinimpact.enums;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
+import java.util.stream.Stream;
+
 public enum CircletMainStats {
     HEALTH_PERCENT("HP%"),
     ATTACK_PERCENT("ATK%"),
@@ -18,6 +20,14 @@ public enum CircletMainStats {
 
     private CircletMainStats(String label) {
         this.value = label;
+    }
+
+    public static CircletMainStats convertToEnumFromCsvValue(String csvValue) {
+        if (csvValue == null) {
+            return null;
+        }
+
+        return Stream.of(CircletMainStats.values()).filter(c -> c.getValue().equals(csvValue)).findFirst().orElse(null);
     }
 
     @Override

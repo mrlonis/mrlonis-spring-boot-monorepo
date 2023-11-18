@@ -22,6 +22,13 @@
 											"pm.test(\"Status code is 200\", () => {",
 											"  pm.response.to.have.status(200);",
 											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
 											""
 										],
 										"type": "text/javascript"
@@ -106,6 +113,46 @@
 							"response": []
 						},
 						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {",
+											"  pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/artifacts/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"artifacts",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "findById",
 							"event": [
 								{
@@ -138,6 +185,39 @@
 										"api",
 										"artifacts",
 										"{{testArtifactId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {",
+											"  pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/artifacts/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"artifacts",
+										"11111111-1111-1111-1111-111111111111"
 									]
 								}
 							},
@@ -248,6 +328,46 @@
 							"response": []
 						},
 						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "findById",
 							"event": [
 								{
@@ -286,7 +406,59 @@
 							"response": []
 						},
 						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "findByArtifactSet",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"At least 1 Character should be returned\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson._embedded.data.length).to.be.greaterThan(1);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -346,6 +518,87 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "findByArtifactSet - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No Character should be returned\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson._embedded.data.length).to.be.eq(0);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/search/findByArtifactSet?artifactSetOneIdFirst=11111111-1111-1111-1111-111111111111&artifactSetOneIdSecond=11111111-1111-1111-1111-111111111111&artifactSetTwoIdFirst=11111111-1111-1111-1111-111111111111&artifactSetTwoIdSecond=11111111-1111-1111-1111-111111111111&artifactSetThreeIdFirst=11111111-1111-1111-1111-111111111111&artifactSetThreeIdSecond=11111111-1111-1111-1111-111111111111&artifactSetFourIdFirst=11111111-1111-1111-1111-111111111111&artifactSetFourIdSecond=11111111-1111-1111-1111-111111111111&artifactSetFiveIdFirst=11111111-1111-1111-1111-111111111111&artifactSetFiveIdSecond=11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"search",
+										"findByArtifactSet"
+									],
+									"query": [
+										{
+											"key": "artifactSetOneIdFirst",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetOneIdSecond",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetTwoIdFirst",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetTwoIdSecond",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetThreeIdFirst",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetThreeIdSecond",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetFourIdFirst",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetFourIdSecond",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetFiveIdFirst",
+											"value": "11111111-1111-1111-1111-111111111111"
+										},
+										{
+											"key": "artifactSetFiveIdSecond",
+											"value": "11111111-1111-1111-1111-111111111111"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -361,6 +614,13 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", () => {",
 											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
 											"});",
 											""
 										],
@@ -445,6 +705,46 @@
 							"response": []
 						},
 						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {",
+											"  pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/elements/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"elements",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "findById",
 							"event": [
 								{
@@ -481,6 +781,39 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {",
+											"  pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/elements/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"elements",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -496,6 +829,13 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", () => {",
 											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
 											"});",
 											""
 										],
@@ -580,6 +920,46 @@
 							"response": []
 						},
 						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {",
+											"  pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "findById",
 							"event": [
 								{
@@ -618,6 +998,39 @@
 							"response": []
 						},
 						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {",
+											"  pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "findByWeaponType",
 							"event": [
 								{
@@ -626,6 +1039,51 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", () => {",
 											"  pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/weapons/search/findByWeaponType?weaponType=SWORD",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"weapons",
+										"search",
+										"findByWeaponType"
+									],
+									"query": [
+										{
+											"key": "weaponType",
+											"value": "SWORD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByWeaponType - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", () => {",
+											"  pm.response.to.have.status(500);",
+											"});",
+											"",
+											"pm.test(\"Unable to convert Enum\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.cause.cause.cause).to.be.null;",
 											"});",
 											""
 										],
@@ -701,6 +1159,39 @@
 							"response": []
 						},
 						{
+							"name": "Get By - No Params",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 500\", function(){",
+											"    pm.response.to.have.status(500);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifact",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifact"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get By ID",
 							"event": [
 								{
@@ -740,6 +1231,45 @@
 							"response": []
 						},
 						{
+							"name": "Get By ID - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 500\", function(){",
+											"    pm.response.to.have.status(500);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifact?id=11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifact"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "11111111-1111-1111-1111-111111111111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get By Name",
 							"event": [
 								{
@@ -772,6 +1302,45 @@
 										{
 											"key": "name",
 											"value": "{{testArtifactName}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Name - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 500\", function(){",
+											"    pm.response.to.have.status(500);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifact?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifact"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
 										}
 									]
 								}
@@ -854,6 +1423,45 @@
 										{
 											"key": "artifactId",
 											"value": "{{testArtifactId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Artifact Breakdown - Artifact Doesn't Exist",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 500\", function(){",
+											"    pm.response.to.have.status(500);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/artifactBreakdown?artifactId=11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"artifactBreakdown"
+									],
+									"query": [
+										{
+											"key": "artifactId",
+											"value": "11111111-1111-1111-1111-111111111111"
 										}
 									]
 								}

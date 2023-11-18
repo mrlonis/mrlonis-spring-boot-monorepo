@@ -1,9 +1,12 @@
 package com.mrlonis.genshinimpact.entities;
 
 import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
+import com.mrlonis.genshinimpact.enums.WeaponTypes;
 import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -48,10 +51,11 @@ public class Weapon implements IBaseEntity, Serializable {
 
     @Column(name = "weaponType")
     @NonNull
-    private String weaponType;
+    @Enumerated(EnumType.STRING)
+    private WeaponTypes weaponType;
 
     @Column(name = "secondaryStat")
-    @NonNull
+    @Enumerated(EnumType.STRING)
     private WeaponSecondaryStats secondaryStat;
 
     @Column(name = "weaponAffix")
