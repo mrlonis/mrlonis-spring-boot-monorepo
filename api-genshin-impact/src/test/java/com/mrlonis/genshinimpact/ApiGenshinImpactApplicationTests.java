@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ApiGenshinImpactApplication.class)
 @ActiveProfiles("test-h2")
@@ -15,6 +17,7 @@ class ApiGenshinImpactApplicationTests {
 
     @Test
     void contextLoads() {
+        assertTrue(true);
     }
 
 }

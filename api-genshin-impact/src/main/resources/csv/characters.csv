@@ -1,82 +1,82 @@
-name,imageUrl,rarity,elementId,weaponType,sandsStatOne,sandsStatTwo,sandsStatThree,gobletStatOne,gobletStatTwo,gobletStatThree,circletStatOne,circletStatTwo,circletStatThree,substatOne,substatTwo,substatThree,substatFour,weaponOneId,weaponTwoId,weaponThreeId,weaponFourId,weaponFiveId,artifactSetOneIdFirst,artifactSetOneIdSecond,artifactSetTwoIdFirst,artifactSetTwoIdSecond,artifactSetThreeIdFirst,artifactSetThreeIdSecond,artifactSetFourIdFirst,artifactSetFourIdSecond,artifactSetFiveIdFirst,artifactSetFiveIdSecond
-Kamisato Ayaka,,5,Cryo,Sword,ATK%,,,Cryo DMG,,,CRIT DMG,ATK%,,CRIT DMG,ATK%,Energy Recharge,,Mistsplitter Reforged,Haran Geppaku Futsu,Light of Foliar Incision,Summit Shaper,Amenoma Kageuchi,Blizzard Strayer,,Blizzard Strayer,Shimenawa's Reminiscence,Gladiator's Finale,Shimenawa's Reminiscence,Echoes of an Offering,Vermillion Hereafter,Blizzard Strayer,Noblesse Oblige
-Jean,,5,Anemo,Sword,ATK%,Energy Recharge,,Anemo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Primordial Jade Cutter,Freedom-Sworn,Mistsplitter Reforged,Haran Geppaku Futsu,Amenoma Kageuchi,Viridescent Venerer,,Noblesse Oblige,,Ocean-Hued Clam,,Shimenawa's Reminiscence,Viridescent Venerer,Emblem of Severed Fate,Shimenawa's Reminiscence
-Traveler (Anemo),,5,Anemo,Sword,Elemental Mastery,ATK%,Energy Recharge,Elemental Mastery,Anemo DMG,,Elemental Mastery,CRIT Rate / CRIT DMG,,Elemental Mastery,Energy Recharge,ATK%,,Freedom-Sworn,Primordial Jade Cutter,Mistsplitter Reforged,Sacrificial Sword,Iron Sting,Viridescent Venerer,,Gilded Dreams,Viridescent Venerer,Noblesse Oblige,Viridescent Venerer,Shimenawa's Reminiscence,Viridescent Venerer,Gilded Dreams,Noblesse Oblige
-Traveler (Geo),,5,Geo,Sword,ATK%,,,Geo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Primordial Jade Cutter,Mistsplitter Reforged,Haran Geppaku Futsu,Summit Shaper,The Black Sword,Archaic Petra,Noblesse Oblige,Archaic Petra,Shimenawa's Reminiscence,Emblem of Severed Fate,,Noblesse Oblige,Shimenawa's Reminiscence,Gladiator's Finale,Shimenawa's Reminiscence
-Traveler (Electro),,5,Electro,Sword,Energy Recharge,,,Electro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,ATK%,CRIT Rate / CRIT DMG,,Favonius Sword,Freedom-Sworn,Sacrificial Sword,Skyward Blade,Festering Desire,Noblesse Oblige,,Emblem of Severed Fate,,Instructor,,Emblem of Severed Fate,The Exile,The Exile,
-Traveler (Dendro),,5,Dendro,Sword,Energy Recharge,ATK%,,Dendro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Freedom-Sworn,Favonius Sword,Sacrificial Sword,Sapwood Blade,Skyward Blade,Deepwood Memories,,Noblesse Oblige,,Instructor,,Gilded Dreams,,The Exile,
-Traveler (Hydro),,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Lisa,,4,Electro,Catalyst,Elemental Mastery,ATK%,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,ATK%,,Kagura's Verity,Lost Prayer to the Sacred Winds,Skyward Atlas,A Thousand Floating Dreams,The Widsith,Thundering Fury,,Gilded Dreams,,Thundersoother,,Gilded Dreams,Thundering Fury,Shimenawa's Reminiscence,Thundering Fury
-Barbara,,4,Hydro,Catalyst,HP%,,,HP%,,,Healing Bonus,,,HP%,HP,Energy Recharge,,Thrilling Tales of Dragon Slayers,Everlasting Moonglow,Prototype Amber,Favonius Codex,Wine and Song,Maiden Beloved,,Maiden Beloved,Tenacity of the Millelith,Maiden Beloved,Ocean-Hued Clam,Ocean-Hued Clam,Tenacity of the Millelith,Instructor,
-Kaeya,,4,Cryo,Sword,Energy Recharge,ATK%,,Cryo DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Primordial Jade Cutter,Mistsplitter Reforged,Light of Foliar Incision,Freedom-Sworn,Lion's Roar,Emblem of Severed Fate,,Blizzard Strayer,Noblesse Oblige,Emblem of Severed Fate,Noblesse Oblige,Noblesse Oblige,,Instructor,
-Diluc,,5,Pyro,Claymore,ATK%,Elemental Mastery,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Redhorn Stonethresher,Beacon of the Reed Sea,Serpent Spine,Wolf's Gravestone,The Unforged,Crimson Witch of Flames,,Gilded Dreams,,Crimson Witch of Flames,Gilded Dreams,Crimson Witch of Flames,Shimenawa's Reminiscence,Gilded Dreams,Shimenawa's Reminiscence
-Razor,,4,Electro,Claymore,ATK%,,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Wolf's Gravestone,Beacon of the Reed Sea,Song of Broken Pines,Redhorn Stonethresher,Serpent Spine,Pale Flame,,Gladiator's Finale,,Bloodstained Chivalry,Pale Flame,Gladiator's Finale,Pale Flame,Gladiator's Finale,Shimenawa's Reminiscence
-Amber,,4,Pyro,Bow,Energy Recharge,,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Elegy for the End,Favonius Warbow,Sacrificial Bow,The Viridescent Hunt,End of the Line,Noblesse Oblige,,Instructor,,Emblem of Severed Fate,The Exile,Emblem of Severed Fate,,Emblem of Severed Fate,Noblesse Oblige
-Venti,,5,Anemo,Bow,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,,Elegy for the End,The Stringless,Windblume Ode,Alley Hunter,Favonius Warbow,Viridescent Venerer,,Noblesse Oblige,,Gilded Dreams,Wanderer's Troupe,Emblem of Severed Fate,Gilded Dreams,Gilded Dreams,
-Xiangling,,4,Pyro,Polearm,Energy Recharge,ATK%,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Staff of the Scarlet Sands,Staff of Homa,The Catch,Engulfing Lightning,Deathmatch,Emblem of Severed Fate,,Crimson Witch of Flames,,Crimson Witch of Flames,Emblem of Severed Fate,Emblem of Severed Fate,Noblesse Oblige,Crimson Witch of Flames,Noblesse Oblige
-Beidou,,4,Electro,Claymore,ATK%,Energy Recharge,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Wolf's Gravestone,Serpent Spine,Beacon of the Reed Sea,Redhorn Stonethresher,Akuoumaru,Emblem of Severed Fate,,Emblem of Severed Fate,Noblesse Oblige,Emblem of Severed Fate,Thundering Fury,Noblesse Oblige,Thundering Fury,Thundersoother,
-Xingqiu,,4,Hydro,Sword,Energy Recharge,,,Hydro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,,Primordial Jade Cutter,Favonius Sword,Sacrificial Sword,Mistsplitter Reforged,Haran Geppaku Futsu,Emblem of Severed Fate,,Noblesse Oblige,,Emblem of Severed Fate,Noblesse Oblige,Emblem of Severed Fate,Heart of Depth,Heart of Depth,Noblesse Oblige
-Xiao,,5,Anemo,Polearm,ATK%,,,Anemo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Primordial Jade Winged-Spear,Staff of Homa,Vortex Vanquisher,Calamity Queller,Deathmatch,Vermillion Hereafter,,Desert Pavilion Chronicle,,Desert Pavilion Chronicle,Vermillion Hereafter,Shimenawa's Reminiscence,Vermillion Hereafter,Desert Pavilion Chronicle,Viridescent Venerer
-Ningguang,,4,Geo,Catalyst,ATK%,,,Geo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Lost Prayer to the Sacred Winds,Kagura's Verity,Skyward Atlas,Memory of Dust,Solar Pearl,Archaic Petra,Emblem of Severed Fate,Archaic Petra,Noblesse Oblige,Archaic Petra,Shimenawa's Reminiscence,Archaic Petra,,Emblem of Severed Fate,
-Klee,,5,Pyro,Catalyst,ATK%,,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,The Widsith,Lost Prayer to the Sacred Winds,Kagura's Verity,The Widsith,Skyward Atlas,Crimson Witch of Flames,Shimenawa's Reminiscence,Crimson Witch of Flames,,Crimson Witch of Flames,,Crimson Witch of Flames,Noblesse Oblige,Wanderer's Troupe,
-Zhongli,,5,Geo,Polearm,HP%,,,HP%,,,HP%,,,HP%,HP,Energy Recharge,,Black Tassel,Favonius Lance,Staff of Homa,Skyward Spine,Engulfing Lightning,Tenacity of the Millelith,,Archaic Petra,,Deepwood Memories,,Instructor,,Noblesse Oblige,
-Fischl,,4,Electro,Bow,ATK%,Elemental Mastery,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Aqua Simulacra,Polar Star,Hunter's Path,Skyward Harp,The Stringless,Golden Troupe,,Shimenawa's Reminiscence,Thundering Fury,Gilded Dreams,Thundering Fury,Thundersoother,,Thundering Fury,
-Bennett,,4,Pyro,Sword,ATK%,Energy Recharge,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Mistsplitter Reforged,Aquila Favonia,Skyward Blade,Freedom-Sworn,The Alley Flash,Noblesse Oblige,,Emblem of Severed Fate,,Crimson Witch of Flames,,Emblem of Severed Fate,Noblesse Oblige,Crimson Witch of Flames,Noblesse Oblige
-Tartaglia,,5,Hydro,Bow,ATK%,,,Hydro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Polar Star,Thundering Pulse,Hunter's Path,Aqua Simulacra,The Viridescent Hunt,Heart of Depth,,Heart of Depth,Shimenawa's Reminiscence,Heart of Depth,Noblesse Oblige,Noblesse Oblige,Shimenawa's Reminiscence,Shimenawa's Reminiscence,
-Noelle,,4,Geo,Claymore,DEF%,ATK%,,Geo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Energy Recharge,DEF%,,Redhorn Stonethresher,Serpent Spine,Skyward Pride,Whiteblind,Favonius Greatsword,Husk of Opulent Dreams,,Retracing Bolide,,Gladiator's Finale,,Archaic Petra,Husk of Opulent Dreams,Gladiator's Finale,Husk of Opulent Dreams
-Qiqi,,5,Cryo,Sword,ATK%,Energy Recharge,,ATK%,,,ATK%,Healing Bonus,,ATK%,Energy Recharge,ATK,,Sacrificial Sword,Skyward Blade,Kagotsurube Isshin,The Flute,Favonius Sword,Tenacity of the Millelith,,Ocean-Hued Clam,,Maiden Beloved,,Maiden Beloved,Shimenawa's Reminiscence,Noblesse Oblige,
-Chongyun,,4,Cryo,Claymore,ATK%,Energy Recharge,Elemental Mastery,Cryo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Wolf's Gravestone,Serpent Spine,Redhorn Stonethresher,Beacon of the Reed Sea,The Unforged,Blizzard Strayer,Noblesse Oblige,Emblem of Severed Fate,,Blizzard Strayer,Shimenawa's Reminiscence,Noblesse Oblige,Shimenawa's Reminiscence,Blizzard Strayer,Emblem of Severed Fate
-Ganyu,,5,Cryo,Bow,ATK%,,,Cryo DMG,,,CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,ATK%,,Hunter's Path,Amos' Bow,Aqua Simulacra,Polar Star,Prototype Crescent,Shimenawa's Reminiscence,,Wanderer's Troupe,,Shimenawa's Reminiscence,Wanderer's Troupe,Blizzard Strayer,Shimenawa's Reminiscence,Blizzard Strayer,Wanderer's Troupe
-Albedo,,5,Geo,Sword,DEF%,,,Geo DMG,,,CRIT Rate / CRIT DMG,DEF%,,CRIT Rate / CRIT DMG,DEF%,ATK%,,Cinnabar Spindle,Harbinger of Dawn,Primordial Jade Cutter,Mistsplitter Reforged,Freedom-Sworn,Husk of Opulent Dreams,,Archaic Petra,Husk of Opulent Dreams,Archaic Petra,Noblesse Oblige,Tenacity of the Millelith,,Noblesse Oblige,
-Diona,,4,Cryo,Bow,Energy Recharge,HP%,,HP%,,,HP%,Healing Bonus,,HP%,Energy Recharge,HP,,Favonius Warbow,Sacrificial Bow,Elegy for the End,Recurve Bow,End of the Line,Noblesse Oblige,,Emblem of Severed Fate,Tenacity of the Millelith,Maiden Beloved,Tenacity of the Millelith,Maiden Beloved,,Emblem of Severed Fate,Maiden Beloved
-Mona,,5,Hydro,Catalyst,Energy Recharge,ATK%,,Hydro DMG,ATK%,,CRIT Rate,,,Energy Recharge,CRIT Rate,ATK%,,Thrilling Tales of Dragon Slayers,Favonius Codex,Prototype Amber,Wine and Song,The Widsith,Noblesse Oblige,,Tenacity of the Millelith,,Emblem of Severed Fate,Scholar,Emblem of Severed Fate,,Scholar,
-Keqing,,5,Electro,Sword,ATK%,,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,,Mistsplitter Reforged,Primordial Jade Cutter,Haran Geppaku Futsu,Freedom-Sworn,Harbinger of Dawn,Thundering Fury,,Thundersoother,,Gilded Dreams,,Gilded Dreams,Thundering Fury,Shimenawa's Reminiscence,Thundering Fury
-Sucrose,,4,Anemo,Catalyst,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,,A Thousand Floating Dreams,Sacrificial Fragments,Thrilling Tales of Dragon Slayers,Hakushin Ring,Magic Guide,Viridescent Venerer,,Instructor,,Gilded Dreams,Wanderer's Troupe,Gilded Dreams,,Gilded Dreams,Viridescent Venerer
-Xinyan,,4,Geo,Claymore,ATK%,Energy Recharge,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,,Redhorn Stonethresher,Skyward Pride,Serpent Spine,The Unforged,Song of Broken Pines,Bloodstained Chivalry,Pale Flame,Pale Flame,,Emblem of Severed Fate,Pale Flame,Pale Flame,Shimenawa's Reminiscence,Noblesse Oblige,Pale Flame
-Rosaria,,4,Cryo,Polearm,ATK%,,,Cryo DMG,,,CRIT DMG,,,CRIT DMG,ATK%,Energy Recharge,,Staff of Homa,Wavebreaker's Fin,Vortex Vanquisher,Primordial Jade Winged-Spear,Blackcliff Pole,Blizzard Strayer,,Noblesse Oblige,,Blizzard Strayer,Noblesse Oblige,Blizzard Strayer,Shimenawa's Reminiscence,Noblesse Oblige,Shimenawa's Reminiscence
-Hu Tao,,5,Pyro,Polearm,HP%,Elemental Mastery,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,HP%,,Staff of Homa,Staff of the Scarlet Sands,Dragon's Bane,Deathmatch,Primordial Jade Winged-Spear,Crimson Witch of Flames,,Shimenawa's Reminiscence,,Gilded Dreams,,Crimson Witch of Flames,Gilded Dreams,Crimson Witch of Flames,Tenacity of the Millelith
-Kaedehara Kazuha,,5,Anemo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Yanfei,,4,Pyro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Yoimiya,,5,Pyro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Thoma,,4,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Eula,,5,Cryo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Raiden Shogun,,5,Electro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Sayu,,4,Anemo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Sangonomiya Kokomi,,5,Hydro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Gorou,,4,Geo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kujou Sara,,4,Electro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Arataki Itto,,5,Geo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Yae Miko,,5,Electro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Shikanoin Heizou,,4,Anemo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Yelan,,5,Hydro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kirara,,4,Dendro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Aloy,,5,Cryo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Shenhe,,5,Cryo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Yun Jin,,4,Geo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kuki Shinobu,,4,Electro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kamisato Ayato,,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Collei,,4,Dendro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Dori,,4,Electro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Tighnari,,5,Dendro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Nilou,,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Cyno,,5,Electro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Candace,,4,Hydro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Nahida,,5,Dendro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Layla,,4,Cryo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Wanderer,,5,Anemo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Faruzan,,4,Anemo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Yaoyao,,4,Dendro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Alhaitham,,5,Dendro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Dehya,,5,Pyro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Mika,,4,Cryo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kaveh,,4,Dendro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Baizhu,,5,Dendro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Lynette,,4,Anemo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Lyney,,5,Pyro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Freminet,,4,Cryo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Wriothesley,,5,Cryo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Neuvillette,,5,Hydro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Charlotte,,4,Cryo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Furina,,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Chevreuse,,4,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Navia,,5,Geo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+name,imageUrl,rarity,elementId,weaponType,sandsStatOne,sandsStatTwo,sandsStatThree,gobletStatOne,gobletStatTwo,gobletStatThree,circletStatOne,circletStatTwo,circletStatThree,substatOne,substatTwo,substatThree,weaponOneId,weaponTwoId,weaponThreeId,weaponFourId,weaponFiveId,artifactSetOneIdFirst,artifactSetOneIdSecond,artifactSetTwoIdFirst,artifactSetTwoIdSecond,artifactSetThreeIdFirst,artifactSetThreeIdSecond,artifactSetFourIdFirst,artifactSetFourIdSecond,artifactSetFiveIdFirst,artifactSetFiveIdSecond
+Kamisato Ayaka,,5,Cryo,Sword,ATK%,,,Cryo DMG,,,CRIT DMG,ATK%,,CRIT DMG,ATK%,Energy Recharge,Mistsplitter Reforged,Haran Geppaku Futsu,Light of Foliar Incision,Summit Shaper,Amenoma Kageuchi,Blizzard Strayer,,Blizzard Strayer,Shimenawa's Reminiscence,Gladiator's Finale,Shimenawa's Reminiscence,Echoes of an Offering,Vermillion Hereafter,Blizzard Strayer,Noblesse Oblige
+Jean,,5,Anemo,Sword,ATK%,Energy Recharge,,Anemo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Primordial Jade Cutter,Freedom-Sworn,Mistsplitter Reforged,Haran Geppaku Futsu,Amenoma Kageuchi,Viridescent Venerer,,Noblesse Oblige,,Ocean-Hued Clam,,Shimenawa's Reminiscence,Viridescent Venerer,Emblem of Severed Fate,Shimenawa's Reminiscence
+Traveler (Anemo),,5,Anemo,Sword,Elemental Mastery,ATK%,Energy Recharge,Elemental Mastery,Anemo DMG,,Elemental Mastery,CRIT Rate / CRIT DMG,,Elemental Mastery,Energy Recharge,ATK%,Freedom-Sworn,Primordial Jade Cutter,Mistsplitter Reforged,Sacrificial Sword,Iron Sting,Viridescent Venerer,,Gilded Dreams,Viridescent Venerer,Noblesse Oblige,Viridescent Venerer,Shimenawa's Reminiscence,Viridescent Venerer,Gilded Dreams,Noblesse Oblige
+Traveler (Geo),,5,Geo,Sword,ATK%,,,Geo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Primordial Jade Cutter,Mistsplitter Reforged,Haran Geppaku Futsu,Summit Shaper,The Black Sword,Archaic Petra,Noblesse Oblige,Archaic Petra,Shimenawa's Reminiscence,Emblem of Severed Fate,,Noblesse Oblige,Shimenawa's Reminiscence,Gladiator's Finale,Shimenawa's Reminiscence
+Traveler (Electro),,5,Electro,Sword,Energy Recharge,,,Electro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,ATK%,CRIT Rate / CRIT DMG,Favonius Sword,Freedom-Sworn,Sacrificial Sword,Skyward Blade,Festering Desire,Noblesse Oblige,,Emblem of Severed Fate,,Instructor,,Emblem of Severed Fate,The Exile,The Exile,
+Traveler (Dendro),,5,Dendro,Sword,Energy Recharge,ATK%,,Dendro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,Freedom-Sworn,Favonius Sword,Sacrificial Sword,Sapwood Blade,Skyward Blade,Deepwood Memories,,Noblesse Oblige,,Instructor,,Gilded Dreams,,The Exile,
+Traveler (Hydro),,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lisa,,4,Electro,Catalyst,Elemental Mastery,ATK%,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,ATK%,Kagura's Verity,Lost Prayer to the Sacred Winds,Skyward Atlas,A Thousand Floating Dreams,The Widsith,Thundering Fury,,Gilded Dreams,,Thundersoother,,Gilded Dreams,Thundering Fury,Shimenawa's Reminiscence,Thundering Fury
+Barbara,,4,Hydro,Catalyst,HP%,,,HP%,,,Healing Bonus,,,HP%,HP,Energy Recharge,Thrilling Tales of Dragon Slayers,Everlasting Moonglow,Prototype Amber,Favonius Codex,Wine and Song,Maiden Beloved,,Maiden Beloved,Tenacity of the Millelith,Maiden Beloved,Ocean-Hued Clam,Ocean-Hued Clam,Tenacity of the Millelith,Instructor,
+Kaeya,,4,Cryo,Sword,Energy Recharge,ATK%,,Cryo DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,Primordial Jade Cutter,Mistsplitter Reforged,Light of Foliar Incision,Freedom-Sworn,Lion's Roar,Emblem of Severed Fate,,Blizzard Strayer,Noblesse Oblige,Emblem of Severed Fate,Noblesse Oblige,Noblesse Oblige,,Instructor,
+Diluc,,5,Pyro,Claymore,ATK%,Elemental Mastery,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,Redhorn Stonethresher,Beacon of the Reed Sea,Serpent Spine,Wolf's Gravestone,The Unforged,Crimson Witch of Flames,,Gilded Dreams,,Crimson Witch of Flames,Gilded Dreams,Crimson Witch of Flames,Shimenawa's Reminiscence,Gilded Dreams,Shimenawa's Reminiscence
+Razor,,4,Electro,Claymore,ATK%,,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Wolf's Gravestone,Beacon of the Reed Sea,Song of Broken Pines,Redhorn Stonethresher,Serpent Spine,Pale Flame,,Gladiator's Finale,,Bloodstained Chivalry,Pale Flame,Gladiator's Finale,Pale Flame,Gladiator's Finale,Shimenawa's Reminiscence
+Amber,,4,Pyro,Bow,Energy Recharge,,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,Elegy for the End,Favonius Warbow,Sacrificial Bow,The Viridescent Hunt,End of the Line,Noblesse Oblige,,Instructor,,Emblem of Severed Fate,The Exile,Emblem of Severed Fate,,Emblem of Severed Fate,Noblesse Oblige
+Venti,,5,Anemo,Bow,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,Elegy for the End,The Stringless,Windblume Ode,Alley Hunter,Favonius Warbow,Viridescent Venerer,,Noblesse Oblige,,Gilded Dreams,Wanderer's Troupe,Emblem of Severed Fate,Gilded Dreams,Gilded Dreams,
+Xiangling,,4,Pyro,Polearm,Energy Recharge,ATK%,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,Staff of the Scarlet Sands,Staff of Homa,The Catch,Engulfing Lightning,Deathmatch,Emblem of Severed Fate,,Crimson Witch of Flames,,Crimson Witch of Flames,Emblem of Severed Fate,Emblem of Severed Fate,Noblesse Oblige,Crimson Witch of Flames,Noblesse Oblige
+Beidou,,4,Electro,Claymore,ATK%,Energy Recharge,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Wolf's Gravestone,Serpent Spine,Beacon of the Reed Sea,Redhorn Stonethresher,Akuoumaru,Emblem of Severed Fate,,Emblem of Severed Fate,Noblesse Oblige,Emblem of Severed Fate,Thundering Fury,Noblesse Oblige,Thundering Fury,Thundersoother,
+Xingqiu,,4,Hydro,Sword,Energy Recharge,,,Hydro DMG,,,CRIT Rate / CRIT DMG,,,Energy Recharge,CRIT Rate / CRIT DMG,ATK%,Primordial Jade Cutter,Favonius Sword,Sacrificial Sword,Mistsplitter Reforged,Haran Geppaku Futsu,Emblem of Severed Fate,,Noblesse Oblige,,Emblem of Severed Fate,Noblesse Oblige,Emblem of Severed Fate,Heart of Depth,Heart of Depth,Noblesse Oblige
+Xiao,,5,Anemo,Polearm,ATK%,,,Anemo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Primordial Jade Winged-Spear,Staff of Homa,Vortex Vanquisher,Calamity Queller,Deathmatch,Vermillion Hereafter,,Desert Pavilion Chronicle,,Desert Pavilion Chronicle,Vermillion Hereafter,Shimenawa's Reminiscence,Vermillion Hereafter,Desert Pavilion Chronicle,Viridescent Venerer
+Ningguang,,4,Geo,Catalyst,ATK%,,,Geo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Lost Prayer to the Sacred Winds,Kagura's Verity,Skyward Atlas,Memory of Dust,Solar Pearl,Archaic Petra,Emblem of Severed Fate,Archaic Petra,Noblesse Oblige,Archaic Petra,Shimenawa's Reminiscence,Archaic Petra,,Emblem of Severed Fate,
+Klee,,5,Pyro,Catalyst,ATK%,,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,The Widsith,Lost Prayer to the Sacred Winds,Kagura's Verity,The Widsith,Skyward Atlas,Crimson Witch of Flames,Shimenawa's Reminiscence,Crimson Witch of Flames,,Crimson Witch of Flames,,Crimson Witch of Flames,Noblesse Oblige,Wanderer's Troupe,
+Zhongli,,5,Geo,Polearm,HP%,,,HP%,,,HP%,,,HP%,HP,Energy Recharge,Black Tassel,Favonius Lance,Staff of Homa,Skyward Spine,Engulfing Lightning,Tenacity of the Millelith,,Archaic Petra,,Deepwood Memories,,Instructor,,Noblesse Oblige,
+Fischl,,4,Electro,Bow,ATK%,Elemental Mastery,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,Aqua Simulacra,Polar Star,Hunter's Path,Skyward Harp,The Stringless,Golden Troupe,,Shimenawa's Reminiscence,Thundering Fury,Gilded Dreams,Thundering Fury,Thundersoother,,Thundering Fury,
+Bennett,,4,Pyro,Sword,ATK%,Energy Recharge,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Mistsplitter Reforged,Aquila Favonia,Skyward Blade,Freedom-Sworn,The Alley Flash,Noblesse Oblige,,Emblem of Severed Fate,,Crimson Witch of Flames,,Emblem of Severed Fate,Noblesse Oblige,Crimson Witch of Flames,Noblesse Oblige
+Tartaglia,,5,Hydro,Bow,ATK%,,,Hydro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,Polar Star,Thundering Pulse,Hunter's Path,Aqua Simulacra,The Viridescent Hunt,Heart of Depth,,Heart of Depth,Shimenawa's Reminiscence,Heart of Depth,Noblesse Oblige,Noblesse Oblige,Shimenawa's Reminiscence,Shimenawa's Reminiscence,
+Noelle,,4,Geo,Claymore,DEF%,ATK%,,Geo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Energy Recharge,DEF%,Redhorn Stonethresher,Serpent Spine,Skyward Pride,Whiteblind,Favonius Greatsword,Husk of Opulent Dreams,,Retracing Bolide,,Gladiator's Finale,,Archaic Petra,Husk of Opulent Dreams,Gladiator's Finale,Husk of Opulent Dreams
+Qiqi,,5,Cryo,Sword,ATK%,Energy Recharge,,ATK%,,,ATK%,Healing Bonus,,ATK%,Energy Recharge,ATK,Sacrificial Sword,Skyward Blade,Kagotsurube Isshin,The Flute,Favonius Sword,Tenacity of the Millelith,,Ocean-Hued Clam,,Maiden Beloved,,Maiden Beloved,Shimenawa's Reminiscence,Noblesse Oblige,
+Chongyun,,4,Cryo,Claymore,ATK%,Energy Recharge,Elemental Mastery,Cryo DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Wolf's Gravestone,Serpent Spine,Redhorn Stonethresher,Beacon of the Reed Sea,The Unforged,Blizzard Strayer,Noblesse Oblige,Emblem of Severed Fate,,Blizzard Strayer,Shimenawa's Reminiscence,Noblesse Oblige,Shimenawa's Reminiscence,Blizzard Strayer,Emblem of Severed Fate
+Ganyu,,5,Cryo,Bow,ATK%,,,Cryo DMG,,,CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,ATK%,Hunter's Path,Amos' Bow,Aqua Simulacra,Polar Star,Prototype Crescent,Shimenawa's Reminiscence,,Wanderer's Troupe,,Shimenawa's Reminiscence,Wanderer's Troupe,Blizzard Strayer,Shimenawa's Reminiscence,Blizzard Strayer,Wanderer's Troupe
+Albedo,,5,Geo,Sword,DEF%,,,Geo DMG,,,CRIT Rate / CRIT DMG,DEF%,,CRIT Rate / CRIT DMG,DEF%,ATK%,Cinnabar Spindle,Harbinger of Dawn,Primordial Jade Cutter,Mistsplitter Reforged,Freedom-Sworn,Husk of Opulent Dreams,,Archaic Petra,Husk of Opulent Dreams,Archaic Petra,Noblesse Oblige,Tenacity of the Millelith,,Noblesse Oblige,
+Diona,,4,Cryo,Bow,Energy Recharge,HP%,,HP%,,,HP%,Healing Bonus,,HP%,Energy Recharge,HP,Favonius Warbow,Sacrificial Bow,Elegy for the End,Recurve Bow,End of the Line,Noblesse Oblige,,Emblem of Severed Fate,Tenacity of the Millelith,Maiden Beloved,Tenacity of the Millelith,Maiden Beloved,,Emblem of Severed Fate,Maiden Beloved
+Mona,,5,Hydro,Catalyst,Energy Recharge,ATK%,,Hydro DMG,ATK%,,CRIT Rate,,,Energy Recharge,CRIT Rate,ATK%,Thrilling Tales of Dragon Slayers,Favonius Codex,Prototype Amber,Wine and Song,The Widsith,Noblesse Oblige,,Tenacity of the Millelith,,Emblem of Severed Fate,Scholar,Emblem of Severed Fate,,Scholar,
+Keqing,,5,Electro,Sword,ATK%,,,Electro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Elemental Mastery,Mistsplitter Reforged,Primordial Jade Cutter,Haran Geppaku Futsu,Freedom-Sworn,Harbinger of Dawn,Thundering Fury,,Thundersoother,,Gilded Dreams,,Gilded Dreams,Thundering Fury,Shimenawa's Reminiscence,Thundering Fury
+Sucrose,,4,Anemo,Catalyst,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,,,Elemental Mastery,Energy Recharge,ATK%,A Thousand Floating Dreams,Sacrificial Fragments,Thrilling Tales of Dragon Slayers,Hakushin Ring,Magic Guide,Viridescent Venerer,,Instructor,,Gilded Dreams,Wanderer's Troupe,Gilded Dreams,,Gilded Dreams,Viridescent Venerer
+Xinyan,,4,Geo,Claymore,ATK%,Energy Recharge,,Physical DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,ATK%,Energy Recharge,Redhorn Stonethresher,Skyward Pride,Serpent Spine,The Unforged,Song of Broken Pines,Bloodstained Chivalry,Pale Flame,Pale Flame,,Emblem of Severed Fate,Pale Flame,Pale Flame,Shimenawa's Reminiscence,Noblesse Oblige,Pale Flame
+Rosaria,,4,Cryo,Polearm,ATK%,,,Cryo DMG,,,CRIT DMG,,,CRIT DMG,ATK%,Energy Recharge,Staff of Homa,Wavebreaker's Fin,Vortex Vanquisher,Primordial Jade Winged-Spear,Blackcliff Pole,Blizzard Strayer,,Noblesse Oblige,,Blizzard Strayer,Noblesse Oblige,Blizzard Strayer,Shimenawa's Reminiscence,Noblesse Oblige,Shimenawa's Reminiscence
+Hu Tao,,5,Pyro,Polearm,HP%,Elemental Mastery,,Pyro DMG,,,CRIT Rate / CRIT DMG,,,CRIT Rate / CRIT DMG,Elemental Mastery,HP%,Staff of Homa,Staff of the Scarlet Sands,Dragon's Bane,Deathmatch,Primordial Jade Winged-Spear,Crimson Witch of Flames,,Shimenawa's Reminiscence,,Gilded Dreams,,Crimson Witch of Flames,Gilded Dreams,Crimson Witch of Flames,Tenacity of the Millelith
+Kaedehara Kazuha,,5,Anemo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Yanfei,,4,Pyro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Yoimiya,,5,Pyro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Thoma,,4,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eula,,5,Cryo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Raiden Shogun,,5,Electro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sayu,,4,Anemo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sangonomiya Kokomi,,5,Hydro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gorou,,4,Geo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kujou Sara,,4,Electro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Arataki Itto,,5,Geo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Yae Miko,,5,Electro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Shikanoin Heizou,,4,Anemo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Yelan,,5,Hydro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kirara,,4,Dendro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aloy,,5,Cryo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Shenhe,,5,Cryo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Yun Jin,,4,Geo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kuki Shinobu,,4,Electro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kamisato Ayato,,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Collei,,4,Dendro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dori,,4,Electro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Tighnari,,5,Dendro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Nilou,,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cyno,,5,Electro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Candace,,4,Hydro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Nahida,,5,Dendro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Layla,,4,Cryo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Wanderer,,5,Anemo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Faruzan,,4,Anemo,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Yaoyao,,4,Dendro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Alhaitham,,5,Dendro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dehya,,5,Pyro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Mika,,4,Cryo,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kaveh,,4,Dendro,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Baizhu,,5,Dendro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lynette,,4,Anemo,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lyney,,5,Pyro,Bow,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Freminet,,4,Cryo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Wriothesley,,5,Cryo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Neuvillette,,5,Hydro,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Charlotte,,4,Cryo,Catalyst,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Furina,,5,Hydro,Sword,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Chevreuse,,4,Pyro,Polearm,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Navia,,5,Geo,Claymore,,,,,,,,,,,,,,,,,,,,,,,,,,,

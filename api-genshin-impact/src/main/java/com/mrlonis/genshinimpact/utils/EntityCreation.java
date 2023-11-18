@@ -10,6 +10,7 @@ import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
 import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import com.mrlonis.genshinimpact.enums.WeaponTypes;
+import com.mrlonis.genshinimpact.exceptions.EntityCreationException;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import com.mrlonis.genshinimpact.repositories.CharactersRepository;
 import com.mrlonis.genshinimpact.repositories.ElementsRepository;
@@ -45,12 +46,12 @@ public class EntityCreation {
 
     @EventListener(ContextRefreshedEvent.class)
     public void contextRefreshedEvent() {
-        log.info("WeaponsCreation.contextRefreshedEvent(): Starting...");
+        log.info("contextRefreshedEvent(): Starting...");
         createElementEntities(parseCsvFile("csv/elements.csv"));
         createWeaponEntities(parseCsvFile("csv/weapons.csv"));
         createArtifactEntities(parseCsvFile("csv/artifacts.csv"));
         createCharacterEntities(parseCsvFile("csv/characters.csv"));
-        log.info("WeaponsCreation.contextRefreshedEvent(): Finished!");
+        log.info("contextRefreshedEvent(): Finished!");
     }
 
     private List<String[]> parseCsvFile(String filename) {
@@ -58,13 +59,14 @@ public class EntityCreation {
         try (InputStream inputStream = classloader.getResourceAsStream(filename)) {
             if (inputStream == null) {
                 log.error("parseCsvFile(): Error: File not found!");
-                throw new RuntimeException("File not found!");
+                throw new EntityCreationException("File not found!");
             }
 
             return readCsvFile(new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8)));
         } catch (IOException e) {
-            log.error("parseCsvFile(): IOException: " + e.getMessage());
-            throw new RuntimeException(e);
+            String errorMessage = "parseCsvFile(): IOException: " + e.getMessage();
+            log.error(errorMessage);
+            throw new EntityCreationException(errorMessage, e);
         }
     }
 
@@ -74,11 +76,13 @@ public class EntityCreation {
                                                                        .build()) {
             return csvReader.readAll();
         } catch (CsvException e) {
-            log.error("readCsvFile(): CsvException: " + e.getMessage());
-            throw new RuntimeException(e);
+            String errorMessage = "readCsvFile(): CsvException: " + e.getMessage();
+            log.error(errorMessage);
+            throw new EntityCreationException(errorMessage, e);
         } catch (IOException e) {
-            log.error("readCsvFile(): IOException: " + e.getMessage());
-            throw new RuntimeException(e);
+            String errorMessage = "readCsvFile(): IOException: " + e.getMessage();
+            log.error(errorMessage);
+            throw new EntityCreationException(errorMessage, e);
         }
     }
 
@@ -89,12 +93,12 @@ public class EntityCreation {
             String[] row = csvFile.get(i);
             if (row.length != 2) {
                 String errorMessage = String.format(
-                        "createWeaponEntities(): Row %s size is not 2 and was instead %s! row: %s",
+                        "createElementEntities(): Row %s size is not 2 and was instead %s! row: %s",
                         i,
                         row.length,
                         Arrays.toString(row));
                 log.error(errorMessage);
-                throw new RuntimeException(errorMessage);
+                throw new EntityCreationException(errorMessage);
             }
             String name = row[0];
             String imageUrl = row[1];
@@ -102,14 +106,14 @@ public class EntityCreation {
             Optional<Element> existingElement = elementsRepository.findByNameIgnoreCaseIs(name);
             if (existingElement.isPresent()) {
                 Element element = existingElement.get();
-                log.info("createEntities(): Element already exists: " + element);
-                log.info("createEntities(): Updating element: " + element);
+                log.info("createElementEntities(): Element already exists: " + element);
+                log.info("createElementEntities(): Updating element: " + element);
 
                 element.setImageUrl(imageUrl);
 
                 elements.add(element);
             } else {
-                log.info("createEntities(): Element does not exist: " + name);
+                log.info("createElementEntities(): Element does not exist: " + name);
                 Element element = Element.builder()
                                          .name(name)
                                          .imageUrl(imageUrl)
@@ -133,7 +137,7 @@ public class EntityCreation {
                         row.length,
                         Arrays.toString(row));
                 log.error(errorMessage);
-                throw new RuntimeException(errorMessage);
+                throw new EntityCreationException(errorMessage);
             }
             String name = row[0];
             String imageUrl = row[1];
@@ -144,12 +148,12 @@ public class EntityCreation {
             String affixDescription = row[6];
             String description = row[7];
 
-            log.info("createEntities(): Creating weapon: " + name);
+            log.info("createWeaponEntities(): Creating weapon: " + name);
             Optional<Weapon> existingWeapon = weaponsRepository.findByNameIgnoreCaseIs(name);
             if (existingWeapon.isPresent()) {
                 Weapon weapon = existingWeapon.get();
-                log.info("createEntities(): Weapon already exists: " + weapon);
-                log.info("createEntities(): Updating weapon: " + weapon);
+                log.info("createWeaponEntities(): Weapon already exists: " + weapon);
+                log.info("createWeaponEntities(): Updating weapon: " + weapon);
 
                 weapon.setImageUrl(imageUrl);
                 weapon.setRarity(rarity);
@@ -161,7 +165,7 @@ public class EntityCreation {
 
                 weapons.add(weapon);
             } else {
-                log.info("createEntities(): Weapon does not exist: " + name);
+                log.info("createWeaponEntities(): Weapon does not exist: " + name);
                 Weapon weapon = Weapon.builder()
                                       .name(name)
                                       .imageUrl(imageUrl)
@@ -191,7 +195,7 @@ public class EntityCreation {
                         row.length,
                         Arrays.toString(row));
                 log.error(errorMessage);
-                throw new RuntimeException(errorMessage);
+                throw new EntityCreationException(errorMessage);
             }
 
             String name = row[0];
@@ -203,8 +207,8 @@ public class EntityCreation {
             Optional<Artifact> existingArtifact = artifactsRepository.findByNameIgnoreCaseIs(name);
             if (existingArtifact.isPresent()) {
                 Artifact artifact = existingArtifact.get();
-                log.info("createEntities(): Artifact already exists: " + artifact);
-                log.info("createEntities(): Updating artifact: " + artifact);
+                log.info("createArtifactEntities(): Artifact already exists: " + artifact);
+                log.info("createArtifactEntities(): Updating artifact: " + artifact);
 
                 artifact.setImageUrl(imageUrl);
                 artifact.setOnePieceSetEffect(onePieceSetEffect);
@@ -213,7 +217,7 @@ public class EntityCreation {
 
                 artifacts.add(artifact);
             } else {
-                log.info("createEntities(): Artifact does not exist: " + name);
+                log.info("createArtifactEntities(): Artifact does not exist: " + name);
                 Artifact artifact = Artifact.builder()
                                             .name(name)
                                             .imageUrl(imageUrl)
@@ -233,14 +237,14 @@ public class EntityCreation {
 
         for (int i = 0; i < csvFile.size(); i++) {
             String[] row = csvFile.get(i);
-            if (row.length != 33) {
+            if (row.length != 32) {
                 String errorMessage = String.format(
-                        "createFileContents(): Row %s size is not 33 and was instead %s! row: %s",
+                        "createCharacterEntities(): Row %s size is not 32 and was instead %s! row: %s",
                         i,
                         row.length,
                         Arrays.toString(row));
                 log.error(errorMessage);
-                throw new RuntimeException(errorMessage);
+                throw new EntityCreationException(errorMessage);
             }
 
             String name = row[0];
@@ -260,35 +264,34 @@ public class EntityCreation {
             Substats substatOne = Substats.convertToEnumFromCsvValue(row[14]);
             Substats substatTwo = Substats.convertToEnumFromCsvValue(row[15]);
             Substats substatThree = Substats.convertToEnumFromCsvValue(row[16]);
-            Substats substatFour = Substats.convertToEnumFromCsvValue(row[17]);
-            String weaponOneName = row[18];
-            String weaponTwoName = row[19];
-            String weaponThreeName = row[20];
-            String weaponFourName = row[21];
-            String weaponFiveName = row[22];
-            String artifactSetOneNameFirst = row[23];
-            String artifactSetOneNameSecond = row[24];
-            String artifactSetTwoNameFirst = row[25];
-            String artifactSetTwoNameSecond = row[26];
-            String artifactSetThreeNameFirst = row[27];
-            String artifactSetThreeNameSecond = row[28];
-            String artifactSetFourNameFirst = row[29];
-            String artifactSetFourNameSecond = row[30];
-            String artifactSetFiveNameFirst = row[31];
-            String artifactSetFiveNameSecond = row[32];
+            String weaponOneName = row[17];
+            String weaponTwoName = row[18];
+            String weaponThreeName = row[19];
+            String weaponFourName = row[20];
+            String weaponFiveName = row[21];
+            String artifactSetOneNameFirst = row[22];
+            String artifactSetOneNameSecond = row[23];
+            String artifactSetTwoNameFirst = row[24];
+            String artifactSetTwoNameSecond = row[25];
+            String artifactSetThreeNameFirst = row[26];
+            String artifactSetThreeNameSecond = row[27];
+            String artifactSetFourNameFirst = row[28];
+            String artifactSetFourNameSecond = row[29];
+            String artifactSetFiveNameFirst = row[30];
+            String artifactSetFiveNameSecond = row[31];
 
-            log.info("createEntities(): Creating character: " + name);
+            log.info("createCharacterEntities(): Creating character: " + name);
             Character existingCharacter = charactersRepository.findByNameIgnoreCaseIs(name);
             if (existingCharacter != null) {
-                log.info("createEntities(): Character already exists: " + existingCharacter);
-                log.info("createEntities(): Updating character: " + existingCharacter);
+                log.info("createCharacterEntities(): Character already exists: " + existingCharacter);
+                log.info("createCharacterEntities(): Updating character: " + existingCharacter);
 
                 existingCharacter.setImageUrl(imageUrl);
                 existingCharacter.setRarity(rarity);
                 Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseIs(elementName);
                 if (repositoryElement.isEmpty()) {
-                    log.error("createEntities(): Element does not exist: " + elementName);
-                    throw new RuntimeException("Element does not exist: " + elementName);
+                    log.error("createCharacterEntities(): Element does not exist: " + elementName);
+                    throw new EntityCreationException("Element does not exist: " + elementName);
                 }
                 Element element = repositoryElement.get();
                 existingCharacter.setElementId(element.getId());
@@ -306,7 +309,6 @@ public class EntityCreation {
                 existingCharacter.setSubstatOne(substatOne);
                 existingCharacter.setSubstatTwo(substatTwo);
                 existingCharacter.setSubstatThree(substatThree);
-                existingCharacter.setSubstatFour(substatFour);
                 Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseIs(weaponOneName);
                 if (repositoryWeaponOne.isEmpty()) {
                     existingCharacter.setWeaponOneId(null);
@@ -459,7 +461,7 @@ public class EntityCreation {
                 Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseIs(elementName);
                 if (repositoryElement.isEmpty()) {
                     log.error("createEntities(): Element does not exist: " + elementName);
-                    throw new RuntimeException("Element does not exist: " + elementName);
+                    throw new EntityCreationException("Element does not exist: " + elementName);
                 }
                 Element element = repositoryElement.get();
                 Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseIs(weaponOneName);
@@ -507,7 +509,6 @@ public class EntityCreation {
                                                .substatOne(substatOne)
                                                .substatTwo(substatTwo)
                                                .substatThree(substatThree)
-                                               .substatFour(substatFour)
                                                .weaponOneId(repositoryWeaponOne.<java.util.UUID>map(Weapon::getId)
                                                                                .orElse(null))
                                                .weaponOne(repositoryWeaponOne.orElse(null))

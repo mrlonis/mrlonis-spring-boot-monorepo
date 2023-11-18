@@ -89,53 +89,66 @@ public class ArtifactBreakdownController {
                                    List<CircletMainStats> circletStats,
                                    List<Substats> substats) {
         for (Character character : characters) {
-            if (character.getSandsStatOne() != null && !sandsStats.contains(character.getSandsStatOne())) {
-                sandsStats.add(character.getSandsStatOne());
-            }
+            addSandsStats(character, sandsStats);
+            addGobletStats(character, gobletStats);
+            addCircletStats(character, circletStats);
+            addSubstats(character, substats);
+        }
+    }
 
-            if (character.getSandsStatTwo() != null && !sandsStats.contains(character.getSandsStatTwo())) {
-                sandsStats.add(character.getSandsStatTwo());
-            }
+    private void addSandsStats(Character character, List<SandsMainStats> sandsStats) {
+        if (character.getSandsStatOne() != null && !sandsStats.contains(character.getSandsStatOne())) {
+            sandsStats.add(character.getSandsStatOne());
+        }
 
-            if (character.getSandsStatThree() != null && !sandsStats.contains(character.getSandsStatThree())) {
-                sandsStats.add(character.getSandsStatThree());
-            }
+        if (character.getSandsStatTwo() != null && !sandsStats.contains(character.getSandsStatTwo())) {
+            sandsStats.add(character.getSandsStatTwo());
+        }
 
-            if (character.getGobletStatOne() != null && !gobletStats.contains(character.getGobletStatOne())) {
-                gobletStats.add(character.getGobletStatOne());
-            }
+        if (character.getSandsStatThree() != null && !sandsStats.contains(character.getSandsStatThree())) {
+            sandsStats.add(character.getSandsStatThree());
+        }
+    }
 
-            if (character.getGobletStatTwo() != null && !gobletStats.contains(character.getGobletStatTwo())) {
-                gobletStats.add(character.getGobletStatTwo());
-            }
+    private void addGobletStats(Character character, List<GobletMainStats> gobletStats) {
+        if (character.getGobletStatOne() != null && !gobletStats.contains(character.getGobletStatOne())) {
+            gobletStats.add(character.getGobletStatOne());
+        }
 
-            if (character.getGobletStatThree() != null && !gobletStats.contains(character.getGobletStatThree())) {
-                gobletStats.add(character.getGobletStatThree());
-            }
+        if (character.getGobletStatTwo() != null && !gobletStats.contains(character.getGobletStatTwo())) {
+            gobletStats.add(character.getGobletStatTwo());
+        }
 
-            if (character.getCircletStatOne() != null && !circletStats.contains(character.getCircletStatOne())) {
-                circletStats.add(character.getCircletStatOne());
-            }
+        if (character.getGobletStatThree() != null && !gobletStats.contains(character.getGobletStatThree())) {
+            gobletStats.add(character.getGobletStatThree());
+        }
+    }
 
-            if (character.getCircletStatTwo() != null && !circletStats.contains(character.getCircletStatTwo())) {
-                circletStats.add(character.getCircletStatTwo());
-            }
+    private void addCircletStats(Character character, List<CircletMainStats> circletStats) {
+        if (character.getCircletStatOne() != null && !circletStats.contains(character.getCircletStatOne())) {
+            circletStats.add(character.getCircletStatOne());
+        }
 
-            if (character.getCircletStatThree() != null && !circletStats.contains(character.getCircletStatThree())) {
-                circletStats.add(character.getCircletStatThree());
-            }
+        if (character.getCircletStatTwo() != null && !circletStats.contains(character.getCircletStatTwo())) {
+            circletStats.add(character.getCircletStatTwo());
+        }
 
-            if (character.getSubstatOne() != null && !substats.contains(character.getSubstatOne())) {
-                substats.add(character.getSubstatOne());
-            }
+        if (character.getCircletStatThree() != null && !circletStats.contains(character.getCircletStatThree())) {
+            circletStats.add(character.getCircletStatThree());
+        }
+    }
 
-            if (character.getSubstatTwo() != null && !substats.contains(character.getSubstatTwo())) {
-                substats.add(character.getSubstatTwo());
-            }
+    private void addSubstats(Character character, List<Substats> substats) {
+        if (character.getSubstatOne() != null && !substats.contains(character.getSubstatOne())) {
+            substats.add(character.getSubstatOne());
+        }
 
-            if (character.getSubstatThree() != null && !substats.contains(character.getSubstatThree())) {
-                substats.add(character.getSubstatThree());
-            }
+        if (character.getSubstatTwo() != null && !substats.contains(character.getSubstatTwo())) {
+            substats.add(character.getSubstatTwo());
+        }
+
+        if (character.getSubstatThree() != null && !substats.contains(character.getSubstatThree())) {
+            substats.add(character.getSubstatThree());
         }
     }
 
