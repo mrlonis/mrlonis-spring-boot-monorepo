@@ -21,8 +21,8 @@ public class ArtifactBreakdown {
     private String onePieceSetEffect;
     private String twoPieceSetEffect;
     private String fourPieceSetEffect;
-    private Map<SandsMainStats, List<Character>> sandsStats;
-    private Map<GobletMainStats, List<Character>> gobletStats;
-    private Map<CircletMainStats, List<Character>> circletStats;
-    private Map<Substats, List<Character>> substats;
+    private Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats;
+    private Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats;
+    private Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats;
+    private Map<Substats, List<ArtifactBreakdownCharacter>> substats;
 }
