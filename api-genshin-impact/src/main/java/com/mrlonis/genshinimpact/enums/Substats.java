@@ -16,12 +16,14 @@ public enum Substats {
     ELEMENTAL_MASTERY("Elemental Mastery"),
     CRITICAL_RATE("CRIT Rate"),
     CRITICAL_DAMAGE("CRIT DMG"),
-    CRITICAL_RATE_AND_DAMAGE("CRIT Rate / CRIT DMG");
+    CRITICAL_RATE_AND_DAMAGE("CRIT Rate / CRIT DMG"),
+    ATTACK_PERCENT_ELEMENTAL_MASTERY("ATK% / Elemental Mastery"),
+    ELEMENTAL_MASTERY_ATTACK_PERCENT("Elemental Mastery / ATK%");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
 
-    private Substats(String label) {
+    Substats(String label) {
         this.value = label;
     }
 
@@ -30,7 +32,10 @@ public enum Substats {
             return null;
         }
 
-        return Stream.of(Substats.values()).filter(c -> c.getValue().equals(csvValue)).findFirst().orElse(null);
+        return Stream.of(Substats.values())
+                     .filter(c -> c.getValue().equals(csvValue))
+                     .findFirst()
+                     .orElseThrow(() -> new IllegalArgumentException("Invalid Substat: " + csvValue));
     }
 
     @Override

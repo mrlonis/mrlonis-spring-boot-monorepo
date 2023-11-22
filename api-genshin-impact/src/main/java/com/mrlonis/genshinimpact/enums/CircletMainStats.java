@@ -18,7 +18,7 @@ public enum CircletMainStats {
     @Getter(onMethod_ = @JsonValue)
     private final String value;
 
-    private CircletMainStats(String label) {
+    CircletMainStats(String label) {
         this.value = label;
     }
 
@@ -27,7 +27,10 @@ public enum CircletMainStats {
             return null;
         }
 
-        return Stream.of(CircletMainStats.values()).filter(c -> c.getValue().equals(csvValue)).findFirst().orElse(null);
+        return Stream.of(CircletMainStats.values())
+                     .filter(c -> c.getValue().equals(csvValue))
+                     .findFirst()
+                     .orElseThrow(() -> new IllegalArgumentException("Invalid Circlet Main Stat: " + csvValue));
     }
 
     @Override

@@ -114,10 +114,7 @@ public class EntityCreation {
                 elements.add(element);
             } else {
                 log.info("createElementEntities(): Element does not exist: " + name);
-                Element element = Element.builder()
-                                         .name(name)
-                                         .imageUrl(imageUrl)
-                                         .build();
+                Element element = Element.builder().name(name).imageUrl(imageUrl).build();
                 elements.add(element);
             }
         }
@@ -248,6 +245,7 @@ public class EntityCreation {
             }
 
             String name = row[0];
+            log.info("createCharacterEntities(): Creating character: " + name);
             String imageUrl = row[1];
             int rarity = Integer.parseInt(row[2]);
             String elementName = row[3];
@@ -280,7 +278,6 @@ public class EntityCreation {
             String artifactSetFiveNameFirst = row[30];
             String artifactSetFiveNameSecond = row[31];
 
-            log.info("createCharacterEntities(): Creating character: " + name);
             Character existingCharacter = charactersRepository.findByNameIgnoreCaseIs(name);
             if (existingCharacter != null) {
                 log.info("createCharacterEntities(): Character already exists: " + existingCharacter);
@@ -309,8 +306,12 @@ public class EntityCreation {
                 existingCharacter.setSubstatOne(substatOne);
                 existingCharacter.setSubstatTwo(substatTwo);
                 existingCharacter.setSubstatThree(substatThree);
+
                 Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseIs(weaponOneName);
-                if (repositoryWeaponOne.isEmpty()) {
+                if (weaponOneName != null && repositoryWeaponOne.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponOneName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponOneName);
+                } else if (repositoryWeaponOne.isEmpty()) {
                     existingCharacter.setWeaponOneId(null);
                     existingCharacter.setWeaponOne(null);
                 } else {
@@ -318,8 +319,12 @@ public class EntityCreation {
                     existingCharacter.setWeaponOneId(weaponOne.getId());
                     existingCharacter.setWeaponOne(weaponOne);
                 }
+
                 Optional<Weapon> repositoryWeaponTwo = weaponsRepository.findByNameIgnoreCaseIs(weaponTwoName);
-                if (repositoryWeaponTwo.isEmpty()) {
+                if (weaponTwoName != null && repositoryWeaponTwo.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponTwoName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponTwoName);
+                } else if (repositoryWeaponTwo.isEmpty()) {
                     existingCharacter.setWeaponTwoId(null);
                     existingCharacter.setWeaponTwo(null);
                 } else {
@@ -327,9 +332,12 @@ public class EntityCreation {
                     existingCharacter.setWeaponTwoId(weaponTwo.getId());
                     existingCharacter.setWeaponTwo(weaponTwo);
                 }
-                Optional<Weapon> repositoryWeaponThree =
-                        weaponsRepository.findByNameIgnoreCaseIs(weaponThreeName);
-                if (repositoryWeaponThree.isEmpty()) {
+
+                Optional<Weapon> repositoryWeaponThree = weaponsRepository.findByNameIgnoreCaseIs(weaponThreeName);
+                if (weaponThreeName != null && repositoryWeaponThree.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponThreeName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponThreeName);
+                } else if (repositoryWeaponThree.isEmpty()) {
                     existingCharacter.setWeaponThreeId(null);
                     existingCharacter.setWeaponThree(null);
                 } else {
@@ -337,8 +345,12 @@ public class EntityCreation {
                     existingCharacter.setWeaponThreeId(weaponThree.getId());
                     existingCharacter.setWeaponThree(weaponThree);
                 }
+
                 Optional<Weapon> repositoryWeaponFour = weaponsRepository.findByNameIgnoreCaseIs(weaponFourName);
-                if (repositoryWeaponFour.isEmpty()) {
+                if (weaponFourName != null && repositoryWeaponFour.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponFourName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponFourName);
+                } else if (repositoryWeaponFour.isEmpty()) {
                     existingCharacter.setWeaponFourId(null);
                     existingCharacter.setWeaponFour(null);
                 } else {
@@ -346,8 +358,12 @@ public class EntityCreation {
                     existingCharacter.setWeaponFourId(weaponFour.getId());
                     existingCharacter.setWeaponFour(weaponFour);
                 }
+
                 Optional<Weapon> repositoryWeaponFive = weaponsRepository.findByNameIgnoreCaseIs(weaponFiveName);
-                if (repositoryWeaponFive.isEmpty()) {
+                if (weaponFiveName != null && repositoryWeaponFive.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponFiveName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponFiveName);
+                } else if (repositoryWeaponFive.isEmpty()) {
                     existingCharacter.setWeaponFiveId(null);
                     existingCharacter.setWeaponFive(null);
                 } else {
@@ -355,9 +371,13 @@ public class EntityCreation {
                     existingCharacter.setWeaponFiveId(weaponFive.getId());
                     existingCharacter.setWeaponFive(weaponFive);
                 }
+
                 Optional<Artifact> repositoryArtifactSetOneFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameFirst);
-                if (repositoryArtifactSetOneFirst.isEmpty()) {
+                if (artifactSetOneNameFirst != null && repositoryArtifactSetOneFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetOneNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetOneNameFirst);
+                } else if (repositoryArtifactSetOneFirst.isEmpty()) {
                     existingCharacter.setArtifactSetOneIdFirst(null);
                     existingCharacter.setArtifactSetOneFirst(null);
                 } else {
@@ -365,9 +385,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetOneIdFirst(artifactSetOneFirst.getId());
                     existingCharacter.setArtifactSetOneFirst(artifactSetOneFirst);
                 }
+
                 Optional<Artifact> repositoryArtifactSetOneSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameSecond);
-                if (repositoryArtifactSetOneSecond.isEmpty()) {
+                if (artifactSetOneNameSecond != null && repositoryArtifactSetOneSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetOneNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetOneNameSecond);
+                } else if (repositoryArtifactSetOneSecond.isEmpty()) {
                     existingCharacter.setArtifactSetOneIdSecond(null);
                     existingCharacter.setArtifactSetOneSecond(null);
                 } else {
@@ -375,9 +399,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetOneIdSecond(artifactSetOneSecond.getId());
                     existingCharacter.setArtifactSetOneSecond(artifactSetOneSecond);
                 }
+
                 Optional<Artifact> repositoryArtifactSetTwoFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameFirst);
-                if (repositoryArtifactSetTwoFirst.isEmpty()) {
+                if (artifactSetTwoNameFirst != null && repositoryArtifactSetTwoFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetTwoNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetTwoNameFirst);
+                } else if (repositoryArtifactSetTwoFirst.isEmpty()) {
                     existingCharacter.setArtifactSetTwoIdFirst(null);
                     existingCharacter.setArtifactSetTwoFirst(null);
                 } else {
@@ -385,9 +413,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetTwoIdFirst(artifactSetTwoFirst.getId());
                     existingCharacter.setArtifactSetTwoFirst(artifactSetTwoFirst);
                 }
+
                 Optional<Artifact> repositoryArtifactSetTwoSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameSecond);
-                if (repositoryArtifactSetTwoSecond.isEmpty()) {
+                if (artifactSetTwoNameSecond != null && repositoryArtifactSetTwoSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetTwoNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetTwoNameSecond);
+                } else if (repositoryArtifactSetTwoSecond.isEmpty()) {
                     existingCharacter.setArtifactSetTwoIdSecond(null);
                     existingCharacter.setArtifactSetTwoSecond(null);
                 } else {
@@ -395,9 +427,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetTwoIdSecond(artifactSetTwoSecond.getId());
                     existingCharacter.setArtifactSetTwoSecond(artifactSetTwoSecond);
                 }
+
                 Optional<Artifact> repositoryArtifactSetThreeFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameFirst);
-                if (repositoryArtifactSetThreeFirst.isEmpty()) {
+                if (artifactSetThreeNameFirst != null && repositoryArtifactSetThreeFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetThreeNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetThreeNameFirst);
+                } else if (repositoryArtifactSetThreeFirst.isEmpty()) {
                     existingCharacter.setArtifactSetThreeIdFirst(null);
                     existingCharacter.setArtifactSetThreeFirst(null);
                 } else {
@@ -405,9 +441,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetThreeIdFirst(artifactSetThreeFirst.getId());
                     existingCharacter.setArtifactSetThreeFirst(artifactSetThreeFirst);
                 }
+
                 Optional<Artifact> repositoryArtifactSetThreeSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameSecond);
-                if (repositoryArtifactSetThreeSecond.isEmpty()) {
+                if (artifactSetThreeNameSecond != null && repositoryArtifactSetThreeSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetThreeNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetThreeNameSecond);
+                } else if (repositoryArtifactSetThreeSecond.isEmpty()) {
                     existingCharacter.setArtifactSetThreeIdSecond(null);
                     existingCharacter.setArtifactSetThreeSecond(null);
                 } else {
@@ -415,9 +455,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetThreeIdSecond(artifactSetThreeSecond.getId());
                     existingCharacter.setArtifactSetThreeSecond(artifactSetThreeSecond);
                 }
+
                 Optional<Artifact> repositoryArtifactSetFourFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameFirst);
-                if (repositoryArtifactSetFourFirst.isEmpty()) {
+                if (artifactSetFourNameFirst != null && repositoryArtifactSetFourFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFourNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFourNameFirst);
+                } else if (repositoryArtifactSetFourFirst.isEmpty()) {
                     existingCharacter.setArtifactSetFourIdFirst(null);
                     existingCharacter.setArtifactSetFourFirst(null);
                 } else {
@@ -425,9 +469,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFourIdFirst(artifactSetFourFirst.getId());
                     existingCharacter.setArtifactSetFourFirst(artifactSetFourFirst);
                 }
+
                 Optional<Artifact> repositoryArtifactSetFourSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameSecond);
-                if (repositoryArtifactSetFourSecond.isEmpty()) {
+                if (artifactSetFourNameSecond != null && repositoryArtifactSetFourSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFourNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFourNameSecond);
+                } else if (repositoryArtifactSetFourSecond.isEmpty()) {
                     existingCharacter.setArtifactSetFourIdSecond(null);
                     existingCharacter.setArtifactSetFourSecond(null);
                 } else {
@@ -435,9 +483,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFourIdSecond(artifactSetFourSecond.getId());
                     existingCharacter.setArtifactSetFourSecond(artifactSetFourSecond);
                 }
+
                 Optional<Artifact> repositoryArtifactSetFiveFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameFirst);
-                if (repositoryArtifactSetFiveFirst.isEmpty()) {
+                if (artifactSetFiveNameFirst != null && repositoryArtifactSetFiveFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFiveNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFiveNameFirst);
+                } else if (repositoryArtifactSetFiveFirst.isEmpty()) {
                     existingCharacter.setArtifactSetFiveIdFirst(null);
                     existingCharacter.setArtifactSetFiveFirst(null);
                 } else {
@@ -445,9 +497,13 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFiveIdFirst(artifactSetFiveFirst.getId());
                     existingCharacter.setArtifactSetFiveFirst(artifactSetFiveFirst);
                 }
+
                 Optional<Artifact> repositoryArtifactSetFiveSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameSecond);
-                if (repositoryArtifactSetFiveSecond.isEmpty()) {
+                if (artifactSetFiveNameSecond != null && repositoryArtifactSetFiveSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFiveNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFiveNameSecond);
+                } else if (repositoryArtifactSetFiveSecond.isEmpty()) {
                     existingCharacter.setArtifactSetFiveIdSecond(null);
                     existingCharacter.setArtifactSetFiveSecond(null);
                 } else {
@@ -455,41 +511,192 @@ public class EntityCreation {
                     existingCharacter.setArtifactSetFiveIdSecond(artifactSetFiveSecond.getId());
                     existingCharacter.setArtifactSetFiveSecond(artifactSetFiveSecond);
                 }
+
                 characters.add(existingCharacter);
             } else {
-                log.info("createEntities(): Character does not exist: " + name);
+                log.info("createCharacterEntities(): Character does not exist: " + name);
                 Optional<Element> repositoryElement = elementsRepository.findByNameIgnoreCaseIs(elementName);
                 if (repositoryElement.isEmpty()) {
-                    log.error("createEntities(): Element does not exist: " + elementName);
+                    log.error("createCharacterEntities(): Element does not exist: " + elementName);
                     throw new EntityCreationException("Element does not exist: " + elementName);
                 }
                 Element element = repositoryElement.get();
+
+                Weapon weaponOne;
                 Optional<Weapon> repositoryWeaponOne = weaponsRepository.findByNameIgnoreCaseIs(weaponOneName);
+                if (weaponOneName != null && repositoryWeaponOne.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponOneName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponOneName);
+                } else if (repositoryWeaponOne.isEmpty()) {
+                    weaponOne = null;
+                } else {
+                    weaponOne = repositoryWeaponOne.get();
+                }
+
+                Weapon weaponTwo;
                 Optional<Weapon> repositoryWeaponTwo = weaponsRepository.findByNameIgnoreCaseIs(weaponTwoName);
-                Optional<Weapon> repositoryWeaponThree =
-                        weaponsRepository.findByNameIgnoreCaseIs(weaponThreeName);
+                if (weaponTwoName != null && repositoryWeaponTwo.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponTwoName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponTwoName);
+                } else if (repositoryWeaponTwo.isEmpty()) {
+                    weaponTwo = null;
+                } else {
+                    weaponTwo = repositoryWeaponTwo.get();
+                }
+
+                Weapon weaponThree;
+                Optional<Weapon> repositoryWeaponThree = weaponsRepository.findByNameIgnoreCaseIs(weaponThreeName);
+                if (weaponThreeName != null && repositoryWeaponThree.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponThreeName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponThreeName);
+                } else if (repositoryWeaponThree.isEmpty()) {
+                    weaponThree = null;
+                } else {
+                    weaponThree = repositoryWeaponThree.get();
+                }
+
+                Weapon weaponFour;
                 Optional<Weapon> repositoryWeaponFour = weaponsRepository.findByNameIgnoreCaseIs(weaponFourName);
+                if (weaponFourName != null && repositoryWeaponFour.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponFourName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponFourName);
+                } else if (repositoryWeaponFour.isEmpty()) {
+                    weaponFour = null;
+                } else {
+                    weaponFour = repositoryWeaponFour.get();
+                }
+
+                Weapon weaponFive;
                 Optional<Weapon> repositoryWeaponFive = weaponsRepository.findByNameIgnoreCaseIs(weaponFiveName);
+                if (weaponFiveName != null && repositoryWeaponFive.isEmpty()) {
+                    log.error("createCharacterEntities(): Weapon does not exist: " + weaponFiveName);
+                    throw new EntityCreationException("Weapon does not exist: " + weaponFiveName);
+                } else if (repositoryWeaponFive.isEmpty()) {
+                    weaponFive = null;
+                } else {
+                    weaponFive = repositoryWeaponFive.get();
+                }
+
+                Artifact artifactSetOneFirst;
                 Optional<Artifact> repositoryArtifactSetOneFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameFirst);
+                if (artifactSetOneNameFirst != null && repositoryArtifactSetOneFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetOneNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetOneNameFirst);
+                } else if (repositoryArtifactSetOneFirst.isEmpty()) {
+                    artifactSetOneFirst = null;
+                } else {
+                    artifactSetOneFirst = repositoryArtifactSetOneFirst.get();
+                }
+
+                Artifact artifactSetOneSecond;
                 Optional<Artifact> repositoryArtifactSetOneSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetOneNameSecond);
+                if (artifactSetOneNameSecond != null && repositoryArtifactSetOneSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetOneNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetOneNameSecond);
+                } else if (repositoryArtifactSetOneSecond.isEmpty()) {
+                    artifactSetOneSecond = null;
+                } else {
+                    artifactSetOneSecond = repositoryArtifactSetOneSecond.get();
+                }
+
+                Artifact artifactSetTwoFirst;
                 Optional<Artifact> repositoryArtifactSetTwoFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameFirst);
+                if (artifactSetTwoNameFirst != null && repositoryArtifactSetTwoFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetTwoNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetTwoNameFirst);
+                } else if (repositoryArtifactSetTwoFirst.isEmpty()) {
+                    artifactSetTwoFirst = null;
+                } else {
+                    artifactSetTwoFirst = repositoryArtifactSetTwoFirst.get();
+                }
+
+                Artifact artifactSetTwoSecond;
                 Optional<Artifact> repositoryArtifactSetTwoSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetTwoNameSecond);
+                if (artifactSetTwoNameSecond != null && repositoryArtifactSetTwoSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetTwoNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetTwoNameSecond);
+                } else if (repositoryArtifactSetTwoSecond.isEmpty()) {
+                    artifactSetTwoSecond = null;
+                } else {
+                    artifactSetTwoSecond = repositoryArtifactSetTwoSecond.get();
+                }
+
+                Artifact artifactSetThreeFirst;
                 Optional<Artifact> repositoryArtifactSetThreeFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameFirst);
+                if (artifactSetThreeNameFirst != null && repositoryArtifactSetThreeFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetThreeNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetThreeNameFirst);
+                } else if (repositoryArtifactSetThreeFirst.isEmpty()) {
+                    artifactSetThreeFirst = null;
+                } else {
+                    artifactSetThreeFirst = repositoryArtifactSetThreeFirst.get();
+                }
+
+                Artifact artifactSetThreeSecond;
                 Optional<Artifact> repositoryArtifactSetThreeSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetThreeNameSecond);
+                if (artifactSetThreeNameSecond != null && repositoryArtifactSetThreeSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetThreeNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetThreeNameSecond);
+                } else if (repositoryArtifactSetThreeSecond.isEmpty()) {
+                    artifactSetThreeSecond = null;
+                } else {
+                    artifactSetThreeSecond = repositoryArtifactSetThreeSecond.get();
+                }
+
+                Artifact artifactSetFourFirst;
                 Optional<Artifact> repositoryArtifactSetFourFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameFirst);
+                if (artifactSetFourNameFirst != null && repositoryArtifactSetFourFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFourNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFourNameFirst);
+                } else if (repositoryArtifactSetFourFirst.isEmpty()) {
+                    artifactSetFourFirst = null;
+                } else {
+                    artifactSetFourFirst = repositoryArtifactSetFourFirst.get();
+                }
+
+                Artifact artifactSetFourSecond;
                 Optional<Artifact> repositoryArtifactSetFourSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFourNameSecond);
+                if (artifactSetFourNameSecond != null && repositoryArtifactSetFourSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFourNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFourNameSecond);
+                } else if (repositoryArtifactSetFourSecond.isEmpty()) {
+                    artifactSetFourSecond = null;
+                } else {
+                    artifactSetFourSecond = repositoryArtifactSetFourSecond.get();
+                }
+
+                Artifact artifactSetFiveFirst;
                 Optional<Artifact> repositoryArtifactSetFiveFirst =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameFirst);
+                if (artifactSetFiveNameFirst != null && repositoryArtifactSetFiveFirst.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFiveNameFirst);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFiveNameFirst);
+                } else if (repositoryArtifactSetFiveFirst.isEmpty()) {
+                    artifactSetFiveFirst = null;
+                } else {
+                    artifactSetFiveFirst = repositoryArtifactSetFiveFirst.get();
+                }
+
+                Artifact artifactSetFiveSecond;
                 Optional<Artifact> repositoryArtifactSetFiveSecond =
                         artifactsRepository.findByNameIgnoreCaseIs(artifactSetFiveNameSecond);
+                if (artifactSetFiveNameSecond != null && repositoryArtifactSetFiveSecond.isEmpty()) {
+                    log.error("createCharacterEntities(): Artifact does not exist: " + artifactSetFiveNameSecond);
+                    throw new EntityCreationException("Artifact does not exist: " + artifactSetFiveNameSecond);
+                } else if (repositoryArtifactSetFiveSecond.isEmpty()) {
+                    artifactSetFiveSecond = null;
+                } else {
+                    artifactSetFiveSecond = repositoryArtifactSetFiveSecond.get();
+                }
+
                 Character character = Character.builder()
                                                .name(name)
                                                .imageUrl(imageUrl)
@@ -509,51 +716,56 @@ public class EntityCreation {
                                                .substatOne(substatOne)
                                                .substatTwo(substatTwo)
                                                .substatThree(substatThree)
-                                               .weaponOneId(repositoryWeaponOne.<java.util.UUID>map(Weapon::getId)
-                                                                               .orElse(null))
-                                               .weaponOne(repositoryWeaponOne.orElse(null))
-                                               .weaponTwoId(repositoryWeaponTwo.<java.util.UUID>map(Weapon::getId)
-                                                                               .orElse(null))
-                                               .weaponTwo(repositoryWeaponTwo.orElse(null))
-                                               .weaponThreeId(repositoryWeaponThree.<java.util.UUID>map(Weapon::getId)
-                                                                                   .orElse(null))
-                                               .weaponThree(repositoryWeaponThree.orElse(null))
-                                               .weaponFourId(repositoryWeaponFour.<java.util.UUID>map(Weapon::getId)
-                                                                                 .orElse(null))
-                                               .weaponFour(repositoryWeaponFour.orElse(null))
-                                               .weaponFiveId(repositoryWeaponFive.<java.util.UUID>map(Weapon::getId)
-                                                                                 .orElse(null))
-                                               .weaponFive(repositoryWeaponFive.orElse(null))
-                                               .artifactSetOneIdFirst(repositoryArtifactSetOneFirst.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetOneFirst(repositoryArtifactSetOneFirst.orElse(null))
-                                               .artifactSetOneIdSecond(repositoryArtifactSetOneSecond.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetOneSecond(repositoryArtifactSetOneSecond.orElse(null))
-                                               .artifactSetTwoIdFirst(repositoryArtifactSetTwoFirst.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetTwoFirst(repositoryArtifactSetTwoFirst.orElse(null))
-                                               .artifactSetTwoIdSecond(repositoryArtifactSetTwoSecond.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetTwoSecond(repositoryArtifactSetTwoSecond.orElse(null))
-                                               .artifactSetThreeIdFirst(repositoryArtifactSetThreeFirst.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetThreeFirst(repositoryArtifactSetThreeFirst.orElse(null))
-                                               .artifactSetThreeIdSecond(repositoryArtifactSetThreeSecond.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetThreeSecond(repositoryArtifactSetThreeSecond.orElse(null))
-                                               .artifactSetFourIdFirst(repositoryArtifactSetFourFirst.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetFourFirst(repositoryArtifactSetFourFirst.orElse(null))
-                                               .artifactSetFourIdSecond(repositoryArtifactSetFourSecond.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetFourSecond(repositoryArtifactSetFourSecond.orElse(null))
-                                               .artifactSetFiveIdFirst(repositoryArtifactSetFiveFirst.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetFiveFirst(repositoryArtifactSetFiveFirst.orElse(null))
-                                               .artifactSetFiveIdSecond(repositoryArtifactSetFiveSecond.<java.util.UUID>map(
-                                                       Artifact::getId).orElse(null))
-                                               .artifactSetFiveSecond(repositoryArtifactSetFiveSecond.orElse(null))
+                                               .weaponOneId(weaponOne.getId() == null ? null : weaponOne.getId())
+                                               .weaponOne(weaponOne)
+                                               .weaponTwoId(weaponTwo.getId() == null ? null : weaponTwo.getId())
+                                               .weaponTwo(weaponTwo)
+                                               .weaponThreeId(weaponThree != null ? weaponThree.getId() : null)
+                                               .weaponThree(weaponThree)
+                                               .weaponFourId(weaponFour != null ? weaponFour.getId() : null)
+                                               .weaponFour(weaponFour)
+                                               .weaponFiveId(weaponFive != null ? weaponFive.getId() : null)
+                                               .weaponFive(weaponFive)
+                                               .artifactSetOneIdFirst(artifactSetOneFirst == null ?
+                                                                      null :
+                                                                      artifactSetOneFirst.getId())
+                                               .artifactSetOneFirst(artifactSetOneFirst)
+                                               .artifactSetOneIdSecond(artifactSetOneSecond == null ?
+                                                                       null :
+                                                                       artifactSetOneSecond.getId())
+                                               .artifactSetOneSecond(artifactSetOneSecond)
+                                               .artifactSetTwoIdFirst(artifactSetTwoFirst == null ?
+                                                                      null :
+                                                                      artifactSetTwoFirst.getId())
+                                               .artifactSetTwoFirst(artifactSetTwoFirst)
+                                               .artifactSetTwoIdSecond(artifactSetTwoSecond == null ?
+                                                                       null :
+                                                                       artifactSetTwoSecond.getId())
+                                               .artifactSetTwoSecond(artifactSetTwoSecond)
+                                               .artifactSetThreeIdFirst(artifactSetThreeFirst == null ?
+                                                                        null :
+                                                                        artifactSetThreeFirst.getId())
+                                               .artifactSetThreeFirst(artifactSetThreeFirst)
+                                               .artifactSetThreeIdSecond(artifactSetThreeSecond == null ?
+                                                                         null :
+                                                                         artifactSetThreeSecond.getId())
+                                               .artifactSetThreeSecond(artifactSetThreeSecond)
+                                               .artifactSetFourIdFirst(artifactSetFourFirst == null ?
+                                                                       null :
+                                                                       artifactSetFourFirst.getId())
+                                               .artifactSetFourFirst(artifactSetFourFirst)
+                                               .artifactSetFourIdSecond(artifactSetFourSecond == null ?
+                                                                        null :
+                                                                        artifactSetFourSecond.getId())
+                                               .artifactSetFourSecond(artifactSetFourSecond)
+                                               .artifactSetFiveIdFirst(artifactSetFiveFirst == null ?
+                                                                       null :
+                                                                       artifactSetFiveFirst.getId())
+                                               .artifactSetFiveFirst(artifactSetFiveFirst)
+                                               .artifactSetFiveIdSecond(artifactSetFiveSecond == null ?
+                                                                        null :
+                                                                        artifactSetFiveSecond.getId())
+                                               .artifactSetFiveSecond(artifactSetFiveSecond)
                                                .build();
                 characters.add(character);
             }

@@ -11,7 +11,7 @@ public enum WeaponTypes {
     @Getter(onMethod_ = @JsonValue)
     private final String value;
 
-    private WeaponTypes(String label) {
+    WeaponTypes(String label) {
         this.value = label;
     }
 
@@ -20,7 +20,10 @@ public enum WeaponTypes {
             return null;
         }
 
-        return Stream.of(WeaponTypes.values()).filter(c -> c.getValue().equals(csvValue)).findFirst().orElse(null);
+        return Stream.of(WeaponTypes.values())
+                     .filter(c -> c.getValue().equals(csvValue))
+                     .findFirst()
+                     .orElseThrow(() -> new IllegalArgumentException("Invalid Weapon Type: " + csvValue));
     }
 
     @Override

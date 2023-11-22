@@ -24,7 +24,7 @@ public enum GobletMainStats {
     @Getter
     private final String csvValue;
 
-    private GobletMainStats(String label, String csvValue) {
+    GobletMainStats(String label, String csvValue) {
         this.value = label;
         this.csvValue = csvValue;
     }
@@ -37,7 +37,7 @@ public enum GobletMainStats {
         return Stream.of(GobletMainStats.values())
                      .filter(c -> c.getCsvValue().equals(csvValue))
                      .findFirst()
-                     .orElse(null);
+                     .orElseThrow(() -> new IllegalArgumentException("Invalid Goblet Main Stats: " + csvValue));
     }
 
     @Override

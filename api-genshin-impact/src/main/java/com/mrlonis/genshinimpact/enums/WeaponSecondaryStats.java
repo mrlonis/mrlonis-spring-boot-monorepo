@@ -20,7 +20,7 @@ public enum WeaponSecondaryStats {
     @Getter
     private final String csvValue;
 
-    private WeaponSecondaryStats(String label, String csvValue) {
+    WeaponSecondaryStats(String label, String csvValue) {
         this.value = label;
         this.csvValue = csvValue;
     }
@@ -33,7 +33,7 @@ public enum WeaponSecondaryStats {
         return Stream.of(WeaponSecondaryStats.values())
                      .filter(c -> c.getCsvValue().equals(csvValue))
                      .findFirst()
-                     .orElse(null);
+                     .orElseThrow(() -> new IllegalArgumentException("Invalid Weapon Secondary Stat: " + csvValue));
     }
 
     @Override

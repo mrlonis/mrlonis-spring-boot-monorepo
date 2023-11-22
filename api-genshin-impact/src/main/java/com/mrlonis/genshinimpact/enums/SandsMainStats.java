@@ -15,7 +15,7 @@ public enum SandsMainStats {
     @Getter(onMethod_ = @JsonValue)
     private final String value;
 
-    private SandsMainStats(String label) {
+    SandsMainStats(String label) {
         this.value = label;
     }
 
@@ -24,7 +24,10 @@ public enum SandsMainStats {
             return null;
         }
 
-        return Stream.of(SandsMainStats.values()).filter(c -> c.getValue().equals(csvValue)).findFirst().orElse(null);
+        return Stream.of(SandsMainStats.values())
+                     .filter(c -> c.getValue().equals(csvValue))
+                     .findFirst()
+                     .orElseThrow(() -> new IllegalArgumentException("Invalid Sands Main Stat: " + csvValue));
     }
 
     @Override
