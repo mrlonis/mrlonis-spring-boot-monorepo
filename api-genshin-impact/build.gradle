@@ -73,9 +73,9 @@ tasks.register('restartDocker') {
         exec {
             if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
                 workingDir = file("./")
-                commandLine = ["cmd", "/C", "docker compose up -d", "--wait"]
+                commandLine = ["cmd", "/C", "docker compose", "up", "--pull", "always", "-V", "--wait"]
             } else {
-                commandLine = ["docker", "compose", "up", "-d", "--wait"]
+                commandLine = ["docker", "compose", "up", "--pull", "always", "-V", "--wait"]
             }
         }
     }
