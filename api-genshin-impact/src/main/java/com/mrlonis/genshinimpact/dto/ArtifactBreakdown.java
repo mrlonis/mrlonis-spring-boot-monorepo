@@ -24,5 +24,4 @@ public class ArtifactBreakdown {
     private Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats;
     private Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats;
     private Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats;
-    private Map<Substats, List<ArtifactBreakdownCharacter>> substats;
 }

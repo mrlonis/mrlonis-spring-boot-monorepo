@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,19 +70,16 @@ public class ArtifactBreakdownController {
             return artifactBreakdown;
         }
 
-        Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats = new HashMap<>();
-        Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats = new HashMap<>();
-        Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats = new HashMap<>();
-        Map<Substats, List<ArtifactBreakdownCharacter>> substats = new HashMap<>();
+        Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats = new EnumMap<>(SandsMainStats.class);
+        Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats = new EnumMap<>(GobletMainStats.class);
+        Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats = new EnumMap<>(CircletMainStats.class);
 
-        processCharacters(characters, sandsStats, gobletStats, circletStats, substats);
+        processCharacters(characters, sandsStats, gobletStats, circletStats);
         processCircletStats(circletStats);
-        processSubstats(substats);
 
         artifactBreakdown.setSandsStats(sandsStats);
         artifactBreakdown.setGobletStats(gobletStats);
         artifactBreakdown.setCircletStats(circletStats);
-        artifactBreakdown.setSubstats(substats);
 
         return artifactBreakdown;
     }
@@ -89,13 +87,11 @@ public class ArtifactBreakdownController {
     private void processCharacters(List<Character> characters,
                                    Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats,
                                    Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats,
-                                   Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats,
-                                   Map<Substats, List<ArtifactBreakdownCharacter>> substats) {
+                                   Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats) {
         for (Character character : characters) {
             addSandsStats(character, sandsStats);
             addGobletStats(character, gobletStats);
             addCircletStats(character, circletStats);
-            addSubstats(character, substats);
         }
     }
 
@@ -104,6 +100,7 @@ public class ArtifactBreakdownController {
                                                                                           .id(character.getId())
                                                                                           .name(character.getName())
                                                                                           .imageUrl(character.getImageUrl())
+                                                                                          .substats(build_substats(character))
                                                                                           .build();
 
         if (character.getSandsStatOne() != null) {
@@ -152,6 +149,7 @@ public class ArtifactBreakdownController {
                                                                                           .id(character.getId())
                                                                                           .name(character.getName())
                                                                                           .imageUrl(character.getImageUrl())
+                                                                                          .substats(build_substats(character))
                                                                                           .build();
 
         if (character.getGobletStatOne() != null) {
@@ -200,6 +198,7 @@ public class ArtifactBreakdownController {
                                                                                           .id(character.getId())
                                                                                           .name(character.getName())
                                                                                           .imageUrl(character.getImageUrl())
+                                                                                          .substats(build_substats(character))
                                                                                           .build();
 
         if (character.getCircletStatOne() != null) {
@@ -242,53 +241,6 @@ public class ArtifactBreakdownController {
         }
     }
 
-    private void addSubstats(Character character, Map<Substats, List<ArtifactBreakdownCharacter>> substats) {
-        ArtifactBreakdownCharacter artifactBreakdownCharacter = ArtifactBreakdownCharacter.builder()
-                                                                                          .id(character.getId())
-                                                                                          .name(character.getName())
-                                                                                          .imageUrl(character.getImageUrl())
-                                                                                          .build();
-
-        if (character.getSubstatOne() != null) {
-            if (!substats.containsKey(character.getSubstatOne())) {
-                substats.put(character.getSubstatOne(), List.of(artifactBreakdownCharacter));
-            } else {
-                List<ArtifactBreakdownCharacter> characters = substats.get(character.getSubstatOne());
-                if (!characters.contains(artifactBreakdownCharacter)) {
-                    List<ArtifactBreakdownCharacter> newCharacters = new ArrayList<>(characters);
-                    newCharacters.add(artifactBreakdownCharacter);
-                    substats.put(character.getSubstatOne(), newCharacters);
-                }
-            }
-        }
-
-        if (character.getSubstatTwo() != null) {
-            if (!substats.containsKey(character.getSubstatTwo())) {
-                substats.put(character.getSubstatTwo(), List.of(artifactBreakdownCharacter));
-            } else {
-                List<ArtifactBreakdownCharacter> characters = substats.get(character.getSubstatTwo());
-                if (!characters.contains(artifactBreakdownCharacter)) {
-                    List<ArtifactBreakdownCharacter> newCharacters = new ArrayList<>(characters);
-                    newCharacters.add(artifactBreakdownCharacter);
-                    substats.put(character.getSubstatTwo(), newCharacters);
-                }
-            }
-        }
-
-        if (character.getSubstatThree() != null) {
-            if (!substats.containsKey(character.getSubstatThree())) {
-                substats.put(character.getSubstatThree(), List.of(artifactBreakdownCharacter));
-            } else {
-                List<ArtifactBreakdownCharacter> characters = substats.get(character.getSubstatThree());
-                if (!characters.contains(artifactBreakdownCharacter)) {
-                    List<ArtifactBreakdownCharacter> newCharacters = new ArrayList<>(characters);
-                    newCharacters.add(artifactBreakdownCharacter);
-                    substats.put(character.getSubstatThree(), newCharacters);
-                }
-            }
-        }
-    }
-
     private void processCircletStats(Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats) {
         if (circletStats.containsKey(CircletMainStats.CRITICAL_RATE_AND_DAMAGE)) {
             List<ArtifactBreakdownCharacter> characters = circletStats.get(CircletMainStats.CRITICAL_RATE_AND_DAMAGE);
@@ -323,37 +275,17 @@ public class ArtifactBreakdownController {
         }
     }
 
-    private void processSubstats(Map<Substats, List<ArtifactBreakdownCharacter>> substats) {
-        if (substats.containsKey(Substats.CRITICAL_RATE_AND_DAMAGE)) {
-            List<ArtifactBreakdownCharacter> characters = substats.get(Substats.CRITICAL_RATE_AND_DAMAGE);
-
-            if (!substats.containsKey(Substats.CRITICAL_RATE)) {
-                substats.put(Substats.CRITICAL_RATE, characters);
-            } else {
-                List<ArtifactBreakdownCharacter> charactersCritRate = substats.get(Substats.CRITICAL_RATE);
-                for (ArtifactBreakdownCharacter character : characters) {
-                    if (!charactersCritRate.contains(character)) {
-                        List<ArtifactBreakdownCharacter> newCharacters = new ArrayList<>(charactersCritRate);
-                        newCharacters.add(character);
-                        substats.put(Substats.CRITICAL_RATE, newCharacters);
-                    }
-                }
-            }
-
-            if (!substats.containsKey(Substats.CRITICAL_DAMAGE)) {
-                substats.put(Substats.CRITICAL_DAMAGE, characters);
-            } else {
-                List<ArtifactBreakdownCharacter> charactersCritDamage = substats.get(Substats.CRITICAL_DAMAGE);
-                for (ArtifactBreakdownCharacter character : characters) {
-                    if (!charactersCritDamage.contains(character)) {
-                        List<ArtifactBreakdownCharacter> newCharacters = new ArrayList<>(charactersCritDamage);
-                        newCharacters.add(character);
-                        substats.put(Substats.CRITICAL_DAMAGE, newCharacters);
-                    }
-                }
-            }
-
-            substats.remove(Substats.CRITICAL_RATE_AND_DAMAGE);
+    private List<Substats> build_substats(Character character) {
+        List<Substats> substats = new ArrayList<>();
+        if (character.getSubstatOne() != null) {
+            substats.add(character.getSubstatOne());
         }
+        if (character.getSubstatTwo() != null) {
+            substats.add(character.getSubstatTwo());
+        }
+        if (character.getSubstatThree() != null) {
+            substats.add(character.getSubstatThree());
+        }
+        return substats;
     }
 }
