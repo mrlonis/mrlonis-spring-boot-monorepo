@@ -726,17 +726,15 @@ public class EntityCreation {
                                                .weaponFour(weaponFour)
                                                .weaponFiveId(weaponFive != null ? weaponFive.getId() : null)
                                                .weaponFive(weaponFive)
-                                               .artifactSetOneIdFirst(artifactSetOneFirst == null ?
-                                                                      null :
-                                                                      artifactSetOneFirst.getId())
+                                               .artifactSetOneIdFirst(
+                                                       artifactSetOneFirst == null ? null : artifactSetOneFirst.getId())
                                                .artifactSetOneFirst(artifactSetOneFirst)
                                                .artifactSetOneIdSecond(artifactSetOneSecond == null ?
                                                                        null :
                                                                        artifactSetOneSecond.getId())
                                                .artifactSetOneSecond(artifactSetOneSecond)
-                                               .artifactSetTwoIdFirst(artifactSetTwoFirst == null ?
-                                                                      null :
-                                                                      artifactSetTwoFirst.getId())
+                                               .artifactSetTwoIdFirst(
+                                                       artifactSetTwoFirst == null ? null : artifactSetTwoFirst.getId())
                                                .artifactSetTwoFirst(artifactSetTwoFirst)
                                                .artifactSetTwoIdSecond(artifactSetTwoSecond == null ?
                                                                        null :

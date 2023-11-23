@@ -50,7 +50,7 @@ class ArtifactBreakdownControllerTests {
 
         String route = "/api/v2/artifactBreakdown";
         ResponseEntity<ArtifactBreakdown> result = this.restTemplate.exchange(
-                "http://localhost:" + port + route + "?artifactId=" + artifact.getId().toString(),
+                "http://localhost:" + port + route + "?artifactId=" + artifact.getId().toString() + "&artifactDepth=5",
                 HttpMethod.GET,
                 null,
                 ArtifactBreakdown.class);

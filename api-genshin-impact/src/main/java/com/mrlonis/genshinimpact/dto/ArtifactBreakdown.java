@@ -1,10 +1,8 @@
 package com.mrlonis.genshinimpact.dto;
 
-import com.mrlonis.genshinimpact.entities.Character;
 import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
-import com.mrlonis.genshinimpact.enums.Substats;
 import lombok.Builder;
 import lombok.Data;
 
@@ -21,6 +19,7 @@ public class ArtifactBreakdown {
     private String onePieceSetEffect;
     private String twoPieceSetEffect;
     private String fourPieceSetEffect;
+    private List<ArtifactBreakdownCharacter> characters;
     private Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats;
     private Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats;
     private Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats;

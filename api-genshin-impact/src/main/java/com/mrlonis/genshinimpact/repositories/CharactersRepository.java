@@ -18,7 +18,38 @@ public interface CharactersRepository
     @RestResource(path = "findByName", rel = "findByName")
     Character findByNameIgnoreCaseIs(@Param("name") String name);
 
-    @RestResource(path = "findByArtifactSet", rel = "findByArtifactSet")
+    @RestResource(path = "findByArtifactSetOne", rel = "findByArtifactSetOne")
+    List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIs(@Param("artifactSetOneIdFirst") UUID artifactSetOneIdFirst,
+                                                                            @Param("artifactSetOneIdSecond") UUID artifactSetOneIdSecond);
+
+    @RestResource(path = "findByArtifactSetOneAndTwo", rel = "findByArtifactSetOneAndTwo")
+    List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIs(
+            @Param("artifactSetOneIdFirst") UUID artifactSetOneIdFirst,
+            @Param("artifactSetOneIdSecond") UUID artifactSetOneIdSecond,
+            @Param("artifactSetTwoIdFirst") UUID artifactSetTwoIdFirst,
+            @Param("artifactSetTwoIdSecond") UUID artifactSetTwoIdSecond);
+
+    @RestResource(path = "findByArtifactSetOneTwoAndThree", rel = "findByArtifactSetOneTwoAndThree")
+    List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIs(
+            @Param("artifactSetOneIdFirst") UUID artifactSetOneIdFirst,
+            @Param("artifactSetOneIdSecond") UUID artifactSetOneIdSecond,
+            @Param("artifactSetTwoIdFirst") UUID artifactSetTwoIdFirst,
+            @Param("artifactSetTwoIdSecond") UUID artifactSetTwoIdSecond,
+            @Param("artifactSetThreeIdFirst") UUID artifactSetThreeIdFirst,
+            @Param("artifactSetThreeIdSecond") UUID artifactSetThreeIdSecond);
+
+    @RestResource(path = "findByArtifactSetOneTwoThreeAndFour", rel = "findByArtifactSet")
+    List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIs(
+            @Param("artifactSetOneIdFirst") UUID artifactSetOneIdFirst,
+            @Param("artifactSetOneIdSecond") UUID artifactSetOneIdSecond,
+            @Param("artifactSetTwoIdFirst") UUID artifactSetTwoIdFirst,
+            @Param("artifactSetTwoIdSecond") UUID artifactSetTwoIdSecond,
+            @Param("artifactSetThreeIdFirst") UUID artifactSetThreeIdFirst,
+            @Param("artifactSetThreeIdSecond") UUID artifactSetThreeIdSecond,
+            @Param("artifactSetFourIdFirst") UUID artifactSetFourIdFirst,
+            @Param("artifactSetFourIdSecond") UUID artifactSetFourIdSecond);
+
+    @RestResource(path = "findByAllArtifactSets", rel = "findByAllArtifactSets")
     List<Character> findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
             @Param("artifactSetOneIdFirst") UUID artifactSetOneIdFirst,
             @Param("artifactSetOneIdSecond") UUID artifactSetOneIdSecond,
