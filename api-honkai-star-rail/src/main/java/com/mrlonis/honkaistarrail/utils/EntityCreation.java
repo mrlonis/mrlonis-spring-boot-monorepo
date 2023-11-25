@@ -1,11 +1,18 @@
 package com.mrlonis.honkaistarrail.utils;
 
+import com.mrlonis.honkaistarrail.entities.Character;
 import com.mrlonis.honkaistarrail.entities.CombatPath;
 import com.mrlonis.honkaistarrail.entities.CombatType;
 import com.mrlonis.honkaistarrail.entities.LightCone;
 import com.mrlonis.honkaistarrail.entities.Ornament;
 import com.mrlonis.honkaistarrail.entities.Relic;
+import com.mrlonis.honkaistarrail.enums.BodyMainStats;
+import com.mrlonis.honkaistarrail.enums.FeetMainStats;
+import com.mrlonis.honkaistarrail.enums.LinkRopeMainStats;
+import com.mrlonis.honkaistarrail.enums.PlanarSphereMainStats;
+import com.mrlonis.honkaistarrail.enums.Substats;
 import com.mrlonis.honkaistarrail.exceptions.EntityCreationException;
+import com.mrlonis.honkaistarrail.repositories.CharactersRepository;
 import com.mrlonis.honkaistarrail.repositories.CombatPathsRepository;
 import com.mrlonis.honkaistarrail.repositories.CombatTypesRepository;
 import com.mrlonis.honkaistarrail.repositories.LightConesRepository;
@@ -40,6 +47,7 @@ public class EntityCreation {
     LightConesRepository lightConesRepository;
     RelicsRepository relicsRepository;
     OrnamentsRepository ornamentsRepository;
+    CharactersRepository charactersRepository;
 
     @EventListener(ContextRefreshedEvent.class)
     public void contextRefreshedEvent() {
@@ -49,6 +57,7 @@ public class EntityCreation {
         createLightConeEntities(parseCsvFile("csv/lightCones.csv"));
         createRelicEntities(parseCsvFile("csv/relics.csv"));
         createOrnamentEntities(parseCsvFile("csv/ornaments.csv"));
+        createCharacterEntities(parseCsvFile("csv/characters.csv"));
         log.info("contextRefreshedEvent(): Finished!");
     }
 
@@ -301,15 +310,317 @@ public class EntityCreation {
                 ornaments.add(ornament);
             } else {
                 log.info("createOrnamentsEntities(): Ornament does not exist: " + name);
-                Ornament ornament = Ornament.builder()
-                                            .name(name)
-                                            .imageUrl(imageUrl)
-                                            .twoPieceSetEffect(twoPieceSetEffect)
-                                            .build();
+                Ornament ornament =
+                        Ornament.builder().name(name).imageUrl(imageUrl).twoPieceSetEffect(twoPieceSetEffect).build();
                 ornaments.add(ornament);
             }
         }
 
         ornamentsRepository.saveAll(ornaments);
+    }
+
+    private void createCharacterEntities(List<String[]> csvFile) {
+        List<Character> characters = new LinkedList<>();
+
+        for (int i = 0; i < csvFile.size(); i++) {
+            String[] row = csvFile.get(i);
+            if (row.length != 30) {
+                String errorMessage = String.format(
+                        "createCharacterEntities(): Row %s size is not 30 and was instead %s! row: %s",
+                        i,
+                        row.length,
+                        Arrays.toString(row));
+                log.error(errorMessage);
+                throw new EntityCreationException(errorMessage);
+            }
+
+            log.info(Arrays.toString(row));
+            String name = row[0];
+            String imageUrl = row[1];
+            int rarity = Integer.parseInt(row[2]);
+            String combatPathName = row[3];
+            String combatTypeName = row[4];
+            BodyMainStats bodyMainStatOne = BodyMainStats.convertToEnumFromCsvValue(row[5]);
+            BodyMainStats bodyMainStatTwo = BodyMainStats.convertToEnumFromCsvValue(row[6]);
+            FeetMainStats feetMainStatOne = FeetMainStats.convertToEnumFromCsvValue(row[7]);
+            FeetMainStats feetMainStatTwo = FeetMainStats.convertToEnumFromCsvValue(row[8]);
+            PlanarSphereMainStats planarSphereMainStat = PlanarSphereMainStats.convertToEnumFromCsvValue(row[9]);
+            LinkRopeMainStats linkRopeMainStatOne = LinkRopeMainStats.convertToEnumFromCsvValue(row[10]);
+            LinkRopeMainStats linkRopeMainStatTwo = LinkRopeMainStats.convertToEnumFromCsvValue(row[11]);
+            Substats substatOne = Substats.convertToEnumFromCsvValue(row[12]);
+            Substats substatTwo = Substats.convertToEnumFromCsvValue(row[13]);
+            Substats substatThree = Substats.convertToEnumFromCsvValue(row[14]);
+            Substats substatFour = Substats.convertToEnumFromCsvValue(row[15]);
+            String relicSetOneNameFirst = row[16];
+            String relicSetOneNameSecond = row[17];
+            String relicSetTwoNameFirst = row[18];
+            String relicSetTwoNameSecond = row[19];
+            String relicSetThreeNameFirst = row[20];
+            String relicSetThreeNameSecond = row[21];
+            String ornamentSetOneName = row[22];
+            String ornamentSetTwoName = row[23];
+            String ornamentSetThreeName = row[24];
+            String lightConeNameOne = row[25];
+            String lightConeNameTwo = row[26];
+            String lightConeNameThree = row[27];
+            String lightConeNameFour = row[28];
+            String lightConeNameFive = row[29];
+
+            Optional<Character> existingCharacter = charactersRepository.findByNameIgnoreCaseIs(name);
+            Character character;
+            if (existingCharacter.isPresent()) {
+                log.info("createCharacterEntities(): Character already exists: " + existingCharacter.get());
+                log.info("createCharacterEntities(): Updating Character: " + existingCharacter.get());
+                character = existingCharacter.get();
+            } else {
+                log.info("createCharacterEntities(): Character does not exist: " + name);
+                character = Character.builder().name(name).build();
+            }
+
+            character.setImageUrl(imageUrl);
+            character.setRarity(rarity);
+
+            Optional<CombatPath> repositoryCombatPath = combatPathsRepository.findByNameIgnoreCaseIs(combatPathName);
+            if (repositoryCombatPath.isEmpty()) {
+                String errorMessage =
+                        String.format("createCharacterEntities(): Combat Path does not exist: %s", combatPathName);
+                log.error(errorMessage);
+                throw new EntityCreationException(errorMessage);
+            }
+            CombatPath combatPath = repositoryCombatPath.get();
+            character.setCombatPathId(combatPath.getId());
+            character.setCombatPath(combatPath);
+
+            Optional<CombatType> repositoryCombatType = combatTypesRepository.findByNameIgnoreCaseIs(combatTypeName);
+            if (repositoryCombatType.isEmpty()) {
+                String errorMessage =
+                        String.format("createCharacterEntities(): Combat Type does not exist: %s", combatTypeName);
+                log.error(errorMessage);
+                throw new EntityCreationException(errorMessage);
+            }
+            CombatType combatType = repositoryCombatType.get();
+            character.setCombatTypeId(combatType.getId());
+            character.setCombatType(combatType);
+
+            character.setBodyMainStatOne(bodyMainStatOne);
+            character.setBodyMainStatTwo(bodyMainStatTwo);
+            character.setFeetMainStatOne(feetMainStatOne);
+            character.setFeetMainStatTwo(feetMainStatTwo);
+            character.setPlanarSphereMainStat(planarSphereMainStat);
+            character.setLinkRopeMainStatOne(linkRopeMainStatOne);
+            character.setLinkRopeMainStatTwo(linkRopeMainStatTwo);
+            character.setSubstatOne(substatOne);
+            character.setSubstatTwo(substatTwo);
+            character.setSubstatThree(substatThree);
+            character.setSubstatFour(substatFour);
+
+            Optional<Relic> repositoryRelicSetOneNameFirst =
+                    relicsRepository.findByNameIgnoreCaseIs(relicSetOneNameFirst);
+            if (repositoryRelicSetOneNameFirst.isEmpty()) {
+                String errorMessage = String.format(
+                        "createCharacterEntities(): Relic Set One Name First does not exist: %s",
+                        relicSetOneNameFirst);
+                log.error(errorMessage);
+                throw new EntityCreationException(errorMessage);
+            }
+            Relic relicSetOneFirst = repositoryRelicSetOneNameFirst.get();
+            character.setRelicSetOneIdFirst(relicSetOneFirst.getId());
+            character.setRelicSetOneFirst(relicSetOneFirst);
+
+            if (relicSetOneNameSecond != null) {
+                Optional<Relic> repositoryRelicSetOneNameSecond =
+                        relicsRepository.findByNameIgnoreCaseIs(relicSetOneNameSecond);
+                if (repositoryRelicSetOneNameSecond.isEmpty()) {
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Relic Set One Name Second does not exist: %s",
+                            relicSetOneNameSecond);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Relic relicSetOneSecond = repositoryRelicSetOneNameSecond.get();
+                character.setRelicSetOneIdSecond(relicSetOneSecond.getId());
+                character.setRelicSetOneSecond(relicSetOneSecond);
+            }
+
+            if (relicSetTwoNameFirst != null) {
+                Optional<Relic> repositoryRelicSetTwoNameFirst =
+                        relicsRepository.findByNameIgnoreCaseIs(relicSetTwoNameFirst);
+                if (repositoryRelicSetTwoNameFirst.isEmpty()) {
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Relic Set Two Name First does not exist: %s",
+                            relicSetTwoNameFirst);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Relic relicSetTwoFirst = repositoryRelicSetTwoNameFirst.get();
+                character.setRelicSetTwoIdFirst(relicSetTwoFirst.getId());
+                character.setRelicSetTwoFirst(relicSetTwoFirst);
+            }
+
+            if (relicSetTwoNameSecond != null) {
+                Optional<Relic> repositoryRelicSetTwoNameSecond =
+                        relicsRepository.findByNameIgnoreCaseIs(relicSetTwoNameSecond);
+                if (repositoryRelicSetTwoNameSecond.isEmpty()) {
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Relic Set Two Name Second does not exist: %s",
+                            relicSetTwoNameSecond);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Relic relicSetTwoSecond = repositoryRelicSetTwoNameSecond.get();
+                character.setRelicSetTwoIdSecond(relicSetTwoSecond.getId());
+                character.setRelicSetTwoSecond(relicSetTwoSecond);
+            }
+
+            if (relicSetThreeNameFirst != null) {
+                Optional<Relic> repositoryRelicSetThreeNameFirst =
+                        relicsRepository.findByNameIgnoreCaseIs(relicSetThreeNameFirst);
+                if (repositoryRelicSetThreeNameFirst.isEmpty()) {
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Relic Set Three Name First does not exist: %s",
+                            relicSetThreeNameFirst);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Relic relicSetThreeFirst = repositoryRelicSetThreeNameFirst.get();
+                character.setRelicSetThreeIdFirst(relicSetThreeFirst.getId());
+                character.setRelicSetThreeFirst(relicSetThreeFirst);
+            }
+
+            if (relicSetThreeNameSecond != null) {
+                Optional<Relic> repositoryRelicSetThreeNameSecond =
+                        relicsRepository.findByNameIgnoreCaseIs(relicSetThreeNameSecond);
+                if (repositoryRelicSetThreeNameSecond.isEmpty()) {
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Relic Set Three Name Second does not exist: %s",
+                            relicSetThreeNameSecond);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Relic relicSetThreeSecond = repositoryRelicSetThreeNameSecond.get();
+                character.setRelicSetThreeIdSecond(relicSetThreeSecond.getId());
+                character.setRelicSetThreeSecond(relicSetThreeSecond);
+            }
+
+            if (ornamentSetOneName != null) {
+                Optional<Ornament> repositoryOrnamentSetOne =
+                        ornamentsRepository.findByNameIgnoreCaseIs(ornamentSetOneName);
+                if (repositoryOrnamentSetOne.isEmpty()) {
+                    String errorMessage =
+                            String.format("createCharacterEntities(): Ornament Set One does not exist: %s",
+                                          ornamentSetOneName);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Ornament ornamentSetOne = repositoryOrnamentSetOne.get();
+                character.setOrnamentSetOneId(ornamentSetOne.getId());
+                character.setOrnamentSetOne(ornamentSetOne);
+            }
+
+            if (ornamentSetTwoName != null) {
+                Optional<Ornament> repositoryOrnamentSetTwo =
+                        ornamentsRepository.findByNameIgnoreCaseIs(ornamentSetTwoName);
+                if (repositoryOrnamentSetTwo.isEmpty()) {
+                    String errorMessage =
+                            String.format("createCharacterEntities(): Ornament Set Two does not exist: %s",
+                                          ornamentSetTwoName);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Ornament ornamentSetTwo = repositoryOrnamentSetTwo.get();
+                character.setOrnamentSetTwoId(ornamentSetTwo.getId());
+                character.setOrnamentSetTwo(ornamentSetTwo);
+            }
+
+            if (ornamentSetThreeName != null) {
+                Optional<Ornament> repositoryOrnamentSetThree =
+                        ornamentsRepository.findByNameIgnoreCaseIs(ornamentSetThreeName);
+                if (repositoryOrnamentSetThree.isEmpty()) {
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Ornament Set Three does not exist: %s",
+                            ornamentSetThreeName);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                Ornament ornamentSetThree = repositoryOrnamentSetThree.get();
+                character.setOrnamentSetThreeId(ornamentSetThree.getId());
+                character.setOrnamentSetThree(ornamentSetThree);
+            }
+
+            if (lightConeNameOne != null) {
+                Optional<LightCone> repositoryLightConeOne =
+                        lightConesRepository.findByNameIgnoreCaseIs(lightConeNameOne);
+                if (repositoryLightConeOne.isEmpty()) {
+                    String errorMessage = String.format("createCharacterEntities(): Light Cone One does not exist: %s",
+                                                        lightConeNameOne);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                LightCone lightConeOne = repositoryLightConeOne.get();
+                character.setLightConeOneId(lightConeOne.getId());
+                character.setLightConeOne(lightConeOne);
+            }
+
+            if (lightConeNameTwo != null) {
+                Optional<LightCone> repositoryLightConeTwo =
+                        lightConesRepository.findByNameIgnoreCaseIs(lightConeNameTwo);
+                if (repositoryLightConeTwo.isEmpty()) {
+                    String errorMessage = String.format("createCharacterEntities(): Light Cone Two does not exist: %s",
+                                                        lightConeNameTwo);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                LightCone lightConeTwo = repositoryLightConeTwo.get();
+                character.setLightConeTwoId(lightConeTwo.getId());
+                character.setLightConeTwo(lightConeTwo);
+            }
+
+            if (lightConeNameThree != null) {
+                Optional<LightCone> repositoryLightConeThree =
+                        lightConesRepository.findByNameIgnoreCaseIs(lightConeNameThree);
+                if (repositoryLightConeThree.isEmpty()) {
+                    String errorMessage =
+                            String.format("createCharacterEntities(): Light Cone Three does not exist: %s",
+                                          lightConeNameThree);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                LightCone lightConeThree = repositoryLightConeThree.get();
+                character.setLightConeThreeId(lightConeThree.getId());
+                character.setLightConeThree(lightConeThree);
+            }
+
+            if (lightConeNameFour != null) {
+                Optional<LightCone> repositoryLightConeFour =
+                        lightConesRepository.findByNameIgnoreCaseIs(lightConeNameFour);
+                if (repositoryLightConeFour.isEmpty()) {
+                    String errorMessage = String.format("createCharacterEntities(): Light Cone Four does not exist: %s",
+                                                        lightConeNameFour);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                LightCone lightConeFour = repositoryLightConeFour.get();
+                character.setLightConeFourId(lightConeFour.getId());
+                character.setLightConeFour(lightConeFour);
+            }
+
+            if (lightConeNameFive != null) {
+                Optional<LightCone> repositoryLightConeFive =
+                        lightConesRepository.findByNameIgnoreCaseIs(lightConeNameFive);
+                if (repositoryLightConeFive.isEmpty()) {
+                    String errorMessage = String.format("createCharacterEntities(): Light Cone Five does not exist: %s",
+                                                        lightConeNameFive);
+                    log.error(errorMessage);
+                    throw new EntityCreationException(errorMessage);
+                }
+                LightCone lightConeFive = repositoryLightConeFive.get();
+                character.setLightConeFiveId(lightConeFive.getId());
+                character.setLightConeFive(lightConeFive);
+            }
+
+            characters.add(character);
+        }
+
+        charactersRepository.saveAll(characters);
     }
 }

@@ -1,5 +1,10 @@
 package com.mrlonis.honkaistarrail.entities;
 
+import com.mrlonis.honkaistarrail.enums.BodyMainStats;
+import com.mrlonis.honkaistarrail.enums.FeetMainStats;
+import com.mrlonis.honkaistarrail.enums.LinkRopeMainStats;
+import com.mrlonis.honkaistarrail.enums.PlanarSphereMainStats;
+import com.mrlonis.honkaistarrail.enums.Substats;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,14 +44,12 @@ public class Character {
     private String name;
 
     @Column(name = "imageUrl")
-    @NonNull
     private String imageUrl;
 
     @Column(name = "rarity")
     private int rarity;
 
     @Column(name = "combatPathId")
-    @NonNull
     private UUID combatPathId;
 
     @ManyToOne
@@ -54,7 +57,6 @@ public class Character {
     private CombatPath combatPath;
 
     @Column(name = "combatTypeId")
-    @NonNull
     private UUID combatTypeId;
 
     @ManyToOne
@@ -62,37 +64,37 @@ public class Character {
     private CombatType combatType;
 
     @Column(name = "bodyMainStatOne")
-    private String bodyMainStatOne;
+    private BodyMainStats bodyMainStatOne;
 
     @Column(name = "bodyMainStatTwo")
-    private String bodyMainStatTwo;
+    private BodyMainStats bodyMainStatTwo;
 
     @Column(name = "feetMainStatOne")
-    private String feetMainStatOne;
+    private FeetMainStats feetMainStatOne;
 
     @Column(name = "feetMainStatTwo")
-    private String feetMainStatTwo;
+    private FeetMainStats feetMainStatTwo;
 
     @Column(name = "planarSphereMainStat")
-    private String planarSphereMainStat;
+    private PlanarSphereMainStats planarSphereMainStat;
 
     @Column(name = "linkRopeMainStatOne")
-    private String linkRopeMainStatOne;
+    private LinkRopeMainStats linkRopeMainStatOne;
 
     @Column(name = "linkRopeMainStatTwo")
-    private String linkRopeMainStatTwo;
+    private LinkRopeMainStats linkRopeMainStatTwo;
 
     @Column(name = "substatOne")
-    private String substatOne;
+    private Substats substatOne;
 
     @Column(name = "substatTwo")
-    private String substatTwo;
+    private Substats substatTwo;
 
     @Column(name = "substatThree")
-    private String substatThree;
+    private Substats substatThree;
 
     @Column(name = "substatFour")
-    private String substatFour;
+    private Substats substatFour;
 
     @Column(name = "relicSetOneIdFirst")
     private UUID relicSetOneIdFirst;
