@@ -1,0 +1,8 @@
+name,imageUrl,description
+Physical,combatTypes/Physical.webp,"Using Physical attacks to trigger Weakness Break will deal Physical DMG and apply the Bleed effect, dealing Physical DoT."
+Fire,combatTypes/Fire.webp,"Using Fire attacks to trigger Weakness Break will deal Fire DMG and apply the Burn effect, dealing Fire DoT."
+Ice,combatTypes/Ice.webp,"Using Ice attacks to trigger Weakness Break will deal Ice DMG and Freeze the target, immobilizing the enemy and dealing additional Ice DMG."
+Lightning,combatTypes/Lightning.webp,"Using Lightning attacks to trigger Weakness Break will deal Lightning DMG and apply the Shock effect, dealing Lightning DoT."
+Wind,combatTypes/Wind.webp,"Using Wind attacks to trigger Weakness Break will deal Wind DMG and apply the Wind Shear effect, dealing Wind DoT."
+Quantum,combatTypes/Quantum.webp,"Using Quantum attacks to trigger Weakness Break will deal Quantum DMG and apply the Entanglement effect, delaying the enemy's action and dealing Additional Quantum DMG to the affected enemy at the start of the next turn. When the enemy is hit, this extra DMG will increase."
+Imaginary,combatTypes/Imaginary.webp,"Using Imaginary attacks to trigger Weakness Break will deal Imaginary DMG and apply the Imprisonment effect, delaying the enemy's action and reducing its SPD."

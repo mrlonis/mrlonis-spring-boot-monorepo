@@ -35,6 +35,9 @@ dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
     implementation "commons-io:commons-io:${commonsIoVersion}"
+    implementation("com.opencsv:opencsv:5.8") {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
     implementation "org.apache.ant:ant:${antVersion}"
     implementation "org.flywaydb:flyway-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
@@ -70,9 +73,9 @@ tasks.register('restartDocker') {
         exec {
             if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
                 workingDir = file("./")
-                commandLine = ["cmd", "/C", "docker compose up -d", "--wait"]
+                commandLine = ["cmd", "/C", "docker compose", "up", "--pull", "always", "-V", "--wait"]
             } else {
-                commandLine = ["docker", "compose", "up", "-d", "--wait"]
+                commandLine = ["docker", "compose", "up", "--pull", "always", "-V", "--wait"]
             }
         }
     }

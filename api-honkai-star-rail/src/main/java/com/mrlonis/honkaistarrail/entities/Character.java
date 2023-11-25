@@ -49,93 +49,137 @@ public class Character {
     @NonNull
     private UUID combatPathId;
 
-    @Column(name = "combatTypeId")
-    @NonNull
-    private UUID combatTypeId;
-
-    @Column(name = "relicSetOneId")
-    @NonNull
-    private UUID relicSetOneId;
-
-    @Column(name = "relicSetTwoId")
-    private UUID relicSetTwoId;
-
-    @Column(name = "relicSetThreeId")
-    private UUID relicSetThreeId;
-
-    @Column(name = "ornamentOneId")
-    @NonNull
-    private UUID ornamentOneId;
-
-    @Column(name = "ornamentTwoId")
-    private UUID ornamentTwoId;
-
-    @Column(name = "ornamentThreeId")
-    private UUID ornamentThreeId;
-
-    @Column(name = "lightConeOneId")
-    @NonNull
-    private UUID lightConeOneId;
-
-    @Column(name = "lightConeTwoId")
-    private UUID lightConeTwoId;
-
-    @Column(name = "lightConeThreeId")
-    private UUID lightConeThreeId;
-
-    @Column(name = "lightConeFourId")
-    private UUID lightConeFourId;
-
-    @Column(name = "lightConeFiveId")
-    private UUID lightConeFiveId;
-
     @ManyToOne
     @JoinColumn(name = "combatPathId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private CombatPath combatPath;
+
+    @Column(name = "combatTypeId")
+    @NonNull
+    private UUID combatTypeId;
 
     @ManyToOne
     @JoinColumn(name = "combatTypeId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private CombatType combatType;
 
-    @ManyToOne
-    @JoinColumn(name = "relicSetOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
-    private RelicSet relicSetOne;
+    @Column(name = "bodyMainStatOne")
+    private String bodyMainStatOne;
+
+    @Column(name = "bodyMainStatTwo")
+    private String bodyMainStatTwo;
+
+    @Column(name = "feetMainStatOne")
+    private String feetMainStatOne;
+
+    @Column(name = "feetMainStatTwo")
+    private String feetMainStatTwo;
+
+    @Column(name = "planarSphereMainStat")
+    private String planarSphereMainStat;
+
+    @Column(name = "linkRopeMainStatOne")
+    private String linkRopeMainStatOne;
+
+    @Column(name = "linkRopeMainStatTwo")
+    private String linkRopeMainStatTwo;
+
+    @Column(name = "substatOne")
+    private String substatOne;
+
+    @Column(name = "substatTwo")
+    private String substatTwo;
+
+    @Column(name = "substatThree")
+    private String substatThree;
+
+    @Column(name = "substatFour")
+    private String substatFour;
+
+    @Column(name = "relicSetOneIdFirst")
+    private UUID relicSetOneIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetTwoId", referencedColumnName = "id", insertable = false, updatable = false)
-    private RelicSet relicSetTwo;
+    @JoinColumn(name = "relicSetOneIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicSetOneFirst;
+
+    @Column(name = "relicSetOneIdSecond")
+    private UUID relicSetOneIdSecond;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetThreeId", referencedColumnName = "id", insertable = false, updatable = false)
-    private RelicSet relicSetThree;
+    @JoinColumn(name = "relicSetOneIdSecond", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicSetOneSecond;
+
+    @Column(name = "relicSetTwoIdFirst")
+    private UUID relicSetTwoIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "ornamentOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
-    private Ornament ornamentOne;
+    @JoinColumn(name = "relicSetTwoIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicSetTwoFirst;
+
+    @Column(name = "relicSetTwoIdSecond")
+    private UUID relicSetTwoIdSecond;
 
     @ManyToOne
-    @JoinColumn(name = "ornamentTwoId", referencedColumnName = "id", insertable = false, updatable = false)
-    private Ornament ornamentTwo;
+    @JoinColumn(name = "relicSetTwoIdSecond", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicSetTwoSecond;
+
+    @Column(name = "relicSetThreeIdFirst")
+    private UUID relicSetThreeIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "ornamentThreeId", referencedColumnName = "id", insertable = false, updatable = false)
-    private Ornament ornamentThree;
+    @JoinColumn(name = "relicSetThreeIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicSetThreeFirst;
+
+    @Column(name = "relicSetThreeIdSecond")
+    private UUID relicSetThreeIdSecond;
+
+    @ManyToOne
+    @JoinColumn(name = "relicSetThreeIdSecond", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Relic relicSetThreeSecond;
+
+    @Column(name = "ornamentSetOneId")
+    private UUID ornamentSetOneId;
+
+    @ManyToOne
+    @JoinColumn(name = "ornamentSetOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Ornament ornamentSetOne;
+
+    @Column(name = "ornamentSetTwoId")
+    private UUID ornamentSetTwoId;
+
+    @ManyToOne
+    @JoinColumn(name = "ornamentSetTwoId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Ornament ornamentSetTwo;
+
+    @Column(name = "lightConeOneId")
+    private UUID lightConeOneId;
 
     @ManyToOne
     @JoinColumn(name = "lightConeOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
     private LightCone lightConeOne;
 
+    @Column(name = "lightConeTwoId")
+    private UUID lightConeTwoId;
+
     @ManyToOne
     @JoinColumn(name = "lightConeTwoId", referencedColumnName = "id", insertable = false, updatable = false)
     private LightCone lightConeTwo;
+
+    @Column(name = "lightConeThreeId")
+    private UUID lightConeThreeId;
 
     @ManyToOne
     @JoinColumn(name = "lightConeThreeId", referencedColumnName = "id", insertable = false, updatable = false)
     private LightCone lightConeThree;
 
+    @Column(name = "lightConeFourId")
+    private UUID lightConeFourId;
+
     @ManyToOne
     @JoinColumn(name = "lightConeFourId", referencedColumnName = "id", insertable = false, updatable = false)
     private LightCone lightConeFour;
+
+    @Column(name = "lightConeFiveId")
+    private UUID lightConeFiveId;
 
     @ManyToOne
     @JoinColumn(name = "lightConeFiveId", referencedColumnName = "id", insertable = false, updatable = false)
