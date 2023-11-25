@@ -150,6 +150,13 @@ public class Character {
     @JoinColumn(name = "ornamentSetTwoId", referencedColumnName = "id", insertable = false, updatable = false)
     private Ornament ornamentSetTwo;
 
+    @Column(name = "ornamentSetThreeId")
+    private UUID ornamentSetThreeId;
+
+    @ManyToOne
+    @JoinColumn(name = "ornamentSetThreeId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Ornament ornamentSetThree;
+
     @Column(name = "lightConeOneId")
     private UUID lightConeOneId;
 
