@@ -107,7 +107,7 @@ public class EntityCreation {
             if (existingElement.isPresent()) {
                 Element element = existingElement.get();
                 log.info("createElementEntities(): Element already exists: " + element);
-                log.info("createElementEntities(): Updating element: " + element);
+                log.info("createElementEntities(): Updating Element: " + element);
 
                 element.setImageUrl(imageUrl);
 
