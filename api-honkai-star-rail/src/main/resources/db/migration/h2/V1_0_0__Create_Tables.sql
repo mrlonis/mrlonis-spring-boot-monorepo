@@ -9,7 +9,7 @@ CREATE TABLE Combat_Types (
 CREATE TABLE Combat_Paths (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
+    imageUrl VARCHAR(200),
     description VARCHAR(500) NOT NULL,
     CONSTRAINT Combat_Paths_Unique UNIQUE (name)
 );
@@ -17,7 +17,7 @@ CREATE TABLE Combat_Paths (
 CREATE TABLE Light_Cones (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
+    imageUrl VARCHAR(200),
     rarity INT NOT NULL,
     combatPathId UUID NOT NULL,
     skill VARCHAR(750) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE Light_Cones (
 CREATE TABLE Relics (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
+    imageUrl VARCHAR(200),
     twoPieceSetEffect VARCHAR(500) NOT NULL,
     fourPieceSetEffect VARCHAR(500) NOT NULL,
     CONSTRAINT Relics_Unique UNIQUE (name)
@@ -37,7 +37,7 @@ CREATE TABLE Relics (
 CREATE TABLE Ornaments (
     id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    imageUrl VARCHAR(200) NOT NULL,
+    imageUrl VARCHAR(200),
     twoPieceSetEffect VARCHAR(500) NOT NULL,
     CONSTRAINT Ornaments_Unique UNIQUE (name)
 );

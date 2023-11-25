@@ -1,1 +1,17 @@
 name,imageUrl,twoPieceSetEffect,fourPieceSetEffect
+Passerby of Wandering Cloud,,2-Pc: Increases Outgoing Healing by 10%.,"4-Pc: At the start of the battle, immediately regenerates 1 Skill Point."
+Musketeer of Wild Wheat,,2-Pc: ATK increases by 12%.,4-Pc: The wearer's SPD increases by 6% and Basic ATK DMG increases by 10%.
+Knight of Purity Palace,,2-Pc: Increases DEF by 15%.,4-Pc: Increases the max DMG that can be absorbed by the Shield created by the wearer by 20%.
+Hunter of Glacial Forest,,2-Pc: Increases Ice DMG by 10%.,"4-Pc: After the wearer uses their Ultimate, their CRIT DMG increases by 25% for 2 turn(s)."
+Champion of Streetwise Boxing,,2-Pc: Increases Physical DMG by 10%.,"4-Pc: After the wearer attacks or is hit, their ATK increases by 5% for the rest of the battle. This effect can stack up to 5 time(s)."
+Guard of Wuthering Snow,,2-Pc: Reduces DMG taken by 8%.,"4-Pc: At the beginning of the turn, if the wearer's HP is equal to or less than 50%, restores HP equal to 8% of their Max HP and regenerates 5 Energy."
+Firesmith of Lava-Forging,,2-Pc: Increases Fire DMG by 10%.,"4-Pc: Increases the wearer's Skill DMG by 12%. After unleashing Ultimate, increases the wearer's Fire DMG by 12% for the next attack."
+Genius of Brilliant Stars,,2-Pc: Increases Quantum DMG by 10%.,"4-Pc: When the wearer deals DMG to the target enemy, ignores 10% DEF. If the target enemy has Quantum Weakness, the wearer additionally ignores 10% DEF."
+Band of Sizzling Thunder,,2-Pc: Increases Lightning DMG by 10%.,"4-Pc: When the wearer uses their Skill, increases the wearer's ATK by 20% for 1 turn(s)."
+Eagle of Twilight Line,,2-Pc: Increases Wind DMG by 10%.,"4-Pc: After the wearer uses their Ultimate, their action is Advanced Forward by 25%."
+Thief of Shooting Meteor,,2-Pc: Increases Break Effect by 16%.,"4-Pc: Increases the wearer's Break Effect by 16%. After a character inflicts Weakness Break on an enemy, regenerates 3 Energy."
+Wastelander of Banditry Desert,,2-Pc: Increases Imaginary DMG by 10%.,"4-Pc: When attacking debuffed enemies, the wearer's CRIT Rate increases by 10%, and their CRIT DMG increases by 20% against Imprisoned enemies."
+Longevous Disciple,,2-Pc: Increases Max HP by 12%.,"4-Pc: When the wearer is hit or has their HP consumed by an ally or themselves, their CRIT Rate increases by 8% for 2 turn(s) and up to 2 stacks."
+Messenger Traversing Hackerspace,,2-Pc: Increases SPD by 6%.,"4-Pc: When the wearer uses their Ultimate on an ally, SPD for all allies increases by 12% for 1 turn(s). This effect cannot be stacked."
+The Ashblazing Grand Duke,,2-Pc: Increases the DMG dealt by follow-up attacks by 20%.,"4-Pc: When the wearer uses follow-up attacks, increases the wearer's ATK by 6% for every time the follow-up attack deals DMG. This effect can stack up to 8 time(s) and lasts for 3 turn(s). This effect is removed the next time the wearer uses a follow-up attack."
+Prisoner in Deep Confinement,,2-Pc: ATK increases by 12%.,"4-Pc: For every DoT the target enemy is afflicted with, the wearer will ignore 6% of its DEF when dealing DMG to it. This effect is valid for a max of 3 DoTs."

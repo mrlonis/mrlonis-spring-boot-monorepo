@@ -39,7 +39,6 @@ public class CombatPath implements IBaseEntity, Serializable {
     private String name;
 
     @Column(name = "imageUrl")
-    @NonNull
     private String imageUrl;
 
     @Column(name = "description")
