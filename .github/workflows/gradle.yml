@@ -34,4 +34,4 @@ jobs:
         shell: bash
 
       - name: Run newman
-        run: newman run ./api-genshin-impact/newman/demo-genshin-impact-spring-boot.postman_collection.json -e ./api-genshin-impact/newman/demo-genshin-impact-spring-boot-local.postman_environment.json
+        run: newman run ./api-genshin-impact/newman/api-genshin-impact.postman_collection.json -e ./api-genshin-impact/newman/api-genshin-impact-local.postman_environment.json
