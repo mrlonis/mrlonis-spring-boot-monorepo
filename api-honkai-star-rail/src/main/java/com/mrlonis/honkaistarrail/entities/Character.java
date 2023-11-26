@@ -5,6 +5,7 @@ import com.mrlonis.honkaistarrail.enums.FeetMainStats;
 import com.mrlonis.honkaistarrail.enums.LinkRopeMainStats;
 import com.mrlonis.honkaistarrail.enums.PlanarSphereMainStats;
 import com.mrlonis.honkaistarrail.enums.Substats;
+import com.mrlonis.types.IBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
@@ -33,7 +35,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Characters")
-public class Character {
+public class Character implements IBaseEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

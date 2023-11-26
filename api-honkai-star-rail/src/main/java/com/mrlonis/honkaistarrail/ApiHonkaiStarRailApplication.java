@@ -21,5 +21,4 @@ public class ApiHonkaiStarRailApplication implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/images/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }
-
 }

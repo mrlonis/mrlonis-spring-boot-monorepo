@@ -278,8 +278,9 @@ public class EntityCreation {
             String artifactSetFiveNameFirst = row[30];
             String artifactSetFiveNameSecond = row[31];
 
-            Character existingCharacter = charactersRepository.findByNameIgnoreCaseIs(name);
-            if (existingCharacter != null) {
+            Optional<Character> repositoryExistingCharacter = charactersRepository.findByNameIgnoreCaseIs(name);
+            if (repositoryExistingCharacter.isPresent()) {
+                Character existingCharacter = repositoryExistingCharacter.get();
                 log.info("createCharacterEntities(): Character already exists: " + existingCharacter);
                 log.info("createCharacterEntities(): Updating character: " + existingCharacter);
 

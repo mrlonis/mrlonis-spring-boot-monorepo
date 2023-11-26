@@ -1,15 +1,15 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="api-honkai-star-rail [bootRun: local-h2]" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="api-honkai-star-rail [bootRun: local]" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
       <option name="env">
         <map>
-          <entry key="spring_profiles_active" value="local-h2" />
+          <entry key="spring_profiles_active" value="local" />
         </map>
       </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/api-honkai-star-rail" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="-Dspring.profiles.active=local-h2" />
+      <option name="scriptParameters" value="-Dspring.profiles.active=local" />
       <option name="taskDescriptions">
         <list />
       </option>
