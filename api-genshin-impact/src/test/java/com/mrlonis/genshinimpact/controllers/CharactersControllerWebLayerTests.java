@@ -64,7 +64,9 @@ class CharactersControllerWebLayerTests {
                                                                                                                            UUID.randomUUID())
                                                                                                                    .artifactSetOneIdFirst(
                                                                                                                            UUID.randomUUID())
-                                                                                                                   .build())));
+                                                                                                                   .build()),
+                                                                                                  Pageable.ofSize(1),
+                                                                                                  1));
         this.mockMvc.perform(get("/api/v2/characters"))
                     .andDo(print())
                     .andExpect(status().isOk())
@@ -97,7 +99,9 @@ class CharactersControllerWebLayerTests {
                                                                                                                            UUID.randomUUID())
                                                                                                                    .artifactSetOneIdFirst(
                                                                                                                            UUID.randomUUID())
-                                                                                                                   .build())));
+                                                                                                                   .build()),
+                                                                                                  Pageable.ofSize(1),
+                                                                                                  1));
         ResultActions result = this.mockMvc.perform(get("/api/v2/characters"));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
