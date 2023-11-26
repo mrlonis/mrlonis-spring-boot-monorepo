@@ -26,12 +26,22 @@ jobs:
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
 
-      - name: Run bootRun in the background
+      - name: Run api-genshin-impact in the background
         run: ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &
 
-      - name: Wait for bootRun to start
+      - name: Wait for api-genshin-impact to start
         run: sleep 10
         shell: bash
 
-      - name: Run newman
+      - name: Run newman for api-genshin-impact
         run: newman run ./api-genshin-impact/newman/api-genshin-impact.postman_collection.json -e ./api-genshin-impact/newman/api-genshin-impact-local.postman_environment.json
+
+      - name: Run api-honkai-star-rail in the background
+        run: ./gradlew :api-honkai-star-rail:bootRun --args='--spring.profiles.active=local-h2' &
+
+      - name: Wait for api-honkai-star-rail to start
+        run: sleep 10
+        shell: bash
+
+      - name: Run newman for api-honkai-star-rail
+        run: newman run ./api-honkai-star-rail/newman/api-honkai-star-rail.postman_collection.json -e ./api-honkai-star-rail/newman/api-honkai-star-rail-local.postman_environment.json

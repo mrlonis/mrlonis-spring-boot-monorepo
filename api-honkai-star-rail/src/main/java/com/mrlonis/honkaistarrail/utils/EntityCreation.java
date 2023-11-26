@@ -130,7 +130,7 @@ public class EntityCreation {
             }
         }
 
-        combatTypesRepository.saveAll(combatTypes);
+        combatTypesRepository.saveAllAndFlush(combatTypes);
     }
 
     private void createCombatPathEntities(List<String[]> csvFile) {
@@ -170,7 +170,7 @@ public class EntityCreation {
             }
         }
 
-        combatPathsRepository.saveAll(combatPaths);
+        combatPathsRepository.saveAllAndFlush(combatPaths);
     }
 
     private void createLightConeEntities(List<String[]> csvFile) {
@@ -230,7 +230,7 @@ public class EntityCreation {
             }
         }
 
-        lightConesRepository.saveAll(lightCones);
+        lightConesRepository.saveAllAndFlush(lightCones);
     }
 
     private void createRelicEntities(List<String[]> csvFile) {
@@ -276,7 +276,7 @@ public class EntityCreation {
             }
         }
 
-        relicsRepository.saveAll(relics);
+        relicsRepository.saveAllAndFlush(relics);
     }
 
     private void createOrnamentEntities(List<String[]> csvFile) {
@@ -316,7 +316,7 @@ public class EntityCreation {
             }
         }
 
-        ornamentsRepository.saveAll(ornaments);
+        ornamentsRepository.saveAllAndFlush(ornaments);
     }
 
     private void createCharacterEntities(List<String[]> csvFile) {
@@ -621,6 +621,6 @@ public class EntityCreation {
             characters.add(character);
         }
 
-        charactersRepository.saveAll(characters);
+        charactersRepository.saveAllAndFlush(characters);
     }
 }

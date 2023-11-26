@@ -1,0 +1,1901 @@
+{
+	"info": {
+		"_postman_id": "5d9edd07-8c31-437c-994e-02e8890ef8d4",
+		"name": "api-honkai-star-rail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10017040"
+	},
+	"item": [
+		{
+			"name": "Spring Data Rest",
+			"item": [
+				{
+					"name": "characters",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - Sort By Name & Rarity",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters?page=0&size=0&sort=rarity,desc&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "rarity,desc"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testCharacterId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/search/findByName?name=Kafka",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Kafka"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/{{testCharacterId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"{{testCharacterId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/characters/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"characters",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "combatPaths",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatPaths?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatPaths"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - Sort By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatPaths?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatPaths"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testCombatPathId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatPaths/search/findByName?name=Abundance",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatPaths",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Abundance"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatPaths/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatPaths",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatPaths/{{testCombatPathId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatPaths",
+										"{{testCombatPathId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatPaths/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatPaths",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "combatTypes",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatTypes?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatTypes"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - Sort By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatTypes?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatTypes"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testCombatTypeId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatTypes/search/findByName?name=Fire",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatTypes",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fire"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatTypes/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatTypes",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatTypes/{{testCombatTypeId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatTypes",
+										"{{testCombatTypeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/combatTypes/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"combatTypes",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "lightCones",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/lightCones?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"lightCones"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - Sort By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/lightCones?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"lightCones"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testLightConeId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/lightCones/search/findByName?name=A Secret Vow",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"lightCones",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "A Secret Vow"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/lightCones/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"lightCones",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/lightCones/{{testLightConeId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"lightCones",
+										"{{testLightConeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/lightCones/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"lightCones",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ornaments",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/ornaments?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"ornaments"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - Sort By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/ornaments?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"ornaments"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testOrnamentId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/ornaments/search/findByName?name=Belobog of the Architects",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"ornaments",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Belobog of the Architects"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/ornaments/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"ornaments",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/ornaments/{{testOrnamentId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"ornaments",
+										"{{testOrnamentId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/ornaments/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"ornaments",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "relics",
+					"item": [
+						{
+							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - Sort By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"    \r",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics?page=0&size=0&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Extract Character ID\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"  pm.environment.set(\"testRelicId\", responseJson.id);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics/search/findByName?name=Band of Sizzling Thunder",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Band of Sizzling Thunder"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByName - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics/search/findByName?name=Fake",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Fake"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics/{{testRelicId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics",
+										"{{testRelicId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics/{{testRelicId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics",
+										"{{testRelicId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 404\", function(){",
+											"    pm.response.to.have.status(404);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/relics/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"relics",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Characters",
+					"item": [
+						{
+							"name": "Get Character by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Character ID Is  Not Null\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.id).to.not.be.null;",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/characters/:id",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"characters",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{testCharacterId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Get Combat Path Image",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/images/:type/:fimename",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"images",
+								":type",
+								":fimename"
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "combatPaths"
+								},
+								{
+									"key": "fimename",
+									"value": "abundance.webp"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combat Type Image",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/images/:type/:fimename",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"images",
+								":type",
+								":fimename"
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "combatTypes"
+								},
+								{
+									"key": "fimename",
+									"value": "fire.webp"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actuator",
+			"item": [
+				{
+					"name": "Actuator Mappings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Status Code is 200\", function(){",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/actuator/mappings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"actuator",
+								"mappings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List API Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response Status Code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
