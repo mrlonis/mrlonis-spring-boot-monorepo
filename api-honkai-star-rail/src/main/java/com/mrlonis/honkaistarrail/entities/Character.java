@@ -109,35 +109,35 @@ public class Character implements IBaseEntity, Serializable {
     private UUID relicSetOneIdSecond;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetOneIdSecond", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "relicSetOneIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
     private Relic relicSetOneSecond;
 
     @Column(name = "relicSetTwoIdFirst")
     private UUID relicSetTwoIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetTwoIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "relicSetTwoIdFirst", referencedColumnName = "id", insertable = false, updatable = false)
     private Relic relicSetTwoFirst;
 
     @Column(name = "relicSetTwoIdSecond")
     private UUID relicSetTwoIdSecond;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetTwoIdSecond", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "relicSetTwoIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
     private Relic relicSetTwoSecond;
 
     @Column(name = "relicSetThreeIdFirst")
     private UUID relicSetThreeIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetThreeIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "relicSetThreeIdFirst", referencedColumnName = "id", insertable = false, updatable = false)
     private Relic relicSetThreeFirst;
 
     @Column(name = "relicSetThreeIdSecond")
     private UUID relicSetThreeIdSecond;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetThreeIdSecond", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(name = "relicSetThreeIdSecond", referencedColumnName = "id", insertable = false, updatable = false)
     private Relic relicSetThreeSecond;
 
     @Column(name = "ornamentSetOneId")
