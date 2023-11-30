@@ -5,6 +5,7 @@ import com.mrlonis.honkaistarrail.repositories.CharactersRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @RequestMapping("/api/v2")
 @AllArgsConstructor
 @Slf4j
+@CrossOrigin(origins = "http://localhost:3001")
 public class CharactersController {
 
     private CharactersRepository charactersRepository;

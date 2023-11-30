@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "combatPaths")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3001")
 public interface CombatPathsRepository extends JpaRepository<CombatPath, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
     Optional<CombatPath> findByNameIgnoreCaseIs(@Param("name") String name);

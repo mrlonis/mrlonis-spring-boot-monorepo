@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "relics")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3001")
 public interface RelicsRepository extends JpaRepository<Relic, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
     Optional<Relic> findByNameIgnoreCaseIs(@Param("name") String name);

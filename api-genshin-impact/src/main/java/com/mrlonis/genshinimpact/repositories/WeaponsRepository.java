@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "weapons")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3000")
 public interface WeaponsRepository extends JpaRepository<Weapon, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
     Optional<Weapon> findByNameIgnoreCaseIs(@Param("name") String name);

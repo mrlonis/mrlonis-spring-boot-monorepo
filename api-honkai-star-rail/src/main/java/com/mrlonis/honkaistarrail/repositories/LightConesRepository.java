@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "lightCones")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3001")
 public interface LightConesRepository extends JpaRepository<LightCone, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
     Optional<LightCone> findByNameIgnoreCaseIs(@Param("name") String name);

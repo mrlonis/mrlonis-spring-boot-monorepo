@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "characters")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3000")
 public interface CharactersRepository extends JpaRepository<Character, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
     Optional<Character> findByNameIgnoreCaseIs(@Param("name") String name);

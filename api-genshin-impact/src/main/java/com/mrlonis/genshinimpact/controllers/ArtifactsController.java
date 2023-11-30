@@ -5,6 +5,7 @@ import com.mrlonis.genshinimpact.exceptions.BadRequestException;
 import com.mrlonis.genshinimpact.exceptions.NotFoundException;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v2")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class ArtifactsController {
     private final ArtifactsRepository artifactsRepository;
 

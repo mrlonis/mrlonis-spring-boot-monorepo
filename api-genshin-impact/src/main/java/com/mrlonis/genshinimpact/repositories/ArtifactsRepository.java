@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "artifacts")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:3000")
 public interface ArtifactsRepository extends JpaRepository<Artifact, UUID> {
     @RestResource(path = "findByName", rel = "findByName")
     Optional<Artifact> findByNameIgnoreCaseIs(@Param("name") String name);
