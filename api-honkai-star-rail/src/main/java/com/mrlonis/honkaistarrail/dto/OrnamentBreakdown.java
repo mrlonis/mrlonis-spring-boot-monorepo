@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Builder
 @Data
-public class OrnamentBreakdown {
+public class OrnamentBreakdown implements IBreakdown {
     private UUID id;
     private String name;
     private String imageUrl;

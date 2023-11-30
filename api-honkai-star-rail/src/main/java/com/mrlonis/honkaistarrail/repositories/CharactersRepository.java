@@ -25,4 +25,20 @@ public interface CharactersRepository extends JpaRepository<Character, UUID> {
     List<Character> findByOrnamentSetOneIdIsOrOrnamentSetTwoIdIsOrOrnamentSetThreeIdIs(@Param("ornamentSetOneId") UUID ornamentSetOneId,
                                                                                        @Param("ornamentSetTwoId") UUID ornamentSetTwoId,
                                                                                        @Param("ornamentSetThreeId") UUID ornamentSetThreeId);
+
+    List<Character> findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIs(@Param("relicSetOneIdFirst") UUID relicSetOneIdFirst,
+                                                                      @Param("relicSetOneIdSecond") UUID relicSetOneIdSecond);
+
+    List<Character> findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIsOrRelicSetTwoIdFirstIsOrRelicSetTwoIdSecondIs(@Param("relicSetOneIdFirst") UUID relicSetOneIdFirst,
+                                                                                                                   @Param("relicSetOneIdSecond") UUID relicSetOneIdSecond,
+                                                                                                                   @Param("relicSetTwoIdFirst") UUID relicSetTwoIdFirst,
+                                                                                                                   @Param("relicSetTwoIdSecond") UUID relicSetTwoIdSecond);
+
+    List<Character> findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIsOrRelicSetTwoIdFirstIsOrRelicSetTwoIdSecondIsOrRelicSetThreeIdFirstIsOrRelicSetThreeIdSecondIs(
+            @Param("relicSetOneIdFirst") UUID relicSetOneIdFirst,
+            @Param("relicSetOneIdSecond") UUID relicSetOneIdSecond,
+            @Param("relicSetTwoIdFirst") UUID relicSetTwoIdFirst,
+            @Param("relicSetTwoIdSecond") UUID relicSetTwoIdSecond,
+            @Param("relicSetThreeIdFirst") UUID relicSetThreeIdFirst,
+            @Param("relicSetThreeIdSecond") UUID relicSetThreeIdSecond);
 }

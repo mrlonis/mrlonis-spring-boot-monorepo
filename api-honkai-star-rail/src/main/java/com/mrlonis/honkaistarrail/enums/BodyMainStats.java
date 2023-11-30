@@ -9,9 +9,9 @@ public enum BodyMainStats {
     HP_PERCENT("HP%"),
     ATK_PERCENT("ATK%"),
     DEF_PERCENT("DEF%"),
-    CRIT_RATE("CRIT Rate"),
-    CRIT_DAMAGE("CRIT DMG"),
-    CRIT_RATE_CRIT_DAMAGE("CRIT Rate / CRIT DMG"),
+    CRITICAL_RATE("CRIT Rate"),
+    CRITICAL_DAMAGE("CRIT DMG"),
+    CRITICAL_RATE_AND_DAMAGE("CRIT Rate / CRIT DMG"),
     OUTGOING_HEALING_BOOST("Outgoing Healing Boost"),
     EFFECT_HIT_RATE("Effect Hit Rate");
 
