@@ -36,8 +36,8 @@ public class ArtifactBreakdownController {
     private ArtifactsRepository artifactsRepository;
 
     @GetMapping("/artifactBreakdown")
-    ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId, @RequestParam int artifactDepth)
-            throws NotFoundException {
+    public ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId,
+                                                             @RequestParam int artifactDepth) throws NotFoundException {
         log.info("Getting artifact breakdown for artifact: {}", artifactId);
         Optional<Artifact> repositoryArtifact = artifactsRepository.findById(artifactId);
         if (repositoryArtifact.isEmpty()) {
@@ -57,7 +57,7 @@ public class ArtifactBreakdownController {
                                                                .fourPieceSetEffect(artifact.getFourPieceSetEffect())
                                                                .build();
 
-        List<Character> characters = new ArrayList<>();
+        List<Character> characters;
         if (artifactDepth == 1) {
             characters = charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIs(artifact.getId(),
                                                                                                       artifact.getId());
