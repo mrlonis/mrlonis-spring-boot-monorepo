@@ -1709,6 +1709,49 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get Relic Breakdown",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/relicBreakdown?relicId={{testRelicId}}&relicDepth=3",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"relicBreakdown"
+									],
+									"query": [
+										{
+											"key": "relicId",
+											"value": "{{testRelicId}}"
+										},
+										{
+											"key": "relicDepth",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
