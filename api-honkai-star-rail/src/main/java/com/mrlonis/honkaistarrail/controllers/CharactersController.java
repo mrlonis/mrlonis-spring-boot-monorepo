@@ -30,7 +30,7 @@ public class CharactersController {
     private CharactersRepository charactersRepository;
 
     @GetMapping("/characters")
-    public ResponseEntity<List<Character>> getCharacters(@RequestParam String[] sort) {
+    public ResponseEntity<List<Character>> getCharacters(@RequestParam(required = false) String[] sort) {
         log.info("CharactersController: getCharacters(): Starting...");
         log.info("CharactersController: getCharacters(): sort = " + Arrays.toString(sort));
 
@@ -64,7 +64,7 @@ public class CharactersController {
     }
 
     @GetMapping("/characters/{id}")
-    public ResponseEntity<Character> getCharacterById(@PathVariable UUID id, @RequestParam Sort sort) {
+    public ResponseEntity<Character> getCharacterById(@PathVariable UUID id) {
         boolean exists = charactersRepository.existsById(id);
         log.info(String.format("Character with id %s exists: %s", id, exists));
         Optional<Character> character = charactersRepository.findById(id);
