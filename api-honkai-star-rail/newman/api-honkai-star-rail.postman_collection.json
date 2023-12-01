@@ -1759,6 +1759,82 @@
 					"name": "Characters",
 					"item": [
 						{
+							"name": "Get All Characters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/characters",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"characters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Characters with Sorting",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/characters?sort=rarity,desc&sort=name,asc",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "rarity,desc"
+										},
+										{
+											"key": "sort",
+											"value": "name,asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get Character by ID",
 							"event": [
 								{
