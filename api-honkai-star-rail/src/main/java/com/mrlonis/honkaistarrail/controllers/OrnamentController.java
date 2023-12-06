@@ -1,9 +1,9 @@
 package com.mrlonis.honkaistarrail.controllers;
 
-import com.mrlonis.honkaistarrail.entities.Relic;
+import com.mrlonis.honkaistarrail.entities.Ornament;
 import com.mrlonis.honkaistarrail.exceptions.BadRequestException;
 import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
-import com.mrlonis.honkaistarrail.repositories.RelicsRepository;
+import com.mrlonis.honkaistarrail.repositories.OrnamentsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,34 +19,34 @@ import java.util.UUID;
 @RequestMapping("/api/v2")
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3001")
-public class RelicsController {
-    private final RelicsRepository relicsRepository;
+public class OrnamentController {
+    private final OrnamentsRepository ornamentsRepository;
 
-    @GetMapping("/relics")
-    public List<Relic> getRelics() {
-        return relicsRepository.findAll();
+    @GetMapping("/ornaments")
+    public List<Ornament> getOrnament() {
+        return ornamentsRepository.findAll();
     }
 
-    @GetMapping("/relic")
-    public Relic getRelic(@RequestParam(value = "id", required = false) UUID id,
-                          @RequestParam(value = "name", required = false) String name)
+    @GetMapping("/ornament")
+    public Ornament getOrnament(@RequestParam(value = "id", required = false) UUID id,
+                                @RequestParam(value = "name", required = false) String name)
             throws NotFoundException, BadRequestException {
         if (id == null && name == null) {
             throw new BadRequestException("Must provide either an id or a name");
         }
         if (id == null) {
-            Optional<Relic> relic = relicsRepository.findByNameIgnoreCaseIs(name);
-            if (relic.isEmpty()) {
-                throw new NotFoundException("Relic not found");
+            Optional<Ornament> ornament = ornamentsRepository.findByNameIgnoreCaseIs(name);
+            if (ornament.isEmpty()) {
+                throw new NotFoundException("Ornament not found");
             }
-            return relic.get();
+            return ornament.get();
         }
 
-        Optional<Relic> relic = relicsRepository.findById(id);
-        if (relic.isEmpty()) {
-            throw new NotFoundException("Relic not found");
+        Optional<Ornament> ornament = ornamentsRepository.findById(id);
+        if (ornament.isEmpty()) {
+            throw new NotFoundException("Ornament not found");
         }
 
-        return relic.get();
+        return ornament.get();
     }
 }

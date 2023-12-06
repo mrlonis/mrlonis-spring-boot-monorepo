@@ -1,6 +1,8 @@
 package com.mrlonis.honkaistarrail.controllers;
 
 import com.mrlonis.honkaistarrail.entities.Character;
+import com.mrlonis.honkaistarrail.exceptions.BadRequestException;
+import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
 import com.mrlonis.honkaistarrail.repositories.CharactersRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +27,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Slf4j
 @CrossOrigin(origins = "http://localhost:3001")
-public class CharactersController {
+public class CharacterController {
 
     private CharactersRepository charactersRepository;
 
@@ -69,5 +71,28 @@ public class CharactersController {
         log.info(String.format("Character with id %s exists: %s", id, exists));
         Optional<Character> character = charactersRepository.findById(id);
         return character.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/character")
+    public Character getCharacter(@RequestParam(value = "id", required = false) UUID id,
+                                  @RequestParam(value = "name", required = false) String name)
+            throws NotFoundException, BadRequestException {
+        if (id == null && name == null) {
+            throw new BadRequestException("Must provide either an id or a name");
+        }
+        if (id == null) {
+            Optional<Character> character = charactersRepository.findByNameIgnoreCaseIs(name);
+            if (character.isEmpty()) {
+                throw new NotFoundException("Character not found");
+            }
+            return character.get();
+        }
+
+        Optional<Character> character = charactersRepository.findById(id);
+        if (character.isEmpty()) {
+            throw new NotFoundException("Character not found");
+        }
+
+        return character.get();
     }
 }
