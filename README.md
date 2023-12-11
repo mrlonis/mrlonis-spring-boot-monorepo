@@ -67,6 +67,12 @@ gradlew.bat build
 ### Running api-honkai-star-rail
 
 ```shell
+./gradlew :api-honkai-star-rail:bootRun --args='--spring.profiles.active=local-h2'
+```
+
+or
+
+```shell
 ./gradlew :api-honkai-star-rail:bootRun -Dspring.profiles.active=local-h2
 ```
 
