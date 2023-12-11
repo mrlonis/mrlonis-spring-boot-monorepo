@@ -151,12 +151,14 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 bootRun {
+    systemProperties = System.properties
     if (System.properties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker
     }
 }
 
 build {
+    systemProperties = System.properties
     if (System.properties.get("spring.profiles.active") == "local") {
         dependsOn {
             jacocoTestReport

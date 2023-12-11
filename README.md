@@ -14,6 +14,7 @@ This repo is meant to house all of my personal Spring Boot projects
       - [Mac-OS](#mac-os)
       - [WSL - Ubuntu](#wsl---ubuntu)
   - [Running the Project](#running-the-project)
+    - [Running api-honkai-star-rail](#running-api-honkai-star-rail)
   - [Ports](#ports)
   - [Sorting JSON Files](#sorting-json-files)
 
@@ -61,6 +62,12 @@ If on Windows, run the following command:
 
 ```cmd
 gradlew.bat build
+```
+
+### Running api-honkai-star-rail
+
+```shell
+./gradlew :api-honkai-star-rail:bootRun -Dspring.profiles.active=local-h2
 ```
 
 ## Ports
