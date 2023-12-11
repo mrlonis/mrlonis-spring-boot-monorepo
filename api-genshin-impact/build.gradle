@@ -158,7 +158,6 @@ bootRun {
 }
 
 build {
-    systemProperties = System.properties
     if (System.properties.get("spring.profiles.active") == "local") {
         dependsOn {
             jacocoTestReport
