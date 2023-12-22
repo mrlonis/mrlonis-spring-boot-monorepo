@@ -14,6 +14,7 @@ This repo is meant to house all of my personal Spring Boot projects
       - [Mac-OS](#mac-os)
       - [WSL - Ubuntu](#wsl---ubuntu)
   - [Running the Project](#running-the-project)
+    - [Running api-genshin-impact](#running-api-genshin-impact)
     - [Running api-honkai-star-rail](#running-api-honkai-star-rail)
   - [Ports](#ports)
   - [Sorting JSON Files](#sorting-json-files)
@@ -62,6 +63,18 @@ If on Windows, run the following command:
 
 ```cmd
 gradlew.bat build
+```
+
+### Running api-genshin-impact
+
+```shell
+./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2'
+```
+
+or
+
+```shell
+./gradlew :api-genshin-impact:bootRun -Dspring.profiles.active=local-h2
 ```
 
 ### Running api-honkai-star-rail
