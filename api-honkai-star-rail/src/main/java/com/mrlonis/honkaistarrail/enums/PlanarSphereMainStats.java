@@ -16,7 +16,9 @@ public enum PlanarSphereMainStats {
     WIND_DAMAGE_BONUS("Wind DMG Bonus", "Wind DMG"),
     QUANTUM_DAMAGE_BONUS("Quantum DMG Bonus", "Quantum DMG"),
     IMAGINARY_DAMAGE_BONUS("Imaginary DMG Bonus", "Imaginary DMG"),
-    DEF_PERCENT_ICE_DAMAGE_BONUS("DEF% / Ice DMG Bonus", "DEF% / Ice DMG");
+    DEF_PERCENT_ICE_DAMAGE_BONUS("DEF% / Ice DMG Bonus", "DEF% / Ice DMG"),
+    HP_PERCENT_DEF_PERCENT("HP% / DEF%", "HP% / DEF%"),
+    ANY("Any", "Any");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;

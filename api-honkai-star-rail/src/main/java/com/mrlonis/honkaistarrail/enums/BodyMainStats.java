@@ -13,7 +13,8 @@ public enum BodyMainStats {
     CRITICAL_DAMAGE("CRIT DMG"),
     CRITICAL_RATE_AND_DAMAGE("CRIT Rate / CRIT DMG"),
     OUTGOING_HEALING_BOOST("Outgoing Healing Boost"),
-    EFFECT_HIT_RATE("Effect Hit Rate");
+    EFFECT_HIT_RATE("Effect Hit Rate"),
+    ANY("Any");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;

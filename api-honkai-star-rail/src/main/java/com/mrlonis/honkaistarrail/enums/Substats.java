@@ -18,7 +18,8 @@ public enum Substats {
     CRIT_RATE_CRIT_DAMAGE("CRIT Rate / CRIT DMG"),
     EFFECT_HIT_RATE("Effect Hit Rate"),
     EFFECT_RESISTANCE("Effect Res"),
-    BREAK_EFFECT("Break Effect");
+    BREAK_EFFECT("Break Effect"),
+    ANY("Any");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
