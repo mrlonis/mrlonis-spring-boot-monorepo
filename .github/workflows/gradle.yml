@@ -5,6 +5,17 @@ on: [ push, pull_request ]
 jobs:
   build-gradle-project:
     runs-on: ubuntu-latest
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        # Set health checks to wait until redis has started
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v4
 
@@ -25,6 +36,9 @@ jobs:
 
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
+        env:
+          REDIS_HOST: redis
+          REDIS_PORT: 6379
 
       - name: Run api-genshin-impact in the background
         run: ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &

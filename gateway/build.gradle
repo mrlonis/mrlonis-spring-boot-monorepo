@@ -1,0 +1,166 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
+plugins {
+    id "java"
+    id "idea"
+    id "jacoco"
+    id "org.springframework.boot" version "${springBootVersion}"
+    id "io.spring.dependency-management" version "${sprintDependencyManagementVersion}"
+    id "io.freefair.lombok" version "${lombokPluginVersion}"
+    id "org.flywaydb.flyway" version "${flywayPluginVersion}"
+}
+
+group = "com.mrlonis"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-data-redis"
+    implementation "org.springframework.boot:spring-boot-starter-webflux"
+    implementation "org.springframework.cloud:spring-cloud-starter-gateway"
+    implementation "org.springframework.session:spring-session-data-redis"
+
+    developmentOnly "org.springframework.boot:spring-boot-devtools"
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testImplementation "org.mockito:mockito-junit-jupiter"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+jacoco {
+    toolVersion = "${jacocoVersion}"
+}
+
+def filesToExcludeFromCoverage = [""]
+
+tasks.register('restartDocker') {
+    doLast {
+        exec {
+            if (DefaultNativePlatform.currentOperatingSystem.isWindows()) {
+                workingDir = file("./")
+                commandLine = ["cmd", "/C", "docker compose", "up", "--pull", "always", "-V", "--wait"]
+            } else {
+                commandLine = ["docker", "compose", "up", "--pull", "always", "-V", "--wait"]
+            }
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+    if (systemProperties.get("spring.profiles.active") == "local") {
+        dependsOn restartDocker
+    }
+//    testLogging {
+//        showStandardStreams = true
+//    }
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required.set(false)
+        csv.required.set(false)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
+    }
+
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: filesToExcludeFromCoverage)
+        })
+    }
+}
+
+jacocoTestCoverageVerification {
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: filesToExcludeFromCoverage)
+        })
+    }
+
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.00
+            }
+        }
+
+        rule {
+            enabled = false
+            element = "CLASS"
+            includes = ["org.gradle.*"]
+
+            limit {
+                counter = "LINE"
+                value = "TOTALCOUNT"
+                maximum = 0.3
+            }
+        }
+    }
+
+    mustRunAfter jacocoTestReport
+}
+
+check {
+    dependsOn jacocoTestCoverageVerification
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.warnings = true
+    options.deprecation = true
+    options.compilerArgs << "-Xlint:unchecked"
+}
+
+bootRun {
+    systemProperties = System.properties
+    if (System.properties.get("spring.profiles.active") == "local") {
+        dependsOn restartDocker
+    }
+}
+
+build {
+    if (System.properties.get("spring.profiles.active") == "local") {
+        dependsOn {
+            jacocoTestReport
+            restartDocker
+        }
+    } else {
+        dependsOn jacocoTestReport
+    }
+}

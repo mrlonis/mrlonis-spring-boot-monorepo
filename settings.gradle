@@ -4,3 +4,5 @@ include "api-honkai-star-rail"
 include "lib-mrlonis-testing"
 include "lib-mrlonis-types"
 include "playground"
+include 'gateway'
+
