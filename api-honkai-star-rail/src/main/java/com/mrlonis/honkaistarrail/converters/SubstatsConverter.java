@@ -3,7 +3,7 @@ package com.mrlonis.honkaistarrail.converters;
 import com.mrlonis.honkaistarrail.enums.Substats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import lombok.NonNull;
+import org.springframework.lang.NonNull;
 
 import java.util.stream.Stream;
 

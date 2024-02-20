@@ -6,7 +6,6 @@ import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
 import com.mrlonis.honkaistarrail.services.OrnamentBreakdownService;
 import com.mrlonis.honkaistarrail.services.RelicBreakdownService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +17,6 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v2")
 @AllArgsConstructor
-@Slf4j
 @CrossOrigin(origins = "http://localhost:3001")
 public class BreakdownController {
     private OrnamentBreakdownService ornamentBreakdownService;

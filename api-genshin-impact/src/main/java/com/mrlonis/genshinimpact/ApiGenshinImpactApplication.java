@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
-@Slf4j
 public class ApiGenshinImpactApplication implements WebMvcConfigurer {
     public static void main(String[] args) {
         SpringApplication.run(ApiGenshinImpactApplication.class, args);

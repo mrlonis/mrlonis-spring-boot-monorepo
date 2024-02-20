@@ -39,6 +39,9 @@ public class ArtifactBreakdownController {
     public ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId,
                                                              @RequestParam int artifactDepth) throws NotFoundException {
         log.info("Getting artifact breakdown for artifact: {}", artifactId);
+        if (artifactId == null) {
+            throw new IllegalArgumentException("Artifact ID cannot be null");
+        }
         Optional<Artifact> repositoryArtifact = artifactsRepository.findById(artifactId);
         if (repositoryArtifact.isEmpty()) {
             throw new NotFoundException("Artifact not found");

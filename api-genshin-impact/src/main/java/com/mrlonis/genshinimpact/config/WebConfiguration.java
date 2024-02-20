@@ -12,12 +12,12 @@ import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
 import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import com.mrlonis.genshinimpact.enums.WeaponTypes;
-import lombok.NonNull;
 import org.springframework.boot.convert.ApplicationConversionService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.CacheControl;
+import org.springframework.lang.NonNull;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 public class WebConfiguration extends WebMvcConfigurationSupport {
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(@NonNull ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/api/images/**")
                 .addResourceLocations("classpath:/images/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
@@ -40,7 +40,7 @@ public class WebConfiguration extends WebMvcConfigurationSupport {
     }
 
     @Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+    public void addArgumentResolvers(@NonNull List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(new PageableHandlerMethodArgumentResolver());
     }
 
