@@ -18,6 +18,7 @@ This repo is meant to house all of my personal Spring Boot projects
     - [Running api-honkai-star-rail](#running-api-honkai-star-rail)
   - [Ports](#ports)
   - [Sorting JSON Files](#sorting-json-files)
+  - [Updating](#updating)
 
 ## Prerequisites
 
@@ -98,7 +99,15 @@ or
 ## Sorting JSON Files
 
 ```bash
-sort-json --indent 2 --depth 4 .vscode/settings.json && prettier --config .prettierrc --write .vscode/settings.json
-sort-json --indent 2 --depth 4 .vscode/settings.mac.sample.json && prettier --config .prettierrc --write .vscode/settings.mac.sample.json
-sort-json --indent 2 --depth 4 .vscode/settings.wsl.sample.json && prettier --config .prettierrc --write .vscode/settings.wsl.sample.json
+npx sort-json --indent 2 --depth 4 .vscode/settings.json && prettier --config .prettierrc --write .vscode/settings.json
+npx sort-json --indent 2 --depth 4 .vscode/settings.mac.sample.json && prettier --config .prettierrc --write .vscode/settings.mac.sample.json
+npx sort-json --indent 2 --depth 4 .vscode/settings.wsl.sample.json && prettier --config .prettierrc --write .vscode/settings.wsl.sample.json
+```
+
+## Updating
+
+```shell
+npx nx migrate latest
+npm update && npm i
+npx nx migrate --run-migrations # If needed
 ```
