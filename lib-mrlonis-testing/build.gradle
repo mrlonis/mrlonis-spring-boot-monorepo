@@ -1,36 +1,5 @@
 plugins {
-    id "java-library"
-    id "idea"
-    id "org.springframework.boot" version "${springBootVersion}"
-    id "io.spring.dependency-management" version "${sprintDependencyManagementVersion}"
-    id "io.freefair.lombok" version "${lombokPluginVersion}"
-}
-
-group = "com.mrlonis"
-version = "0.0.1-SNAPSHOT"
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
+    id "mrlonis-java-library"
 }
 
 dependencies {
@@ -45,10 +14,4 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 
     testImplementation "org.junit.jupiter:junit-jupiter"
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.warnings = true
-    options.deprecation = true
-    options.compilerArgs << "-Xlint:unchecked"
 }

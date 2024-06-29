@@ -1,0 +1,13 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation("io.freefair.gradle:lombok-plugin:${lombokPluginVersion}")
+    implementation("io.spring.gradle:dependency-management-plugin:${sprintDependencyManagementVersion}")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+}
