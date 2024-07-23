@@ -5,11 +5,11 @@ plugins {
 dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
-    implementation "commons-io:commons-io:${commonsIoVersion}"
+    implementation "commons-io:commons-io:2.16.1"
     implementation("com.opencsv:opencsv:5.9") {
         exclude group: 'commons-logging', module: 'commons-logging'
     }
-    implementation "org.apache.ant:ant:${antVersion}"
+    implementation "org.apache.ant:ant:1.10.14"
     implementation "org.flywaydb:flyway-core"
     implementation "org.flywaydb:flyway-database-postgresql"
     implementation "org.springframework.boot:spring-boot-starter-actuator"

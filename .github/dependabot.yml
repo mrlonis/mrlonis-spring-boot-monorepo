@@ -10,7 +10,14 @@ updates:
     schedule:
       interval: 'daily'
   - package-ecosystem: 'gradle' # See documentation for possible values
-    directory: '/' # Location of package manifests
+    directories:
+      - '/api-genshin-impact'
+      - '/api-honkai-star-rail'
+      - '/buildSrc'
+      - '/gateway'
+      - '/lib-mrlonis-testing'
+      - 'lib-mrlonis-types'
+      - 'playground'
     schedule:
       interval: 'daily'
     allow:
