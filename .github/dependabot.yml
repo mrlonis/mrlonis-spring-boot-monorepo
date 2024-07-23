@@ -9,9 +9,9 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
-  - package-ecosystem: "gradle" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'gradle' # See documentation for possible values
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: 'daily'
     allow:
-      - dependency-type: "all"
+      - dependency-type: 'all'
