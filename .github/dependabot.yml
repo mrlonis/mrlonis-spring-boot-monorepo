@@ -23,3 +23,28 @@ updates:
     allow:
       - dependency-type: 'all'
     open-pull-requests-limit: 99
+    groups:
+      production-version-updates:
+        applies-to: version-updates
+        dependency-type: production
+        update-types:
+          - 'patch'
+          - 'minor'
+      production-security-updates:
+        applies-to: security-updates
+        dependency-type: production
+        update-types:
+          - 'patch'
+          - 'minor'
+      development-version-updates:
+        applies-to: version-updates
+        dependency-type: development
+        update-types:
+          - 'patch'
+          - 'minor'
+      development-security-updates:
+        applies-to: security-updates
+        dependency-type: development
+        update-types:
+          - 'patch'
+          - 'minor'
