@@ -48,7 +48,7 @@ jobs:
         run: ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &
 
       - name: Wait for api-genshin-impact to start
-        run: sleep 10
+        run: sleep 15
         shell: bash
 
       - name: Run newman for api-genshin-impact
@@ -58,7 +58,7 @@ jobs:
         run: ./gradlew :api-honkai-star-rail:bootRun --args='--spring.profiles.active=local-h2' &
 
       - name: Wait for api-honkai-star-rail to start
-        run: sleep 10
+        run: sleep 15
         shell: bash
 
       - name: Run newman for api-honkai-star-rail
