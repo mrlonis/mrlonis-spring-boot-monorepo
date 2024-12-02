@@ -3,12 +3,11 @@ package com.mrlonis.genshinimpact.dto;
 import com.mrlonis.genshinimpact.enums.CircletMainStats;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import lombok.Builder;
+import lombok.Data;
 
 @Builder
 @Data

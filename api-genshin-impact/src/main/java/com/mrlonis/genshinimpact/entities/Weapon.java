@@ -11,6 +11,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.io.Serializable;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,9 +21,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
-import java.util.UUID;
 
 @Builder
 @Getter
@@ -39,8 +38,7 @@ public class Weapon implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
-    @NonNull
-    private String name;
+    @NonNull private String name;
 
     @Column(name = "imageUrl")
     // TODO - @NonNull
@@ -50,8 +48,7 @@ public class Weapon implements IBaseEntity, Serializable {
     private int rarity;
 
     @Column(name = "weaponType")
-    @NonNull
-    @Enumerated(EnumType.STRING)
+    @NonNull @Enumerated(EnumType.STRING)
     private WeaponTypes weaponType;
 
     @Column(name = "secondaryStat")

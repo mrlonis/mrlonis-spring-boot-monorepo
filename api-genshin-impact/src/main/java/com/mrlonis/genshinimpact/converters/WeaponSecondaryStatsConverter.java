@@ -3,15 +3,15 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import java.util.stream.Stream;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.stream.Stream;
-
 @Converter(autoApply = true)
 @Slf4j
-public class WeaponSecondaryStatsConverter implements AttributeConverter<WeaponSecondaryStats, String>,
-        org.springframework.core.convert.converter.Converter<String, WeaponSecondaryStats> {
+public class WeaponSecondaryStatsConverter
+        implements AttributeConverter<WeaponSecondaryStats, String>,
+                org.springframework.core.convert.converter.Converter<String, WeaponSecondaryStats> {
     @Override
     public WeaponSecondaryStats convert(@NonNull String from) {
         return WeaponSecondaryStats.convertToEnumFromCsvValue(from);
@@ -32,8 +32,8 @@ public class WeaponSecondaryStatsConverter implements AttributeConverter<WeaponS
         }
 
         return Stream.of(WeaponSecondaryStats.values())
-                     .filter(c -> c.getValue().equals(value))
-                     .findFirst()
-                     .orElse(null);
+                .filter(c -> c.getValue().equals(value))
+                .findFirst()
+                .orElse(null);
     }
 }

@@ -2,12 +2,11 @@ package com.mrlonis.honkaistarrail.dto;
 
 import com.mrlonis.honkaistarrail.enums.LinkRopeMainStats;
 import com.mrlonis.honkaistarrail.enums.PlanarSphereMainStats;
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import lombok.Builder;
+import lombok.Data;
 
 @Builder
 @Data

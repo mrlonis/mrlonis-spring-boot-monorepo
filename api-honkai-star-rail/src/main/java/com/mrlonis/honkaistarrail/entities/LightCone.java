@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.io.Serializable;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,9 +19,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
-import java.util.UUID;
 
 @Builder
 @Getter
@@ -37,8 +36,7 @@ public class LightCone implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
-    @NonNull
-    private String name;
+    @NonNull private String name;
 
     @Column(name = "imageUrl")
     private String imageUrl;
@@ -47,14 +45,17 @@ public class LightCone implements IBaseEntity, Serializable {
     private int rarity;
 
     @Column(name = "combatPathId")
-    @NonNull
-    private UUID combatPathId;
+    @NonNull private UUID combatPathId;
 
     @Column(name = "skill")
-    @NonNull
-    private String skill;
+    @NonNull private String skill;
 
     @ManyToOne
-    @JoinColumn(name = "combatPathId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "combatPathId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private CombatPath combatPath;
 }

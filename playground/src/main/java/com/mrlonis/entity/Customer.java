@@ -22,7 +22,13 @@ import lombok.Setter;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", columnDefinition = "serial", unique = true, nullable = false, insertable = false, updatable = false)
+    @Column(
+            name = "id",
+            columnDefinition = "serial",
+            unique = true,
+            nullable = false,
+            insertable = false,
+            updatable = false)
     private int id;
 
     @Column(name = "name")

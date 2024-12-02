@@ -43,9 +43,9 @@ test {
     if (systemProperties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker
     }
-//    testLogging {
-//        showStandardStreams = true
-//    }
+    //    testLogging {
+    //        showStandardStreams = true
+    //    }
 }
 
 jacocoTestReport {
@@ -60,7 +60,7 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: filesToExcludeFromCoverage)
+            exclude: filesToExcludeFromCoverage)
         })
     }
 }
@@ -69,7 +69,7 @@ jacocoTestCoverageVerification {
     afterEvaluate {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: filesToExcludeFromCoverage)
+            exclude: filesToExcludeFromCoverage)
         })
     }
 

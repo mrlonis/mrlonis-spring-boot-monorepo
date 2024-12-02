@@ -14,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.io.Serializable;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,9 +24,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
-import java.util.UUID;
 
 @Builder
 @Getter
@@ -42,8 +41,7 @@ public class Character implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
-    @NonNull
-    private String name;
+    @NonNull private String name;
 
     @Column(name = "imageUrl")
     // TODO - @NonNull
@@ -53,15 +51,18 @@ public class Character implements IBaseEntity, Serializable {
     private int rarity;
 
     @Column(name = "elementId")
-    @NonNull
-    private UUID elementId;
+    @NonNull private UUID elementId;
 
     @Column(name = "weaponType")
-    @NonNull
-    private WeaponTypes weaponType;
+    @NonNull private WeaponTypes weaponType;
 
     @ManyToOne
-    @JoinColumn(name = "elementId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "elementId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private Element element;
 
     @Column(name = "sandsStatOne")
@@ -111,7 +112,12 @@ public class Character implements IBaseEntity, Serializable {
     private UUID weaponOneId;
 
     @ManyToOne
-    @JoinColumn(name = "weaponOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "weaponOneId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private Weapon weaponOne;
 
     @Column(name = "weaponTwoId")
@@ -147,7 +153,12 @@ public class Character implements IBaseEntity, Serializable {
     private UUID artifactSetOneIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "artifactSetOneIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "artifactSetOneIdFirst",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private Artifact artifactSetOneFirst;
 
     @Column(name = "artifactSetOneIdSecond")

@@ -1,9 +1,8 @@
 package com.mrlonis.genshinimpact.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum GobletMainStats {
     HEALTH_PERCENT("HP%", "HP%"),
@@ -21,6 +20,7 @@ public enum GobletMainStats {
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
+
     @Getter
     private final String csvValue;
 
@@ -35,9 +35,9 @@ public enum GobletMainStats {
         }
 
         return Stream.of(GobletMainStats.values())
-                     .filter(c -> c.getCsvValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Goblet Main Stats: " + csvValue));
+                .filter(c -> c.getCsvValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Goblet Main Stats: " + csvValue));
     }
 
     @Override

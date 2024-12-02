@@ -22,12 +22,6 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.enums.CSVReaderNullFieldIndicator;
 import com.opencsv.exceptions.CsvException;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +31,11 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
@@ -78,9 +77,10 @@ public class EntityCreation {
     }
 
     private List<String[]> readCsvFile(BufferedReader bufferedReader) {
-        try (CSVReader csvReader = new CSVReaderBuilder(bufferedReader).withSkipLines(1)
-                                                                       .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
-                                                                       .build()) {
+        try (CSVReader csvReader = new CSVReaderBuilder(bufferedReader)
+                .withSkipLines(1)
+                .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
+                .build()) {
             return csvReader.readAll();
         } catch (CsvException e) {
             String errorMessage = "readCsvFile(): CsvException: " + e.getMessage();
@@ -101,9 +101,7 @@ public class EntityCreation {
             if (row.length != 3) {
                 String errorMessage = String.format(
                         "createCombatTypesEntities(): Row %s size is not 3 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -124,8 +122,11 @@ public class EntityCreation {
                 combatTypes.add(combatType);
             } else {
                 log.info("createCombatTypesEntities(): Combat Type does not exist: " + name);
-                CombatType combatType =
-                        CombatType.builder().name(name).imageUrl(imageUrl).description(description).build();
+                CombatType combatType = CombatType.builder()
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .description(description)
+                        .build();
                 combatTypes.add(combatType);
             }
         }
@@ -141,9 +142,7 @@ public class EntityCreation {
             if (row.length != 3) {
                 String errorMessage = String.format(
                         "createCombatPathsEntities(): Row %s size is not 3 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -164,8 +163,11 @@ public class EntityCreation {
                 combatPaths.add(combatPath);
             } else {
                 log.info("createCombatPathsEntities(): Combat Path does not exist: " + name);
-                CombatPath combatPath =
-                        CombatPath.builder().name(name).imageUrl(imageUrl).description(description).build();
+                CombatPath combatPath = CombatPath.builder()
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .description(description)
+                        .build();
                 combatPaths.add(combatPath);
             }
         }
@@ -181,9 +183,7 @@ public class EntityCreation {
             if (row.length != 5) {
                 String errorMessage = String.format(
                         "createLightConesEntities(): Row %s size is not 5 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -219,13 +219,13 @@ public class EntityCreation {
             } else {
                 log.info("createLightConesEntities(): Light Cone does not exist: " + name);
                 LightCone lightCone = LightCone.builder()
-                                               .name(name)
-                                               .imageUrl(imageUrl)
-                                               .rarity(rarity)
-                                               .combatPathId(combatPath.getId())
-                                               .combatPath(combatPath)
-                                               .skill(skill)
-                                               .build();
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .rarity(rarity)
+                        .combatPathId(combatPath.getId())
+                        .combatPath(combatPath)
+                        .skill(skill)
+                        .build();
                 lightCones.add(lightCone);
             }
         }
@@ -241,9 +241,7 @@ public class EntityCreation {
             if (row.length != 4) {
                 String errorMessage = String.format(
                         "createRelicsEntities(): Row %s size is not 4 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -267,11 +265,11 @@ public class EntityCreation {
             } else {
                 log.info("createRelicsEntities(): Relic does not exist: " + name);
                 Relic relic = Relic.builder()
-                                   .name(name)
-                                   .imageUrl(imageUrl)
-                                   .twoPieceSetEffect(twoPieceSetEffect)
-                                   .fourPieceSetEffect(fourPieceSetEffect)
-                                   .build();
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .twoPieceSetEffect(twoPieceSetEffect)
+                        .fourPieceSetEffect(fourPieceSetEffect)
+                        .build();
                 relics.add(relic);
             }
         }
@@ -287,9 +285,7 @@ public class EntityCreation {
             if (row.length != 3) {
                 String errorMessage = String.format(
                         "createOrnamentsEntities(): Row %s size is not 3 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -310,8 +306,11 @@ public class EntityCreation {
                 ornaments.add(ornament);
             } else {
                 log.info("createOrnamentsEntities(): Ornament does not exist: " + name);
-                Ornament ornament =
-                        Ornament.builder().name(name).imageUrl(imageUrl).twoPieceSetEffect(twoPieceSetEffect).build();
+                Ornament ornament = Ornament.builder()
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .twoPieceSetEffect(twoPieceSetEffect)
+                        .build();
                 ornaments.add(ornament);
             }
         }
@@ -327,9 +326,7 @@ public class EntityCreation {
             if (row.length != 30) {
                 String errorMessage = String.format(
                         "createCharacterEntities(): Row %s size is not 30 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -418,8 +415,7 @@ public class EntityCreation {
                     relicsRepository.findByNameIgnoreCaseIs(relicSetOneNameFirst);
             if (repositoryRelicSetOneNameFirst.isEmpty()) {
                 String errorMessage = String.format(
-                        "createCharacterEntities(): Relic Set One Name First does not exist: %s",
-                        relicSetOneNameFirst);
+                        "createCharacterEntities(): Relic Set One Name First does not exist: %s", relicSetOneNameFirst);
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -506,9 +502,8 @@ public class EntityCreation {
                 Optional<Ornament> repositoryOrnamentSetOne =
                         ornamentsRepository.findByNameIgnoreCaseIs(ornamentSetOneName);
                 if (repositoryOrnamentSetOne.isEmpty()) {
-                    String errorMessage =
-                            String.format("createCharacterEntities(): Ornament Set One does not exist: %s",
-                                          ornamentSetOneName);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Ornament Set One does not exist: %s", ornamentSetOneName);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -521,9 +516,8 @@ public class EntityCreation {
                 Optional<Ornament> repositoryOrnamentSetTwo =
                         ornamentsRepository.findByNameIgnoreCaseIs(ornamentSetTwoName);
                 if (repositoryOrnamentSetTwo.isEmpty()) {
-                    String errorMessage =
-                            String.format("createCharacterEntities(): Ornament Set Two does not exist: %s",
-                                          ornamentSetTwoName);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Ornament Set Two does not exist: %s", ornamentSetTwoName);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -537,8 +531,7 @@ public class EntityCreation {
                         ornamentsRepository.findByNameIgnoreCaseIs(ornamentSetThreeName);
                 if (repositoryOrnamentSetThree.isEmpty()) {
                     String errorMessage = String.format(
-                            "createCharacterEntities(): Ornament Set Three does not exist: %s",
-                            ornamentSetThreeName);
+                            "createCharacterEntities(): Ornament Set Three does not exist: %s", ornamentSetThreeName);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -551,8 +544,8 @@ public class EntityCreation {
                 Optional<LightCone> repositoryLightConeOne =
                         lightConesRepository.findByNameIgnoreCaseIs(lightConeNameOne);
                 if (repositoryLightConeOne.isEmpty()) {
-                    String errorMessage = String.format("createCharacterEntities(): Light Cone One does not exist: %s",
-                                                        lightConeNameOne);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Light Cone One does not exist: %s", lightConeNameOne);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -565,8 +558,8 @@ public class EntityCreation {
                 Optional<LightCone> repositoryLightConeTwo =
                         lightConesRepository.findByNameIgnoreCaseIs(lightConeNameTwo);
                 if (repositoryLightConeTwo.isEmpty()) {
-                    String errorMessage = String.format("createCharacterEntities(): Light Cone Two does not exist: %s",
-                                                        lightConeNameTwo);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Light Cone Two does not exist: %s", lightConeNameTwo);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -579,9 +572,8 @@ public class EntityCreation {
                 Optional<LightCone> repositoryLightConeThree =
                         lightConesRepository.findByNameIgnoreCaseIs(lightConeNameThree);
                 if (repositoryLightConeThree.isEmpty()) {
-                    String errorMessage =
-                            String.format("createCharacterEntities(): Light Cone Three does not exist: %s",
-                                          lightConeNameThree);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Light Cone Three does not exist: %s", lightConeNameThree);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -594,8 +586,8 @@ public class EntityCreation {
                 Optional<LightCone> repositoryLightConeFour =
                         lightConesRepository.findByNameIgnoreCaseIs(lightConeNameFour);
                 if (repositoryLightConeFour.isEmpty()) {
-                    String errorMessage = String.format("createCharacterEntities(): Light Cone Four does not exist: %s",
-                                                        lightConeNameFour);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Light Cone Four does not exist: %s", lightConeNameFour);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }
@@ -608,8 +600,8 @@ public class EntityCreation {
                 Optional<LightCone> repositoryLightConeFive =
                         lightConesRepository.findByNameIgnoreCaseIs(lightConeNameFive);
                 if (repositoryLightConeFive.isEmpty()) {
-                    String errorMessage = String.format("createCharacterEntities(): Light Cone Five does not exist: %s",
-                                                        lightConeNameFive);
+                    String errorMessage = String.format(
+                            "createCharacterEntities(): Light Cone Five does not exist: %s", lightConeNameFive);
                     log.error(errorMessage);
                     throw new EntityCreationException(errorMessage);
                 }

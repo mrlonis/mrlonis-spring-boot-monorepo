@@ -29,7 +29,10 @@ dependencies {
     testRuntimeOnly "org.junit.platform:junit-platform-launcher"
 }
 
-def filesToExcludeFromCoverage = ["**/com/mrlonis/afkarena/config/**", "**/com/mrlonis/afkarena/domain/**"]
+def filesToExcludeFromCoverage = [
+    "**/com/mrlonis/afkarena/config/**",
+    "**/com/mrlonis/afkarena/domain/**"
+]
 
 test {
     useJUnitPlatform()
@@ -37,9 +40,9 @@ test {
     if (systemProperties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker
     }
-//    testLogging {
-//        showStandardStreams = true
-//    }
+    //    testLogging {
+    //        showStandardStreams = true
+    //    }
 }
 
 jacocoTestReport {
@@ -54,7 +57,7 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: filesToExcludeFromCoverage)
+            exclude: filesToExcludeFromCoverage)
         })
     }
 }
@@ -63,7 +66,7 @@ jacocoTestCoverageVerification {
     afterEvaluate {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: filesToExcludeFromCoverage)
+            exclude: filesToExcludeFromCoverage)
         })
     }
 

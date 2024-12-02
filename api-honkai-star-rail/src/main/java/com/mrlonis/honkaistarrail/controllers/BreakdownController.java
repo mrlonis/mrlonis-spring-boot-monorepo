@@ -5,14 +5,13 @@ import com.mrlonis.honkaistarrail.dto.RelicBreakdown;
 import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
 import com.mrlonis.honkaistarrail.services.OrnamentBreakdownService;
 import com.mrlonis.honkaistarrail.services.RelicBreakdownService;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v2")
@@ -23,8 +22,8 @@ public class BreakdownController {
     private RelicBreakdownService relicBreakdownService;
 
     @GetMapping("/ornamentBreakdown")
-    public OrnamentBreakdown getOrnamentBreakdownForOrnament(@RequestParam UUID ornamentId,
-                                                             @RequestParam int ornamentDepth) throws NotFoundException {
+    public OrnamentBreakdown getOrnamentBreakdownForOrnament(
+            @RequestParam UUID ornamentId, @RequestParam int ornamentDepth) throws NotFoundException {
         return ornamentBreakdownService.getBreakdown(ornamentId, ornamentDepth);
     }
 

@@ -7,3 +7,4 @@ This module is the API for the Genshin Impact angular UI
 ```shell
 docker compose up --pull always --remove-orphans -V --wait
 ```
+

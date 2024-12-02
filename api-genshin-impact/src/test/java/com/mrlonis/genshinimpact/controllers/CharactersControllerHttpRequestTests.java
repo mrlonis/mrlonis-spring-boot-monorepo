@@ -1,5 +1,8 @@
 package com.mrlonis.genshinimpact.controllers;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.mrlonis.genshinimpact.entities.Character;
 import com.mrlonis.testing.PaginatedResponse;
 import org.junit.jupiter.api.Test;
@@ -13,9 +16,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test-h2")
 @AutoConfigureTestDatabase
@@ -28,8 +28,7 @@ class CharactersControllerHttpRequestTests {
 
     @Test
     void testShouldReturnAllForEntity() {
-        ParameterizedTypeReference<PaginatedResponse<Character>> responseType = new ParameterizedTypeReference<>() {
-        };
+        ParameterizedTypeReference<PaginatedResponse<Character>> responseType = new ParameterizedTypeReference<>() {};
 
         String route = "/api/v2/characters";
         ResponseEntity<PaginatedResponse<Character>> result =

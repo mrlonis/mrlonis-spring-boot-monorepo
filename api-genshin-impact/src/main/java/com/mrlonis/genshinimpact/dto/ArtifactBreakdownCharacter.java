@@ -1,11 +1,10 @@
 package com.mrlonis.genshinimpact.dto;
 
 import com.mrlonis.genshinimpact.enums.Substats;
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.List;
 import java.util.UUID;
+import lombok.Builder;
+import lombok.Data;
 
 @Builder
 @Data

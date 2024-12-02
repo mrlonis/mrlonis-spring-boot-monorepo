@@ -3,13 +3,13 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import java.util.stream.Stream;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
 @Converter(autoApply = true)
-public class SandsMainStatsConverter implements AttributeConverter<SandsMainStats, String>,
-        org.springframework.core.convert.converter.Converter<String, SandsMainStats> {
+public class SandsMainStatsConverter
+        implements AttributeConverter<SandsMainStats, String>,
+                org.springframework.core.convert.converter.Converter<String, SandsMainStats> {
     @Override
     public SandsMainStats convert(@NonNull String from) {
         return SandsMainStats.convertToEnumFromCsvValue(from);
@@ -30,8 +30,8 @@ public class SandsMainStatsConverter implements AttributeConverter<SandsMainStat
         }
 
         return Stream.of(SandsMainStats.values())
-                     .filter(c -> c.getValue().equals(value))
-                     .findFirst()
-                     .orElseThrow(IllegalArgumentException::new);
+                .filter(c -> c.getValue().equals(value))
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
     }
 }

@@ -4,7 +4,6 @@ import com.mrlonis.honkaistarrail.dto.IBreakdown;
 import com.mrlonis.honkaistarrail.entities.Character;
 import com.mrlonis.honkaistarrail.enums.Substats;
 import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

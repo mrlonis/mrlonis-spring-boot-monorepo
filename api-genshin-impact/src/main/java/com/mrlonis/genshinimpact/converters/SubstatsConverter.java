@@ -3,13 +3,13 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.Substats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import java.util.stream.Stream;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
 @Converter(autoApply = true)
-public class SubstatsConverter implements AttributeConverter<Substats, String>,
-        org.springframework.core.convert.converter.Converter<String, Substats> {
+public class SubstatsConverter
+        implements AttributeConverter<Substats, String>,
+                org.springframework.core.convert.converter.Converter<String, Substats> {
     @Override
     public Substats convert(@NonNull String from) {
         return Substats.convertToEnumFromCsvValue(from);
@@ -30,8 +30,8 @@ public class SubstatsConverter implements AttributeConverter<Substats, String>,
         }
 
         return Stream.of(Substats.values())
-                     .filter(c -> c.getValue().equals(value))
-                     .findFirst()
-                     .orElseThrow(IllegalArgumentException::new);
+                .filter(c -> c.getValue().equals(value))
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
     }
 }

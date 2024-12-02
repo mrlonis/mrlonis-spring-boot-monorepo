@@ -1,11 +1,10 @@
 package com.mrlonis.honkaistarrail.dto;
 
 import com.mrlonis.honkaistarrail.enums.Substats;
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.List;
 import java.util.UUID;
+import lombok.Builder;
+import lombok.Data;
 
 @Builder
 @Data

@@ -1,9 +1,8 @@
 package com.mrlonis.honkaistarrail.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum PlanarSphereMainStats {
     HP_PERCENT("HP%", "HP%"),
@@ -37,9 +36,9 @@ public enum PlanarSphereMainStats {
         }
 
         return Stream.of(PlanarSphereMainStats.values())
-                     .filter(c -> c.getCsvValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Planar Sphere Main Stat: " + csvValue));
+                .filter(c -> c.getCsvValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Planar Sphere Main Stat: " + csvValue));
     }
 
     @Override

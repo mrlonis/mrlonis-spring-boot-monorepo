@@ -4,6 +4,12 @@ import com.mrlonis.honkaistarrail.entities.Character;
 import com.mrlonis.honkaistarrail.exceptions.BadRequestException;
 import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
 import com.mrlonis.honkaistarrail.repositories.CharactersRepository;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
@@ -14,13 +20,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v2")
@@ -70,12 +69,15 @@ public class CharacterController {
         boolean exists = charactersRepository.existsById(id);
         log.info(String.format("Character with id %s exists: %s", id, exists));
         Optional<Character> character = charactersRepository.findById(id);
-        return character.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+        return character
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/character")
-    public Character getCharacter(@RequestParam(value = "id", required = false) UUID id,
-                                  @RequestParam(value = "name", required = false) String name)
+    public Character getCharacter(
+            @RequestParam(value = "id", required = false) UUID id,
+            @RequestParam(value = "name", required = false) String name)
             throws NotFoundException, BadRequestException {
         if (id == null && name == null) {
             throw new BadRequestException("Must provide either an id or a name");

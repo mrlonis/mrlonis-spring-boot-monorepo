@@ -1,13 +1,13 @@
 package com.mrlonis.genshinimpact;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ApiGenshinImpactApplication.class)
@@ -19,5 +19,4 @@ class ApiGenshinImpactApplicationTests {
     void contextLoads() {
         assertTrue(true);
     }
-
 }

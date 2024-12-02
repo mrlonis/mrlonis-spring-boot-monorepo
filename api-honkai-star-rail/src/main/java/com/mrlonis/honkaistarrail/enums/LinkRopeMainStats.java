@@ -1,9 +1,8 @@
 package com.mrlonis.honkaistarrail.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum LinkRopeMainStats {
     BREAK_EFFECT("Break Effect"),
@@ -25,9 +24,9 @@ public enum LinkRopeMainStats {
         }
 
         return Stream.of(LinkRopeMainStats.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Link Rope Main Stat: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Link Rope Main Stat: " + csvValue));
     }
 
     @Override

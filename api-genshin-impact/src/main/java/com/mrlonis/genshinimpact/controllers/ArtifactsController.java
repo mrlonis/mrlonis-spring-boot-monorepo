@@ -4,16 +4,15 @@ import com.mrlonis.genshinimpact.entities.Artifact;
 import com.mrlonis.genshinimpact.exceptions.BadRequestException;
 import com.mrlonis.genshinimpact.exceptions.NotFoundException;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v2")
@@ -28,8 +27,9 @@ public class ArtifactsController {
     }
 
     @GetMapping("/artifact")
-    public Artifact getArtifact(@RequestParam(value = "id", required = false) UUID id,
-                                @RequestParam(value = "name", required = false) String name)
+    public Artifact getArtifact(
+            @RequestParam(value = "id", required = false) UUID id,
+            @RequestParam(value = "name", required = false) String name)
             throws NotFoundException, BadRequestException {
         if (id == null && name == null) {
             throw new BadRequestException("Must provide either an id or a name");

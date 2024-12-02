@@ -3,13 +3,13 @@ package com.mrlonis.honkaistarrail.converters;
 import com.mrlonis.honkaistarrail.enums.PlanarSphereMainStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import java.util.stream.Stream;
 import org.springframework.lang.NonNull;
 
-import java.util.stream.Stream;
-
 @Converter(autoApply = true)
-public class PlanarSphereMainStatsConverter implements AttributeConverter<PlanarSphereMainStats, String>,
-        org.springframework.core.convert.converter.Converter<String, PlanarSphereMainStats> {
+public class PlanarSphereMainStatsConverter
+        implements AttributeConverter<PlanarSphereMainStats, String>,
+                org.springframework.core.convert.converter.Converter<String, PlanarSphereMainStats> {
     @Override
     public PlanarSphereMainStats convert(@NonNull String from) {
         return PlanarSphereMainStats.convertToEnumFromCsvValue(from);
@@ -30,8 +30,8 @@ public class PlanarSphereMainStatsConverter implements AttributeConverter<Planar
         }
 
         return Stream.of(PlanarSphereMainStats.values())
-                     .filter(c -> c.getValue().equals(value))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Planar Sphere Main Stat: " + value));
+                .filter(c -> c.getValue().equals(value))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Planar Sphere Main Stat: " + value));
     }
 }

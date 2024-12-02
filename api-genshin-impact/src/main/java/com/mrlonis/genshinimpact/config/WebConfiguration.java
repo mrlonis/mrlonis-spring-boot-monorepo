@@ -12,6 +12,8 @@ import com.mrlonis.genshinimpact.enums.SandsMainStats;
 import com.mrlonis.genshinimpact.enums.Substats;
 import com.mrlonis.genshinimpact.enums.WeaponSecondaryStats;
 import com.mrlonis.genshinimpact.enums.WeaponTypes;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 import org.springframework.boot.convert.ApplicationConversionService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
@@ -21,9 +23,6 @@ import org.springframework.lang.NonNull;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class WebConfiguration extends WebMvcConfigurationSupport {
@@ -54,5 +53,4 @@ public class WebConfiguration extends WebMvcConfigurationSupport {
         registry.addConverter(String.class, WeaponSecondaryStats.class, new WeaponSecondaryStatsConverter());
         registry.addConverter(String.class, WeaponTypes.class, new WeaponTypesConverter());
     }
-
 }

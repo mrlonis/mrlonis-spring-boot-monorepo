@@ -1,9 +1,8 @@
 package com.mrlonis.honkaistarrail.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum BodyMainStats {
     HP_PERCENT("HP%"),
@@ -29,9 +28,9 @@ public enum BodyMainStats {
         }
 
         return Stream.of(BodyMainStats.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Body Main Stat: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Body Main Stat: " + csvValue));
     }
 
     @Override

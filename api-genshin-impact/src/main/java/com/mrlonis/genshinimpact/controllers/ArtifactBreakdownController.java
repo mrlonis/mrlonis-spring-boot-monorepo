@@ -11,6 +11,12 @@ import com.mrlonis.genshinimpact.enums.Substats;
 import com.mrlonis.genshinimpact.exceptions.NotFoundException;
 import com.mrlonis.genshinimpact.repositories.ArtifactsRepository;
 import com.mrlonis.genshinimpact.repositories.CharactersRepository;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,13 +24,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v2")
@@ -36,8 +35,8 @@ public class ArtifactBreakdownController {
     private ArtifactsRepository artifactsRepository;
 
     @GetMapping("/artifactBreakdown")
-    public ArtifactBreakdown getArtifactBreakdownForArtifact(@RequestParam UUID artifactId,
-                                                             @RequestParam int artifactDepth) throws NotFoundException {
+    public ArtifactBreakdown getArtifactBreakdownForArtifact(
+            @RequestParam UUID artifactId, @RequestParam int artifactDepth) throws NotFoundException {
         log.info("Getting artifact breakdown for artifact: {}", artifactId);
         if (artifactId == null) {
             throw new IllegalArgumentException("Artifact ID cannot be null");
@@ -52,28 +51,26 @@ public class ArtifactBreakdownController {
 
         Artifact artifact = repositoryArtifact.get();
         ArtifactBreakdown artifactBreakdown = ArtifactBreakdown.builder()
-                                                               .id(artifact.getId())
-                                                               .name(artifact.getName())
-                                                               .imageUrl(artifact.getImageUrl())
-                                                               .onePieceSetEffect(artifact.getOnePieceSetEffect())
-                                                               .twoPieceSetEffect(artifact.getTwoPieceSetEffect())
-                                                               .fourPieceSetEffect(artifact.getFourPieceSetEffect())
-                                                               .build();
+                .id(artifact.getId())
+                .name(artifact.getName())
+                .imageUrl(artifact.getImageUrl())
+                .onePieceSetEffect(artifact.getOnePieceSetEffect())
+                .twoPieceSetEffect(artifact.getTwoPieceSetEffect())
+                .fourPieceSetEffect(artifact.getFourPieceSetEffect())
+                .build();
 
         List<Character> characters;
         if (artifactDepth == 1) {
-            characters = charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIs(artifact.getId(),
-                                                                                                      artifact.getId());
+            characters = charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIs(
+                    artifact.getId(), artifact.getId());
         } else if (artifactDepth == 2) {
             characters =
-                    charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIs(
-                            artifact.getId(),
-                            artifact.getId(),
-                            artifact.getId(),
-                            artifact.getId());
+                    charactersRepository
+                            .findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIs(
+                                    artifact.getId(), artifact.getId(), artifact.getId(), artifact.getId());
         } else if (artifactDepth == 3) {
-            characters =
-                    charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIs(
+            characters = charactersRepository
+                    .findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIs(
                             artifact.getId(),
                             artifact.getId(),
                             artifact.getId(),
@@ -81,8 +78,8 @@ public class ArtifactBreakdownController {
                             artifact.getId(),
                             artifact.getId());
         } else if (artifactDepth == 4) {
-            characters =
-                    charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIs(
+            characters = charactersRepository
+                    .findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIs(
                             artifact.getId(),
                             artifact.getId(),
                             artifact.getId(),
@@ -92,8 +89,8 @@ public class ArtifactBreakdownController {
                             artifact.getId(),
                             artifact.getId());
         } else {
-            characters =
-                    charactersRepository.findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
+            characters = charactersRepository
+                    .findByArtifactSetOneIdFirstIsOrArtifactSetOneIdSecondIsOrArtifactSetTwoIdFirstIsOrArtifactSetTwoIdSecondIsOrArtifactSetThreeIdFirstIsOrArtifactSetThreeIdSecondIsOrArtifactSetFourIdFirstIsOrArtifactSetFourIdSecondIsOrArtifactSetFiveIdFirstIsOrArtifactSetFiveIdSecondIs(
                             artifact.getId(),
                             artifact.getId(),
                             artifact.getId(),
@@ -127,19 +124,19 @@ public class ArtifactBreakdownController {
         return artifactBreakdown;
     }
 
-    private void processCharacters(List<Character> characters,
-                                   List<ArtifactBreakdownCharacter> artifactBreakdownCharacters,
-                                   Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats,
-                                   Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats,
-                                   Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats) {
+    private void processCharacters(
+            List<Character> characters,
+            List<ArtifactBreakdownCharacter> artifactBreakdownCharacters,
+            Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats,
+            Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats,
+            Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats) {
         for (Character character : characters) {
             ArtifactBreakdownCharacter artifactBreakdownCharacter = ArtifactBreakdownCharacter.builder()
-                                                                                              .id(character.getId())
-                                                                                              .name(character.getName())
-                                                                                              .imageUrl(character.getImageUrl())
-                                                                                              .substats(buildSubstats(
-                                                                                                      character))
-                                                                                              .build();
+                    .id(character.getId())
+                    .name(character.getName())
+                    .imageUrl(character.getImageUrl())
+                    .substats(buildSubstats(character))
+                    .build();
             artifactBreakdownCharacters.add(artifactBreakdownCharacter);
             addSandsStats(character, artifactBreakdownCharacter, sandsStats);
             addGobletStats(character, artifactBreakdownCharacter, gobletStats);
@@ -147,9 +144,10 @@ public class ArtifactBreakdownController {
         }
     }
 
-    private void addSandsStats(Character character,
-                               ArtifactBreakdownCharacter artifactBreakdownCharacter,
-                               Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats) {
+    private void addSandsStats(
+            Character character,
+            ArtifactBreakdownCharacter artifactBreakdownCharacter,
+            Map<SandsMainStats, List<ArtifactBreakdownCharacter>> sandsStats) {
         if (character.getSandsStatOne() != null) {
             if (!sandsStats.containsKey(character.getSandsStatOne())) {
                 sandsStats.put(character.getSandsStatOne(), List.of(artifactBreakdownCharacter));
@@ -190,9 +188,10 @@ public class ArtifactBreakdownController {
         }
     }
 
-    private void addGobletStats(Character character,
-                                ArtifactBreakdownCharacter artifactBreakdownCharacter,
-                                Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats) {
+    private void addGobletStats(
+            Character character,
+            ArtifactBreakdownCharacter artifactBreakdownCharacter,
+            Map<GobletMainStats, List<ArtifactBreakdownCharacter>> gobletStats) {
         if (character.getGobletStatOne() != null) {
             if (!gobletStats.containsKey(character.getGobletStatOne())) {
                 gobletStats.put(character.getGobletStatOne(), List.of(artifactBreakdownCharacter));
@@ -233,9 +232,10 @@ public class ArtifactBreakdownController {
         }
     }
 
-    private void addCircletStats(Character character,
-                                 ArtifactBreakdownCharacter artifactBreakdownCharacter,
-                                 Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats) {
+    private void addCircletStats(
+            Character character,
+            ArtifactBreakdownCharacter artifactBreakdownCharacter,
+            Map<CircletMainStats, List<ArtifactBreakdownCharacter>> circletStats) {
         if (character.getCircletStatOne() != null) {
             if (!circletStats.containsKey(character.getCircletStatOne())) {
                 circletStats.put(character.getCircletStatOne(), List.of(artifactBreakdownCharacter));
