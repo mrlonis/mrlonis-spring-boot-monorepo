@@ -2,9 +2,9 @@ name: Build Gradle project
 
 on:
   push:
-    branches: ['main']
+    branches: [ 'main' ]
   pull_request:
-    branches: ['main']
+    branches: [ 'main' ]
 
 jobs:
   build-gradle-project:
@@ -45,7 +45,9 @@ jobs:
           REDIS_PORT: 6379
 
       - name: Run api-genshin-impact in the background
-        run: ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &
+        run: |
+          ./gradlew :api-genshin-impact:bootRun --args='--spring.profiles.active=local-h2' &
+          echo $! > genshin-impact.pid
 
       - name: Wait for api-genshin-impact to start
         run: sleep 15
@@ -54,8 +56,17 @@ jobs:
       - name: Run newman for api-genshin-impact
         run: newman run ./api-genshin-impact/newman/api-genshin-impact.postman_collection.json -e ./api-genshin-impact/newman/api-genshin-impact-local.postman_environment.json
 
+      - name: Shut down api-genshin-impact
+        run: |
+          if [ -f genshin-impact.pid ]; then
+            kill $(cat genshin-impact.pid) || echo "Process already terminated"
+            rm genshin-impact.pid
+          fi
+
       - name: Run api-honkai-star-rail in the background
-        run: ./gradlew :api-honkai-star-rail:bootRun --args='--spring.profiles.active=local-h2' &
+        run: |
+          ./gradlew :api-honkai-star-rail:bootRun --args='--spring.profiles.active=local-h2' &
+          echo $! > honkai-star-rail.pid
 
       - name: Wait for api-honkai-star-rail to start
         run: sleep 15
@@ -63,6 +74,13 @@ jobs:
 
       - name: Run newman for api-honkai-star-rail
         run: newman run ./api-honkai-star-rail/newman/api-honkai-star-rail.postman_collection.json -e ./api-honkai-star-rail/newman/api-honkai-star-rail-local.postman_environment.json
+
+      - name: Shut down api-honkai-star-rail
+        run: |
+          if [ -f honkai-star-rail.pid ]; then
+            kill $(cat honkai-star-rail.pid) || echo "Process already terminated"
+            rm honkai-star-rail.pid
+          fi
 
   dependency-submission:
     runs-on: ubuntu-latest
