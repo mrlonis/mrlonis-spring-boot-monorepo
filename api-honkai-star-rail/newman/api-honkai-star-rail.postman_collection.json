@@ -135,12 +135,14 @@
 											"",
 											"pm.test(\"Extract Character ID\", () => {",
 											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.not.be.null;",
 											"  pm.expect(responseJson.id).to.not.be.null;",
 											"  pm.environment.set(\"testCharacterId\", responseJson.id);",
 											"});",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -221,11 +223,13 @@
 											"",
 											"pm.test(\"Character ID Is  Not Null\", () => {",
 											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.not.be.null;",
 											"  pm.expect(responseJson.id).to.not.be.null;",
 											"});",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
