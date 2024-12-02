@@ -1,9 +1,8 @@
 package com.mrlonis.genshinimpact.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum WeaponSecondaryStats {
     HEALTH_PERCENT("HP%", "HP%"),
@@ -17,6 +16,7 @@ public enum WeaponSecondaryStats {
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
+
     @Getter
     private final String csvValue;
 
@@ -31,9 +31,9 @@ public enum WeaponSecondaryStats {
         }
 
         return Stream.of(WeaponSecondaryStats.values())
-                     .filter(c -> c.getCsvValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Weapon Secondary Stat: " + csvValue));
+                .filter(c -> c.getCsvValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Weapon Secondary Stat: " + csvValue));
     }
 
     @Override

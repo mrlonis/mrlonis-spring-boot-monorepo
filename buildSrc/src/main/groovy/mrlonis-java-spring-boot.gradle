@@ -7,6 +7,7 @@ plugins {
     id "org.springframework.boot"
     id "io.spring.dependency-management"
     id "io.freefair.lombok"
+    id "com.diffplug.spotless"
 }
 
 group = "com.mrlonis"
@@ -32,7 +33,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.2"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.4"
     }
 }
 
@@ -45,6 +46,7 @@ tasks.withType(JavaCompile).configureEach {
     options.warnings = true
     options.deprecation = true
     options.compilerArgs << "-Xlint:unchecked"
+    dependsOn("spotlessApply")
 }
 
 tasks.register('restartDocker') {
@@ -57,5 +59,31 @@ tasks.register('restartDocker') {
                 commandLine = ["docker", "compose", "up", "--pull", "always", "-V", "--wait"]
             }
         }
+    }
+}
+
+spotless {
+    java {
+        cleanthat().version('2.20')
+                .sourceCompatibility('21')
+                .addMutator('SafeAndConsensual')
+                .addMutator('SafeButNotConsensual')
+        palantirJavaFormat('2.50.0').style('PALANTIR').formatJavadoc(true)
+        formatAnnotations()
+        removeUnusedImports()
+        importOrder()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+    groovyGradle {
+        target '*.gradle' // default target of groovyGradle
+        greclipse().configFile('../greclipse.properties')
+        importOrder()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+    flexmark {
+        target '**/*.md'
+        flexmark()
     }
 }

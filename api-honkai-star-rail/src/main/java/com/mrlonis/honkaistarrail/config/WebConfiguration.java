@@ -10,6 +10,8 @@ import com.mrlonis.honkaistarrail.enums.FeetMainStats;
 import com.mrlonis.honkaistarrail.enums.LinkRopeMainStats;
 import com.mrlonis.honkaistarrail.enums.PlanarSphereMainStats;
 import com.mrlonis.honkaistarrail.enums.Substats;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 import org.springframework.boot.convert.ApplicationConversionService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
@@ -19,9 +21,6 @@ import org.springframework.lang.NonNull;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class WebConfiguration extends WebMvcConfigurationSupport {
@@ -51,5 +50,4 @@ public class WebConfiguration extends WebMvcConfigurationSupport {
         registry.addConverter(String.class, PlanarSphereMainStats.class, new PlanarSphereMainStatsConverter());
         registry.addConverter(String.class, Substats.class, new SubstatsConverter());
     }
-
 }

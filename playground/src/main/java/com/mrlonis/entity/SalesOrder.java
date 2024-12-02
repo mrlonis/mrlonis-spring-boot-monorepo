@@ -8,13 +8,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 
 @Builder
 @Getter
@@ -26,7 +25,13 @@ import java.math.BigDecimal;
 public class SalesOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", columnDefinition = "serial", unique = true, nullable = false, insertable = false, updatable = false)
+    @Column(
+            name = "id",
+            columnDefinition = "serial",
+            unique = true,
+            nullable = false,
+            insertable = false,
+            updatable = false)
     private int id;
 
     @Column(name = "customer_id")

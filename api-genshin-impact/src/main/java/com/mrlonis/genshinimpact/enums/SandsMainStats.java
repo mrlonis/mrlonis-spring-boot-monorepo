@@ -1,9 +1,8 @@
 package com.mrlonis.genshinimpact.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum SandsMainStats {
     HEALTH_PERCENT("HP%"),
@@ -25,9 +24,9 @@ public enum SandsMainStats {
         }
 
         return Stream.of(SandsMainStats.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Sands Main Stat: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Sands Main Stat: " + csvValue));
     }
 
     @Override

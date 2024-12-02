@@ -1,12 +1,14 @@
 package com.mrlonis.honkaistarrail.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.stream.Stream;
 import lombok.Getter;
 
-import java.util.stream.Stream;
-
 public enum FeetMainStats {
-    HP_PERCENT("HP%"), ATK_PERCENT("ATK%"), DEF_PERCENT("DEF%"), SPEED("Speed");
+    HP_PERCENT("HP%"),
+    ATK_PERCENT("ATK%"),
+    DEF_PERCENT("DEF%"),
+    SPEED("Speed");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
@@ -21,9 +23,9 @@ public enum FeetMainStats {
         }
 
         return Stream.of(FeetMainStats.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Feet Main Stat: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Feet Main Stat: " + csvValue));
     }
 
     @Override

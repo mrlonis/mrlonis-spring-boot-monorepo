@@ -1,13 +1,12 @@
 package com.mrlonis.repository;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.mrlonis.entity.Customer;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -42,5 +41,4 @@ class CustomerRepositoryTests {
         assertEquals(1, customers.size());
         assertEquals(2, customers.get(0).getId());
     }
-
 }

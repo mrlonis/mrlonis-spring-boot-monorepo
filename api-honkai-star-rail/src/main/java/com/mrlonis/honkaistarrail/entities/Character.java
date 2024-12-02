@@ -14,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.io.Serializable;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,9 +24,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
-import java.util.UUID;
 
 @Builder
 @Getter
@@ -42,8 +41,7 @@ public class Character implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
-    @NonNull
-    private String name;
+    @NonNull private String name;
 
     @Column(name = "imageUrl")
     private String imageUrl;
@@ -55,14 +53,24 @@ public class Character implements IBaseEntity, Serializable {
     private UUID combatPathId;
 
     @ManyToOne
-    @JoinColumn(name = "combatPathId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "combatPathId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private CombatPath combatPath;
 
     @Column(name = "combatTypeId")
     private UUID combatTypeId;
 
     @ManyToOne
-    @JoinColumn(name = "combatTypeId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "combatTypeId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private CombatType combatType;
 
     @Column(name = "bodyMainStatOne")
@@ -102,7 +110,12 @@ public class Character implements IBaseEntity, Serializable {
     private UUID relicSetOneIdFirst;
 
     @ManyToOne
-    @JoinColumn(name = "relicSetOneIdFirst", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "relicSetOneIdFirst",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private Relic relicSetOneFirst;
 
     @Column(name = "relicSetOneIdSecond")
@@ -144,7 +157,12 @@ public class Character implements IBaseEntity, Serializable {
     private UUID ornamentSetOneId;
 
     @ManyToOne
-    @JoinColumn(name = "ornamentSetOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "ornamentSetOneId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private Ornament ornamentSetOne;
 
     @Column(name = "ornamentSetTwoId")
@@ -165,7 +183,12 @@ public class Character implements IBaseEntity, Serializable {
     private UUID lightConeOneId;
 
     @ManyToOne
-    @JoinColumn(name = "lightConeOneId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    @JoinColumn(
+            name = "lightConeOneId",
+            referencedColumnName = "id",
+            insertable = false,
+            updatable = false,
+            nullable = false)
     private LightCone lightConeOne;
 
     @Column(name = "lightConeTwoId")

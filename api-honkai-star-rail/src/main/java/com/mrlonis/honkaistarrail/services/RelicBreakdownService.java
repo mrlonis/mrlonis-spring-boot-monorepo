@@ -9,17 +9,16 @@ import com.mrlonis.honkaistarrail.enums.FeetMainStats;
 import com.mrlonis.honkaistarrail.exceptions.NotFoundException;
 import com.mrlonis.honkaistarrail.repositories.CharactersRepository;
 import com.mrlonis.honkaistarrail.repositories.RelicsRepository;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 @AllArgsConstructor
@@ -40,33 +39,26 @@ public class RelicBreakdownService extends BaseBreakdownService<RelicBreakdown> 
 
         Relic relic = repositoryRelic.get();
         RelicBreakdown relicBreakdown = RelicBreakdown.builder()
-                                                      .id(relic.getId())
-                                                      .name(relic.getName())
-                                                      .imageUrl(relic.getImageUrl())
-                                                      .twoPieceSetEffect(relic.getTwoPieceSetEffect())
-                                                      .fourPieceSetEffect(relic.getFourPieceSetEffect())
-                                                      .build();
+                .id(relic.getId())
+                .name(relic.getName())
+                .imageUrl(relic.getImageUrl())
+                .twoPieceSetEffect(relic.getTwoPieceSetEffect())
+                .fourPieceSetEffect(relic.getFourPieceSetEffect())
+                .build();
 
         List<Character> characters;
         if (depth == 1) {
-            characters = charactersRepository.findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIs(relic.getId(),
-                                                                                                relic.getId());
+            characters = charactersRepository.findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIs(
+                    relic.getId(), relic.getId());
         } else if (depth == 2) {
             characters =
-                    charactersRepository.findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIsOrRelicSetTwoIdFirstIsOrRelicSetTwoIdSecondIs(
-                            relic.getId(),
-                            relic.getId(),
-                            relic.getId(),
-                            relic.getId());
+                    charactersRepository
+                            .findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIsOrRelicSetTwoIdFirstIsOrRelicSetTwoIdSecondIs(
+                                    relic.getId(), relic.getId(), relic.getId(), relic.getId());
         } else {
-            characters =
-                    charactersRepository.findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIsOrRelicSetTwoIdFirstIsOrRelicSetTwoIdSecondIsOrRelicSetThreeIdFirstIsOrRelicSetThreeIdSecondIs(
-                            relic.getId(),
-                            relic.getId(),
-                            relic.getId(),
-                            relic.getId(),
-                            relic.getId(),
-                            relic.getId());
+            characters = charactersRepository
+                    .findByRelicSetOneIdFirstIsOrRelicSetOneIdSecondIsOrRelicSetTwoIdFirstIsOrRelicSetTwoIdSecondIsOrRelicSetThreeIdFirstIsOrRelicSetThreeIdSecondIs(
+                            relic.getId(), relic.getId(), relic.getId(), relic.getId(), relic.getId(), relic.getId());
         }
 
         if (characters == null || characters.isEmpty()) {
@@ -88,26 +80,28 @@ public class RelicBreakdownService extends BaseBreakdownService<RelicBreakdown> 
         return relicBreakdown;
     }
 
-    private void processRelicCharacters(List<Character> characters,
-                                        List<BreakdownCharacter> breakdownCharacters,
-                                        Map<BodyMainStats, List<BreakdownCharacter>> bodyStats,
-                                        Map<FeetMainStats, List<BreakdownCharacter>> feetStats) {
+    private void processRelicCharacters(
+            List<Character> characters,
+            List<BreakdownCharacter> breakdownCharacters,
+            Map<BodyMainStats, List<BreakdownCharacter>> bodyStats,
+            Map<FeetMainStats, List<BreakdownCharacter>> feetStats) {
         for (Character character : characters) {
             BreakdownCharacter breakdownCharacter = BreakdownCharacter.builder()
-                                                                      .id(character.getId())
-                                                                      .name(character.getName())
-                                                                      .imageUrl(character.getImageUrl())
-                                                                      .substats(buildSubstats(character))
-                                                                      .build();
+                    .id(character.getId())
+                    .name(character.getName())
+                    .imageUrl(character.getImageUrl())
+                    .substats(buildSubstats(character))
+                    .build();
             breakdownCharacters.add(breakdownCharacter);
             addBodyStats(character, breakdownCharacter, bodyStats);
             addFeetStats(character, breakdownCharacter, feetStats);
         }
     }
 
-    private void addBodyStats(Character character,
-                              BreakdownCharacter breakdownCharacter,
-                              Map<BodyMainStats, List<BreakdownCharacter>> bodyStats) {
+    private void addBodyStats(
+            Character character,
+            BreakdownCharacter breakdownCharacter,
+            Map<BodyMainStats, List<BreakdownCharacter>> bodyStats) {
         if (character.getBodyMainStatOne() != null) {
             if (!bodyStats.containsKey(character.getBodyMainStatOne())) {
                 bodyStats.put(character.getBodyMainStatOne(), List.of(breakdownCharacter));
@@ -135,9 +129,10 @@ public class RelicBreakdownService extends BaseBreakdownService<RelicBreakdown> 
         }
     }
 
-    private void addFeetStats(Character character,
-                              BreakdownCharacter breakdownCharacter,
-                              Map<FeetMainStats, List<BreakdownCharacter>> feetStats) {
+    private void addFeetStats(
+            Character character,
+            BreakdownCharacter breakdownCharacter,
+            Map<FeetMainStats, List<BreakdownCharacter>> feetStats) {
         if (character.getFeetMainStatOne() != null) {
             if (!feetStats.containsKey(character.getFeetMainStatOne())) {
                 feetStats.put(character.getFeetMainStatOne(), List.of(breakdownCharacter));
@@ -198,5 +193,4 @@ public class RelicBreakdownService extends BaseBreakdownService<RelicBreakdown> 
             bodyStats.remove(BodyMainStats.CRITICAL_RATE_AND_DAMAGE);
         }
     }
-
 }

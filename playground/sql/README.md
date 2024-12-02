@@ -38,15 +38,17 @@ The tables above could have hundreds of thousands of rows. You have been tasked 
 tables.
 
 1. Find all Customers who do not have any Sales Orders
-  1. Create a query using a LEFT JOIN in the query
-  2. Create a query using a Subquery
-2. Create a query to find the average price each Customer pays for each Item ordered
-3. Create a query to add a new Sales Order with the following data
-  - Amount : 50
-  - Customer : 1
-  - Quantity : 3
-  - Sales Order : B201911210924551000
-  - Item : 23
+2. Create a query using a LEFT JOIN in the query
+3. Create a query using a Subquery
+4. Create a query to find the average price each Customer pays for each Item ordered
+5. Create a query to add a new Sales Order with the following data
+
+- Amount : 50
+- Customer : 1
+- Quantity : 3
+- Sales Order : B201911210924551000
+- Item : 23
+
 4. An error occurred mistakenly adding the item with id 2 to Sales Orders for the Martin Bros customer account. The
    mistake only occurred on Sales Orders with a prefix of 'M'. Create a query to delete instances of this item from
    Sales_Orders for the Martin Bros customer account.
@@ -309,3 +311,4 @@ Without any additional context, some broad improvements that I would suggest are
   report/{customerId}".
 - Where possible, use the correct type for the query parameters instead of parsing them. For example, orderGuideOnly
   should be a boolean type instead of a string type.
+

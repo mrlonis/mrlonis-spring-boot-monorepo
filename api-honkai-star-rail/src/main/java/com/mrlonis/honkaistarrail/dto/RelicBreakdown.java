@@ -2,12 +2,11 @@ package com.mrlonis.honkaistarrail.dto;
 
 import com.mrlonis.honkaistarrail.enums.BodyMainStats;
 import com.mrlonis.honkaistarrail.enums.FeetMainStats;
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import lombok.Builder;
+import lombok.Data;
 
 @Builder
 @Data

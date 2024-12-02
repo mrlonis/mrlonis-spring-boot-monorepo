@@ -1,9 +1,8 @@
 package com.mrlonis.genshinimpact.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum CircletMainStats {
     HEALTH_PERCENT("HP%"),
@@ -28,9 +27,9 @@ public enum CircletMainStats {
         }
 
         return Stream.of(CircletMainStats.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Circlet Main Stat: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Circlet Main Stat: " + csvValue));
     }
 
     @Override

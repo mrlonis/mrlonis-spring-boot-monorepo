@@ -1,12 +1,15 @@
 package com.mrlonis.genshinimpact.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.stream.Stream;
 import lombok.Getter;
 
-import java.util.stream.Stream;
-
 public enum WeaponTypes {
-    SWORD("Sword"), CLAYMORE("Claymore"), POLEARM("Polearm"), BOW("Bow"), CATALYST("Catalyst");
+    SWORD("Sword"),
+    CLAYMORE("Claymore"),
+    POLEARM("Polearm"),
+    BOW("Bow"),
+    CATALYST("Catalyst");
 
     @Getter(onMethod_ = @JsonValue)
     private final String value;
@@ -21,9 +24,9 @@ public enum WeaponTypes {
         }
 
         return Stream.of(WeaponTypes.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Weapon Type: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Weapon Type: " + csvValue));
     }
 
     @Override

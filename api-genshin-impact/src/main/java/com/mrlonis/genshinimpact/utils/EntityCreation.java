@@ -19,12 +19,6 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.enums.CSVReaderNullFieldIndicator;
 import com.opencsv.exceptions.CsvException;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +28,11 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
@@ -71,9 +70,10 @@ public class EntityCreation {
     }
 
     private List<String[]> readCsvFile(BufferedReader bufferedReader) {
-        try (CSVReader csvReader = new CSVReaderBuilder(bufferedReader).withSkipLines(1)
-                                                                       .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
-                                                                       .build()) {
+        try (CSVReader csvReader = new CSVReaderBuilder(bufferedReader)
+                .withSkipLines(1)
+                .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
+                .build()) {
             return csvReader.readAll();
         } catch (CsvException e) {
             String errorMessage = "readCsvFile(): CsvException: " + e.getMessage();
@@ -94,9 +94,7 @@ public class EntityCreation {
             if (row.length != 2) {
                 String errorMessage = String.format(
                         "createElementEntities(): Row %s size is not 2 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -114,7 +112,8 @@ public class EntityCreation {
                 elements.add(element);
             } else {
                 log.info("createElementEntities(): Element does not exist: " + name);
-                Element element = Element.builder().name(name).imageUrl(imageUrl).build();
+                Element element =
+                        Element.builder().name(name).imageUrl(imageUrl).build();
                 elements.add(element);
             }
         }
@@ -130,9 +129,7 @@ public class EntityCreation {
             if (row.length != 8) {
                 String errorMessage = String.format(
                         "createWeaponEntities(): Row %s size is not 8 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -164,15 +161,15 @@ public class EntityCreation {
             } else {
                 log.info("createWeaponEntities(): Weapon does not exist: " + name);
                 Weapon weapon = Weapon.builder()
-                                      .name(name)
-                                      .imageUrl(imageUrl)
-                                      .rarity(rarity)
-                                      .weaponType(weaponType)
-                                      .secondaryStat(secondaryStat)
-                                      .weaponAffix(weaponAffix)
-                                      .affixDescription(affixDescription)
-                                      .description(description)
-                                      .build();
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .rarity(rarity)
+                        .weaponType(weaponType)
+                        .secondaryStat(secondaryStat)
+                        .weaponAffix(weaponAffix)
+                        .affixDescription(affixDescription)
+                        .description(description)
+                        .build();
                 weapons.add(weapon);
             }
         }
@@ -188,9 +185,7 @@ public class EntityCreation {
             if (row.length != 5) {
                 String errorMessage = String.format(
                         "createArtifactEntities(): Row %s size is not 5 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -216,12 +211,12 @@ public class EntityCreation {
             } else {
                 log.info("createArtifactEntities(): Artifact does not exist: " + name);
                 Artifact artifact = Artifact.builder()
-                                            .name(name)
-                                            .imageUrl(imageUrl)
-                                            .onePieceSetEffect(onePieceSetEffect)
-                                            .twoPieceSetEffect(twoPieceSetEffect)
-                                            .fourPieceSetEffect(fourPieceSetEffect)
-                                            .build();
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .onePieceSetEffect(onePieceSetEffect)
+                        .twoPieceSetEffect(twoPieceSetEffect)
+                        .fourPieceSetEffect(fourPieceSetEffect)
+                        .build();
                 artifacts.add(artifact);
             }
         }
@@ -237,9 +232,7 @@ public class EntityCreation {
             if (row.length != 32) {
                 String errorMessage = String.format(
                         "createCharacterEntities(): Row %s size is not 32 and was instead %s! row: %s",
-                        i,
-                        row.length,
-                        Arrays.toString(row));
+                        i, row.length, Arrays.toString(row));
                 log.error(errorMessage);
                 throw new EntityCreationException(errorMessage);
             }
@@ -699,78 +692,60 @@ public class EntityCreation {
                 }
 
                 Character character = Character.builder()
-                                               .name(name)
-                                               .imageUrl(imageUrl)
-                                               .rarity(rarity)
-                                               .elementId(element.getId())
-                                               .element(element)
-                                               .weaponType(weaponType)
-                                               .sandsStatOne(sandsStatOne)
-                                               .sandsStatTwo(sandsStatTwo)
-                                               .sandsStatThree(sandsStatThree)
-                                               .gobletStatOne(gobletStatOne)
-                                               .gobletStatTwo(gobletStatTwo)
-                                               .gobletStatThree(gobletStatThree)
-                                               .circletStatOne(circletStatOne)
-                                               .circletStatTwo(circletStatTwo)
-                                               .circletStatThree(circletStatThree)
-                                               .substatOne(substatOne)
-                                               .substatTwo(substatTwo)
-                                               .substatThree(substatThree)
-                                               .weaponOneId(weaponOne.getId() == null ? null : weaponOne.getId())
-                                               .weaponOne(weaponOne)
-                                               .weaponTwoId(weaponTwo.getId() == null ? null : weaponTwo.getId())
-                                               .weaponTwo(weaponTwo)
-                                               .weaponThreeId(weaponThree != null ? weaponThree.getId() : null)
-                                               .weaponThree(weaponThree)
-                                               .weaponFourId(weaponFour != null ? weaponFour.getId() : null)
-                                               .weaponFour(weaponFour)
-                                               .weaponFiveId(weaponFive != null ? weaponFive.getId() : null)
-                                               .weaponFive(weaponFive)
-                                               .artifactSetOneIdFirst(
-                                                       artifactSetOneFirst == null ? null : artifactSetOneFirst.getId())
-                                               .artifactSetOneFirst(artifactSetOneFirst)
-                                               .artifactSetOneIdSecond(artifactSetOneSecond == null ?
-                                                                       null :
-                                                                       artifactSetOneSecond.getId())
-                                               .artifactSetOneSecond(artifactSetOneSecond)
-                                               .artifactSetTwoIdFirst(
-                                                       artifactSetTwoFirst == null ? null : artifactSetTwoFirst.getId())
-                                               .artifactSetTwoFirst(artifactSetTwoFirst)
-                                               .artifactSetTwoIdSecond(artifactSetTwoSecond == null ?
-                                                                       null :
-                                                                       artifactSetTwoSecond.getId())
-                                               .artifactSetTwoSecond(artifactSetTwoSecond)
-                                               .artifactSetThreeIdFirst(artifactSetThreeFirst == null ?
-                                                                        null :
-                                                                        artifactSetThreeFirst.getId())
-                                               .artifactSetThreeFirst(artifactSetThreeFirst)
-                                               .artifactSetThreeIdSecond(artifactSetThreeSecond == null ?
-                                                                         null :
-                                                                         artifactSetThreeSecond.getId())
-                                               .artifactSetThreeSecond(artifactSetThreeSecond)
-                                               .artifactSetFourIdFirst(artifactSetFourFirst == null ?
-                                                                       null :
-                                                                       artifactSetFourFirst.getId())
-                                               .artifactSetFourFirst(artifactSetFourFirst)
-                                               .artifactSetFourIdSecond(artifactSetFourSecond == null ?
-                                                                        null :
-                                                                        artifactSetFourSecond.getId())
-                                               .artifactSetFourSecond(artifactSetFourSecond)
-                                               .artifactSetFiveIdFirst(artifactSetFiveFirst == null ?
-                                                                       null :
-                                                                       artifactSetFiveFirst.getId())
-                                               .artifactSetFiveFirst(artifactSetFiveFirst)
-                                               .artifactSetFiveIdSecond(artifactSetFiveSecond == null ?
-                                                                        null :
-                                                                        artifactSetFiveSecond.getId())
-                                               .artifactSetFiveSecond(artifactSetFiveSecond)
-                                               .build();
+                        .name(name)
+                        .imageUrl(imageUrl)
+                        .rarity(rarity)
+                        .elementId(element.getId())
+                        .element(element)
+                        .weaponType(weaponType)
+                        .sandsStatOne(sandsStatOne)
+                        .sandsStatTwo(sandsStatTwo)
+                        .sandsStatThree(sandsStatThree)
+                        .gobletStatOne(gobletStatOne)
+                        .gobletStatTwo(gobletStatTwo)
+                        .gobletStatThree(gobletStatThree)
+                        .circletStatOne(circletStatOne)
+                        .circletStatTwo(circletStatTwo)
+                        .circletStatThree(circletStatThree)
+                        .substatOne(substatOne)
+                        .substatTwo(substatTwo)
+                        .substatThree(substatThree)
+                        .weaponOneId(weaponOne.getId() == null ? null : weaponOne.getId())
+                        .weaponOne(weaponOne)
+                        .weaponTwoId(weaponTwo.getId() == null ? null : weaponTwo.getId())
+                        .weaponTwo(weaponTwo)
+                        .weaponThreeId(weaponThree != null ? weaponThree.getId() : null)
+                        .weaponThree(weaponThree)
+                        .weaponFourId(weaponFour != null ? weaponFour.getId() : null)
+                        .weaponFour(weaponFour)
+                        .weaponFiveId(weaponFive != null ? weaponFive.getId() : null)
+                        .weaponFive(weaponFive)
+                        .artifactSetOneIdFirst(artifactSetOneFirst == null ? null : artifactSetOneFirst.getId())
+                        .artifactSetOneFirst(artifactSetOneFirst)
+                        .artifactSetOneIdSecond(artifactSetOneSecond == null ? null : artifactSetOneSecond.getId())
+                        .artifactSetOneSecond(artifactSetOneSecond)
+                        .artifactSetTwoIdFirst(artifactSetTwoFirst == null ? null : artifactSetTwoFirst.getId())
+                        .artifactSetTwoFirst(artifactSetTwoFirst)
+                        .artifactSetTwoIdSecond(artifactSetTwoSecond == null ? null : artifactSetTwoSecond.getId())
+                        .artifactSetTwoSecond(artifactSetTwoSecond)
+                        .artifactSetThreeIdFirst(artifactSetThreeFirst == null ? null : artifactSetThreeFirst.getId())
+                        .artifactSetThreeFirst(artifactSetThreeFirst)
+                        .artifactSetThreeIdSecond(
+                                artifactSetThreeSecond == null ? null : artifactSetThreeSecond.getId())
+                        .artifactSetThreeSecond(artifactSetThreeSecond)
+                        .artifactSetFourIdFirst(artifactSetFourFirst == null ? null : artifactSetFourFirst.getId())
+                        .artifactSetFourFirst(artifactSetFourFirst)
+                        .artifactSetFourIdSecond(artifactSetFourSecond == null ? null : artifactSetFourSecond.getId())
+                        .artifactSetFourSecond(artifactSetFourSecond)
+                        .artifactSetFiveIdFirst(artifactSetFiveFirst == null ? null : artifactSetFiveFirst.getId())
+                        .artifactSetFiveFirst(artifactSetFiveFirst)
+                        .artifactSetFiveIdSecond(artifactSetFiveSecond == null ? null : artifactSetFiveSecond.getId())
+                        .artifactSetFiveSecond(artifactSetFiveSecond)
+                        .build();
                 characters.add(character);
             }
         }
 
         charactersRepository.saveAllAndFlush(characters);
     }
-
 }

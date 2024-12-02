@@ -1,9 +1,8 @@
 package com.mrlonis.genshinimpact.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum Substats {
     HEALTH_FLAT("HP"),
@@ -33,9 +32,9 @@ public enum Substats {
         }
 
         return Stream.of(Substats.values())
-                     .filter(c -> c.getValue().equals(csvValue))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Substat: " + csvValue));
+                .filter(c -> c.getValue().equals(csvValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Substat: " + csvValue));
     }
 
     @Override

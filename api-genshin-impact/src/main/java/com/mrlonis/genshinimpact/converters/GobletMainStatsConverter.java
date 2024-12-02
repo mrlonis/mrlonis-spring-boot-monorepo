@@ -3,13 +3,13 @@ package com.mrlonis.genshinimpact.converters;
 import com.mrlonis.genshinimpact.enums.GobletMainStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import java.util.stream.Stream;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
 @Converter(autoApply = true)
-public class GobletMainStatsConverter implements AttributeConverter<GobletMainStats, String>,
-        org.springframework.core.convert.converter.Converter<String, GobletMainStats> {
+public class GobletMainStatsConverter
+        implements AttributeConverter<GobletMainStats, String>,
+                org.springframework.core.convert.converter.Converter<String, GobletMainStats> {
     @Override
     public GobletMainStats convert(@NonNull String from) {
         return GobletMainStats.convertToEnumFromCsvValue(from);
@@ -30,8 +30,8 @@ public class GobletMainStatsConverter implements AttributeConverter<GobletMainSt
         }
 
         return Stream.of(GobletMainStats.values())
-                     .filter(c -> c.getValue().equals(value))
-                     .findFirst()
-                     .orElseThrow(IllegalArgumentException::new);
+                .filter(c -> c.getValue().equals(value))
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
     }
 }

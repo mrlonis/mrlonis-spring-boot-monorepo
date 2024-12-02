@@ -7,6 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.io.Serializable;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,9 +17,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
-import java.util.UUID;
 
 @Builder
 @Getter
@@ -35,13 +34,11 @@ public class Ornament implements IBaseEntity, Serializable {
     private UUID id;
 
     @Column(name = "name")
-    @NonNull
-    private String name;
+    @NonNull private String name;
 
     @Column(name = "imageUrl")
     private String imageUrl;
 
     @Column(name = "twoPieceSetEffect")
-    @NonNull
-    private String twoPieceSetEffect;
+    @NonNull private String twoPieceSetEffect;
 }

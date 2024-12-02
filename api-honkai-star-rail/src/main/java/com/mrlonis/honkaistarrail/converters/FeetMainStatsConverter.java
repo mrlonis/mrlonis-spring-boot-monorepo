@@ -3,13 +3,13 @@ package com.mrlonis.honkaistarrail.converters;
 import com.mrlonis.honkaistarrail.enums.FeetMainStats;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import java.util.stream.Stream;
 import org.springframework.lang.NonNull;
 
-import java.util.stream.Stream;
-
 @Converter(autoApply = true)
-public class FeetMainStatsConverter implements AttributeConverter<FeetMainStats, String>,
-        org.springframework.core.convert.converter.Converter<String, FeetMainStats> {
+public class FeetMainStatsConverter
+        implements AttributeConverter<FeetMainStats, String>,
+                org.springframework.core.convert.converter.Converter<String, FeetMainStats> {
     @Override
     public FeetMainStats convert(@NonNull String from) {
         return FeetMainStats.convertToEnumFromCsvValue(from);
@@ -30,8 +30,8 @@ public class FeetMainStatsConverter implements AttributeConverter<FeetMainStats,
         }
 
         return Stream.of(FeetMainStats.values())
-                     .filter(c -> c.getValue().equals(value))
-                     .findFirst()
-                     .orElseThrow(() -> new IllegalArgumentException("Invalid Feet Main Stat: " + value));
+                .filter(c -> c.getValue().equals(value))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Feet Main Stat: " + value));
     }
 }
