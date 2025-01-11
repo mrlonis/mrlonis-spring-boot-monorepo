@@ -5,34 +5,37 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: 'weekly'
-  - package-ecosystem: 'gradle' # See documentation for possible values
+      interval: "weekly"
+  - package-ecosystem: "gradle" # See documentation for possible values
     directories:
-      - '/api-genshin-impact'
-      - '/api-honkai-star-rail'
-      - '/buildSrc'
-      - '/gateway'
-      - '/lib-mrlonis-testing'
-      - 'lib-mrlonis-types'
-      - 'playground'
+      - "/api-genshin-impact"
+      - "/api-honkai-star-rail"
+      - "/buildSrc"
+      - "/gateway"
+      - "/lib-mrlonis-testing"
+      - "lib-mrlonis-types"
+      - "playground"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
     allow:
-      - dependency-type: 'all'
+      - dependency-type: "all"
     open-pull-requests-limit: 99
     groups:
       development-version-updates:
         applies-to: version-updates
         dependency-type: development
         update-types:
-          - 'patch'
-          - 'minor'
+          - "patch"
+          - "minor"
       development-security-updates:
         applies-to: security-updates
         dependency-type: development
         update-types:
-          - 'patch'
-          - 'minor'
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "org.flywaydb:flyway*"
+        update-types: ["version-update:semver-major"]
