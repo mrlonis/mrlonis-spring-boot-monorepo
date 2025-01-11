@@ -1,0 +1,18 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:postgresql://localhost:5110/honkaistarrail
+    username: postgres
+    password: 123456
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/postgresql
+    user: postgres
+    password: 123456
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

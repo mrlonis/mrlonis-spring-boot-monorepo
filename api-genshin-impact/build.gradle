@@ -17,7 +17,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-rest"
     implementation "org.springframework.boot:spring-boot-starter-web"
 
-    developmentOnly "org.springframework.boot:spring-boot-devtools"
+    // developmentOnly "org.springframework.boot:spring-boot-devtools"
 
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.postgresql:postgresql"
