@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: api-genshin-impact
+  output:
+    ansi:
+      enabled: always
+  data:
+    rest:
+      basePath: /api
+  jackson:
+    default-property-inclusion: NON_NULL
+    mapper:
+      ACCEPT_CASE_INSENSITIVE_ENUMS: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: mappings,metrics,health,refresh
+---
+server:
+  port: 9002
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:postgresql://localhost:5110/genshinimpact
+    username: postgres
+    password: 123456
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/postgresql
+    user: postgres
+    password: 123456
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+---
+server:
+  port: 9002
+spring:
+  config:
+    activate:
+      on-profile: local-h2
+  datasource:
+    url: jdbc:h2:mem:genshinimpact;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    # url: jdbc:h2:file:./h2/genshinimpact
+    username: sa
+    password:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/h2
+    user: sa
+    password:
+  h2:
+    console:
+      enabled: true
