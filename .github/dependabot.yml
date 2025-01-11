@@ -14,7 +14,6 @@ updates:
       - "/api-genshin-impact"
       - "/api-honkai-star-rail"
       - "/buildSrc"
-      - "/buildSrc/src/main/groovy"
       - "/gateway"
       - "/lib-mrlonis-testing"
       - "lib-mrlonis-types"
@@ -25,6 +24,18 @@ updates:
       - dependency-type: "all"
     open-pull-requests-limit: 99
     groups:
+      production-version-updates:
+        applies-to: version-updates
+        dependency-type: production
+        update-types:
+          - "patch"
+          - "minor"
+      production-security-updates:
+        applies-to: security-updates
+        dependency-type: production
+        update-types:
+          - "patch"
+          - "minor"
       development-version-updates:
         applies-to: version-updates
         dependency-type: development
