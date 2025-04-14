@@ -5,7 +5,7 @@ plugins {
 dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
-    implementation "commons-io:commons-io:2.18.0"
+    implementation "commons-io:commons-io:2.19.0"
     implementation("com.opencsv:opencsv:5.10") {
         exclude group: 'commons-logging', module: 'commons-logging'
     }
