@@ -6,7 +6,7 @@ dependencies {
     implementation project(":lib-mrlonis-types")
     implementation "com.h2database:h2"
     implementation "commons-io:commons-io:2.19.0"
-    implementation("com.opencsv:opencsv:5.10") {
+    implementation("com.opencsv:opencsv:5.11") {
         exclude group: 'commons-logging', module: 'commons-logging'
     }
     implementation "org.apache.ant:ant:1.10.15"
