@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     implementation("com.diffplug.spotless:spotless-plugin-gradle:8.0.0")
-    implementation("io.freefair.gradle:lombok-plugin:9.0.0")
+    implementation("io.freefair.gradle:lombok-plugin:9.1.0")
     implementation("io.spring.gradle:dependency-management-plugin:1.1.7")
     implementation("org.springframework.boot:spring-boot-gradle-plugin:3.5.7")
 }
