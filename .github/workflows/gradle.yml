@@ -36,7 +36,7 @@ jobs:
           java-version: 21
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
+        uses: gradle/actions/setup-gradle@v6
 
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
@@ -98,4 +98,4 @@ jobs:
       # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
       # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
       - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@cd4b95f1dffd155d6d8f6b8c195a3ff2f9f77a5d
+        uses: gradle/actions/dependency-submission@6710000013efea00802ecf636afd397941ccbfc5
