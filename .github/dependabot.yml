@@ -8,7 +8,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    open-pull-requests-limit: 5
   - package-ecosystem: "gradle" # See documentation for possible values
     directories:
       - "/api-genshin-impact"
@@ -19,10 +20,10 @@ updates:
       - "lib-mrlonis-types"
       - "playground"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     allow:
       - dependency-type: "all"
-    open-pull-requests-limit: 99
+    open-pull-requests-limit: 5
     groups:
       production-version-updates:
         applies-to: version-updates

@@ -43,11 +43,11 @@ tasks.withType(JavaCompile).configureEach {
 
 spotless {
     java {
-        cleanthat().version('2.20')
+        cleanthat().version('2.25')
                 .sourceCompatibility('21')
                 .addMutator('SafeAndConsensual')
                 .addMutator('SafeButNotConsensual')
-        palantirJavaFormat('2.50.0').style('PALANTIR').formatJavadoc(true)
+        palantirJavaFormat('2.94.0').style('PALANTIR').formatJavadoc(true)
         formatAnnotations()
         removeUnusedImports()
         importOrder()
