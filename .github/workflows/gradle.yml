@@ -98,4 +98,4 @@ jobs:
       # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
       # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
       - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@b128da9bf0c2651a9fe51856df98ba6e611afc58
+        uses: gradle/actions/dependency-submission@00888779244ce80fcbec1ea0050a6cf334f660f5
